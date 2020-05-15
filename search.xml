@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Good affternoon</title>
-    <url>/2020/05/15/Good-affternoon/</url>
-    <content><![CDATA[<h2 id="生活本身就是一个缓慢受锤的过程。——于小波"><a href="#生活本身就是一个缓慢受锤的过程。——于小波" class="headerlink" title="生活本身就是一个缓慢受锤的过程。——于小波"></a>生活本身就是一个缓慢受锤的过程。——于小波</h2>]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2020/05/15/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，同时在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
 ]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
   </entry>
 </search>

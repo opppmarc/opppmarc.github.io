@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>阿虞在路上</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2020-05-15T08:28:21.367Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="https://opppmarc.github.io/"/>
+  <updated>2020-05-15T16:17:18.247Z</updated>
+  <id>https://opppmarc.github.io/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Marc Lee</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Good affternoon</title>
-    <link href="http://yoursite.com/2020/05/15/Good-affternoon/"/>
-    <id>http://yoursite.com/2020/05/15/Good-affternoon/</id>
-    <published>2020-05-15T08:25:05.000Z</published>
-    <updated>2020-05-15T08:28:21.367Z</updated>
+    <title>HelloWorld</title>
+    <link href="https://opppmarc.github.io/2020/05/15/HelloWorld/"/>
+    <id>https://opppmarc.github.io/2020/05/15/HelloWorld/</id>
+    <published>2020-05-15T15:26:29.000Z</published>
+    <updated>2020-05-15T16:17:18.247Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h2 id=&quot;生活本身就是一个缓慢受锤的过程。——于小波&quot;&gt;&lt;a href=&quot;#生活本身就是一个缓慢受锤的过程。——于小波&quot; class=&quot;headerlink&quot;
+          &lt;h1 id=&quot;起初&quot;&gt;&lt;a href=&quot;#起初&quot; class=&quot;headerlink&quot;
         
       
     
@@ -37,28 +37,7 @@
     
     
     
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2020/05/15/hello-world/"/>
-    <id>http://yoursite.com/2020/05/15/hello-world/</id>
-    <published>2020-05-15T05:32:01.984Z</published>
-    <updated>2020-05-15T05:32:01.984Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
-    
-    </summary>
-    
-    
+      <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
