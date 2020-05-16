@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-05-15T16:17:18.247Z</updated>
+  <updated>2020-05-16T06:13:24.240Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -18,20 +18,35 @@
   
   <entry>
     <title>HelloWorld</title>
-    <link href="https://opppmarc.github.io/2020/05/15/HelloWorld/"/>
-    <id>https://opppmarc.github.io/2020/05/15/HelloWorld/</id>
-    <published>2020-05-15T15:26:29.000Z</published>
-    <updated>2020-05-15T16:17:18.247Z</updated>
+    <link href="https://opppmarc.github.io/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/"/>
+    <id>https://opppmarc.github.io/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/</id>
+    <published>2020-05-16T06:10:32.000Z</published>
+    <updated>2020-05-16T06:13:24.240Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;起初&quot;&gt;&lt;a href=&quot;#起初&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;p&gt;简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="信息管理与信息系统" scheme="https://opppmarc.github.io/categories/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="信管" scheme="https://opppmarc.github.io/tags/%E4%BF%A1%E7%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HelloWorld</title>
+    <link href="https://opppmarc.github.io/2020/05/15/HelloWorld/"/>
+    <id>https://opppmarc.github.io/2020/05/15/HelloWorld/</id>
+    <published>2020-05-15T15:26:29.000Z</published>
+    <updated>2020-05-16T06:10:36.914Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;起初&quot;&gt;&lt;a href=&quot;#起初&quot; class=&quot;headerlink&quot; title=&quot;起初&quot;&gt;&lt;/a&gt;起初&lt;/h1&gt;&lt;p&gt;第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。&lt;/p&gt;
     
     </summary>
     
