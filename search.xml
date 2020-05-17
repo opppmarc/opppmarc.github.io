@@ -1,15 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>HelloWorld</title>
-    <url>/2020/05/15/HelloWorld/</url>
-    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+    <title>Hexo+GithubBlog搭建</title>
+    <url>/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>基于开源框架搭建博客，可以直接在<em>github page</em>上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…</p>
 <a id="more"></a>
-<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
-<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
-]]></content>
+<p><a href="https://sunhwee.com/posts/6e8839eb.html#toc-heading-14" target="_blank" rel="noopener">传送门</a> 参考自洪卫的博客，以下仅部分会展开详细说明，保姆级教程请点传送门跳转。:P</p>
+<p>这篇文章主要记录如何进行hexo的初级搭建，将hexo部署到github page上，以及个人域名的绑定、文章的发布。</p>
+<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><ul>
+<li>安装 Git</li>
+<li>安装 Node.js</li>
+<li>安装 Hexo</li>
+<li>在Github创建个人仓库</li>
+<li>生成SSH添加到GitHub</li>
+<li>将hexo部署到github</li>
+<li>设置个人域名</li>
+<li>发布文章</li>
+</ul>
+<h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h2><p>为了把本地网页文件上传到github，需要用到Git。Git是目前世界上先进的分布式版本控制系统，可以有效、高速处理从小到非常大的项目版本管理。     </p>
+<p>windows系统用户直接到git官网下载即可，网上教程都说在安装过程最后一步添加路径时要选择<em>Use GIt form the Windows Command Prompt</em>(为了能直接在命令提示符里打开git)，但是我在安装时在这一步中并没有看到该选项，就选择了<em>Use Git form the VS Code</em>，原本以为是要在vscode里打开git，后来发现在文件目录下右键就能看到Git bush的选项了。</p>
+<h2 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2.安装node.js"></a>2.安装node.js</h2><p>Hexo是基于node.js编写的，所以需要安装node.js和里面的npm工具。<br>windows系统下载好Node.js后，按<kbd>Win</kbd>+<kbd>R</kbd>打开命令提示符，输入 node -v 和 npm -v，如果出现版本号就安装成功了：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v  </span><br><span class="line">11.1      </span><br><span class="line"></span><br><span class="line">npm -v  </span><br><span class="line">5.6.0</span><br></pre></td></tr></table></figure>
+
+<p>继续添加国内镜像源(这里用阿里的国内镜像加速，不用梯子)：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>创建一个文件夹来存放自己的博客文件，例如创建了<em>MyBlog<em>，就在</em>D：\MyBlog</em> 目录下直接右键gitbash打开  </p>
+<p>先安装hexo</p>
+<pre><code>npm install -g hexo-cli </code></pre><p>安装完后验证是否安装成功</p>
+<pre><code>hexo -v </code></pre><p>验证成功后会输出版本信息   </p>
+<pre><code>hexo-cli: 3.1.0  
+os: Windows_NT 10.0.18363 win32 x64  
+http_parser: 2.8.0  
+node: 9.11.1  
+v8: 6.2.414.46-node.23  
+uv: 1.19.2  
+zlib: 1.2.11  
+ares: 1.13.0  
+modules: 59  
+nghttp2: 1.29.0  
+napi: 3  
+openssl: 1.0.2o  
+icu: 61.1  
+unicode: 10.0  
+cldr: 33.0  
+tz: 2018c</code></pre><p>然后初始化Hexo,初始化文件夹MyBlog,文件夹名也可以是你自己命名的</p>
+<pre><code>hexo init MyBlog</code></pre><p>然后cd到文件夹安装组件  </p>
+<pre><code>cd MyBlog  
+npm install</code></pre><p>生成静态网页并在本地服务器打开</p>
+<pre><code>hexo generate //简写：hexo g  
+hexo server    //简写：hexo s</code></pre><h2 id="4-注册Github账户并创建个人仓库"><a href="#4-注册Github账户并创建个人仓库" class="headerlink" title="4.注册Github账户并创建个人仓库"></a>4.注册Github账户并创建个人仓库</h2><p>github账户就不说了，点击首页右上角加号新建一个项目仓库<em>New repositroy</em>,要创建一个和你用户名相同的仓库，后面加.<a href="http://github.io，只有这样，将来要部署到GitHub" target="_blank" rel="noopener">http://github.io，只有这样，将来要部署到GitHub</a> page的时候，才会被识别，也就是<a href="http://xxxx.github.io，其中xxx就是你注册GitHub的用户名。" target="_blank" rel="noopener">http://xxxx.github.io，其中xxx就是你注册GitHub的用户名。</a></p>
+<p>如下图所示，项目名字和用户名一致，同时后面加<code>.github.io</code>后缀，<code>README</code>初始化勾选上。<br><img src="https://s1.ax1x.com/2020/05/17/Y2rcIH.png" alt="Y2rcIH.png"></p>
+<h2 id="5-生成SSH添加到GitHub"><a href="#5-生成SSH添加到GitHub" class="headerlink" title="5.生成SSH添加到GitHub"></a>5.生成SSH添加到GitHub</h2><p>在博客根目录右键打开<code>git bash</code>，输入以下命令:  </p>
+<pre><code>git config --global user.name &quot;yourname&quot;
+git config --global user.email &quot;youremail&quot;</code></pre><p>youname指GitHub用户名，youremail指Github邮箱。  </p>
+<p>输入命令核对：  </p>
+<pre><code>git config user.name
+git config user.email</code></pre><blockquote>
+<p>ssh就是秘钥，创建好后会输出私钥和公钥，链接Github账户后，把公钥放在Github上，就可以根据公钥匹配本地电脑的私钥，然后通过git上传数据到github上。</p>
+</blockquote>
+<p>创建<code>SSH</code>,一直回车</p>
+<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></pre><p>系统会告诉你生成了<code>.ssh</code>的文件夹，在该文件夹目录下<code>git bash</code>输入</p>
+<pre><code>cat ~/.ssh/id_rsa.pub</code></pre><p>复制输出的内容，打开Github，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个<code>SSH</code>，名字随便取一个都可以，把刚才复制的id_rsa.pub信息复制进去。如图：</p>
+<p><img src="https://s1.ax1x.com/2020/05/17/Y2rcIH.png" alt="Y2rcIH.png"></p>
+<p>回到博客根目录，<code>git bash</code>输入：</p>
+<pre><code>ssh -T git@github.com</code></pre><p><img src="https://s1.ax1x.com/2020/05/17/Y2r6de.png" alt="Y2r6de.png"><br>系统输出的信息中包含你的用户名就成功了。</p>
+<h2 id="6-将hexo部署到GitHub"><a href="#6-将hexo部署到GitHub" class="headerlink" title="6.将hexo部署到GitHub"></a>6.将hexo部署到GitHub</h2><p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，修改最后一行的配置：  </p>
+<pre><code>deploy:
+type: git
+repository: https://github.com/opppmarc/opppmarc.github.io  //这里是自己的github项目地址
+branch: master</code></pre><p>根目录右键<code>git bash</code>安装<code>deploy-git</code>：  </p>
+<pre><code>npm install hexo-deployer-git --save</code></pre><p>然后  </p>
+<pre><code>hexo clean      //清除之前生成的东西
+hexo generate   //生成静态文章
+hexo deploy     //部署文章</code></pre><blockquote>
+<p>过程中可能会要求输入Github账户信息</p>
+</blockquote>
+<p>系统反馈<code>NFO Deploy done: git</code>则部署成功了。</p>
+<h2 id="7-设置个人域名"><a href="#7-设置个人域名" class="headerlink" title="7.设置个人域名"></a>7.设置个人域名</h2><p>这一块需要花钱购置域名，详情参见传送门原博。</p>
+<h2 id="8-写文章、发布文章"><a href="#8-写文章、发布文章" class="headerlink" title="8.写文章、发布文章"></a>8.写文章、发布文章</h2><p>博客根目录打开<code>git bash</code>，安装一个拓展：</p>
+<pre><code>npm i hexo-deployer-git</code></pre><p>新建一篇文章：  </p>
+<pre><code>hexo new post &quot;article title&quot;       //引号里是文章标题</code></pre><p>在<code>\source\_post</code>目录下会发现一个新的md文件， 然后编辑内容即可。  </p>
+<p>编辑好文章内容后，根目录下打开<code>git bash</code>，依次输入：</p>
+<pre><code>hexo clean      //简写 hexo c 清除缓存
+hexo generate   //简写 hexo g 生成静态文章
+hexo server     //简写 hexo s 本地预览
+hexo deployer   //简写 hexo d 上传部署</code></pre>]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -69,6 +150,18 @@
       </categories>
       <tags>
         <tag>信管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+<a id="more"></a>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-05-16T06:13:24.240Z</updated>
+  <updated>2020-05-17T11:04:14.943Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo+GithubBlog搭建</title>
+    <link href="https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/"/>
+    <id>https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/</id>
+    <published>2020-05-17T03:06:49.000Z</published>
+    <updated>2020-05-17T11:04:14.943Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;基于开源框架搭建博客，可以直接在&lt;em&gt;github page&lt;/em&gt;上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="https://opppmarc.github.io/categories/Blog/"/>
+    
+    
+      <category term="blog" scheme="https://opppmarc.github.io/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title>HelloWorld</title>
