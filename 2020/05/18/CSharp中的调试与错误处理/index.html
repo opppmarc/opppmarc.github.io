@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    tags |  阿虞在路上
+    CSharp中的调试与错误处理 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,13 +44,267 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
+  <article id="post-CSharp中的调试与错误处理" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  CSharp中的调试与错误处理
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="article-date">
+  <time datetime="2020-05-18T15:28:12.000Z" itemprop="datePublished">2020-05-18</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C#</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">562</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">1 min</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
+<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
+<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
+<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
+<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
+<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
+<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
+<li>4.在行首位置直接单击添加，再次单击删除。</li>
+</ul>
+<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
+<blockquote>
+<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
+</blockquote>
+<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
+<p><code>监视</code>前需要添加变量对象：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
+<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
+<blockquote>
+<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
+</blockquote>
+<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
+<blockquote>
+<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
+<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
+<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
+<pre><code class="c#"><span class="keyword">try</span>{ 
+    ···     <span class="comment">//包含可能出现异常的代码</span>
+}
+<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
+    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
+<span class="keyword">finally</span>{  
+    ···     <span class="comment">//包含始终会执行的代码</span>
+}</code></pre>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>Copyright： </strong>
+              Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
   
-    <h1 class="page-type-title">Tags</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/" rel="tag">blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E7%AE%A1/" rel="tag">信管</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
   
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Hexo+GithubBlog搭建</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -215,6 +469,23 @@
 </script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
