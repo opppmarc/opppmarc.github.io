@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Hexo+GithubBlog搭建 |  阿虞在路上
+    无“声”胜有“声”——《Inside》中异于传统的叙事手段 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Hexo-GithubBlog搭建" class="article article-type-post" itemscope
+  <article id="post-无“声”胜有“声”——《Inside》中异于传统的叙事手段" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hexo+GithubBlog搭建
+  无“声”胜有“声”——《Inside》中异于传统的叙事手段
 </h1>
  
 
@@ -61,12 +61,12 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/" class="article-date">
-  <time datetime="2020-05-17T03:06:49.000Z" itemprop="datePublished">2020-05-17</time>
+      <a href="/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/" class="article-date">
+  <time datetime="2020-05-27T07:29:50.000Z" itemprop="datePublished">2020-05-27</time>
 </a>
       
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Blog/">Blog</a>
+    <a class="article-category-link" href="/categories/%E6%B8%B8%E6%88%8F%E6%B5%8B%E8%AF%84/">游戏测评</a>
   </div>
 
       
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.4k</span>
+            <span class="post-count">1.9k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">6 min</span>
         </span>
     </span>
 </div>
@@ -110,89 +110,37 @@
       
 
       
-      <p>基于开源框架搭建博客，可以直接在<em>github page</em>上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…</p>
-<a id="more"></a>
-<p><a href="https://sunhwee.com/posts/6e8839eb.html#toc-heading-14" target="_blank" rel="noopener">传送门</a> 参考自洪卫的博客，以下仅部分会展开详细说明，保姆级教程请点传送门跳转。:P</p>
-<p>这篇文章主要记录如何进行hexo的初级搭建，将hexo部署到github page上，以及个人域名的绑定、文章的发布。</p>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><ul>
-<li>安装 Git</li>
-<li>安装 Node.js</li>
-<li>安装 Hexo</li>
-<li>在Github创建个人仓库</li>
-<li>生成SSH添加到GitHub</li>
-<li>将hexo部署到github</li>
-<li>设置个人域名</li>
-<li>发布文章</li>
-</ul>
-<h2 id="1-安装Git"><a href="#1-安装Git" class="headerlink" title="1.安装Git"></a>1.安装Git</h2><p>为了把本地网页文件上传到github，需要用到Git。Git是目前世界上先进的分布式版本控制系统，可以有效、高速处理从小到非常大的项目版本管理。     </p>
-<p>windows系统用户直接到git官网下载即可，网上教程都说在安装过程最后一步添加路径时要选择<em>Use GIt form the Windows Command Prompt</em>(为了能直接在命令提示符里打开git)，但是我在安装时在这一步中并没有看到该选项，就选择了<em>Use Git form the VS Code</em>，原本以为是要在vscode里打开git，后来发现在文件目录下右键就能看到Git bush的选项了。</p>
-<h2 id="2-安装node-js"><a href="#2-安装node-js" class="headerlink" title="2.安装node.js"></a>2.安装node.js</h2><p>Hexo是基于node.js编写的，所以需要安装node.js和里面的npm工具。<br>windows系统下载好Node.js后，按<kbd>Win</kbd>+<kbd>R</kbd>打开命令提示符，输入 node -v 和 npm -v，如果出现版本号就安装成功了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">node -v  </span><br><span class="line">11.1      </span><br><span class="line"></span><br><span class="line">npm -v  </span><br><span class="line">5.6.0</span><br></pre></td></tr></table></figure>
-
-<p>继续添加国内镜像源(这里用阿里的国内镜像加速，不用梯子)：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>创建一个文件夹来存放自己的博客文件，例如创建了<em>MyBlog<em>，就在</em>D：\MyBlog</em> 目录下直接右键gitbash打开  </p>
-<p>先安装hexo</p>
-<pre><code>npm install -g hexo-cli </code></pre><p>安装完后验证是否安装成功</p>
-<pre><code>hexo -v </code></pre><p>验证成功后会输出版本信息   </p>
-<pre><code>hexo-cli: 3.1.0  
-os: Windows_NT 10.0.18363 win32 x64  
-http_parser: 2.8.0  
-node: 9.11.1  
-v8: 6.2.414.46-node.23  
-uv: 1.19.2  
-zlib: 1.2.11  
-ares: 1.13.0  
-modules: 59  
-nghttp2: 1.29.0  
-napi: 3  
-openssl: 1.0.2o  
-icu: 61.1  
-unicode: 10.0  
-cldr: 33.0  
-tz: 2018c</code></pre><p>然后初始化Hexo,初始化文件夹MyBlog,文件夹名也可以是你自己命名的</p>
-<pre><code>hexo init MyBlog</code></pre><p>然后cd到文件夹安装组件  </p>
-<pre><code>cd MyBlog  
-npm install</code></pre><p>生成静态网页并在本地服务器打开</p>
-<pre><code>hexo generate //简写：hexo g  
-hexo server    //简写：hexo s</code></pre><h2 id="4-注册Github账户并创建个人仓库"><a href="#4-注册Github账户并创建个人仓库" class="headerlink" title="4.注册Github账户并创建个人仓库"></a>4.注册Github账户并创建个人仓库</h2><p>github账户就不说了，点击首页右上角加号新建一个项目仓库<em>New repositroy</em>,要创建一个和你用户名相同的仓库，后面加.<a href="http://github.io，只有这样，将来要部署到GitHub" target="_blank" rel="noopener">http://github.io，只有这样，将来要部署到GitHub</a> page的时候，才会被识别，也就是<a href="http://xxxx.github.io，其中xxx就是你注册GitHub的用户名。" target="_blank" rel="noopener">http://xxxx.github.io，其中xxx就是你注册GitHub的用户名。</a></p>
-<p>如下图所示，项目名字和用户名一致，同时后面加<code>.github.io</code>后缀，<code>README</code>初始化勾选上。<br><img src="https://s1.ax1x.com/2020/05/17/Y2rcIH.png" alt="Y2rcIH.png"></p>
-<h2 id="5-生成SSH添加到GitHub"><a href="#5-生成SSH添加到GitHub" class="headerlink" title="5.生成SSH添加到GitHub"></a>5.生成SSH添加到GitHub</h2><p>在博客根目录右键打开<code>git bash</code>，输入以下命令:  </p>
-<pre><code>git config --global user.name &quot;yourname&quot;
-git config --global user.email &quot;youremail&quot;</code></pre><p>youname指GitHub用户名，youremail指Github邮箱。  </p>
-<p>输入命令核对：  </p>
-<pre><code>git config user.name
-git config user.email</code></pre><blockquote>
-<p>ssh就是秘钥，创建好后会输出私钥和公钥，链接Github账户后，把公钥放在Github上，就可以根据公钥匹配本地电脑的私钥，然后通过git上传数据到github上。</p>
+      <blockquote>
+<p>“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  </p>
 </blockquote>
-<p>创建<code>SSH</code>,一直回车</p>
-<pre><code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></pre><p>系统会告诉你生成了<code>.ssh</code>的文件夹，在该文件夹目录下<code>git bash</code>输入</p>
-<pre><code>cat ~/.ssh/id_rsa.pub</code></pre><p>复制输出的内容，打开Github，在头像下面点击<code>settings</code>，再点击<code>SSH and GPG keys</code>，新建一个<code>SSH</code>，名字随便取一个都可以，把刚才复制的id_rsa.pub信息复制进去。如图：</p>
-<p><img src="https://s1.ax1x.com/2020/05/17/Y2rcIH.png" alt="Y2rcIH.png"></p>
-<p>回到博客根目录，<code>git bash</code>输入：</p>
-<pre><code>ssh -T git@github.com</code></pre><p><img src="https://s1.ax1x.com/2020/05/17/Y2r6de.png" alt="Y2r6de.png"><br>系统输出的信息中包含你的用户名就成功了。</p>
-<h2 id="6-将hexo部署到GitHub"><a href="#6-将hexo部署到GitHub" class="headerlink" title="6.将hexo部署到GitHub"></a>6.将hexo部署到GitHub</h2><p>打开博客根目录下的<code>_config.yml</code>文件，这是博客的配置文件，修改最后一行的配置：  </p>
-<pre><code>deploy:
-type: git
-repository: https://github.com/opppmarc/opppmarc.github.io  //这里是自己的github项目地址
-branch: master</code></pre><p>根目录右键<code>git bash</code>安装<code>deploy-git</code>：  </p>
-<pre><code>npm install hexo-deployer-git --save</code></pre><p>然后  </p>
-<pre><code>hexo clean      //清除之前生成的东西
-hexo generate   //生成静态文章
-hexo deploy     //部署文章</code></pre><blockquote>
-<p>过程中可能会要求输入Github账户信息</p>
+<a id="more"></a>  
+
+<h2 id="青出于蓝胜于蓝"><a href="#青出于蓝胜于蓝" class="headerlink" title="青出于蓝胜于蓝"></a>青出于蓝胜于蓝</h2><p>《Inside》是一款由独立游戏工作室Playdead所开发及发行的平台解谜及冒险游戏。该主题和视觉效果类似Playdead的上一款作品：《Limbo》（地狱边境），游戏中玩家需要扮演一个小男孩探索一个超现实的环境，在黑白色的游戏环境中避开危险并解决不同的难题。  </p>
+<p>《Inside》和《Limbo》有许多相似之处：叙事层面上两作中都出现了相同的元素，像《Limbo》中会控制主角行为的虫子也出现在了《Inside》中的猪身上；     </p>
+<p><img src="https://s1.ax1x.com/2020/05/25/tCweot.png" alt="tCweot.png">  </p>
+<p>游戏模式上，两者都是简洁而精巧的<code>平台动作解谜游戏</code>，谜题设计思路相对一致；画面风格上同样是以黑白为主色调，利用一些溅出的色块或光影效获来突出部分环境。  </p>
+<p>和《Limbo》相似，《Inside》整个游戏过程都没有一句对白或旁白，连教程都没有，玩家刚进入游戏就能通过简单的四个方向、推拉动作来操控小男孩。没有传统解密游戏那般絮絮叨叨的游戏对白、四处分散的纸张或书籍来充当一个叙事手段，《Inside》需要通过在场景设计和谜题设计上下更多的功夫，让玩家在没有旁白的情况下也能通过游戏场景和谜题的元素自己揣测出游戏所想要表述的内容。  </p>
+<h2 id="简明但不简单的场景布置"><a href="#简明但不简单的场景布置" class="headerlink" title="简明但不简单的场景布置"></a>简明但不简单的场景布置</h2><p>这一个个游戏场景、或明或暗的各种游戏细节、谜题元素贯穿着整个游戏流程，在不着一字的《Inside》中，它们成了表叙游戏内容、体现游戏主题最为关键的部分。同它的前作一样，即使《Inside》在色彩上丰富些，但是整体给人感觉还是挺压抑的。灰暗的基调、陈旧的环境、奇怪甚至可以说是惊悚的“人”，无一不是在给玩家铺垫一种反乌托邦的气氛，一种绝望压抑、令人恐惧的假想社群或社会。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhMH1.png" alt="tFhMH1.png">  </p>
+<p><strong><em>小男孩歪打正着掉进了这条木讷的队伍中，这些人仿佛是没有灵魂的躯壳，队伍旁边是一台监督队伍前进的机器，主角为了生存只能混入其中，模仿这些躯壳机械地向前走。像是在社会中有的人为了生存，会接受摆布、违背意愿地去加入原本自己不认同的生活，丧失了自己辨别是非的能力，逐渐麻木。</em></strong>   </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhuu9.png" alt="tFhuu9.png">  </p>
+<p><strong><em>在冲击波肆虐的场景中，人是显得多么脆弱和渺小，在坚固的掩体之外，稍有不慎小男孩就会给带走。这种强烈鲜明的对比，我们在某东战场是不是也见过类似的场景？两军交战炮火肆虐，无辜的平民搂着怀里的孩童躲在掩体后瑟瑟发抖，普通人在战争面前是多么的脆弱与无助。</em></strong>  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhKBR.png" alt="tFhKBR.png">  </p>
+<p><strong><em>残破的建筑内，一排排的假人被固定在座椅上，头颅低垂，被外面震荡波一遍又一遍地冲击着···</em></strong>   </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhec4.png" alt="tFhec4.png">  </p>
+<p><strong><em>在小男孩解救肉团的地方，能看到在这个大型“容器”外，有一群人似乎在观察什么。</em></strong>  </p>
+<h2 id="政治隐喻角度的解读"><a href="#政治隐喻角度的解读" class="headerlink" title="政治隐喻角度的解读"></a>政治隐喻角度的解读</h2><p>对于《Inside》想要表达的主题思想，有相当一部分媒体认为<code>乔治·奥威尔</code>的政治隐喻小说《一九八四》对这部游戏的思想有着深刻的影响。小说的中的重点是探讨政府权力过分伸张、极权主义、对社会所有人和行为实施压抑性统治的风险。作为反乌托邦小说三部代表作之一，在小说的构想中，世界大部分地区都陷入了战争中，政府监控无处不在，国家由政党支配，它雇用思想警察去迫害个人主义者以及独立思考者。在大概了解之后，不难发现《Inside》中许多场景或细节在对照小说内容后，其隐喻的对象也就逐渐清晰了起来。  </p>
+<h2 id="结局"><a href="#结局" class="headerlink" title="结局"></a>结局</h2><p>《Inside》除了标准结局，还有一个隐藏结局(这篇不作赘述)，人们对于结局的解读也没有一个固定的说法，官方也没有给出唯一的解释或解读。正如一千个人心目中有一千个哈姆雷特，也恰巧是这没有标准答案的试卷，让玩家们乐此不疲地去探讨这部作品背后的含义，让我写下了这篇文章。一本好书，经得起读者的往复阅读，每个人、每一次的阅读都可能会有新的体验，这也是为什么《Inside》会引领大量玩家展开对游戏内核的讨论，以至于出现了对“反乌托邦”、“自由意志”、“社会问题”等话题的思考，我想这也是《Inside》的魅力所在。</p>
+<p>标准结局下，小男孩最后卯足了劲向那面所谓的墙撞了上去，穿过这层东西后滚到了海岸边，一个和实验室沙盘里的模型一模一样的海岸，最后逐渐没了动静。个人的解读是像小男孩这样有自由意识、独立个性的人在经过一番努力后，冲出“墙”外后，发现自己根本摆脱不了原来世界那种混沌的怪异循环，只不过是又重新成为了一个更大的沙盘中的棋子。(发现结局场景和沙盘一样后，说震惊可能不太准确，是那种后知后觉的惊讶，就和当初看完《紧闭岛》的感觉是一样的。)</p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFh34K.png" alt="tFh34K.png">  </p>
+<p><strong><em>小男孩暴走到最后，冲出墙外后，沿着山坡滚到了海岸边，渐渐瘫软下来，游戏也结束了。</em></strong>  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhlAx.png" alt="tFhlAx.png">  </p>
+<p><strong><em>其实细心的玩家可能会发现游戏结束时的场景，在之前某个场景里也出现过，如同微缩景观一般，甚至还有一盏灯从高处往下打光来模拟日照······</em></strong>  </p>
+<blockquote>
+<p>“隐藏结局却走向了另一个极端，以打破第四面墙的方式提出另一层隐喻，告诉玩家我们在生活中也像小男孩一样被他人控制而不自知，应该早点拔下插在自己身上的那根线，以自己的意志活下去，即使这个结局是更加黑暗而绝望的。”   </p>
 </blockquote>
-<p>系统反馈<code>NFO Deploy done: git</code>则部署成功了。</p>
-<h2 id="7-设置个人域名"><a href="#7-设置个人域名" class="headerlink" title="7.设置个人域名"></a>7.设置个人域名</h2><p>这一块需要花钱购置域名，详情参见传送门原博。</p>
-<h2 id="8-写文章、发布文章"><a href="#8-写文章、发布文章" class="headerlink" title="8.写文章、发布文章"></a>8.写文章、发布文章</h2><p>博客根目录打开<code>git bash</code>，安装一个拓展：</p>
-<pre><code>npm i hexo-deployer-git</code></pre><p>新建一篇文章：  </p>
-<pre><code>hexo new post &quot;article title&quot;       //引号里是文章标题</code></pre><p>在<code>\source\_post</code>目录下会发现一个新的md文件， 然后编辑内容即可。  </p>
-<p>编辑好文章内容后，根目录下打开<code>git bash</code>，依次输入：</p>
-<pre><code>hexo clean      //简写 hexo c 清除缓存
-hexo generate   //简写 hexo g 生成静态文章
-hexo server     //简写 hexo s 本地预览
-hexo deploy   //简写 hexo d 上传部署</code></pre>
+<p>游戏需要故事，就正如电影需要故事一般。无论是以何种艺术形式来表达，人至始至终追求的其实是聆听的愉悦，是思维在跟随讲述过程中构筑另类人生的奇妙体验。《Inside》中并没有传统的叙事手段，但它做到了无“声”胜有“声”。我们要理解它想要讲述的故事就需要摒弃一些传统动作解密游戏的游玩思路，从游戏的场景中、谜题中寻找细节，将自己代入到小男孩的位置中，或许才能真正理解这部作品想要传递的内容。  </p>
+
       
       <!-- reward -->
       
@@ -256,14 +204,14 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%8D%95%E6%9C%BA/" rel="tag">单机</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%84/" rel="tag">测评</a></li></ul>
 
 
     </footer>
@@ -274,19 +222,19 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>
   
   <nav class="article-nav">
     
-      <a href="/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="article-nav-link">
+      <a href="/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
-            CSharp中的调试与错误处理
+            面向对象：类定义/构造/属性/堆栈
           
         </div>
       </a>
     
     
-      <a href="/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/" class="article-nav-link">
+      <a href="/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">16信管答辩简记</div>
+        <div class="article-nav-title">CSharp中的调试与错误处理</div>
       </a>
     
   </nav>

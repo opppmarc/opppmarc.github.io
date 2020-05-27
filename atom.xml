@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-05-18T15:42:04.255Z</updated>
+  <updated>2020-05-27T09:54:05.174Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,75 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>文字截断在blog里不起作用？</title>
+    <link href="https://opppmarc.github.io/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/"/>
+    <id>https://opppmarc.github.io/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</id>
+    <published>2020-05-27T09:09:36.000Z</published>
+    <updated>2020-05-27T09:54:05.174Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="https://opppmarc.github.io/categories/Blog/"/>
+    
+    
+      <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+      <category term="Blog" scheme="https://opppmarc.github.io/tags/Blog/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象：类定义/构造/属性/堆栈</title>
+    <link href="https://opppmarc.github.io/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
+    <id>https://opppmarc.github.io/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-05-27T08:02:03.000Z</published>
+    <updated>2020-05-27T09:07:52.575Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;类的定义&quot;&gt;&lt;a href=&quot;#类的定义&quot; class=&quot;headerlink&quot; title=&quot;类的定义&quot;&gt;&lt;/a&gt;类的定义&lt;/h2&gt;&lt;p&gt;对象是类的实例，构成类的方法和变量是类的成员。&lt;br&gt;定义类的一般形式：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
+    <link href="https://opppmarc.github.io/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/"/>
+    <id>https://opppmarc.github.io/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/</id>
+    <published>2020-05-27T07:29:50.000Z</published>
+    <updated>2020-05-27T07:52:11.003Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  &lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="游戏测评" scheme="https://opppmarc.github.io/categories/%E6%B8%B8%E6%88%8F%E6%B5%8B%E8%AF%84/"/>
+    
+    
+      <category term="单机" scheme="https://opppmarc.github.io/tags/%E5%8D%95%E6%9C%BA/"/>
+    
+      <category term="测评" scheme="https://opppmarc.github.io/tags/%E6%B5%8B%E8%AF%84/"/>
+    
+  </entry>
   
   <entry>
     <title>CSharp中的调试与错误处理</title>
@@ -44,7 +113,7 @@
     <link href="https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/"/>
     <id>https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/</id>
     <published>2020-05-17T03:06:49.000Z</published>
-    <updated>2020-05-17T11:10:45.954Z</updated>
+    <updated>2020-05-27T09:11:11.044Z</updated>
     
     <summary type="html">
     
@@ -56,7 +125,7 @@
       <category term="Blog" scheme="https://opppmarc.github.io/categories/Blog/"/>
     
     
-      <category term="blog" scheme="https://opppmarc.github.io/tags/blog/"/>
+      <category term="Blog" scheme="https://opppmarc.github.io/tags/Blog/"/>
     
   </entry>
   

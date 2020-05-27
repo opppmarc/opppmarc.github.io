@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8" />
+   
+  <meta name="keywords" content="生活, 积淀, 代码, 游戏, 博客" />
+   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    面向对象：类定义/构造/属性/堆栈 |  阿虞在路上
+  </title>
+  <meta name="generator" content="hexo-theme-ayer">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/css/remixicon.min.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+  
+  
+
+  
+
+<link rel="alternate" href="/atom.xml" title="阿虞在路上" type="application/atom+xml">
+</head>
+
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="post-面向对象笔记" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  面向对象：类定义/构造/属性/堆栈
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-05-27T08:02:03.000Z" itemprop="datePublished">2020-05-27</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C#</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">1.3k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">5 min</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 构造函数</span><br><span class="line">每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </span><br><span class="line"></span><br><span class="line">构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 &#96;Person&#96; 的类的构造函数。</span><br><span class="line">&#96;&#96;&#96;C#</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
+<pre><code class="C#"><span class="keyword">private</span> <span class="keyword">string</span> _name = <span class="string">"Hello"</span>;
+
+<span class="keyword">public</span> <span class="keyword">string</span> Name
+{
+    <span class="keyword">get</span>
+    {
+        <span class="keyword">return</span> _name;
+    }
+    <span class="keyword">protected</span> <span class="keyword">set</span>
+    {
+        _name = <span class="keyword">value</span>;
+    }
+}</code></pre>
+<blockquote>
+<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
+</blockquote>
+<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
+<pre><code class="C#"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Parent</span>
+{
+    <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">int</span> TestProperty
+    {
+        <span class="comment">// Notice the accessor accessibility level.</span>
+        <span class="keyword">protected</span> <span class="keyword">set</span> { }
+
+        <span class="comment">// No access modifier is used here.</span>
+        <span class="keyword">get</span> { <span class="keyword">return</span> <span class="number">0</span>; }
+    }
+}
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Kid</span> : <span class="title">Parent</span>
+{
+    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">int</span> TestProperty
+    {
+        <span class="comment">// Use the same accessibility level as in the overridden accessor.</span>
+        <span class="keyword">protected</span> <span class="keyword">set</span> { }
+
+        <span class="comment">// Cannot use access modifier here.</span>
+        <span class="keyword">get</span> { <span class="keyword">return</span> <span class="number">0</span>; }
+    }
+}</code></pre>
+<hr>
+<h2 id="堆和栈：程序运行时的内存区域"><a href="#堆和栈：程序运行时的内存区域" class="headerlink" title="堆和栈：程序运行时的内存区域"></a>堆和栈：程序运行时的内存区域</h2><p>一般我们把内存分为堆空间和栈空间，栈的空间比较小，但是读取速度快，而堆的空间比较大，但是读取速度慢。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/20/Y7fVln.png" alt="Y7fVln.png">  </p>
+<p>数据只能从栈的顶端插入和删除  </p>
+<p><img src="https://s1.ax1x.com/2020/05/20/Y745yn.jpg" alt="Y745yn.jpg">  </p>
+<p>堆是块状内存区域，与栈不同，堆里的内存能够以任意顺序存入和移除。</p>
+<h3 id="值类型和引用类型在内存中的存储"><a href="#值类型和引用类型在内存中的存储" class="headerlink" title="值类型和引用类型在内存中的存储"></a>值类型和引用类型在内存中的存储</h3><blockquote>
+<p>值类型：整数，bool,struct,char,小数···<br>引用类型：string，数组，自定义的类，内置类···<br>值类型仅需一段单独内存，用以存储实际的数据，所以定义值类型的时候放在栈中；<br>引用类型需要两断内存，第一段用以存储数据，第二段指向堆中的存放位置用来引用。</p>
+</blockquote>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>Copyright： </strong>
+              Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            文字截断在blog里不起作用？
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">无“声”胜有“声”——《Inside》中异于传统的叙事手段</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: '',
+        app_key: '',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+    <ul>
+      <li>
+        Copyrights &copy;
+        2019-2020
+        <i class="ri-heart-fill heart_icon"></i> Marc Lee
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+      </li>
+    </ul>
+    <ul>
+      <li>
+        
+        
+        <span>
+  <span><i class="ri-user-3-fill"></i>Visitors:<span id="busuanzi_value_site_uv"></span></s>
+  <span class="division">|</span>
+  <span><i class="ri-eye-fill"></i>Views:<span id="busuanzi_value_page_pv"></span></span>
+</span>
+        
+      </li>
+    </ul>
+    <ul>
+      
+    </ul>
+    <ul>
+      <li>
+        <!-- cnzz统计 -->
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+        
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+<div class="todark" id="todark">
+  <i class="ri-moon-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="阿虞在路上"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://www.runoob.com/" target="_blank" rel="noopener">菜鸟</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/links">链接</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/aboutme">关于我</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="Search">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="https://cdn.jsdelivr.net/gh/Shen-Yu/cdn/img/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+<!-- Subtitle -->
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['时光荏苒', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+    console.log(err)
+  }
+</script>
+
+<!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+<!-- ImageViewer -->
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+<!-- MathJax -->
+
+<!-- Katex -->
+
+<!-- busuanzi  -->
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+<!-- ClickLove -->
+
+<!-- CodeCopy -->
+
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
+
+    
+  </div>
+</body>
+
+</html>

@@ -1,57 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>CSharp中的调试与错误处理</title>
-    <url>/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
-<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
-<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
-<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
-<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
-<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
-<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
-<li>4.在行首位置直接单击添加，再次单击删除。</li>
-</ul>
-<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
-<blockquote>
-<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
-</blockquote>
-<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
-<p><code>监视</code>前需要添加变量对象：  </p>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
-<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
-<blockquote>
-<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
-</blockquote>
-<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
-<blockquote>
-<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
-<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
-<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
-<pre><code class="c#"><span class="keyword">try</span>{ 
-    ···     <span class="comment">//包含可能出现异常的代码</span>
-}
-<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
-    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
-<span class="keyword">finally</span>{  
-    ···     <span class="comment">//包含始终会执行的代码</span>
-}</code></pre>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>16信管答辩简记</title>
     <url>/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。</p>
@@ -120,6 +69,57 @@
 ]]></content>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSharp中的调试与错误处理</title>
+    <url>/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
+<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
+<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
+<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
+<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
+<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
+<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
+<li>4.在行首位置直接单击添加，再次单击删除。</li>
+</ul>
+<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
+<blockquote>
+<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
+</blockquote>
+<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
+<p><code>监视</code>前需要添加变量对象：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
+<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
+<blockquote>
+<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
+</blockquote>
+<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
+<blockquote>
+<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
+<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
+<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
+<pre><code class="c#"><span class="keyword">try</span>{ 
+    ···     <span class="comment">//包含可能出现异常的代码</span>
+}
+<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
+    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
+<span class="keyword">finally</span>{  
+    ···     <span class="comment">//包含始终会执行的代码</span>
+}</code></pre>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -212,7 +212,146 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>blog</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文字截断在blog里不起作用？</title>
+    <url>/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</url>
+    <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
+<a id="more"></a>  
+
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjx00.png" alt="tAjx00.png">  </p>
+<p>第一次测试如图，是正常的段落文字加文字截断标签。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjvmq.png" alt="tAjvmq.png">  </p>
+<p>实际预览时就会出错，该截断的文字没有截断，不知道是什么原因，后面的内容也受影响跑到了代码块里···  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjXXn.png" alt="tAjXXn.png">  </p>
+<p>第二次测试，将测试部分放在了代码块前。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjO6s.png" alt="tAjO6s.png">  </p>
+<p>这次在博客首页就能看到文字截断起效了，而且文章内容没有受到影响。</p>
+<p>待更新···</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+        <tag>Blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
+    <url>/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/</url>
+    <content><![CDATA[<blockquote>
+<p>“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  </p>
+</blockquote>
+<a id="more"></a>  
+
+<h2 id="青出于蓝胜于蓝"><a href="#青出于蓝胜于蓝" class="headerlink" title="青出于蓝胜于蓝"></a>青出于蓝胜于蓝</h2><p>《Inside》是一款由独立游戏工作室Playdead所开发及发行的平台解谜及冒险游戏。该主题和视觉效果类似Playdead的上一款作品：《Limbo》（地狱边境），游戏中玩家需要扮演一个小男孩探索一个超现实的环境，在黑白色的游戏环境中避开危险并解决不同的难题。  </p>
+<p>《Inside》和《Limbo》有许多相似之处：叙事层面上两作中都出现了相同的元素，像《Limbo》中会控制主角行为的虫子也出现在了《Inside》中的猪身上；     </p>
+<p><img src="https://s1.ax1x.com/2020/05/25/tCweot.png" alt="tCweot.png">  </p>
+<p>游戏模式上，两者都是简洁而精巧的<code>平台动作解谜游戏</code>，谜题设计思路相对一致；画面风格上同样是以黑白为主色调，利用一些溅出的色块或光影效获来突出部分环境。  </p>
+<p>和《Limbo》相似，《Inside》整个游戏过程都没有一句对白或旁白，连教程都没有，玩家刚进入游戏就能通过简单的四个方向、推拉动作来操控小男孩。没有传统解密游戏那般絮絮叨叨的游戏对白、四处分散的纸张或书籍来充当一个叙事手段，《Inside》需要通过在场景设计和谜题设计上下更多的功夫，让玩家在没有旁白的情况下也能通过游戏场景和谜题的元素自己揣测出游戏所想要表述的内容。  </p>
+<h2 id="简明但不简单的场景布置"><a href="#简明但不简单的场景布置" class="headerlink" title="简明但不简单的场景布置"></a>简明但不简单的场景布置</h2><p>这一个个游戏场景、或明或暗的各种游戏细节、谜题元素贯穿着整个游戏流程，在不着一字的《Inside》中，它们成了表叙游戏内容、体现游戏主题最为关键的部分。同它的前作一样，即使《Inside》在色彩上丰富些，但是整体给人感觉还是挺压抑的。灰暗的基调、陈旧的环境、奇怪甚至可以说是惊悚的“人”，无一不是在给玩家铺垫一种反乌托邦的气氛，一种绝望压抑、令人恐惧的假想社群或社会。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhMH1.png" alt="tFhMH1.png">  </p>
+<p><strong><em>小男孩歪打正着掉进了这条木讷的队伍中，这些人仿佛是没有灵魂的躯壳，队伍旁边是一台监督队伍前进的机器，主角为了生存只能混入其中，模仿这些躯壳机械地向前走。像是在社会中有的人为了生存，会接受摆布、违背意愿地去加入原本自己不认同的生活，丧失了自己辨别是非的能力，逐渐麻木。</em></strong>   </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhuu9.png" alt="tFhuu9.png">  </p>
+<p><strong><em>在冲击波肆虐的场景中，人是显得多么脆弱和渺小，在坚固的掩体之外，稍有不慎小男孩就会给带走。这种强烈鲜明的对比，我们在某东战场是不是也见过类似的场景？两军交战炮火肆虐，无辜的平民搂着怀里的孩童躲在掩体后瑟瑟发抖，普通人在战争面前是多么的脆弱与无助。</em></strong>  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhKBR.png" alt="tFhKBR.png">  </p>
+<p><strong><em>残破的建筑内，一排排的假人被固定在座椅上，头颅低垂，被外面震荡波一遍又一遍地冲击着···</em></strong>   </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhec4.png" alt="tFhec4.png">  </p>
+<p><strong><em>在小男孩解救肉团的地方，能看到在这个大型“容器”外，有一群人似乎在观察什么。</em></strong>  </p>
+<h2 id="政治隐喻角度的解读"><a href="#政治隐喻角度的解读" class="headerlink" title="政治隐喻角度的解读"></a>政治隐喻角度的解读</h2><p>对于《Inside》想要表达的主题思想，有相当一部分媒体认为<code>乔治·奥威尔</code>的政治隐喻小说《一九八四》对这部游戏的思想有着深刻的影响。小说的中的重点是探讨政府权力过分伸张、极权主义、对社会所有人和行为实施压抑性统治的风险。作为反乌托邦小说三部代表作之一，在小说的构想中，世界大部分地区都陷入了战争中，政府监控无处不在，国家由政党支配，它雇用思想警察去迫害个人主义者以及独立思考者。在大概了解之后，不难发现《Inside》中许多场景或细节在对照小说内容后，其隐喻的对象也就逐渐清晰了起来。  </p>
+<h2 id="结局"><a href="#结局" class="headerlink" title="结局"></a>结局</h2><p>《Inside》除了标准结局，还有一个隐藏结局(这篇不作赘述)，人们对于结局的解读也没有一个固定的说法，官方也没有给出唯一的解释或解读。正如一千个人心目中有一千个哈姆雷特，也恰巧是这没有标准答案的试卷，让玩家们乐此不疲地去探讨这部作品背后的含义，让我写下了这篇文章。一本好书，经得起读者的往复阅读，每个人、每一次的阅读都可能会有新的体验，这也是为什么《Inside》会引领大量玩家展开对游戏内核的讨论，以至于出现了对“反乌托邦”、“自由意志”、“社会问题”等话题的思考，我想这也是《Inside》的魅力所在。</p>
+<p>标准结局下，小男孩最后卯足了劲向那面所谓的墙撞了上去，穿过这层东西后滚到了海岸边，一个和实验室沙盘里的模型一模一样的海岸，最后逐渐没了动静。个人的解读是像小男孩这样有自由意识、独立个性的人在经过一番努力后，冲出“墙”外后，发现自己根本摆脱不了原来世界那种混沌的怪异循环，只不过是又重新成为了一个更大的沙盘中的棋子。(发现结局场景和沙盘一样后，说震惊可能不太准确，是那种后知后觉的惊讶，就和当初看完《紧闭岛》的感觉是一样的。)</p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFh34K.png" alt="tFh34K.png">  </p>
+<p><strong><em>小男孩暴走到最后，冲出墙外后，沿着山坡滚到了海岸边，渐渐瘫软下来，游戏也结束了。</em></strong>  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhlAx.png" alt="tFhlAx.png">  </p>
+<p><strong><em>其实细心的玩家可能会发现游戏结束时的场景，在之前某个场景里也出现过，如同微缩景观一般，甚至还有一盏灯从高处往下打光来模拟日照······</em></strong>  </p>
+<blockquote>
+<p>“隐藏结局却走向了另一个极端，以打破第四面墙的方式提出另一层隐喻，告诉玩家我们在生活中也像小男孩一样被他人控制而不自知，应该早点拔下插在自己身上的那根线，以自己的意志活下去，即使这个结局是更加黑暗而绝望的。”   </p>
+</blockquote>
+<p>游戏需要故事，就正如电影需要故事一般。无论是以何种艺术形式来表达，人至始至终追求的其实是聆听的愉悦，是思维在跟随讲述过程中构筑另类人生的奇妙体验。《Inside》中并没有传统的叙事手段，但它做到了无“声”胜有“声”。我们要理解它想要讲述的故事就需要摒弃一些传统动作解密游戏的游玩思路，从游戏的场景中、谜题中寻找细节，将自己代入到小男孩的位置中，或许才能真正理解这部作品想要传递的内容。  </p>
+]]></content>
+      <categories>
+        <category>游戏测评</category>
+      </categories>
+      <tags>
+        <tag>单机</tag>
+        <tag>测评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象：类定义/构造/属性/堆栈</title>
+    <url>/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#96;&#96;&#96;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 构造函数</span><br><span class="line">每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </span><br><span class="line"></span><br><span class="line">构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 &#96;Person&#96; 的类的构造函数。</span><br><span class="line">&#96;&#96;&#96;C#</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
+<pre><code class="C#"><span class="keyword">private</span> <span class="keyword">string</span> _name = <span class="string">"Hello"</span>;
+
+<span class="keyword">public</span> <span class="keyword">string</span> Name
+{
+    <span class="keyword">get</span>
+    {
+        <span class="keyword">return</span> _name;
+    }
+    <span class="keyword">protected</span> <span class="keyword">set</span>
+    {
+        _name = <span class="keyword">value</span>;
+    }
+}</code></pre>
+<blockquote>
+<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
+</blockquote>
+<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
+<pre><code class="C#"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Parent</span>
+{
+    <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">int</span> TestProperty
+    {
+        <span class="comment">// Notice the accessor accessibility level.</span>
+        <span class="keyword">protected</span> <span class="keyword">set</span> { }
+
+        <span class="comment">// No access modifier is used here.</span>
+        <span class="keyword">get</span> { <span class="keyword">return</span> <span class="number">0</span>; }
+    }
+}
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Kid</span> : <span class="title">Parent</span>
+{
+    <span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">int</span> TestProperty
+    {
+        <span class="comment">// Use the same accessibility level as in the overridden accessor.</span>
+        <span class="keyword">protected</span> <span class="keyword">set</span> { }
+
+        <span class="comment">// Cannot use access modifier here.</span>
+        <span class="keyword">get</span> { <span class="keyword">return</span> <span class="number">0</span>; }
+    }
+}</code></pre>
+<hr>
+<h2 id="堆和栈：程序运行时的内存区域"><a href="#堆和栈：程序运行时的内存区域" class="headerlink" title="堆和栈：程序运行时的内存区域"></a>堆和栈：程序运行时的内存区域</h2><p>一般我们把内存分为堆空间和栈空间，栈的空间比较小，但是读取速度快，而堆的空间比较大，但是读取速度慢。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/20/Y7fVln.png" alt="Y7fVln.png">  </p>
+<p>数据只能从栈的顶端插入和删除  </p>
+<p><img src="https://s1.ax1x.com/2020/05/20/Y745yn.jpg" alt="Y745yn.jpg">  </p>
+<p>堆是块状内存区域，与栈不同，堆里的内存能够以任意顺序存入和移除。</p>
+<h3 id="值类型和引用类型在内存中的存储"><a href="#值类型和引用类型在内存中的存储" class="headerlink" title="值类型和引用类型在内存中的存储"></a>值类型和引用类型在内存中的存储</h3><blockquote>
+<p>值类型：整数，bool,struct,char,小数···<br>引用类型：string，数组，自定义的类，内置类···<br>值类型仅需一段单独内存，用以存储实际的数据，所以定义值类型的时候放在栈中；<br>引用类型需要两断内存，第一段用以存储数据，第二段指向堆中的存放位置用来引用。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
 </search>
