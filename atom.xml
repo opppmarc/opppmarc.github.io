@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-05-27T09:54:05.174Z</updated>
+  <updated>2020-05-29T12:26:13.427Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -17,9 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>DeadCellEvolve</title>
+    <link href="https://opppmarc.github.io/2020/05/29/DeadCellEvolve/"/>
+    <id>https://opppmarc.github.io/2020/05/29/DeadCellEvolve/</id>
+    <published>2020-05-29T12:10:55.000Z</published>
+    <updated>2020-05-29T12:26:13.427Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;When-We-Made…-Dead-Cells&quot;&gt;&lt;a href=&quot;#When-We-Made…-Dead-Cells&quot; class=&quot;headerlink&quot; title=&quot;When We Made… Dead Cells&quot;&gt;&lt;/a&gt;When We Made… Dead Cells&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;本篇为译文，原文地址:&lt;a href=&quot;https://www.mcvuk.com/development-news/when-we-made-dead-cells/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/05/29/tuoHq1.jpg&quot; alt=&quot;tuoHq1.jpg&quot;&gt;  &lt;/p&gt;
+&lt;p&gt;视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="译文" scheme="https://opppmarc.github.io/categories/%E8%AF%91%E6%96%87/"/>
+    
+    
+      <category term="单机" scheme="https://opppmarc.github.io/tags/%E5%8D%95%E6%9C%BA/"/>
+    
+      <category term="搬运" scheme="https://opppmarc.github.io/tags/%E6%90%AC%E8%BF%90/"/>
+    
+      <category term="译文" scheme="https://opppmarc.github.io/tags/%E8%AF%91%E6%96%87/"/>
+    
+  </entry>
+  
+  <entry>
     <title>文字截断在blog里不起作用？</title>
-    <link href="https://opppmarc.github.io/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/"/>
-    <id>https://opppmarc.github.io/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</id>
+    <link href="https://opppmarc.github.io/2020/05/27/TruncationError/"/>
+    <id>https://opppmarc.github.io/2020/05/27/TruncationError/</id>
     <published>2020-05-27T09:09:36.000Z</published>
     <updated>2020-05-27T09:54:05.174Z</updated>
     
@@ -33,18 +62,18 @@
       <category term="Blog" scheme="https://opppmarc.github.io/categories/Blog/"/>
     
     
-      <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="Blog" scheme="https://opppmarc.github.io/tags/Blog/"/>
+    
+      <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
-    <title>面向对象：类定义/构造/属性/堆栈</title>
-    <link href="https://opppmarc.github.io/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/"/>
-    <id>https://opppmarc.github.io/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/</id>
+    <title>面向对象：类定义/构造/属性</title>
+    <link href="https://opppmarc.github.io/2020/05/27/Object-oriented/"/>
+    <id>https://opppmarc.github.io/2020/05/27/Object-oriented/</id>
     <published>2020-05-27T08:02:03.000Z</published>
-    <updated>2020-05-27T09:07:52.575Z</updated>
+    <updated>2020-05-27T15:20:48.089Z</updated>
     
     <summary type="html">
     
@@ -62,8 +91,8 @@
   
   <entry>
     <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
-    <link href="https://opppmarc.github.io/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/"/>
-    <id>https://opppmarc.github.io/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/</id>
+    <link href="https://opppmarc.github.io/2020/05/27/InsideNarrative/"/>
+    <id>https://opppmarc.github.io/2020/05/27/InsideNarrative/</id>
     <published>2020-05-27T07:29:50.000Z</published>
     <updated>2020-05-27T07:52:11.003Z</updated>
     
@@ -87,8 +116,8 @@
   
   <entry>
     <title>CSharp中的调试与错误处理</title>
-    <link href="https://opppmarc.github.io/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/"/>
-    <id>https://opppmarc.github.io/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</id>
+    <link href="https://opppmarc.github.io/2020/05/18/CSharpDebug/"/>
+    <id>https://opppmarc.github.io/2020/05/18/CSharpDebug/</id>
     <published>2020-05-18T15:28:12.000Z</published>
     <updated>2020-05-18T15:42:04.255Z</updated>
     
@@ -110,8 +139,8 @@
   
   <entry>
     <title>Hexo+GithubBlog搭建</title>
-    <link href="https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/"/>
-    <id>https://opppmarc.github.io/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/</id>
+    <link href="https://opppmarc.github.io/2020/05/17/BlogBuding/"/>
+    <id>https://opppmarc.github.io/2020/05/17/BlogBuding/</id>
     <published>2020-05-17T03:06:49.000Z</published>
     <updated>2020-05-27T09:11:11.044Z</updated>
     
@@ -131,8 +160,8 @@
   
   <entry>
     <title>16信管答辩简记</title>
-    <link href="https://opppmarc.github.io/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/"/>
-    <id>https://opppmarc.github.io/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/</id>
+    <link href="https://opppmarc.github.io/2020/05/16/16Reply/"/>
+    <id>https://opppmarc.github.io/2020/05/16/16Reply/</id>
     <published>2020-05-16T06:10:32.000Z</published>
     <updated>2020-05-17T11:11:58.600Z</updated>
     

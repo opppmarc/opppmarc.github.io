@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    面向对象：类定义/构造/属性/堆栈 |  阿虞在路上
+    面向对象：类定义/构造/属性 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-面向对象笔记" class="article article-type-post" itemscope
+  <article id="post-Object-oriented" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  面向对象：类定义/构造/属性/堆栈
+  面向对象：类定义/构造/属性
 </h1>
  
 
@@ -61,7 +61,7 @@
 
     
     <div class="article-meta">
-      <a href="/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/" class="article-date">
+      <a href="/2020/05/27/Object-oriented/" class="article-date">
   <time datetime="2020-05-27T08:02:03.000Z" itemprop="datePublished">2020-05-27</time>
 </a>
       
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.3k</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">5 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -163,15 +163,6 @@
         <span class="keyword">get</span> { <span class="keyword">return</span> <span class="number">0</span>; }
     }
 }</code></pre>
-<hr>
-<h2 id="堆和栈：程序运行时的内存区域"><a href="#堆和栈：程序运行时的内存区域" class="headerlink" title="堆和栈：程序运行时的内存区域"></a>堆和栈：程序运行时的内存区域</h2><p>一般我们把内存分为堆空间和栈空间，栈的空间比较小，但是读取速度快，而堆的空间比较大，但是读取速度慢。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/20/Y7fVln.png" alt="Y7fVln.png">  </p>
-<p>数据只能从栈的顶端插入和删除  </p>
-<p><img src="https://s1.ax1x.com/2020/05/20/Y745yn.jpg" alt="Y745yn.jpg">  </p>
-<p>堆是块状内存区域，与栈不同，堆里的内存能够以任意顺序存入和移除。</p>
-<h3 id="值类型和引用类型在内存中的存储"><a href="#值类型和引用类型在内存中的存储" class="headerlink" title="值类型和引用类型在内存中的存储"></a>值类型和引用类型在内存中的存储</h3><blockquote>
-<p>值类型：整数，bool,struct,char,小数···<br>引用类型：string，数组，自定义的类，内置类···<br>值类型仅需一段单独内存，用以存储实际的数据，所以定义值类型的时候放在栈中；<br>引用类型需要两断内存，第一段用以存储数据，第二段指向堆中的存放位置用来引用。</p>
-</blockquote>
 
       
       <!-- reward -->
@@ -236,7 +227,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/05/27/Object-oriented/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -254,7 +245,7 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/" class="article-nav-link">
+      <a href="/2020/05/27/TruncationError/" class="article-nav-link">
         <strong class="article-nav-caption">上一篇</strong>
         <div class="article-nav-title">
           
@@ -264,7 +255,7 @@
       </a>
     
     
-      <a href="/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/" class="article-nav-link">
+      <a href="/2020/05/27/InsideNarrative/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
         <div class="article-nav-title">无“声”胜有“声”——《Inside》中异于传统的叙事手段</div>
       </a>

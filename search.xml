@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>16信管答辩简记</title>
-    <url>/2020/05/16/16%E4%BF%A1%E7%AE%A1%E7%AD%94%E8%BE%A9%E8%AE%B0%E5%BD%95/</url>
+    <url>/2020/05/16/16Reply/</url>
     <content><![CDATA[<p>简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。</p>
 <a id="more"></a>
 <p>以下是部分答辩内容，不代表全部。</p>
@@ -60,71 +60,8 @@
       </tags>
   </entry>
   <entry>
-    <title>HelloWorld</title>
-    <url>/2020/05/15/HelloWorld/</url>
-    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
-<a id="more"></a>
-<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
-<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSharp中的调试与错误处理</title>
-    <url>/2020/05/18/CSharp%E4%B8%AD%E7%9A%84%E8%B0%83%E8%AF%95%E4%B8%8E%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
-<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
-<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
-<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
-<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
-<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
-<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
-<li>4.在行首位置直接单击添加，再次单击删除。</li>
-</ul>
-<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
-<blockquote>
-<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
-</blockquote>
-<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
-<p><code>监视</code>前需要添加变量对象：  </p>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
-<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
-<blockquote>
-<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
-</blockquote>
-<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
-<blockquote>
-<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
-<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
-<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
-<pre><code class="c#"><span class="keyword">try</span>{ 
-    ···     <span class="comment">//包含可能出现异常的代码</span>
-}
-<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
-    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
-<span class="keyword">finally</span>{  
-    ···     <span class="comment">//包含始终会执行的代码</span>
-}</code></pre>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+GithubBlog搭建</title>
-    <url>/2020/05/17/Hexo-GithubBlog%E6%90%AD%E5%BB%BA/</url>
+    <url>/2020/05/17/BlogBuding/</url>
     <content><![CDATA[<p>基于开源框架搭建博客，可以直接在<em>github page</em>上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…</p>
 <a id="more"></a>
 <p><a href="https://sunhwee.com/posts/6e8839eb.html#toc-heading-14" target="_blank" rel="noopener">传送门</a> 参考自洪卫的博客，以下仅部分会展开详细说明，保姆级教程请点传送门跳转。:P</p>
@@ -216,32 +153,123 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>文字截断在blog里不起作用？</title>
-    <url>/2020/05/27/Hexo%E6%96%87%E5%AD%97%E6%88%AA%E6%96%AD%E5%9C%A8blog%E4%B8%AD%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8/</url>
-    <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
-<a id="more"></a>  
+    <title>CSharp中的调试与错误处理</title>
+    <url>/2020/05/18/CSharpDebug/</url>
+    <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
+<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
+<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
 
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjx00.png" alt="tAjx00.png">  </p>
-<p>第一次测试如图，是正常的段落文字加文字截断标签。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjvmq.png" alt="tAjvmq.png">  </p>
-<p>实际预览时就会出错，该截断的文字没有截断，不知道是什么原因，后面的内容也受影响跑到了代码块里···  </p>
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjXXn.png" alt="tAjXXn.png">  </p>
-<p>第二次测试，将测试部分放在了代码块前。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjO6s.png" alt="tAjO6s.png">  </p>
-<p>这次在博客首页就能看到文字截断起效了，而且文章内容没有受到影响。</p>
-<p>待更新···</p>
+</li>
+</ul>
+<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
+<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
+<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
+<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
+<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
+<li>4.在行首位置直接单击添加，再次单击删除。</li>
+</ul>
+<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
+<blockquote>
+<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
+</blockquote>
+<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
+<p><code>监视</code>前需要添加变量对象：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
+<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
+<blockquote>
+<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
+</blockquote>
+<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
+<blockquote>
+<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
+<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
+<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
+<pre><code class="c#"><span class="keyword">try</span>{ 
+    ···     <span class="comment">//包含可能出现异常的代码</span>
+}
+<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
+    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
+<span class="keyword">finally</span>{  
+    ···     <span class="comment">//包含始终会执行的代码</span>
+}</code></pre>
 ]]></content>
       <categories>
-        <category>Blog</category>
+        <category>C#</category>
       </categories>
       <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DeadCellEvolve</title>
+    <url>/2020/05/29/DeadCellEvolve/</url>
+    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
+<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
+<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
+<a id="more"></a>
+
+<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
+<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
+<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
+<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
+<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
+<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
+<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
+<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
+<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
+<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
+<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
+<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
+<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
+<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
+<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
+<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
+<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
+<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
+<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
+<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
+<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
+<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
+<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
+<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
+<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
+<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
+<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
+<br>  
+<br>  
+]]></content>
+      <categories>
+        <category>译文</category>
+      </categories>
+      <tags>
+        <tag>单机</tag>
+        <tag>搬运</tag>
+        <tag>译文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+<a id="more"></a>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
+]]></content>
+      <tags>
         <tag>随笔</tag>
-        <tag>Blog</tag>
       </tags>
   </entry>
   <entry>
     <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
-    <url>/2020/05/27/%E6%97%A0%E2%80%9C%E5%A3%B0%E2%80%9D%E8%83%9C%E6%9C%89%E2%80%9C%E5%A3%B0%E2%80%9D%E2%80%94%E2%80%94%E3%80%8AInside%E3%80%8B%E4%B8%AD%E5%BC%82%E4%BA%8E%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%8F%99%E4%BA%8B%E6%89%8B%E6%AE%B5/</url>
+    <url>/2020/05/27/InsideNarrative/</url>
     <content><![CDATA[<blockquote>
 <p>“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  </p>
 </blockquote>
@@ -282,8 +310,8 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>面向对象：类定义/构造/属性/堆栈</title>
-    <url>/2020/05/27/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%AC%94%E8%AE%B0/</url>
+    <title>面向对象：类定义/构造/属性</title>
+    <url>/2020/05/27/Object-oriented/</url>
     <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
 <a id="more"></a>
 
@@ -337,21 +365,36 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
         <span class="keyword">get</span> { <span class="keyword">return</span> <span class="number">0</span>; }
     }
 }</code></pre>
-<hr>
-<h2 id="堆和栈：程序运行时的内存区域"><a href="#堆和栈：程序运行时的内存区域" class="headerlink" title="堆和栈：程序运行时的内存区域"></a>堆和栈：程序运行时的内存区域</h2><p>一般我们把内存分为堆空间和栈空间，栈的空间比较小，但是读取速度快，而堆的空间比较大，但是读取速度慢。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/20/Y7fVln.png" alt="Y7fVln.png">  </p>
-<p>数据只能从栈的顶端插入和删除  </p>
-<p><img src="https://s1.ax1x.com/2020/05/20/Y745yn.jpg" alt="Y745yn.jpg">  </p>
-<p>堆是块状内存区域，与栈不同，堆里的内存能够以任意顺序存入和移除。</p>
-<h3 id="值类型和引用类型在内存中的存储"><a href="#值类型和引用类型在内存中的存储" class="headerlink" title="值类型和引用类型在内存中的存储"></a>值类型和引用类型在内存中的存储</h3><blockquote>
-<p>值类型：整数，bool,struct,char,小数···<br>引用类型：string，数组，自定义的类，内置类···<br>值类型仅需一段单独内存，用以存储实际的数据，所以定义值类型的时候放在栈中；<br>引用类型需要两断内存，第一段用以存储数据，第二段指向堆中的存放位置用来引用。</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>C#</category>
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文字截断在blog里不起作用？</title>
+    <url>/2020/05/27/TruncationError/</url>
+    <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
+<a id="more"></a>  
+
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjx00.png" alt="tAjx00.png">  </p>
+<p>第一次测试如图，是正常的段落文字加文字截断标签。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjvmq.png" alt="tAjvmq.png">  </p>
+<p>实际预览时就会出错，该截断的文字没有截断，不知道是什么原因，后面的内容也受影响跑到了代码块里···  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjXXn.png" alt="tAjXXn.png">  </p>
+<p>第二次测试，将测试部分放在了代码块前。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjO6s.png" alt="tAjO6s.png">  </p>
+<p>这次在博客首页就能看到文字截断起效了，而且文章内容没有受到影响。</p>
+<p>待更新···</p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
