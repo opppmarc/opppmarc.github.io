@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-05-29T12:26:13.427Z</updated>
+  <updated>2020-06-09T08:34:40.480Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gneric Note</title>
+    <link href="https://opppmarc.github.io/2020/06/09/Gneric-Note/"/>
+    <id>https://opppmarc.github.io/2020/06/09/Gneric-Note/</id>
+    <published>2020-06-09T07:27:07.000Z</published>
+    <updated>2020-06-09T08:34:40.480Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;泛型&quot;&gt;&lt;a href=&quot;#泛型&quot; class=&quot;headerlink&quot; title=&quot;泛型&quot;&gt;&lt;/a&gt;泛型&lt;/h2&gt;&lt;p&gt;泛型（Generic） 允许您延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许您编写一个可以与任何数据类型一起工作的类或方法。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>DeadCellEvolve</title>
@@ -50,7 +71,7 @@
     <link href="https://opppmarc.github.io/2020/05/27/TruncationError/"/>
     <id>https://opppmarc.github.io/2020/05/27/TruncationError/</id>
     <published>2020-05-27T09:09:36.000Z</published>
-    <updated>2020-05-27T09:54:05.174Z</updated>
+    <updated>2020-06-09T09:40:13.179Z</updated>
     
     <summary type="html">
     
@@ -62,9 +83,9 @@
       <category term="Blog" scheme="https://opppmarc.github.io/categories/Blog/"/>
     
     
-      <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
       <category term="Blog" scheme="https://opppmarc.github.io/tags/Blog/"/>
+    
+      <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -73,11 +94,12 @@
     <link href="https://opppmarc.github.io/2020/05/27/Object-oriented/"/>
     <id>https://opppmarc.github.io/2020/05/27/Object-oriented/</id>
     <published>2020-05-27T08:02:03.000Z</published>
-    <updated>2020-05-27T15:20:48.089Z</updated>
+    <updated>2020-06-09T09:00:19.856Z</updated>
     
     <summary type="html">
     
       &lt;h2 id=&quot;类的定义&quot;&gt;&lt;a href=&quot;#类的定义&quot; class=&quot;headerlink&quot; title=&quot;类的定义&quot;&gt;&lt;/a&gt;类的定义&lt;/h2&gt;&lt;p&gt;对象是类的实例，构成类的方法和变量是类的成员。&lt;br&gt;定义类的一般形式：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;access specifier&amp;gt; class  class_name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#x2F;&amp;#x2F; member variables&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;data type&amp;gt; variable1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;data type&amp;gt; variable2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;data type&amp;gt; variableN;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#x2F;&amp;#x2F; member methods&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;return type&amp;gt; method1(parameter_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#x2F;&amp;#x2F; method body&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;return type&amp;gt; method2(parameter_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#x2F;&amp;#x2F; method body&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;return type&amp;gt; methodN(parameter_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#x2F;&amp;#x2F; method body&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

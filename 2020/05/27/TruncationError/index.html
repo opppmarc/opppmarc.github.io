@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">192</span>
+            <span class="post-count">365</span>
         </span>
     </span>
 
@@ -120,6 +120,11 @@
 <p><img src="https://s1.ax1x.com/2020/05/27/tAjO6s.png" alt="tAjO6s.png">  </p>
 <p>这次在博客首页就能看到文字截断起效了，而且文章内容没有受到影响。</p>
 <p>待更新···</p>
+<p>6月9日更新:<br>generate了一篇blog后，在预览中发现代码块中出现了本不该出现在这个位置的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Console.Write(&quot;love u 3000 times&quot;);</span><br><span class="line">## 标题</span><br><span class="line">&lt;内容&gt; etc</span><br></pre></td></tr></table></figure>
+
+<p>像这样，起初以为是MarkDown代码块符号用错了，反复测试发现问题是出在“``` ”后的空格，因为MD中空格后回车是起换行的作用，没成想这个习惯给带到输入符号的过程中了，引以为戒。 </p>
+<p>之前的有关bolg内容截断失效的原因也是因为代码块符号“``` ”后的空格，而不是截断标签的使用位置。删除空格后即可正常显示。 </p>
 
       
       <!-- reward -->
@@ -383,11 +388,11 @@
 <script>
   try {
     var typed = new Typed("#subtitle", {
-      strings: ['KEEP GOING···', '如春起之苗', '不见其增，日有所长'],
+      strings: ['KEEP GOING, ROOKIE.', '', ''],
       startDelay: 0,
-      typeSpeed: 200,
+      typeSpeed: 250,
       loop: true,
-      backSpeed: 100,
+      backSpeed: 220,
       showCursor: true
     });
   } catch (err) {

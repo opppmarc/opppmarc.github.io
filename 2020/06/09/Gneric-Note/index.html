@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    关于我 |  阿虞在路上
+    Gneric Note |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="page-" class="article article-type-page" itemscope
+  <article id="post-Gneric-Note" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  关于我
+  Gneric Note
 </h1>
  
 
@@ -60,6 +60,47 @@
     
 
     
+    <div class="article-meta">
+      <a href="/2020/06/09/Gneric-Note/" class="article-date">
+  <time datetime="2020-06-09T07:27:07.000Z" itemprop="datePublished">2020-06-09</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C#</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">952</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
 
     
 
@@ -69,8 +110,63 @@
       
 
       
-      <p>&lt;(^-^)&gt;<br>A coder，live in GuangDong, China.</p>
-<p>姓名：李杨煜<br>现居：广州<br>Github: opppmarc<br>Qmail: <a href="mailto:1710474647@qq.com">1710474647@qq.com</a></p>
+      <h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>泛型（Generic） 允许您延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许您编写一个可以与任何数据类型一起工作的类或方法。  </p>
+<a id="more"></a>
+
+<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><blockquote>
+<p>泛型允许编写一个可以与任何数据类型一起工作的的类或方法。<br>泛型类允许延迟编写类中编程元素的数据类型，即类中某些字段的类型是不确定的，这些数据类型可以在类构造的时候确定下来。  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class ClassA&lt;T&gt;     &#x2F;&#x2F;当使用ClassA构造时需要指定T的数据类型</span><br><span class="line">&#123;</span><br><span class="line">    private T a;</span><br><span class="line">    private T b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>泛型方法就是定义一个方法，这个方法的参数类型是不确定的，在调用该方法的时候再确定方法的参数类型。  </p>
+<h2 id="集合类-列表List"><a href="#集合类-列表List" class="headerlink" title="集合类 列表List"></a>集合类 列表List</h2><p>当我们有很多类型一样的数据时，一般用数组来管理，但是数组的大小是固定的。而集合类中的列表(List)可以让我们方便对数据进行添加、删除等操作。  </p>
+<h3 id="列表List的创建和使用"><a href="#列表List的创建和使用" class="headerlink" title="列表List的创建和使用"></a>列表List的创建和使用</h3><p>1.创建列表：</p>
+<blockquote>
+<p>列表可以存储任何类型的数据，在创建列表对象的时候首先要在&lt;&gt;中指定该列表的存储类型。 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;int&gt; scoreList &#x3D; new List&lt;int&gt;();</span><br><span class="line">List&lt;int&gt; scoreList2 &#x3D; new List&lt;int&gt;()&#123;1,2,3&#125;;</span><br><span class="line">List&lt;int&gt; scoreList3 &#x3D; new List&lt;int&gt;()&#123;&quot;one&quot;,&quot;two&quot;,&quot;three&quot;&#125;;</span><br><span class="line"></span><br><span class="line">var scoreList &#x3D; new List&lt;int&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>2.往列表里插入数据：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scoreList.Add(12);</span><br><span class="line">scoreList.Add(45);</span><br></pre></td></tr></table></figure>
+
+<p>3.获取列表中的数据：</p>
+<blockquote>
+<p>列表中的数据和数组的类似，索引从0开始，可以通过索引来访问。  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scoreList[0]        &#x2F;&#x2F;访问添加到列表中的第一个数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="列表的容量"><a href="#列表的容量" class="headerlink" title="列表的容量"></a>列表的容量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;int&gt; intList &#x3D; new List&lt;int&gt;(10);      &#x2F;&#x2F;创建了一个初始容量为10的列表</span><br></pre></td></tr></table></figure>
+
+<p>当容量不够用的时候，列表每次都会按照原来容量的2倍进行扩容。  </p>
+<p>我们可以使用Capacity属性获取和设置容量：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intList.Capacity &#x3D; 100;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意列表容量和列表元素个数的区别，容量可通过Capacity获取，元素个数通过Count获取。</p>
+</blockquote>
+<h3 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h3><ul>
+<li>通过for循环，遍历所有的索引，通过索引访问列表中的元素  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for(int i &#x3D; 0; i &lt; List.Count; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(List[i]);     &#x2F;&#x2F;etc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>foreach遍历输出  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foreach(&lt;data type&gt; temp in List)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(temp);        &#x2F;&#x2F;etc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="操作列表常用的属性和方法"><a href="#操作列表常用的属性和方法" class="headerlink" title="操作列表常用的属性和方法"></a>操作列表常用的属性和方法</h3><ul>
+<li>1.Capacity 获取容量大小；</li>
+<li>2.Add() 方法添加元素；</li>
+<li>3.Insert() 方法插入元素；</li>
+<li>4.[index] 访问元素；</li>
+<li>5.Count 属性访问元素个数；</li>
+<li>6.RemoveAt() 方法移除指定位置的元素；</li>
+<li>7.IndexOf()/LastIndexOf() 方法获取一个元素在列表中的索引位置；（前者从前往后搜索，后者从后往前搜索）</li>
+<li>8.Sort() 对列表中的元素进行从小到大排序。  </li>
+</ul>
+<h4 id="Object-Euqals"><a href="#Object-Euqals" class="headerlink" title="Object.Euqals"></a>Object.Euqals</h4><p>在获取元素在列表/数组中的索引位置时，当调用了一个泛型类的方法来获取目标索引位置时，需要把未知类型的数组元素和目标元素进行比较的时候，是不能通过关系运算符（array[i] == item）来进行比较的，这时候我们可以通过<code>Object.Equals</code>方法可以确定两个示例对象是否相等（或者说内容是否一致）。<br>例如：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class MyList&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    private T[] array;</span><br><span class="line">    private int count &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    public int IndexOf(T item)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (array[i].Equals(item))</span><br><span class="line">            &#123;</span><br><span class="line">                return i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 
       
       <!-- reward -->
@@ -135,13 +231,15 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/aboutme/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/06/09/Gneric-Note/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
+
 
     </footer>
 
@@ -149,11 +247,23 @@
 
   
   
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/05/29/DeadCellEvolve/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">DeadCellEvolve</div>
+      </a>
+    
+  </nav>
+
 
   
 
   
 
+  
+  
   
   
   
@@ -324,6 +434,23 @@
 </script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
