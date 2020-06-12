@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-06-09T08:34:40.480Z</updated>
+  <updated>2020-06-12T06:52:26.005Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Reverse-integer</title>
+    <link href="https://opppmarc.github.io/2020/06/12/Reverse-integer/"/>
+    <id>https://opppmarc.github.io/2020/06/12/Reverse-integer/</id>
+    <published>2020-06-11T17:08:52.000Z</published>
+    <updated>2020-06-12T06:52:26.005Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;昨天在LeetCode上刷到了一个算法题，在看官方的参考思路时有个点给我卡了一下，在这之前对&lt;code&gt;整数溢出&lt;/code&gt;的判断完全没有概念，在这做一下记录。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://opppmarc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="算法" scheme="https://opppmarc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="https://opppmarc.github.io/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Gneric Note</title>
