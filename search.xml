@@ -1,133 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>16信管答辩简记</title>
-    <url>/2020/05/16/16Reply/</url>
-    <content><![CDATA[<p>简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。</p>
-<a id="more"></a>
-<p>以下是部分答辩内容，不代表全部。</p>
-<h3 id="留学信息检索系统"><a href="#留学信息检索系统" class="headerlink" title="留学信息检索系统"></a>留学信息检索系统</h3><p>1.选题背景 2.现有检索系统现状 3.研究意义 4.技术架构 5.成果 6.总结/优点/不足 7.致谢</p>
-<ul>
-<li>Q:数据比较简单，如果出现复杂数据时如何处理 </li>
-<li>Q:系统中的分类有无与信息结合，是存在自动化分类还是需要人工进行分类 </li>
-<li>A:有用到phyton (应该是无自动化)</li>
-</ul>
-<h3 id="基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站"><a href="#基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站" class="headerlink" title="基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)"></a>基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)</h3><p>1.需求及技术选型<br>2.功能分析：点赞/用户私信/多实体评论中心/页面内容展示/账号安全保障<br>4.系统实现<br>5.压力测试：多线程组并发测试<br>6.结论： 创新之处/存在问题/后续研究方向</p>
-<ul>
-<li>Q:能否通过实际应用</li>
-<li>Q:技术类社区和普通社区有什么不同，在网站技术上怎么体现它的不同</li>
-</ul>
-<h3 id="信管专业本科生就业状况的调查与分析"><a href="#信管专业本科生就业状况的调查与分析" class="headerlink" title="信管专业本科生就业状况的调查与分析"></a>信管专业本科生就业状况的调查与分析</h3><p>1.论文绪论<br>采用问卷调查法、文献调查法调查相关学生就业状况，针对具体问题提出措施<br>2.研究方法 3.调查阐述 4.研究成果 5.总结展望 (比较水,分析不够深入) 最后致谢</p>
-<ul>
-<li>Q:论文中的分析总结比较简短？最好能体现基于现在数据所采用的数理分析方法、统计方法的重要作用，而不是着重展示大量数据</li>
-<li>Q:数据样本数量有多大？(有点少)数据样本获取之后是怎么对数据进行处理的？ </li>
-<li>A:采用交叉分析法 </li>
-<li>Q:能具体讲一下吗 </li>
-<li>Q:有无借助其他数据工具进行辅助分析还是单纯是自己分析的数据</li>
-</ul>
-<h3 id="知识管理与企业核心竞争力的培养研究"><a href="#知识管理与企业核心竞争力的培养研究" class="headerlink" title="知识管理与企业核心竞争力的培养研究"></a>知识管理与企业核心竞争力的培养研究</h3><p>1.选题背景 2.研究意义 3.研究方法 文献研究法和案例分析法 4.案例分析 (分析内容偏少) 5.论文总结 (缺乏致谢)</p>
-<ul>
-<li>Q:论文中能体现专业素养或技术的亮点在哪？</li>
-<li>A:回答模棱两可</li>
-<li>Q:为什么选择所调查的三所公司？ </li>
-<li>A:公司规模大..在行业有代表性..有充足的文献可供参考</li>
-<li>Q:对论文这块的研究，你得出什么具体的成果了吗？</li>
-<li>A:答案模糊 显然没有自己独到的成果</li>
-</ul>
-<h3 id="出租屋管理信息系统的设计与实现"><a href="#出租屋管理信息系统的设计与实现" class="headerlink" title="出租屋管理信息系统的设计与实现"></a>出租屋管理信息系统的设计与实现</h3><p>1.背景 2.系统分析 从软件的使用主体来进行分析需求 3.主要功能模块 4.实现方法 5.总结 (缺乏致谢)</p>
-<ul>
-<li>Q:实现了吗各个模块？ </li>
-<li>A:没有全实现，只针对业务进行了实现</li>
-<li>Q:基本功能是有了，但是还是有点简单</li>
-</ul>
-<h3 id="项目管理对公司绩效的影响——以威拓公司为例"><a href="#项目管理对公司绩效的影响——以威拓公司为例" class="headerlink" title="项目管理对公司绩效的影响——以威拓公司为例"></a>项目管理对公司绩效的影响——以威拓公司为例</h3><p>1.研究背景及意义 2.项目管理现状 3.项目管理对公司绩效的影响:管理制度/胜任力/资源管理/客户管理 4.项目管理对威拓公司绩效的影响(具体案例分析) 6.总结 </p>
-<ul>
-<li>缺乏正反方面的例子</li>
-</ul>
-<h3 id="基于4GL的中小型制造业ERP采购管理系统的设计与实现"><a href="#基于4GL的中小型制造业ERP采购管理系统的设计与实现" class="headerlink" title="基于4GL的中小型制造业ERP采购管理系统的设计与实现"></a>基于4GL的中小型制造业ERP采购管理系统的设计与实现</h3><p>1.背景 2.业务流程 流程图 3.系统设计 系统组成模块/模块功能  其中MRP功能没有实现 4.实现方法 开发语言Genero FGL/Oracle数据库(阐述了为什么要使用这样的技术搭配)  实现后的运行页面展示  接口功能未实现 5.结论 6.致谢</p>
-<ul>
-<li>Q:这个erp系统是企业在用的吗？ </li>
-<li>A:不是，是企业提供的用来练习的 </li>
-<li>Q:这个系统是自己做的吗？ </li>
-<li>A:是公司的框架，其他自己开发</li>
-</ul>
-]]></content>
-      <categories>
-        <category>信息管理与信息系统</category>
-      </categories>
-      <tags>
-        <tag>信管</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Gneric Note</title>
-    <url>/2020/06/09/Gneric-Note/</url>
-    <content><![CDATA[<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>泛型（Generic） 允许您延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许您编写一个可以与任何数据类型一起工作的类或方法。  </p>
-<a id="more"></a>
-
-<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><blockquote>
-<p>泛型允许编写一个可以与任何数据类型一起工作的的类或方法。<br>泛型类允许延迟编写类中编程元素的数据类型，即类中某些字段的类型是不确定的，这些数据类型可以在类构造的时候确定下来。  </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ClassA&lt;T&gt;     &#x2F;&#x2F;当使用ClassA构造时需要指定T的数据类型</span><br><span class="line">&#123;</span><br><span class="line">    private T a;</span><br><span class="line">    private T b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>泛型方法就是定义一个方法，这个方法的参数类型是不确定的，在调用该方法的时候再确定方法的参数类型。  </p>
-<h2 id="集合类-列表List"><a href="#集合类-列表List" class="headerlink" title="集合类 列表List"></a>集合类 列表List</h2><p>当我们有很多类型一样的数据时，一般用数组来管理，但是数组的大小是固定的。而集合类中的列表(List)可以让我们方便对数据进行添加、删除等操作。  </p>
-<h3 id="列表List的创建和使用"><a href="#列表List的创建和使用" class="headerlink" title="列表List的创建和使用"></a>列表List的创建和使用</h3><p>1.创建列表：</p>
-<blockquote>
-<p>列表可以存储任何类型的数据，在创建列表对象的时候首先要在&lt;&gt;中指定该列表的存储类型。 </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;int&gt; scoreList &#x3D; new List&lt;int&gt;();</span><br><span class="line">List&lt;int&gt; scoreList2 &#x3D; new List&lt;int&gt;()&#123;1,2,3&#125;;</span><br><span class="line">List&lt;int&gt; scoreList3 &#x3D; new List&lt;int&gt;()&#123;&quot;one&quot;,&quot;two&quot;,&quot;three&quot;&#125;;</span><br><span class="line"></span><br><span class="line">var scoreList &#x3D; new List&lt;int&gt;();</span><br></pre></td></tr></table></figure>
-
-<p>2.往列表里插入数据：  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoreList.Add(12);</span><br><span class="line">scoreList.Add(45);</span><br></pre></td></tr></table></figure>
-
-<p>3.获取列表中的数据：</p>
-<blockquote>
-<p>列表中的数据和数组的类似，索引从0开始，可以通过索引来访问。  </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoreList[0]        &#x2F;&#x2F;访问添加到列表中的第一个数据</span><br></pre></td></tr></table></figure>
-
-<h3 id="列表的容量"><a href="#列表的容量" class="headerlink" title="列表的容量"></a>列表的容量</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;int&gt; intList &#x3D; new List&lt;int&gt;(10);      &#x2F;&#x2F;创建了一个初始容量为10的列表</span><br></pre></td></tr></table></figure>
-
-<p>当容量不够用的时候，列表每次都会按照原来容量的2倍进行扩容。  </p>
-<p>我们可以使用Capacity属性获取和设置容量：  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">intList.Capacity &#x3D; 100;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意列表容量和列表元素个数的区别，容量可通过Capacity获取，元素个数通过Count获取。</p>
-</blockquote>
-<h3 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h3><ul>
-<li>通过for循环，遍历所有的索引，通过索引访问列表中的元素  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(int i &#x3D; 0; i &lt; List.Count; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(List[i]);     &#x2F;&#x2F;etc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>foreach遍历输出  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">foreach(&lt;data type&gt; temp in List)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(temp);        &#x2F;&#x2F;etc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="操作列表常用的属性和方法"><a href="#操作列表常用的属性和方法" class="headerlink" title="操作列表常用的属性和方法"></a>操作列表常用的属性和方法</h3><ul>
-<li>1.Capacity 获取容量大小；</li>
-<li>2.Add() 方法添加元素；</li>
-<li>3.Insert() 方法插入元素；</li>
-<li>4.[index] 访问元素；</li>
-<li>5.Count 属性访问元素个数；</li>
-<li>6.RemoveAt() 方法移除指定位置的元素；</li>
-<li>7.IndexOf()/LastIndexOf() 方法获取一个元素在列表中的索引位置；（前者从前往后搜索，后者从后往前搜索）</li>
-<li>8.Sort() 对列表中的元素进行从小到大排序。  </li>
-</ul>
-<h4 id="Object-Euqals"><a href="#Object-Euqals" class="headerlink" title="Object.Euqals"></a>Object.Euqals</h4><p>在获取元素在列表/数组中的索引位置时，当调用了一个泛型类的方法来获取目标索引位置时，需要把未知类型的数组元素和目标元素进行比较的时候，是不能通过关系运算符（array[i] == item）来进行比较的，这时候我们可以通过<code>Object.Equals</code>方法可以确定两个示例对象是否相等（或者说内容是否一致）。<br>例如：  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyList&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    private T[] array;</span><br><span class="line">    private int count &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    public int IndexOf(T item)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (array[i].Equals(item))</span><br><span class="line">            &#123;</span><br><span class="line">                return i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo+GithubBlog搭建</title>
     <url>/2020/05/17/BlogBuding/</url>
     <content><![CDATA[<p>基于开源框架搭建博客，可以直接在<em>github page</em>上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…</p>
@@ -221,154 +94,62 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>Reverse-integer</title>
-    <url>/2020/06/12/Reverse-integer/</url>
-    <content><![CDATA[<p>昨天在LeetCode上刷到了一个算法题，在看官方的参考思路时有个点给我卡了一下，在这之前对<code>整数溢出</code>的判断完全没有概念，在这做一下记录。  </p>
+    <title>16信管答辩简记</title>
+    <url>/2020/05/16/16Reply/</url>
+    <content><![CDATA[<p>简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。</p>
 <a id="more"></a>
-
-<h2 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h2><p><a href="https://leetcode-cn.com/problems/reverse-integer/" target="_blank" rel="noopener">LeetCode URL</a> </p>
-<p>题目：给出一个32位的有符号整数，你需要将这个整数中每一位上的数字进行反转。<br><em>示例1：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
-
-<p><em>示例2：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：-123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
-
-<p><em>示例3：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
-
-<p>注意：假设我们的环境只能存储下32位的有符号整数，则起数值范围为<code>[-2147483648, 2147483647]</code>,请根据这个假设，如果反转后整数溢出那么就返回0。  </p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>思路：<br>我们可以一次构建反转整数中的一位数整数附加另字，反复构建多次得到反转后的整数，同时通过一次构建一位数字的方式，我们就可以预先检查向反转一位数字是否会导致整数溢出。  </p>
-<p>算法：  </p>
-<blockquote>
-<p>反转整数的方法可以与反转字符串的方法进行类比</p>
-</blockquote>
-<p>通过重复“弹出”原整数中最后一位数字即个位数，然后把该数字“推入”到反转整数的个位上（想象一下，把一个满弹弹夹上的子弹依次填入另一个空弹夹），然后在没有堆栈、数组辅助的情况下用数学方法实现“弹出、推入”，最后得到反转后的整数。  </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pop operation:</span></span><br><span class="line">pop = x % <span class="number">10</span>;</span><br><span class="line">x /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//push operation:</span></span><br><span class="line">temp = rev * <span class="number">10</span> + pop;</span><br><span class="line">rev = temp;</span><br></pre></td></tr></table></figure>
-
-<p>当 <code>temp = rev * 10 + pop</code> 时会导致溢出，需要事先检查语句是否会导致整数溢出  </p>
-<p><img src="https://s1.ax1x.com/2020/06/12/tqqysH.png" alt="tqqysH.png"></p>
-<p>就这个地方，这个7和8那会琢磨了好久愣是一时间没想明白，后来google查了下才知道是指Int最大值和最小值的个位······</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; INT_MAX/<span class="number">10</span> || (rev == INT_MAX / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; INT_MIN/<span class="number">10</span> || (rev == INT_MIN / <span class="number">10</span> &amp;&amp; pop &lt; <span class="number">-8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>该<code>reverse(int x)</code>函数反转的十进制数字x。例如，if x = 102，它返回201，如果x = -102返回-201。</p>
-<p>x计算反向时，将其存储在<code>rev</code>。例如，对于x = 102，<code>rev</code>取连续值2，20，201。</p>
-<p>在每次迭代时，<code>rev</code>乘以10，并向其添加一位数。当然，<code>rev</code>不能大于<code>Integer.MAX_VALUE</code>（2147483647）。因此，乘前<code>rev</code>通过10，我们检查是否乘以它10并加入<code>pop</code>将使其大于<code>Integer.MAX_VALUE</code>。</p>
-<p>我们首先检查是否<code>rev</code>大于<code>Integer.MAX_VALUE / 10</code>（214748364）。如果它更大，则不存在反向整数。如果不是，那么<code>rev</code>小于或等于<code>Integer.MAX_VALUE / 10</code>。如果它小于<code>Integer.MAX_VALUE / 10</code>，那么即使我们乘以它10，我们也可以添加任何数字（pop），我们不会超过<code>Integer.MAX_VALUE</code>。但是，如果它等于<code>Integer.MAX_VALUE / 10</code>，那么我们必须确保<code>pop不是&gt; 7</code>（2147483647 - 214748364 * 10）否则我们会超过<code>Integer.MAX_VALUE</code>。</p>
-<p>同样的推理适用于Integer.MIN_VALUE（-2147483648）。</p>
+<p>以下是部分答辩内容，不代表全部。</p>
+<h3 id="留学信息检索系统"><a href="#留学信息检索系统" class="headerlink" title="留学信息检索系统"></a>留学信息检索系统</h3><p>1.选题背景 2.现有检索系统现状 3.研究意义 4.技术架构 5.成果 6.总结/优点/不足 7.致谢</p>
+<ul>
+<li>Q:数据比较简单，如果出现复杂数据时如何处理 </li>
+<li>Q:系统中的分类有无与信息结合，是存在自动化分类还是需要人工进行分类 </li>
+<li>A:有用到phyton (应该是无自动化)</li>
+</ul>
+<h3 id="基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站"><a href="#基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站" class="headerlink" title="基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)"></a>基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)</h3><p>1.需求及技术选型<br>2.功能分析：点赞/用户私信/多实体评论中心/页面内容展示/账号安全保障<br>4.系统实现<br>5.压力测试：多线程组并发测试<br>6.结论： 创新之处/存在问题/后续研究方向</p>
+<ul>
+<li>Q:能否通过实际应用</li>
+<li>Q:技术类社区和普通社区有什么不同，在网站技术上怎么体现它的不同</li>
+</ul>
+<h3 id="信管专业本科生就业状况的调查与分析"><a href="#信管专业本科生就业状况的调查与分析" class="headerlink" title="信管专业本科生就业状况的调查与分析"></a>信管专业本科生就业状况的调查与分析</h3><p>1.论文绪论<br>采用问卷调查法、文献调查法调查相关学生就业状况，针对具体问题提出措施<br>2.研究方法 3.调查阐述 4.研究成果 5.总结展望 (比较水,分析不够深入) 最后致谢</p>
+<ul>
+<li>Q:论文中的分析总结比较简短？最好能体现基于现在数据所采用的数理分析方法、统计方法的重要作用，而不是着重展示大量数据</li>
+<li>Q:数据样本数量有多大？(有点少)数据样本获取之后是怎么对数据进行处理的？ </li>
+<li>A:采用交叉分析法 </li>
+<li>Q:能具体讲一下吗 </li>
+<li>Q:有无借助其他数据工具进行辅助分析还是单纯是自己分析的数据</li>
+</ul>
+<h3 id="知识管理与企业核心竞争力的培养研究"><a href="#知识管理与企业核心竞争力的培养研究" class="headerlink" title="知识管理与企业核心竞争力的培养研究"></a>知识管理与企业核心竞争力的培养研究</h3><p>1.选题背景 2.研究意义 3.研究方法 文献研究法和案例分析法 4.案例分析 (分析内容偏少) 5.论文总结 (缺乏致谢)</p>
+<ul>
+<li>Q:论文中能体现专业素养或技术的亮点在哪？</li>
+<li>A:回答模棱两可</li>
+<li>Q:为什么选择所调查的三所公司？ </li>
+<li>A:公司规模大..在行业有代表性..有充足的文献可供参考</li>
+<li>Q:对论文这块的研究，你得出什么具体的成果了吗？</li>
+<li>A:答案模糊 显然没有自己独到的成果</li>
+</ul>
+<h3 id="出租屋管理信息系统的设计与实现"><a href="#出租屋管理信息系统的设计与实现" class="headerlink" title="出租屋管理信息系统的设计与实现"></a>出租屋管理信息系统的设计与实现</h3><p>1.背景 2.系统分析 从软件的使用主体来进行分析需求 3.主要功能模块 4.实现方法 5.总结 (缺乏致谢)</p>
+<ul>
+<li>Q:实现了吗各个模块？ </li>
+<li>A:没有全实现，只针对业务进行了实现</li>
+<li>Q:基本功能是有了，但是还是有点简单</li>
+</ul>
+<h3 id="项目管理对公司绩效的影响——以威拓公司为例"><a href="#项目管理对公司绩效的影响——以威拓公司为例" class="headerlink" title="项目管理对公司绩效的影响——以威拓公司为例"></a>项目管理对公司绩效的影响——以威拓公司为例</h3><p>1.研究背景及意义 2.项目管理现状 3.项目管理对公司绩效的影响:管理制度/胜任力/资源管理/客户管理 4.项目管理对威拓公司绩效的影响(具体案例分析) 6.总结 </p>
+<ul>
+<li>缺乏正反方面的例子</li>
+</ul>
+<h3 id="基于4GL的中小型制造业ERP采购管理系统的设计与实现"><a href="#基于4GL的中小型制造业ERP采购管理系统的设计与实现" class="headerlink" title="基于4GL的中小型制造业ERP采购管理系统的设计与实现"></a>基于4GL的中小型制造业ERP采购管理系统的设计与实现</h3><p>1.背景 2.业务流程 流程图 3.系统设计 系统组成模块/模块功能  其中MRP功能没有实现 4.实现方法 开发语言Genero FGL/Oracle数据库(阐述了为什么要使用这样的技术搭配)  实现后的运行页面展示  接口功能未实现 5.结论 6.致谢</p>
+<ul>
+<li>Q:这个erp系统是企业在用的吗？ </li>
+<li>A:不是，是企业提供的用来练习的 </li>
+<li>Q:这个系统是自己做的吗？ </li>
+<li>A:是公司的框架，其他自己开发</li>
+</ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>信息管理与信息系统</category>
       </categories>
       <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DeadCellEvolve</title>
-    <url>/2020/05/29/DeadCellEvolve/</url>
-    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
-<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
-<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
-<a id="more"></a>
-
-<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
-<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
-<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
-<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
-<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
-<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
-<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
-<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
-<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
-<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
-<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
-<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
-<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
-<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
-<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
-<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
-<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
-<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
-<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
-<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
-<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
-<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
-<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
-<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
-<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
-<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
-<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
-<br>  
-<br>  
-]]></content>
-      <categories>
-        <category>译文</category>
-      </categories>
-      <tags>
-        <tag>单机</tag>
-        <tag>搬运</tag>
-        <tag>译文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
-    <url>/2020/05/27/InsideNarrative/</url>
-    <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/05/29/tKnxf0.jpg" alt="tKnxf0.jpg"></p>
-<blockquote>
-<p>“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  </p>
-</blockquote>
-<a id="more"></a>  
-
-<h2 id="青出于蓝胜于蓝"><a href="#青出于蓝胜于蓝" class="headerlink" title="青出于蓝胜于蓝"></a>青出于蓝胜于蓝</h2><p>《Inside》是一款由独立游戏工作室Playdead所开发及发行的平台解谜及冒险游戏。该主题和视觉效果类似Playdead的上一款作品：《Limbo》（地狱边境），游戏中玩家需要扮演一个小男孩探索一个超现实的环境，在黑白色的游戏环境中避开危险并解决不同的难题。  </p>
-<p>《Inside》和《Limbo》有许多相似之处：叙事层面上两作中都出现了相同的元素，像《Limbo》中会控制主角行为的虫子也出现在了《Inside》中的猪身上；     </p>
-<p><img src="https://s1.ax1x.com/2020/05/25/tCweot.png" alt="tCweot.png">  </p>
-<p>游戏模式上，两者都是简洁而精巧的<code>平台动作解谜游戏</code>，谜题设计思路相对一致；画面风格上同样是以黑白为主色调，利用一些溅出的色块或光影效获来突出部分环境。  </p>
-<p>和《Limbo》相似，《Inside》整个游戏过程都没有一句对白或旁白，连教程都没有，玩家刚进入游戏就能通过简单的四个方向、推拉动作来操控小男孩。没有传统解密游戏那般絮絮叨叨的游戏对白、四处分散的纸张或书籍来充当一个叙事手段，《Inside》需要通过在场景设计和谜题设计上下更多的功夫，让玩家在没有旁白的情况下也能通过游戏场景和谜题的元素自己揣测出游戏所想要表述的内容。  </p>
-<h2 id="简明但不简单的场景布置"><a href="#简明但不简单的场景布置" class="headerlink" title="简明但不简单的场景布置"></a>简明但不简单的场景布置</h2><p>这一个个游戏场景、或明或暗的各种游戏细节、谜题元素贯穿着整个游戏流程，在不着一字的《Inside》中，它们成了表叙游戏内容、体现游戏主题最为关键的部分。同它的前作一样，即使《Inside》在色彩上丰富些，但是整体给人感觉还是挺压抑的。灰暗的基调、陈旧的环境、奇怪甚至可以说是惊悚的“人”，无一不是在给玩家铺垫一种反乌托邦的气氛，一种绝望压抑、令人恐惧的假想社群或社会。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/26/tFhMH1.png" alt="tFhMH1.png">  </p>
-<p><strong><em>小男孩歪打正着掉进了这条木讷的队伍中，这些人仿佛是没有灵魂的躯壳，队伍旁边是一台监督队伍前进的机器，主角为了生存只能混入其中，模仿这些躯壳机械地向前走。像是在社会中有的人为了生存，会接受摆布、违背意愿地去加入原本自己不认同的生活，丧失了自己辨别是非的能力，逐渐麻木。</em></strong>   </p>
-<p><img src="https://s1.ax1x.com/2020/05/26/tFhuu9.png" alt="tFhuu9.png">  </p>
-<p><strong><em>在冲击波肆虐的场景中，人是显得多么脆弱和渺小，在坚固的掩体之外，稍有不慎小男孩就会给带走。这种强烈鲜明的对比，我们在某东战场是不是也见过类似的场景？两军交战炮火肆虐，无辜的平民搂着怀里的孩童躲在掩体后瑟瑟发抖，普通人在战争面前是多么的脆弱与无助。</em></strong>  </p>
-<p><img src="https://s1.ax1x.com/2020/05/26/tFhKBR.png" alt="tFhKBR.png">  </p>
-<p><strong><em>残破的建筑内，一排排的假人被固定在座椅上，头颅低垂，被外面震荡波一遍又一遍地冲击着···</em></strong>   </p>
-<p><img src="https://s1.ax1x.com/2020/05/26/tFhec4.png" alt="tFhec4.png">  </p>
-<p><strong><em>在小男孩解救肉团的地方，能看到在这个大型“容器”外，有一群人似乎在观察什么。</em></strong>  </p>
-<h2 id="政治隐喻角度的解读"><a href="#政治隐喻角度的解读" class="headerlink" title="政治隐喻角度的解读"></a>政治隐喻角度的解读</h2><p>对于《Inside》想要表达的主题思想，有相当一部分媒体认为<code>乔治·奥威尔</code>的政治隐喻小说《一九八四》对这部游戏的思想有着深刻的影响。小说的中的重点是探讨政府权力过分伸张、极权主义、对社会所有人和行为实施压抑性统治的风险。作为反乌托邦小说三部代表作之一，在小说的构想中，世界大部分地区都陷入了战争中，政府监控无处不在，国家由政党支配，它雇用思想警察去迫害个人主义者以及独立思考者。在大概了解之后，不难发现《Inside》中许多场景或细节在对照小说内容后，其隐喻的对象也就逐渐清晰了起来。  </p>
-<h2 id="结局"><a href="#结局" class="headerlink" title="结局"></a>结局</h2><p>《Inside》除了标准结局，还有一个隐藏结局(这篇不作赘述)，人们对于结局的解读也没有一个固定的说法，官方也没有给出唯一的解释或解读。正如一千个人心目中有一千个哈姆雷特，也恰巧是这没有标准答案的试卷，让玩家们乐此不疲地去探讨这部作品背后的含义，让我写下了这篇文章。一本好书，经得起读者的往复阅读，每个人、每一次的阅读都可能会有新的体验，这也是为什么《Inside》会引领大量玩家展开对游戏内核的讨论，以至于出现了对“反乌托邦”、“自由意志”、“社会问题”等话题的思考，我想这也是《Inside》的魅力所在。</p>
-<p>标准结局下，小男孩最后卯足了劲向那面所谓的墙撞了上去，穿过这层东西后滚到了海岸边，一个和实验室沙盘里的模型一模一样的海岸，最后逐渐没了动静。个人的解读是像小男孩这样有自由意识、独立个性的人在经过一番努力后，冲出“墙”外后，发现自己根本摆脱不了原来世界那种混沌的怪异循环，只不过是又重新成为了一个更大的沙盘中的棋子。(发现结局场景和沙盘一样后，说震惊可能不太准确，是那种后知后觉的惊讶，就和当初看完《紧闭岛》的感觉是一样的。)</p>
-<p><img src="https://s1.ax1x.com/2020/05/26/tFh34K.png" alt="tFh34K.png">  </p>
-<p><strong><em>小男孩暴走到最后，冲出墙外后，沿着山坡滚到了海岸边，渐渐瘫软下来，游戏也结束了。</em></strong>  </p>
-<p><img src="https://s1.ax1x.com/2020/05/26/tFhlAx.png" alt="tFhlAx.png">  </p>
-<p><strong><em>其实细心的玩家可能会发现游戏结束时的场景，在之前某个场景里也出现过，如同微缩景观一般，甚至还有一盏灯从高处往下打光来模拟日照······</em></strong>  </p>
-<blockquote>
-<p>“隐藏结局却走向了另一个极端，以打破第四面墙的方式提出另一层隐喻，告诉玩家我们在生活中也像小男孩一样被他人控制而不自知，应该早点拔下插在自己身上的那根线，以自己的意志活下去，即使这个结局是更加黑暗而绝望的。”   </p>
-</blockquote>
-<p>游戏需要故事，就正如电影需要故事一般。无论是以何种艺术形式来表达，人至始至终追求的其实是聆听的愉悦，是思维在跟随讲述过程中构筑另类人生的奇妙体验。《Inside》中并没有传统的叙事手段，但它做到了无“声”胜有“声”。我们要理解它想要讲述的故事就需要摒弃一些传统动作解密游戏的游玩思路，从游戏的场景中、谜题中寻找细节，将自己代入到小男孩的位置中，或许才能真正理解这部作品想要传递的内容。  </p>
-]]></content>
-      <categories>
-        <category>游戏测评</category>
-      </categories>
-      <tags>
-        <tag>单机</tag>
-        <tag>测评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HelloWorld</title>
-    <url>/2020/05/15/HelloWorld/</url>
-    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
-<a id="more"></a>
-<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
-<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
+        <tag>信管</tag>
       </tags>
   </entry>
   <entry>
@@ -420,6 +201,268 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+<a id="more"></a>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
+    <url>/2020/05/27/InsideNarrative/</url>
+    <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/05/29/tKnxf0.jpg" alt="tKnxf0.jpg"></p>
+<blockquote>
+<p>“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  </p>
+</blockquote>
+<a id="more"></a>  
+
+<h2 id="青出于蓝胜于蓝"><a href="#青出于蓝胜于蓝" class="headerlink" title="青出于蓝胜于蓝"></a>青出于蓝胜于蓝</h2><p>《Inside》是一款由独立游戏工作室Playdead所开发及发行的平台解谜及冒险游戏。该主题和视觉效果类似Playdead的上一款作品：《Limbo》（地狱边境），游戏中玩家需要扮演一个小男孩探索一个超现实的环境，在黑白色的游戏环境中避开危险并解决不同的难题。  </p>
+<p>《Inside》和《Limbo》有许多相似之处：叙事层面上两作中都出现了相同的元素，像《Limbo》中会控制主角行为的虫子也出现在了《Inside》中的猪身上；     </p>
+<p><img src="https://s1.ax1x.com/2020/05/25/tCweot.png" alt="tCweot.png">  </p>
+<p>游戏模式上，两者都是简洁而精巧的<code>平台动作解谜游戏</code>，谜题设计思路相对一致；画面风格上同样是以黑白为主色调，利用一些溅出的色块或光影效获来突出部分环境。  </p>
+<p>和《Limbo》相似，《Inside》整个游戏过程都没有一句对白或旁白，连教程都没有，玩家刚进入游戏就能通过简单的四个方向、推拉动作来操控小男孩。没有传统解密游戏那般絮絮叨叨的游戏对白、四处分散的纸张或书籍来充当一个叙事手段，《Inside》需要通过在场景设计和谜题设计上下更多的功夫，让玩家在没有旁白的情况下也能通过游戏场景和谜题的元素自己揣测出游戏所想要表述的内容。  </p>
+<h2 id="简明但不简单的场景布置"><a href="#简明但不简单的场景布置" class="headerlink" title="简明但不简单的场景布置"></a>简明但不简单的场景布置</h2><p>这一个个游戏场景、或明或暗的各种游戏细节、谜题元素贯穿着整个游戏流程，在不着一字的《Inside》中，它们成了表叙游戏内容、体现游戏主题最为关键的部分。同它的前作一样，即使《Inside》在色彩上丰富些，但是整体给人感觉还是挺压抑的。灰暗的基调、陈旧的环境、奇怪甚至可以说是惊悚的“人”，无一不是在给玩家铺垫一种反乌托邦的气氛，一种绝望压抑、令人恐惧的假想社群或社会。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhMH1.png" alt="tFhMH1.png">  </p>
+<p><strong><em>小男孩歪打正着掉进了这条木讷的队伍中，这些人仿佛是没有灵魂的躯壳，队伍旁边是一台监督队伍前进的机器，主角为了生存只能混入其中，模仿这些躯壳机械地向前走。像是在社会中有的人为了生存，会接受摆布、违背意愿地去加入原本自己不认同的生活，丧失了自己辨别是非的能力，逐渐麻木。</em></strong>   </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhuu9.png" alt="tFhuu9.png">  </p>
+<p><strong><em>在冲击波肆虐的场景中，人是显得多么脆弱和渺小，在坚固的掩体之外，稍有不慎小男孩就会给带走。这种强烈鲜明的对比，我们在某东战场是不是也见过类似的场景？两军交战炮火肆虐，无辜的平民搂着怀里的孩童躲在掩体后瑟瑟发抖，普通人在战争面前是多么的脆弱与无助。</em></strong>  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhKBR.png" alt="tFhKBR.png">  </p>
+<p><strong><em>残破的建筑内，一排排的假人被固定在座椅上，头颅低垂，被外面震荡波一遍又一遍地冲击着···</em></strong>   </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhec4.png" alt="tFhec4.png">  </p>
+<p><strong><em>在小男孩解救肉团的地方，能看到在这个大型“容器”外，有一群人似乎在观察什么。</em></strong>  </p>
+<h2 id="政治隐喻角度的解读"><a href="#政治隐喻角度的解读" class="headerlink" title="政治隐喻角度的解读"></a>政治隐喻角度的解读</h2><p>对于《Inside》想要表达的主题思想，有相当一部分媒体认为<code>乔治·奥威尔</code>的政治隐喻小说《一九八四》对这部游戏的思想有着深刻的影响。小说的中的重点是探讨政府权力过分伸张、极权主义、对社会所有人和行为实施压抑性统治的风险。作为反乌托邦小说三部代表作之一，在小说的构想中，世界大部分地区都陷入了战争中，政府监控无处不在，国家由政党支配，它雇用思想警察去迫害个人主义者以及独立思考者。在大概了解之后，不难发现《Inside》中许多场景或细节在对照小说内容后，其隐喻的对象也就逐渐清晰了起来。  </p>
+<h2 id="结局"><a href="#结局" class="headerlink" title="结局"></a>结局</h2><p>《Inside》除了标准结局，还有一个隐藏结局(这篇不作赘述)，人们对于结局的解读也没有一个固定的说法，官方也没有给出唯一的解释或解读。正如一千个人心目中有一千个哈姆雷特，也恰巧是这没有标准答案的试卷，让玩家们乐此不疲地去探讨这部作品背后的含义，让我写下了这篇文章。一本好书，经得起读者的往复阅读，每个人、每一次的阅读都可能会有新的体验，这也是为什么《Inside》会引领大量玩家展开对游戏内核的讨论，以至于出现了对“反乌托邦”、“自由意志”、“社会问题”等话题的思考，我想这也是《Inside》的魅力所在。</p>
+<p>标准结局下，小男孩最后卯足了劲向那面所谓的墙撞了上去，穿过这层东西后滚到了海岸边，一个和实验室沙盘里的模型一模一样的海岸，最后逐渐没了动静。个人的解读是像小男孩这样有自由意识、独立个性的人在经过一番努力后，冲出“墙”外后，发现自己根本摆脱不了原来世界那种混沌的怪异循环，只不过是又重新成为了一个更大的沙盘中的棋子。(发现结局场景和沙盘一样后，说震惊可能不太准确，是那种后知后觉的惊讶，就和当初看完《紧闭岛》的感觉是一样的。)</p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFh34K.png" alt="tFh34K.png">  </p>
+<p><strong><em>小男孩暴走到最后，冲出墙外后，沿着山坡滚到了海岸边，渐渐瘫软下来，游戏也结束了。</em></strong>  </p>
+<p><img src="https://s1.ax1x.com/2020/05/26/tFhlAx.png" alt="tFhlAx.png">  </p>
+<p><strong><em>其实细心的玩家可能会发现游戏结束时的场景，在之前某个场景里也出现过，如同微缩景观一般，甚至还有一盏灯从高处往下打光来模拟日照······</em></strong>  </p>
+<blockquote>
+<p>“隐藏结局却走向了另一个极端，以打破第四面墙的方式提出另一层隐喻，告诉玩家我们在生活中也像小男孩一样被他人控制而不自知，应该早点拔下插在自己身上的那根线，以自己的意志活下去，即使这个结局是更加黑暗而绝望的。”   </p>
+</blockquote>
+<p>游戏需要故事，就正如电影需要故事一般。无论是以何种艺术形式来表达，人至始至终追求的其实是聆听的愉悦，是思维在跟随讲述过程中构筑另类人生的奇妙体验。《Inside》中并没有传统的叙事手段，但它做到了无“声”胜有“声”。我们要理解它想要讲述的故事就需要摒弃一些传统动作解密游戏的游玩思路，从游戏的场景中、谜题中寻找细节，将自己代入到小男孩的位置中，或许才能真正理解这部作品想要传递的内容。  </p>
+]]></content>
+      <categories>
+        <category>游戏测评</category>
+      </categories>
+      <tags>
+        <tag>单机</tag>
+        <tag>测评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Gneric Note</title>
+    <url>/2020/06/09/Gneric-Note/</url>
+    <content><![CDATA[<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>泛型（Generic） 允许您延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许您编写一个可以与任何数据类型一起工作的类或方法。  </p>
+<a id="more"></a>
+
+<h3 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h3><blockquote>
+<p>泛型允许编写一个可以与任何数据类型一起工作的的类或方法。<br>泛型类允许延迟编写类中编程元素的数据类型，即类中某些字段的类型是不确定的，这些数据类型可以在类构造的时候确定下来。  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class ClassA&lt;T&gt;     &#x2F;&#x2F;当使用ClassA构造时需要指定T的数据类型</span><br><span class="line">&#123;</span><br><span class="line">    private T a;</span><br><span class="line">    private T b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h3><p>泛型方法就是定义一个方法，这个方法的参数类型是不确定的，在调用该方法的时候再确定方法的参数类型。  </p>
+<h2 id="集合类-列表List"><a href="#集合类-列表List" class="headerlink" title="集合类 列表List"></a>集合类 列表List</h2><p>当我们有很多类型一样的数据时，一般用数组来管理，但是数组的大小是固定的。而集合类中的列表(List)可以让我们方便对数据进行添加、删除等操作。  </p>
+<h3 id="列表List的创建和使用"><a href="#列表List的创建和使用" class="headerlink" title="列表List的创建和使用"></a>列表List的创建和使用</h3><p>1.创建列表：</p>
+<blockquote>
+<p>列表可以存储任何类型的数据，在创建列表对象的时候首先要在&lt;&gt;中指定该列表的存储类型。 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;int&gt; scoreList &#x3D; new List&lt;int&gt;();</span><br><span class="line">List&lt;int&gt; scoreList2 &#x3D; new List&lt;int&gt;()&#123;1,2,3&#125;;</span><br><span class="line">List&lt;int&gt; scoreList3 &#x3D; new List&lt;int&gt;()&#123;&quot;one&quot;,&quot;two&quot;,&quot;three&quot;&#125;;</span><br><span class="line"></span><br><span class="line">var scoreList &#x3D; new List&lt;int&gt;();</span><br></pre></td></tr></table></figure>
+
+<p>2.往列表里插入数据：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoreList.Add(12);</span><br><span class="line">scoreList.Add(45);</span><br></pre></td></tr></table></figure>
+
+<p>3.获取列表中的数据：</p>
+<blockquote>
+<p>列表中的数据和数组的类似，索引从0开始，可以通过索引来访问。  </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">scoreList[0]        &#x2F;&#x2F;访问添加到列表中的第一个数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="列表的容量"><a href="#列表的容量" class="headerlink" title="列表的容量"></a>列表的容量</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">List&lt;int&gt; intList &#x3D; new List&lt;int&gt;(10);      &#x2F;&#x2F;创建了一个初始容量为10的列表</span><br></pre></td></tr></table></figure>
+
+<p>当容量不够用的时候，列表每次都会按照原来容量的2倍进行扩容。  </p>
+<p>我们可以使用Capacity属性获取和设置容量：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">intList.Capacity &#x3D; 100;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意列表容量和列表元素个数的区别，容量可通过Capacity获取，元素个数通过Count获取。</p>
+</blockquote>
+<h3 id="列表的遍历"><a href="#列表的遍历" class="headerlink" title="列表的遍历"></a>列表的遍历</h3><ul>
+<li>通过for循环，遍历所有的索引，通过索引访问列表中的元素  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for(int i &#x3D; 0; i &lt; List.Count; i++)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(List[i]);     &#x2F;&#x2F;etc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>foreach遍历输出  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">foreach(&lt;data type&gt; temp in List)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(temp);        &#x2F;&#x2F;etc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="操作列表常用的属性和方法"><a href="#操作列表常用的属性和方法" class="headerlink" title="操作列表常用的属性和方法"></a>操作列表常用的属性和方法</h3><ul>
+<li>1.Capacity 获取容量大小；</li>
+<li>2.Add() 方法添加元素；</li>
+<li>3.Insert() 方法插入元素；</li>
+<li>4.[index] 访问元素；</li>
+<li>5.Count 属性访问元素个数；</li>
+<li>6.RemoveAt() 方法移除指定位置的元素；</li>
+<li>7.IndexOf()/LastIndexOf() 方法获取一个元素在列表中的索引位置；（前者从前往后搜索，后者从后往前搜索）</li>
+<li>8.Sort() 对列表中的元素进行从小到大排序。  </li>
+</ul>
+<h4 id="Object-Euqals"><a href="#Object-Euqals" class="headerlink" title="Object.Euqals"></a>Object.Euqals</h4><p>在获取元素在列表/数组中的索引位置时，当调用了一个泛型类的方法来获取目标索引位置时，需要把未知类型的数组元素和目标元素进行比较的时候，是不能通过关系运算符（array[i] == item）来进行比较的，这时候我们可以通过<code>Object.Equals</code>方法可以确定两个示例对象是否相等（或者说内容是否一致）。<br>例如：  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyList&lt;T&gt;</span><br><span class="line">&#123;</span><br><span class="line">    private T[] array;</span><br><span class="line">    private int count &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    public int IndexOf(T item)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; count; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (array[i].Equals(item))</span><br><span class="line">            &#123;</span><br><span class="line">                return i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>StringBuilder</title>
+    <url>/2020/06/13/StringBuilder/</url>
+    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
+
+<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
+<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
+<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
+<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
+<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
+<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
+<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
+<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
+</ul>
+<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
+<br>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>String Method</title>
+    <url>/2020/06/13/StringMethod/</url>
+    <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
+<ul>
+<li><p>1.ComparaTo()方法，比较字符串的内容。<br>返回一个Int类型值，相同则返回0，不同则返回1。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name &#x3D; &quot;marc&quot;;</span><br><span class="line">int res &#x3D; name.CompareTo(&quot;lisa&quot;);</span><br><span class="line">Console.Write(res);     &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.Replace()方法，把指定的字符或字符串换成另一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string newStr &#x3D; name.Replace(&quot;rc&quot;,&quot;sa&quot;);</span><br><span class="line">Console.Write(name);        &#x2F;&#x2F;masa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.Split()方法，在出现给定字符的地方，把字符串拆分成一个字符串数组。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string[] strArr &#x3D; name.Split(&#39;a&#39;);</span><br><span class="line">foreach (var temp in strArr)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(temp + &quot; &quot;);     &#x2F;&#x2F;m rc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.Substring()方法，在字符串中检索给定位置的子字符串。<br>Substring(StartIndex, Length)<br>如果参数中没有给定截取长度的话，就会截取字符串里选定字符往后的所有字符。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string subStr &#x3D; name.Substring(1,2);    &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取2个字符</span><br><span class="line">string subStr2 &#x3D; name.Substring(3);     &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取往后的所有字符</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.ToLower()方法，把字符串转换为小写形式。</p>
+</li>
+<li><p>6.ToUpper()方法，把字符串转换为大写形式。</p>
+</li>
+<li><p>7.Trim()方法，删除首尾的空白。<br>常用于用户注册账号的过程中，像玩家注册的用户名首位带有空格的话，就用Trim()方法删掉。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name2 &#x3D; &quot;  marc  &quot;;</span><br><span class="line">string trimStr &#x3D; name2.Trim();       &#x2F;&#x2F;去除name2的首位空格</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8.Concat()方法，合并字符串。</p>
+</li>
+<li><p>9.CopyTo()方法，把字符串中指定的字符复制到另一个数组中。</p>
+</li>
+<li><p>10.Format()方法，格式化字符串。</p>
+</li>
+<li><p>11.IndexOf()方法，取得字符串中第一次出现某个给定字符或字符串的位置。<br>我们可以使用这个方法判断当前字符串是否包含一个给定的子字符串，如包含则返回第一个字符的索引，否则返回-1。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int index &#x3D; name.IndexOf(&quot;rc&quot;);     &#x2F;&#x2F;在name中查找出现子字符串&quot;rc&quot;的索引位置</span><br><span class="line">Console.WriteLine(index);   &#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<br>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse-integer</title>
+    <url>/2020/06/12/Reverse-integer/</url>
+    <content><![CDATA[<p>昨天在LeetCode上刷到了一个算法题，在看官方的参考思路时有个点给我卡了一下，在这之前对<code>整数溢出</code>的判断完全没有概念，在这做一下记录。  </p>
+<a id="more"></a>
+
+<h2 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h2><p><a href="https://leetcode-cn.com/problems/reverse-integer/" target="_blank" rel="noopener">LeetCode URL</a> </p>
+<p>题目：给出一个32位的有符号整数，你需要将这个整数中每一位上的数字进行反转。<br><em>示例1：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
+
+<p><em>示例2：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：-123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
+
+<p><em>示例3：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
+
+<p>注意：假设我们的环境只能存储下32位的有符号整数，则起数值范围为<code>[-2147483648, 2147483647]</code>,请根据这个假设，如果反转后整数溢出那么就返回0。  </p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>思路：<br>我们可以一次构建反转整数中的一位数整数附加另字，反复构建多次得到反转后的整数，同时通过一次构建一位数字的方式，我们就可以预先检查向反转一位数字是否会导致整数溢出。  </p>
+<p>算法：  </p>
+<blockquote>
+<p>反转整数的方法可以与反转字符串的方法进行类比</p>
+</blockquote>
+<p>通过重复“弹出”原整数中最后一位数字即个位数，然后把该数字“推入”到反转整数的个位上（想象一下，把一个满弹弹夹上的子弹依次填入另一个空弹夹），然后在没有堆栈、数组辅助的情况下用数学方法实现“弹出、推入”，最后得到反转后的整数。  </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pop operation:</span></span><br><span class="line">pop = x % <span class="number">10</span>;</span><br><span class="line">x /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//push operation:</span></span><br><span class="line">temp = rev * <span class="number">10</span> + pop;</span><br><span class="line">rev = temp;</span><br></pre></td></tr></table></figure>
+
+<p>当 <code>temp = rev * 10 + pop</code> 时会导致溢出，需要事先检查语句是否会导致整数溢出  </p>
+<p><img src="https://s1.ax1x.com/2020/06/12/tqqysH.png" alt="tqqysH.png"></p>
+<p>就这个地方，这个7和8那会琢磨了好久愣是一时间没想明白，后来google查了下才知道是指Int最大值和最小值的个位······</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; INT_MAX/<span class="number">10</span> || (rev == INT_MAX / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; INT_MIN/<span class="number">10</span> || (rev == INT_MIN / <span class="number">10</span> &amp;&amp; pop &lt; <span class="number">-8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>该<code>reverse(int x)</code>函数反转的十进制数字x。例如，if x = 102，它返回201，如果x = -102返回-201。</p>
+<p>x计算反向时，将其存储在<code>rev</code>。例如，对于x = 102，<code>rev</code>取连续值2，20，201。</p>
+<p>在每次迭代时，<code>rev</code>乘以10，并向其添加一位数。当然，<code>rev</code>不能大于<code>Integer.MAX_VALUE</code>（2147483647）。因此，乘前<code>rev</code>通过10，我们检查是否乘以它10并加入<code>pop</code>将使其大于<code>Integer.MAX_VALUE</code>。</p>
+<p>我们首先检查是否<code>rev</code>大于<code>Integer.MAX_VALUE / 10</code>（214748364）。如果它更大，则不存在反向整数。如果不是，那么<code>rev</code>小于或等于<code>Integer.MAX_VALUE / 10</code>。如果它小于<code>Integer.MAX_VALUE / 10</code>，那么即使我们乘以它10，我们也可以添加任何数字（pop），我们不会超过<code>Integer.MAX_VALUE</code>。但是，如果它等于<code>Integer.MAX_VALUE / 10</code>，那么我们必须确保<code>pop不是&gt; 7</code>（2147483647 - 214748364 * 10）否则我们会超过<code>Integer.MAX_VALUE</code>。</p>
+<p>同样的推理适用于Integer.MIN_VALUE（-2147483648）。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>删除排序数组重复项</title>
+    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
+<pre><code>示例：
+给定数组 nums = [1,1,2],   
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
+你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -487,6 +530,58 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DeadCellEvolve</title>
+    <url>/2020/05/29/DeadCellEvolve/</url>
+    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
+<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
+<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
+<a id="more"></a>
+
+<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
+<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
+<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
+<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
+<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
+<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
+<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
+<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
+<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
+<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
+<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
+<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
+<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
+<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
+<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
+<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
+<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
+<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
+<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
+<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
+<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
+<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
+<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
+<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
+<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
+<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
+<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
+<br>  
+<br>  
+]]></content>
+      <categories>
+        <category>译文</category>
+      </categories>
+      <tags>
+        <tag>单机</tag>
+        <tag>搬运</tag>
+        <tag>译文</tag>
       </tags>
   </entry>
 </search>

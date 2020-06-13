@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    tags |  阿虞在路上
+    删除排序数组重复项 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,13 +44,187 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
+  <article id="post-删除排序数组重复项" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  删除排序数组重复项
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="article-date">
+  <time datetime="2020-06-13T16:13:14.000Z" itemprop="datePublished">2020-06-14</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">466</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
+<pre><code>示例：
+给定数组 nums = [1,1,2],   
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
+你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
+
+
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong>
+              本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
   
-    <h1 class="page-type-title">标签</h1>
-    <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LeetCode/" rel="tag">LeetCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BF%A1%E7%AE%A1/" rel="tag">信管</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%95%E6%9C%BA/" rel="tag">单机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%90%AC%E8%BF%90/" rel="tag">搬运</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%84/" rel="tag">测评</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AF%91%E6%96%87/" rel="tag">译文</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag">随笔</a></li></ul>
   
+  <nav class="article-nav">
+    
+    
+      <a href="/2020/06/13/StringBuilder/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">StringBuilder</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
+</article>
 </section>
-
-
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -215,6 +389,23 @@
 </script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
