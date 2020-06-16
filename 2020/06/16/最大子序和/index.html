@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    删除排序数组重复项 |  阿虞在路上
+    最大子序和 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-删除排序数组重复项" class="article article-type-post" itemscope
+  <article id="post-最大子序和" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  删除排序数组重复项
+  最大子序和
 </h1>
  
 
@@ -61,8 +61,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="article-date">
-  <time datetime="2020-06-13T16:13:14.000Z" itemprop="datePublished">2020-06-14</time>
+      <a href="/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" class="article-date">
+  <time datetime="2020-06-16T03:23:20.000Z" itemprop="datePublished">2020-06-16</time>
 </a>
       
   <div class="article-category">
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">466</span>
+            <span class="post-count">984</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -110,16 +110,27 @@
       
 
       
-      <p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
-<a id="more"></a>
-
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
+      <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
 <pre><code>示例：
-给定数组 nums = [1,1,2],   
-函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
-你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
-<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
+输入[-2,1,-3,4,-1,2,1,-5,4]</code></pre><a id="more"></a>
+
+<h2 id="暴力破解法"><a href="#暴力破解法" class="headerlink" title="暴力破解法"></a>暴力破解法</h2><p>通过枚举判断 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)   &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum &#x3D; 0;</span><br><span class="line">                for (int k &#x3D; i; k &lt; j; k++)     &#x2F;&#x2F;暴力计算</span><br><span class="line">                &#123;</span><br><span class="line">                    sum +&#x3D; nums[k];</span><br><span class="line">                    if (sum &gt; max)</span><br><span class="line">                    &#123;</span><br><span class="line">                        max &#x3D; sum;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;intput: [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">&#x2F;&#x2F;output: 6   (leetcode:6)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>Int32.MinValue</code>字段表示Int32的最小可能值。 此字段是常量：<code>public const int MinValue = -2147483648;</code></p>
+</blockquote>
+<h2 id="改进暴力法"><a href="#改进暴力法" class="headerlink" title="改进暴力法"></a>改进暴力法</h2><p>在上面的代码中可以发现在程序每次执行第二层循环时sum都会清零，所以在我们每次计算子序和时都要重新从i处累加至j,就重复计算了一部分子序和。如果sum不清理，在上一次的序列和基础上来计算新的序列和，就可以减少一层for循环，由O(N^3)变成O(N^2)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;       &#x2F;&#x2F;定义max值为Integer最小值</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)       &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            sum &#x3D; 0;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum +&#x3D; nums[j];     &#x2F;&#x2F;在上一次的序列和基础上来计算新的序列和</span><br><span class="line">                if (sum &gt; max)</span><br><span class="line">                &#123;</span><br><span class="line">                    max &#x3D; sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h2><blockquote>
+<p>（据说这道题是《编程珠机》里面的题目，叫做扫描法，速度最快，扫描一次就求出结果，复杂度是O（n）。书中说，这个算法是一个统计学家提出的，在这略过。）<br>当我们加上一个正数时，和会增加；当我们加上一个负数时，和会减少。如果当前得到的和是个负数，那么这个和在接下来的累加中应该抛弃并重新清零，不然的话这个负数将会减少接下来的和。<br>zwzsdy在他的CSDN博客中有关于该方法的证明和想法，<a href="https://blog.csdn.net/zwzsdy/article/details/80029796" target="_blank" rel="noopener">传送门</a>。  </p>
+</blockquote>
+<h2 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h2><p>动态规划法也是LeetCode的官方题解方法之一，另一个是分治法。<br>设sum[i]为以第i个元素结尾且和最大的连续子数组。假设对于元素i，所有以它前面的元素结尾的子数组的长度都已经求得，那么以第i个元素结尾且和最大的连续子数组实际上，要么是以第i-1个元素结尾且和最大的连续子数组加上这个元素，要么是只包含第i个元素，即知状态转移方程为：sum[i] = max(sum[i-1] + a[i], a[i])。可以通过判断sum[i-1] + a[i]是否大于a[i]来做选择，而这实际上等价于判断sum[i-1]是否大于0。由于每次运算只需要前一次的结果，因此并不需要像普通的动态规划那样保留之前所有的计算结果，只需要保留上一次的即可，因此算法的时间和空间复杂度都很小。  </p>
+<blockquote>
+<p>状态转移方程:是动态规划中本阶段的状态往往是上一阶段状态和上一阶段决策的结果。如果给定了第K阶段的状态Sk以及决策uk(Sk)，则第K+1阶段的状态Sk+1也就完全确定。<br>中文名状态转移方程应用学科编程</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int pre &#x3D; 0, maxAns &#x3D; nums[0];</span><br><span class="line">        foreach (int x in nums) &#123;</span><br><span class="line">            pre &#x3D; Math.Max(pre + x, x);</span><br><span class="line">            maxAns &#x3D; Math.Max(maxAns, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        return maxAns;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -186,7 +197,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -204,19 +215,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            最大子序和
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/06/13/StringBuilder/" class="article-nav-link">
+      <a href="/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">StringBuilder</div>
+        <div class="article-nav-title">删除排序数组重复项</div>
       </a>
     
   </nav>

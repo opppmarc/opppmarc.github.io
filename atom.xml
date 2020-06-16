@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-06-13T16:17:46.244Z</updated>
+  <updated>2020-06-16T03:27:17.994Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最大子序和</title>
+    <link href="https://opppmarc.github.io/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/"/>
+    <id>https://opppmarc.github.io/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</id>
+    <published>2020-06-16T03:23:20.000Z</published>
+    <updated>2020-06-16T03:27:17.994Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h2&gt;&lt;p&gt;给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;示例：
+输入[-2,1,-3,4,-1,2,1,-5,4]&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="https://opppmarc.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="LeetCode" scheme="https://opppmarc.github.io/tags/LeetCode/"/>
+    
+      <category term="数据结构" scheme="https://opppmarc.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>删除排序数组重复项</title>
