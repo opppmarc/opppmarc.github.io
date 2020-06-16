@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-06-16T03:27:17.994Z</updated>
+  <updated>2020-06-16T14:45:50.343Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正则表达式</title>
+    <link href="https://opppmarc.github.io/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    <id>https://opppmarc.github.io/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</id>
+    <published>2020-06-16T14:42:12.000Z</published>
+    <updated>2020-06-16T14:45:50.343Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Regex类&quot;&gt;&lt;a href=&quot;#Regex类&quot; class=&quot;headerlink&quot; title=&quot;Regex类&quot;&gt;&lt;/a&gt;Regex类&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/zh-cn/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Regex类&lt;/a&gt;表示&lt;code&gt;.NET Framework&lt;/code&gt;的正则表达式引擎（类库），它可用于快速分析大量文本以找到特定的字符模式;提取、编辑、替换或删除文本子字符串;和将提取的字符串添加到集合以生成报告。&lt;br&gt;简单的说，Regex是从字符窗中查找匹配字符串的应用类。通过Regex，编程人员能够非常方便的从一段数据中提取自己所需要的数据信息。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+  </entry>
   
   <entry>
     <title>最大子序和</title>
