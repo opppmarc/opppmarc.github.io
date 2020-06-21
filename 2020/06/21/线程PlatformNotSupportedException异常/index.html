@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Tag: C# |  阿虞在路上
+    线程PlatformNotSupportedException异常 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,279 +44,248 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article class="articles">
+  <article id="post-线程PlatformNotSupportedException异常" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">#&nbspC#</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2020" class="archive-year">2020</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  <time datetime="2020-06-21T14:57:59.000Z" itemprop="datePublished">06/21</time>
-</a>
+    <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/"
-    >线程调用带参数方法</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  线程PlatformNotSupportedException异常
+</h1>
  
 
     </header>
     
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
 
     
+    <div class="article-meta">
+      <a href="/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/" class="article-date">
+  <time datetime="2020-06-21T14:52:54.000Z" itemprop="datePublished">2020-06-21</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C#</a> / <a class="article-category-link" href="/categories/C/Bug/">Bug</a>
   </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/" class="archive-article-date">
-  <time datetime="2020-06-21T14:52:54.000Z" itemprop="datePublished">06/21</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/"
-    >线程PlatformNotSupportedException异常</a> 
-</h2>
- 
 
-    </header>
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">693</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">3 分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
     
     
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：<br>    System.PlatformNotSupportedException<br>    HResult=0x80131539<br>    Message=Operation is not supported on this platform.<br>    Source=System.Private.CoreLib<br>    StackTrace:<br>    at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)<br>    at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</p>
+<a id="more"></a>
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在vs2019创建.NET Core(3.1.301)的控制台应用程序，执行以下代码： </p>
+<pre><code>class Program
+{
+    static void Main(string[] args)
+    {
+        ////Action a = Test;
+        Func&lt;int, string, int&gt; a = Test;        //通过委托开起一个线程    
+        IAsyncResult ar = a.BeginInvoke(100, &quot;siki&quot;, null, null);      //run报错：平台不支持该操作
+
+        Console.WriteLine(&quot;Main&quot;);
+        while (ar.IsCompleted == false)     //如果当前线程没有执行完毕
+        {
+            Console.WriteLine(&apos;.&apos;);
+            Thread.Sleep(100);      //让Main线程休眠100ms
+        }
+        int res = a.EndInvoke(ar);      //取得异步线程a的返回值ar
+        Console.WriteLine(res);
+        Console.ReadKey();
+    }
+
+    static int Test(int i, string str)
+    {
+        Console.WriteLine(&quot;test&quot; + i + str);
+        Thread.Sleep(100);          //让当前线程休眠100ms
+        return 100;
+    }
+}</code></pre><p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
+<p>运行前代码中没有出现编译错误，但是在运行后在“IAsyncResult ar = a.BeginInvoke(100, “siki”, null, null);”处会返回一个异常：System.PlatformNotSupportedException 。  </p>
+<p>上网找了下相关异常的处理方式，最后参考了<a href="https://www.cnblogs.com/Zev_Fung/" target="_blank" rel="noopener">阿水zev</a>的一篇博客。 <a href="https://www.cnblogs.com/Zev_Fung/p/12823418.html" target="_blank" rel="noopener">(传送门)</a>    </p>
+<p>阿水例子中使用APM的线程代码运行后会出现同样的错误：  </p>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35hMd.png" alt="N35hMd.png"></p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>异步编程模型(APM)(使用IAsyncResult和BeginInvoke)不再是异步调用的优选方法。从.NET Framework 4.5开始，基于任务的异步模式(TAP)是推荐的异步模型。因此，而且由于异步委托的实现取决于远程处理但.NET Core不存在的功能，BeginInvoke和EndInvoke委托调用不.NET Core支持。（GitHub问题 <a href="https://github.com/dotnet/runtime/issues/16312" target="_blank" rel="noopener">dotnet/corefx＃5940</a> 中对此进行了讨论）</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来直接就在阿水的例子上实验Task.Run了，自己的代码越改越多bug···<br>改为基于任务的异步模式Task.Run  </p>
+<p>   public delegate string AsyncMethodCaller(int callDuration, out int threadId);<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            //基于任务的异步模式(TAP)<br>            AsyncMethodCaller caller = new AsyncMethodCaller(TestMethodAsync);<br>            int threadid = 0;<br>            //开启异步操作 IAsyncResult BeginInvoke<br>            var workTask = Task.Run(() =&gt; caller.Invoke(3000, out threadid));<br>            for (int i = 0; i &lt; 10; i++)<br>            {<br>                Console.WriteLine(“其他业务” + i.ToString());<br>            }<br>            //调用EndInvoke，等待异步执行完成<br>            Console.WriteLine(“等待异步方法TestMethodAsync执行完成”);<br>            string res = workTask.Result;<br>            Console.WriteLine(“Compeleted!”);<br>            Console.WriteLine(res);<br>            Console.ReadKey();<br>        }</p>
+<pre><code>    //基于任务的异步模式(TAP)
+    static string TestMethodAsync(int callDuration, out int threadId)
+    {
+        Stopwatch sw = new Stopwatch(); //创建一个Stopwatch对象 用来测量运行时间
+        sw.Start();     //开始测量运行时间
+        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);
+        for (int i = 0; i &lt; 5; i++)
+        {
+            //模拟耗时操作
+            Thread.Sleep(callDuration);
+            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());
+        }
+        sw.Stop();      //停止策略运行时间
+        threadId = Thread.CurrentThread.ManagedThreadId;    //获取当前线程，获取该线程是否属于托管线程池的值
+        return string.Format(&quot;耗时{0}ms.&quot;, sw.ElapsedMilliseconds.ToString());
+    }
+}</code></pre><p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong>
+              本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/" rel="tag">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
 
-    
+
+    </footer>
+
   </div>
+
+  
+  
+  <nav class="article-nav">
+    
+      <a href="/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            线程调用带参数方法
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">语言继承查询(LINQ)</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+
+  
+  
+  
+  
+  
+
 </article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/" class="archive-article-date">
-  <time datetime="2020-06-21T14:49:24.000Z" itemprop="datePublished">06/21</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/"
-    >语言继承查询(LINQ)</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/21/%E6%A0%88-Stack/" class="archive-article-date">
-  <time datetime="2020-06-21T14:44:58.000Z" itemprop="datePublished">06/21</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/21/%E6%A0%88-Stack/"
-    >栈(Stack)</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="archive-article-date">
-  <time datetime="2020-06-16T14:42:12.000Z" itemprop="datePublished">06/16</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
-    >正则表达式</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/13/StringBuilder/" class="archive-article-date">
-  <time datetime="2020-06-13T12:33:38.000Z" itemprop="datePublished">06/13</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/13/StringBuilder/"
-    >StringBuilder</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/13/StringMethod/" class="archive-article-date">
-  <time datetime="2020-06-13T12:31:02.000Z" itemprop="datePublished">06/13</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/13/StringMethod/"
-    >String Method</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/06/09/Gneric-Note/" class="archive-article-date">
-  <time datetime="2020-06-09T07:27:07.000Z" itemprop="datePublished">06/09</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/06/09/Gneric-Note/"
-    >Gneric Note</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/27/Object-oriented/" class="archive-article-date">
-  <time datetime="2020-05-27T08:02:03.000Z" itemprop="datePublished">05/27</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/05/27/Object-oriented/"
-    >面向对象：类定义/构造/属性</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/05/18/CSharpDebug/" class="archive-article-date">
-  <time datetime="2020-05-18T15:28:12.000Z" itemprop="datePublished">05/18</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2020/05/18/CSharpDebug/"
-    >CSharp中的调试与错误处理</a> 
-</h2>
- 
-
-    </header>
-    
-    
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-    
-  </div>
-</article>
-      
-      
-    </div>
-  </div>
-  
-  
-
-  
 </section>
       <footer class="footer">
   <div class="outer">
@@ -482,6 +451,23 @@
 </script>
 
 <!-- Tocbot -->
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
