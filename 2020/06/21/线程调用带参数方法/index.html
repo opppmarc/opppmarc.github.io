@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">568</span>
+            <span class="post-count">609</span>
         </span>
     </span>
 
@@ -118,55 +118,11 @@
 <p><code>Object Data type</code> 保存引用对象的地址， 可以将任何引用类型（字符串、数组、类或接口）分配给 Object 变量， Object变量还可以引用任意值类型的数据（数值、、 Boolean Char 、 Date 、结构或枚举）。 Object数据类型可以指向任何数据类型的数据，包括应用程序识别的任何对象实例。 在 Object 编译时不知道变量可能指向的数据类型时，请使用。</p>
 </blockquote>
 <p>在线程(函数)的参数位置定义一个object数据类型参数，在运行线程时通过调用Thread类方法Start(object)来传递参数。  </p>
-<pre><code>class Program
-{
-    static void DownloadFile(object filename)
-    {
-        Console.WriteLine(&quot;开始下载&quot;);
-        Thread.Sleep(1000);     //让线程休眠1000ms
-        Console.WriteLine(&quot;下载完成&quot;);
-    }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void DownloadFile(object filename)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot;);</span><br><span class="line">        Thread.Sleep(1000);     &#x2F;&#x2F;让线程休眠1000ms</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">            static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread t &#x3D; new Thread(DownloadFile);    &#x2F;&#x2F;初始化Therad类的新实例 Downloadfile</span><br><span class="line">        t.Start(&quot;xxx种子&quot;);                     &#x2F;&#x2F;让t线程开始运行   传递object类参数filename string</span><br><span class="line">        &#x2F;&#x2F;t.Start(&#39;y&#39;);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename char</span><br><span class="line">        &#x2F;&#x2F;t.Start(666);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename int</span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-            static void Main(string[] args)
-    {
-        Thread t = new Thread(DownloadFile);    //初始化Therad类的新实例 Downloadfile
-        t.Start(&quot;xxx种子&quot;);                     //让t线程开始运行   传递object类参数filename string
-        //t.Start(&apos;y&apos;);                         //让t线程开始运行   传递object类参数filename char
-        //t.Start(666);                         //让t线程开始运行   传递object类参数filename int
-        Console.WriteLine(&quot;Main&quot;);
-        Console.ReadKey();
-    }
-}</code></pre><h3 id="第二种：封装线程的方法和参数"><a href="#第二种：封装线程的方法和参数" class="headerlink" title="第二种：封装线程的方法和参数"></a>第二种：封装线程的方法和参数</h3><p>单独创建一个Thread类，将线程执行的方法和参数都封装到一个类里面，通过实例化该类，方法就可以调用属性来实现间接的类型安全地传递参数。  </p>
-<pre><code>class MyThread
-{
-    private string filename;
-    private string filepath;
-
-    public MyThread(string fileName, string filePath)
-    {
-        this.filename = fileName;
-        this.filepath = filePath;
-    }
-
-    public void DownFile()
-    {
-        Console.WriteLine(&quot;开始下载&quot; + filepath + filename);
-        Thread.Sleep(1000);
-        Console.WriteLine(&quot;下载完成&quot;);
-    }
-}
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        //通过单独创建一个Thread类来传递参数
-        MyThread my = new MyThread(&quot;xxx.bt&quot;, &quot;http://xxxx.com&quot;);
-        Thread t = new Thread(my.DownFile);     //new 一个Thread对象，传递my的DowanFile方法
-        t.Start();
-        Console.ReadKey();
-    }
-}</code></pre><p>运行效果:<br><a href="https://imgchr.com/i/N3IrlQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/21/N3IrlQ.png" alt="N3IrlQ.png"></a></p>
+<h3 id="第二种：封装线程的方法和参数"><a href="#第二种：封装线程的方法和参数" class="headerlink" title="第二种：封装线程的方法和参数"></a>第二种：封装线程的方法和参数</h3><p>单独创建一个Thread类，将线程执行的方法和参数都封装到一个类里面，通过实例化该类，方法就可以调用属性来实现间接的类型安全地传递参数。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class MyThread</span><br><span class="line">&#123;</span><br><span class="line">    private string filename;</span><br><span class="line">    private string filepath;</span><br><span class="line"></span><br><span class="line">    public MyThread(string fileName, string filePath)</span><br><span class="line">    &#123;</span><br><span class="line">        this.filename &#x3D; fileName;</span><br><span class="line">        this.filepath &#x3D; filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void DownFile()</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot; + filepath + filename);</span><br><span class="line">        Thread.Sleep(1000);</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;通过单独创建一个Thread类来传递参数</span><br><span class="line">        MyThread my &#x3D; new MyThread(&quot;xxx.bt&quot;, &quot;http:&#x2F;&#x2F;xxxx.com&quot;);</span><br><span class="line">        Thread t &#x3D; new Thread(my.DownFile);     &#x2F;&#x2F;new 一个Thread对象，传递my的DowanFile方法</span><br><span class="line">        t.Start();</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><a href="https://imgchr.com/i/N3IrlQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/21/N3IrlQ.png" alt="N3IrlQ.png"></a></p>
 <br>
       
       <!-- reward -->

@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">693</span>
+            <span class="post-count">768</span>
         </span>
     </span>
 
@@ -110,60 +110,27 @@
       
 
       
-      <h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：<br>    System.PlatformNotSupportedException<br>    HResult=0x80131539<br>    Message=Operation is not supported on this platform.<br>    Source=System.Private.CoreLib<br>    StackTrace:<br>    at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)<br>    at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</p>
-<a id="more"></a>
+      <h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：  </p>
+<pre><code>System.PlatformNotSupportedException
+HResult=0x80131539
+Message=Operation is not supported on this platform.
+Source=System.Private.CoreLib
+StackTrace:
+at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)
+at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</code></pre><a id="more"></a>
 
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在vs2019创建.NET Core(3.1.301)的控制台应用程序，执行以下代码： </p>
-<pre><code>class Program
-{
-    static void Main(string[] args)
-    {
-        ////Action a = Test;
-        Func&lt;int, string, int&gt; a = Test;        //通过委托开起一个线程    
-        IAsyncResult ar = a.BeginInvoke(100, &quot;siki&quot;, null, null);      //run报错：平台不支持该操作
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;&#x2F;Action a &#x3D; Test;</span><br><span class="line">        Func&lt;int, string, int&gt; a &#x3D; Test;        &#x2F;&#x2F;通过委托开起一个线程    </span><br><span class="line">        IAsyncResult ar &#x3D; a.BeginInvoke(100, &quot;siki&quot;, null, null);      &#x2F;&#x2F;run报错：平台不支持该操作</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        while (ar.IsCompleted &#x3D;&#x3D; false)     &#x2F;&#x2F;如果当前线程没有执行完毕</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&#39;.&#39;);</span><br><span class="line">            Thread.Sleep(100);      &#x2F;&#x2F;让Main线程休眠100ms</span><br><span class="line">        &#125;</span><br><span class="line">        int res &#x3D; a.EndInvoke(ar);      &#x2F;&#x2F;取得异步线程a的返回值ar</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int Test(int i, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;test&quot; + i + str);</span><br><span class="line">        Thread.Sleep(100);          &#x2F;&#x2F;让当前线程休眠100ms</span><br><span class="line">        return 100;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        Console.WriteLine(&quot;Main&quot;);
-        while (ar.IsCompleted == false)     //如果当前线程没有执行完毕
-        {
-            Console.WriteLine(&apos;.&apos;);
-            Thread.Sleep(100);      //让Main线程休眠100ms
-        }
-        int res = a.EndInvoke(ar);      //取得异步线程a的返回值ar
-        Console.WriteLine(res);
-        Console.ReadKey();
-    }
-
-    static int Test(int i, string str)
-    {
-        Console.WriteLine(&quot;test&quot; + i + str);
-        Thread.Sleep(100);          //让当前线程休眠100ms
-        return 100;
-    }
-}</code></pre><p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
 <p>运行前代码中没有出现编译错误，但是在运行后在“IAsyncResult ar = a.BeginInvoke(100, “siki”, null, null);”处会返回一个异常：System.PlatformNotSupportedException 。  </p>
 <p>上网找了下相关异常的处理方式，最后参考了<a href="https://www.cnblogs.com/Zev_Fung/" target="_blank" rel="noopener">阿水zev</a>的一篇博客。 <a href="https://www.cnblogs.com/Zev_Fung/p/12823418.html" target="_blank" rel="noopener">(传送门)</a>    </p>
 <p>阿水例子中使用APM的线程代码运行后会出现同样的错误：  </p>
 <p><img src="https://s1.ax1x.com/2020/06/21/N35hMd.png" alt="N35hMd.png"></p>
 <h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>异步编程模型(APM)(使用IAsyncResult和BeginInvoke)不再是异步调用的优选方法。从.NET Framework 4.5开始，基于任务的异步模式(TAP)是推荐的异步模型。因此，而且由于异步委托的实现取决于远程处理但.NET Core不存在的功能，BeginInvoke和EndInvoke委托调用不.NET Core支持。（GitHub问题 <a href="https://github.com/dotnet/runtime/issues/16312" target="_blank" rel="noopener">dotnet/corefx＃5940</a> 中对此进行了讨论）</p>
 <h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来直接就在阿水的例子上实验Task.Run了，自己的代码越改越多bug···<br>改为基于任务的异步模式Task.Run  </p>
-<p>   public delegate string AsyncMethodCaller(int callDuration, out int threadId);<br>    class Program<br>    {<br>        static void Main(string[] args)<br>        {<br>            //基于任务的异步模式(TAP)<br>            AsyncMethodCaller caller = new AsyncMethodCaller(TestMethodAsync);<br>            int threadid = 0;<br>            //开启异步操作 IAsyncResult BeginInvoke<br>            var workTask = Task.Run(() =&gt; caller.Invoke(3000, out threadid));<br>            for (int i = 0; i &lt; 10; i++)<br>            {<br>                Console.WriteLine(“其他业务” + i.ToString());<br>            }<br>            //调用EndInvoke，等待异步执行完成<br>            Console.WriteLine(“等待异步方法TestMethodAsync执行完成”);<br>            string res = workTask.Result;<br>            Console.WriteLine(“Compeleted!”);<br>            Console.WriteLine(res);<br>            Console.ReadKey();<br>        }</p>
-<pre><code>    //基于任务的异步模式(TAP)
-    static string TestMethodAsync(int callDuration, out int threadId)
-    {
-        Stopwatch sw = new Stopwatch(); //创建一个Stopwatch对象 用来测量运行时间
-        sw.Start();     //开始测量运行时间
-        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);
-        for (int i = 0; i &lt; 5; i++)
-        {
-            //模拟耗时操作
-            Thread.Sleep(callDuration);
-            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());
-        }
-        sw.Stop();      //停止策略运行时间
-        threadId = Thread.CurrentThread.ManagedThreadId;    //获取当前线程，获取该线程是否属于托管线程池的值
-        return string.Format(&quot;耗时{0}ms.&quot;, sw.ElapsedMilliseconds.ToString());
-    }
-}</code></pre><p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">public delegate string AsyncMethodCaller(int callDuration, out int threadId);</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">        AsyncMethodCaller caller &#x3D; new AsyncMethodCaller(TestMethodAsync);</span><br><span class="line">        int threadid &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F;开启异步操作 IAsyncResult BeginInvoke</span><br><span class="line">        var workTask &#x3D; Task.Run(() &#x3D;&gt; caller.Invoke(3000, out threadid));</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;其他业务&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;调用EndInvoke，等待异步执行完成</span><br><span class="line">        Console.WriteLine(&quot;等待异步方法TestMethodAsync执行完成&quot;);</span><br><span class="line">        string res &#x3D; workTask.Result;</span><br><span class="line">        Console.WriteLine(&quot;Compeleted!&quot;);</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">    static string TestMethodAsync(int callDuration, out int threadId)</span><br><span class="line">    &#123;</span><br><span class="line">        Stopwatch sw &#x3D; new Stopwatch(); &#x2F;&#x2F;创建一个Stopwatch对象 用来测量运行时间</span><br><span class="line">        sw.Start();     &#x2F;&#x2F;开始测量运行时间</span><br><span class="line">        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 5; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;模拟耗时操作</span><br><span class="line">            Thread.Sleep(callDuration);</span><br><span class="line">            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        sw.Stop();      &#x2F;&#x2F;停止策略运行时间</span><br><span class="line">        threadId &#x3D; Thread.CurrentThread.ManagedThreadId;    &#x2F;&#x2F;获取当前线程，获取该线程是否属于托管线程池的值</span><br><span class="line">        return string.Format(&quot;耗时&#123;0&#125;ms.&quot;, sw.ElapsedMilliseconds.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
 <br>
 
 

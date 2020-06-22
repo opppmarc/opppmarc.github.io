@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">997</span>
+            <span class="post-count">1k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -139,24 +139,10 @@ IEnumerable&lt;string&gt; filteredNames = names.Where(n =&gt; n.Contains(&quot;a
 foreach (string name in filteredNames)
 Console.WriteLine(name);    // Harry</code></pre><p>LINQ 查询变量被类型化为 IEnumerable<T> 或派生类型（如 IQueryable<T>）。 看到类型化为 IEnumerable<Customer> 的查询变量时，就意味着执行查询时，该查询将生成包含零个或多个 Customer 对象的序列。  </p>
 <h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>完整的查询操作应该包括创建数据源、定义查询表达式和在foreach语句中执行查询。  </p>
-<p>例如：<br>    class LINQQueryExpressions<br>    {<br>        static void Main()<br>        {</p>
-<pre><code>        // Specify the data source.
-        int[] scores = new int[] { 97, 92, 81, 60 };
+<p>例如：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class LINQQueryExpressions</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Specify the data source.</span><br><span class="line">        int[] scores &#x3D; new int[] &#123; 97, 92, 81, 60 &#125;;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Define the query expression.</span><br><span class="line">        IEnumerable&lt;int&gt; scoreQuery &#x3D;</span><br><span class="line">            from score in scores</span><br><span class="line">            where score &gt; 80</span><br><span class="line">            select score;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Execute the query.</span><br><span class="line">        foreach (int i in scoreQuery)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(i + &quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; Output: 97 92 81</span><br></pre></td></tr></table></figure>
 
-        // Define the query expression.
-        IEnumerable&lt;int&gt; scoreQuery =
-            from score in scores
-            where score &gt; 80
-            select score;
-
-        // Execute the query.
-        foreach (int i in scoreQuery)
-        {
-            Console.Write(i + &quot; &quot;);
-        }
-    }
-}
-// Output: 97 92 81</code></pre><blockquote>
+<blockquote>
 <p>查询表达式必须以 from 子句开头，且必须以 select 或 group 子句结尾。 在第一个 from 子句与最后一个 select 或 group 子句之间，可以包含以下这些可选子句中的一个或多个：where、orderby、join、let，甚至是其他 from 子句。 还可以使用 into 关键字，使 join 或 group 子句的结果可以充当相同查询表达式中的其他查询子句的源。</p>
 </blockquote>
 <br>
