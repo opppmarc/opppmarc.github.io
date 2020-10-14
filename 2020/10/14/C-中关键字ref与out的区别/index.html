@@ -111,6 +111,8 @@
 
       
       <h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
+<a id="more"></a>
+
 <h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
 <p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
 <blockquote>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-10-14T13:25:47.260Z</updated>
+  <updated>2020-10-14T13:28:41.948Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="https://opppmarc.github.io/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <id>https://opppmarc.github.io/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
     <published>2020-10-14T12:20:11.000Z</published>
-    <updated>2020-10-14T13:25:47.260Z</updated>
+    <updated>2020-10-14T13:28:41.948Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;C-中关键字ref与out的区别&quot;&gt;&lt;a href=&quot;#C-中关键字ref与out的区别&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h2 id=&quot;C-中关键字ref与out的区别&quot;&gt;&lt;a href=&quot;#C-中关键字ref与out的区别&quot; class=&quot;headerlink&quot; title=&quot;C#中关键字ref与out的区别&quot;&gt;&lt;/a&gt;C#中关键字ref与out的区别&lt;/h2&gt;&lt;p&gt;C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。&lt;/p&gt;
     
     </summary>
     
@@ -48,17 +42,12 @@
     <link href="https://opppmarc.github.io/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>https://opppmarc.github.io/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</id>
     <published>2020-10-10T12:11:48.000Z</published>
-    <updated>2020-10-10T13:08:52.365Z</updated>
+    <updated>2020-10-14T13:29:23.602Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot;&gt;&lt;a href=&quot;#爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h2 id=&quot;爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot;&gt;&lt;a href=&quot;#爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot; class=&quot;headerlink&quot; title=&quot;爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot;&gt;&lt;/a&gt;爬坑：关于显示器标识号与屏幕区域不匹配的问题&lt;/h2&gt;&lt;p&gt;最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。&lt;/p&gt;
+&lt;p&gt;起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。&lt;/p&gt;
     
     </summary>
     
@@ -99,9 +88,9 @@
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
     
-      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
-    
       <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
     
   </entry>
   
@@ -124,9 +113,9 @@
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
     
-      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
-    
       <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
     
       <category term="WPF" scheme="https://opppmarc.github.io/tags/WPF/"/>
     
@@ -153,9 +142,9 @@
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
     
-      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
-    
       <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
     
   </entry>
   

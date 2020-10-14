@@ -119,26 +119,9 @@
 
       
       <h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
-<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
-<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
-<blockquote>
-<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
-</blockquote>
-<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
-<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
-
+      
+      <a class="article-more-link" href="/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/">阅读更多...</a>
+      
       
       <!-- reward -->
       
@@ -209,13 +192,9 @@
       
       <h2 id="爬坑：关于显示器标识号与屏幕区域不匹配的问题"><a href="#爬坑：关于显示器标识号与屏幕区域不匹配的问题" class="headerlink" title="爬坑：关于显示器标识号与屏幕区域不匹配的问题"></a>爬坑：关于显示器标识号与屏幕区域不匹配的问题</h2><p>最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。</p>
 <p>起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。</p>
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201010203717382.png" alt="image-20201010203717382" style="zoom: 50%;" />
-
-<p>那就做呗，然后在项目的加载事件里添加了几行代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">private void ShowToLastSc(int count)</span><br><span class="line">&#123;</span><br><span class="line">    Screen[] sc;</span><br><span class="line">    sc &#x3D; Screen.AllScreens;</span><br><span class="line"></span><br><span class="line">    this.StartPosition &#x3D; FormStartPosition.Manual;</span><br><span class="line">    &#x2F;&#x2F;this.Location &#x3D; new Point(sc[count].Bounds.Left, sc[count].Bounds.Top);</span><br><span class="line">    this.Left &#x3D; sc[count].Bounds.Left;</span><br><span class="line">    this.Top &#x3D; sc[count].Bounds.Top;</span><br><span class="line">    this.Width &#x3D; sc[count].Bounds.Width;</span><br><span class="line">    this.Height &#x3D; sc[count].Bounds.Height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行后发现效果不对，原本该显示在最后一块屏幕的窗口显示在了1号屏。</p>
-
+      
+      <a class="article-more-link" href="/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/">阅读更多...</a>
+      
       
       <!-- reward -->
       
