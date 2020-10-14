@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-09-28T05:26:27.210Z</updated>
+  <updated>2020-10-14T13:25:47.260Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -17,11 +17,129 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>爬坑-关于“未能加载文件或程序集的解决方法法</title>
+    <title>C#中关键字ref与out的区别</title>
+    <link href="https://opppmarc.github.io/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+    <id>https://opppmarc.github.io/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</id>
+    <published>2020-10-14T12:20:11.000Z</published>
+    <updated>2020-10-14T13:25:47.260Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;C-中关键字ref与out的区别&quot;&gt;&lt;a href=&quot;#C-中关键字ref与out的区别&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬坑-显示器标识号与屏幕区域不匹配的问题</title>
+    <link href="https://opppmarc.github.io/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://opppmarc.github.io/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2020-10-10T12:11:48.000Z</published>
+    <updated>2020-10-10T13:08:52.365Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot;&gt;&lt;a href=&quot;#爬坑：关于显示器标识号与屏幕区域不匹配的问题&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
+    
+      <category term="计算机硬件" scheme="https://opppmarc.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬坑-FamilyRacing的那些事</title>
+    <link href="https://opppmarc.github.io/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/"/>
+    <id>https://opppmarc.github.io/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</id>
+    <published>2020-10-06T13:05:47.000Z</published>
+    <updated>2020-10-06T13:14:16.162Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;爬坑：FamilyRacing的那些事&quot;&gt;&lt;a href=&quot;#爬坑：FamilyRacing的那些事&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
+    
+      <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WPF的xaml代码中显示“命名空间不存在对应名称”的错误</title>
+    <link href="https://opppmarc.github.io/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/"/>
+    <id>https://opppmarc.github.io/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/</id>
+    <published>2020-10-06T12:48:29.000Z</published>
+    <updated>2020-10-06T13:04:07.177Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题&quot;&gt;&lt;a href=&quot;#爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题&quot; class=&quot;headerlink&quot; title=&quot;爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题&quot;&gt;&lt;/a&gt;爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题&lt;/h2&gt;&lt;p&gt;背景：在创建一个新的WPF项目时, app.xaml中的DataContext指向了一个IOC初始化类，但是“IOCInit.cs”在项目中已经存在，编译器却提示：命名空间不存在对应名称。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
+    
+      <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
+    
+      <category term="WPF" scheme="https://opppmarc.github.io/tags/WPF/"/>
+    
+      <category term="XAML" scheme="https://opppmarc.github.io/tags/XAML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
     <link href="https://opppmarc.github.io/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/"/>
     <id>https://opppmarc.github.io/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</id>
     <published>2020-09-28T05:22:54.000Z</published>
-    <updated>2020-09-28T05:26:27.210Z</updated>
+    <updated>2020-09-29T02:41:54.367Z</updated>
     
     <summary type="html">
     
@@ -35,22 +153,22 @@
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
     
-      <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
-    
       <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
+    
+      <category term="VS" scheme="https://opppmarc.github.io/tags/VS/"/>
     
   </entry>
   
   <entry>
-    <title>Socke/TcpListener/UdpClient</title>
+    <title>Socket/TcpListener/UdpClient</title>
     <link href="https://opppmarc.github.io/2020/06/26/Socket-TcpListener-UdpClient/"/>
     <id>https://opppmarc.github.io/2020/06/26/Socket-TcpListener-UdpClient/</id>
     <published>2020-06-26T14:26:58.000Z</published>
-    <updated>2020-06-26T14:40:44.000Z</updated>
+    <updated>2020-09-29T02:41:21.740Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Socke/TcpListener/UdpClient同属于命名空间&lt;code&gt;System.Net.Sockets&lt;/code&gt;，&lt;code&gt;System.Net.Sockets&lt;/code&gt;命名空间为需要严密控制网络访问的开发人员提供了 Windows Sockets (Winsock) 接口的托管实现。&lt;/p&gt;
+      &lt;p&gt;Socket/TcpListener/UdpClient同属于命名空间&lt;code&gt;System.Net.Sockets&lt;/code&gt;，&lt;code&gt;System.Net.Sockets&lt;/code&gt;命名空间为需要严密控制网络访问的开发人员提供了 Windows Sockets (Winsock) 接口的托管实现。&lt;/p&gt;
     
     </summary>
     
@@ -387,97 +505,6 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
     
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
-    <link href="https://opppmarc.github.io/2020/05/27/InsideNarrative/"/>
-    <id>https://opppmarc.github.io/2020/05/27/InsideNarrative/</id>
-    <published>2020-05-27T07:29:50.000Z</published>
-    <updated>2020-05-29T14:08:04.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/05/29/tKnxf0.jpg&quot; alt=&quot;tKnxf0.jpg&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“如果说《火情观察员》是2016年独立游戏界燃起的第一把火，那么来自曾经以《Limbo》蜚声业界的独立游戏工作室Playdead的新作《Inside》，毫无疑问就是第二把，只是这把火要烧的更高，影响也显然更为深远。” ——RED  &lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="游戏测评" scheme="https://opppmarc.github.io/categories/%E6%B8%B8%E6%88%8F%E6%B5%8B%E8%AF%84/"/>
-    
-    
-      <category term="单机" scheme="https://opppmarc.github.io/tags/%E5%8D%95%E6%9C%BA/"/>
-    
-      <category term="测评" scheme="https://opppmarc.github.io/tags/%E6%B5%8B%E8%AF%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSharp中的调试与错误处理</title>
-    <link href="https://opppmarc.github.io/2020/05/18/CSharpDebug/"/>
-    <id>https://opppmarc.github.io/2020/05/18/CSharpDebug/</id>
-    <published>2020-05-18T15:28:12.000Z</published>
-    <updated>2020-05-18T15:42:06.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;正常模式下的调试&quot;&gt;&lt;a href=&quot;#正常模式下的调试&quot; class=&quot;headerlink&quot; title=&quot;正常模式下的调试&quot;&gt;&lt;/a&gt;正常模式下的调试&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;1.在VS中 我们使用&lt;code&gt;Console.Write(或者WriteLine)&lt;/code&gt;方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。&lt;/li&gt;
-&lt;li&gt;2.在Unity中我们使用&lt;code&gt;Debug.Log(&amp;quot;&amp;quot;) Debug.LogError(&amp;quot;&amp;quot;) Debug.LogWarn9(&amp;quot;&amp;quot;)&lt;/code&gt;，向unity的Console窗口输出信息，帮助我们调试错误。
-    
-    </summary>
-    
-    
-      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
-    
-    
-      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo+GithubBlog搭建</title>
-    <link href="https://opppmarc.github.io/2020/05/17/BlogBuding/"/>
-    <id>https://opppmarc.github.io/2020/05/17/BlogBuding/</id>
-    <published>2020-05-17T03:06:49.000Z</published>
-    <updated>2020-05-27T09:11:12.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;基于开源框架搭建博客，可以直接在&lt;em&gt;github page&lt;/em&gt;上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Blog" scheme="https://opppmarc.github.io/categories/Blog/"/>
-    
-    
-      <category term="Blog" scheme="https://opppmarc.github.io/tags/Blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>16信管答辩简记</title>
-    <link href="https://opppmarc.github.io/2020/05/16/16Reply/"/>
-    <id>https://opppmarc.github.io/2020/05/16/16Reply/</id>
-    <published>2020-05-16T06:10:32.000Z</published>
-    <updated>2020-05-17T11:12:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="信息管理与信息系统" scheme="https://opppmarc.github.io/categories/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E4%B8%8E%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-      <category term="信管" scheme="https://opppmarc.github.io/tags/%E4%BF%A1%E7%AE%A1/"/>
     
   </entry>
   

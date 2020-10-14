@@ -204,6 +204,37 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>C#中关键字ref与out的区别</title>
+    <url>/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
+<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
+<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
+<blockquote>
+<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
+</blockquote>
+<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
+<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DeadCellEvolve</title>
     <url>/2020/05/29/DeadCellEvolve/</url>
     <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
@@ -324,6 +355,18 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+<a id="more"></a>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
     <url>/2020/05/27/InsideNarrative/</url>
     <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/05/29/tKnxf0.jpg" alt="tKnxf0.jpg"></p>
@@ -367,18 +410,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>HelloWorld</title>
-    <url>/2020/05/15/HelloWorld/</url>
-    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
-<a id="more"></a>
-<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
-<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>面向对象：类定义/构造/属性</title>
     <url>/2020/05/27/Object-oriented/</url>
     <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
@@ -414,54 +445,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </categories>
       <tags>
         <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Socke/TcpListener/UdpClient</title>
-    <url>/2020/06/26/Socket-TcpListener-UdpClient/</url>
-    <content><![CDATA[<p>Socke/TcpListener/UdpClient同属于命名空间<code>System.Net.Sockets</code>，<code>System.Net.Sockets</code>命名空间为需要严密控制网络访问的开发人员提供了 Windows Sockets (Winsock) 接口的托管实现。</p>
-<a id="more"></a>
-
-<h2 id="Socket-套接字-编程"><a href="#Socket-套接字-编程" class="headerlink" title="Socket(套接字)编程"></a>Socket(套接字)编程</h2><h3 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h3><p>基于<code>TCP协议</code>的Socket通讯类似于B/S架构，面向连接，但不同的是服务器端可以向客户端主动推送消息。  </p>
-<p>使用TCP协议通讯需要具备以下几个条件：</p>
-<ol>
-<li>建立一个<code>套接字</code>(Socket)</li>
-<li>绑定服务器端<code>IP地址</code>(IPAddress)和端口号(Port)</li>
-<li>利用<code>Listen()</code>方法开启监听</li>
-<li>利用<code>Accept()</code>方法尝试与客户端建立一个连接</li>
-<li>利用<code>Connect()</code>方法与服务器建立连接</li>
-<li>利用<code>Send()</code>方法向建立连接的主机发送消息</li>
-<li>利用<code>Recive()</code>方法接收来自建立连接的主机的消息</li>
-</ol>
-<p><img src="https://s1.ax1x.com/2020/06/26/Nsba26.png" alt="Nsba26.png"></p>
-<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>基于<code>UDP协议</code>是无连接模式通讯，占用资源少，响应速度快，延时低。至于可靠性，可通过应用层的控制来满足。  </p>
-<p>使用TCP协议通讯需要具备以下几个条件：</p>
-<ol>
-<li>建立一个<code>套接字Socket</code></li>
-<li>绑定服务器端I<code>P地址及端口号</code></li>
-<li>通过<code>SendTo()</code>方法向指定主机发送消息(需提供主机IP和端口号)</li>
-<li>通过<code>ReciveFrom()</code>方法接收指定主机发送的消息(需提供主机IP和端口号)</li>
-</ol>
-<p><img src="https://s1.ax1x.com/2020/06/26/NsbU8x.png" alt="NsbU8x.png"></p>
-<h3 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h3><p>TCP协议和UDP协议连接过程的区别：</p>
-<ol>
-<li>基于连接和无连接；</li>
-<li>对系统资源的要求不同，TCP较多，UDP较少；</li>
-<li>UDP程序结构较简单；</li>
-<li>流模式(<code>Stream</code>)和数据报模式(<code>Dgram</code>)；</li>
-<li>TCP保证数据正确性，UDP可能会丢包，TCP保证数据顺序，UDP不保证。</li>
-</ol>
-<h2 id="TcpClient-TcpListener-UdpClient"><a href="#TcpClient-TcpListener-UdpClient" class="headerlink" title="TcpClient,TcpListener,UdpClient"></a>TcpClient,TcpListener,UdpClient</h2><p>应用程序可以通过<code>TcpClient</code>、<code>TcpListener</code>和<code>UdpClient</code>类使用传输控制协议(TCP)和用户数据文报协议(UDP)服务。这些协议类建立在<code>System.Net.Sockets.Socket</code>类的基础之上，辅助数据传送的细节(也就是说TcpClient、TcpListener和UdpClisent类是用来简化Socket的)。  </p>
-<p><code>TcpClient</code>和<code>TcpListener</code>使用<code>NetworkStream</code>类表示网络，使用GetStream方法返回网络流，然后调用该Stream的<code>Read</code>和<code>Write</code>方法。NetworkStream不拥有协议类的基础套接字，因此关闭NetworkStream不影响套接字。  </p>
-<p>UdpClient类使用字节数组(byte[])保存UDP数据文报，使用<code>Send</code>方法向网络发送数据，使用<code>Receive</code>方法接收传入的数据文报。</p>
-<br>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>Socket</tag>
       </tags>
   </entry>
   <entry>
@@ -509,6 +492,33 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>StringBuilder</title>
+    <url>/2020/06/13/StringBuilder/</url>
+    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
+
+<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
+<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
+<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
+<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
+<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
+<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
+<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
+<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
+</ul>
+<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
+<br>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>String Method</title>
     <url>/2020/06/13/StringMethod/</url>
     <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
@@ -553,30 +563,27 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>StringBuilder</title>
-    <url>/2020/06/13/StringBuilder/</url>
-    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
+    <title>删除排序数组重复项</title>
+    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
 <a id="more"></a>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
+<pre><code>示例：
+给定数组 nums = [1,1,2],   
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
+你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
 
-<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
-<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
-<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
-<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
-<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
-<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
-<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
-<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
-</ul>
-<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
-<br>
+
 ]]></content>
       <categories>
-        <category>C#</category>
+        <category>数据结构</category>
       </categories>
       <tags>
-        <tag>C#</tag>
+        <tag>LeetCode</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -609,6 +616,54 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>Socket/TcpListener/UdpClient</title>
+    <url>/2020/06/26/Socket-TcpListener-UdpClient/</url>
+    <content><![CDATA[<p>Socket/TcpListener/UdpClient同属于命名空间<code>System.Net.Sockets</code>，<code>System.Net.Sockets</code>命名空间为需要严密控制网络访问的开发人员提供了 Windows Sockets (Winsock) 接口的托管实现。</p>
+<a id="more"></a>
+
+<h2 id="Socket-套接字-编程"><a href="#Socket-套接字-编程" class="headerlink" title="Socket(套接字)编程"></a>Socket(套接字)编程</h2><h3 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h3><p>基于<code>TCP协议</code>的Socket通讯类似于B/S架构，面向连接，但不同的是服务器端可以向客户端主动推送消息。  </p>
+<p>使用TCP协议通讯需要具备以下几个条件：</p>
+<ol>
+<li>建立一个<code>套接字</code>(Socket)</li>
+<li>绑定服务器端<code>IP地址</code>(IPAddress)和端口号(Port)</li>
+<li>利用<code>Listen()</code>方法开启监听</li>
+<li>利用<code>Accept()</code>方法尝试与客户端建立一个连接</li>
+<li>利用<code>Connect()</code>方法与服务器建立连接</li>
+<li>利用<code>Send()</code>方法向建立连接的主机发送消息</li>
+<li>利用<code>Recive()</code>方法接收来自建立连接的主机的消息</li>
+</ol>
+<p><img src="https://s1.ax1x.com/2020/06/26/Nsba26.png" alt="Nsba26.png"></p>
+<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>基于<code>UDP协议</code>是无连接模式通讯，占用资源少，响应速度快，延时低。至于可靠性，可通过应用层的控制来满足。  </p>
+<p>使用TCP协议通讯需要具备以下几个条件：</p>
+<ol>
+<li>建立一个<code>套接字Socket</code></li>
+<li>绑定服务器端I<code>P地址及端口号</code></li>
+<li>通过<code>SendTo()</code>方法向指定主机发送消息(需提供主机IP和端口号)</li>
+<li>通过<code>ReciveFrom()</code>方法接收指定主机发送的消息(需提供主机IP和端口号)</li>
+</ol>
+<p><img src="https://s1.ax1x.com/2020/06/26/NsbU8x.png" alt="NsbU8x.png"></p>
+<h3 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h3><p>TCP协议和UDP协议连接过程的区别：</p>
+<ol>
+<li>基于连接和无连接；</li>
+<li>对系统资源的要求不同，TCP较多，UDP较少；</li>
+<li>UDP程序结构较简单；</li>
+<li>流模式(<code>Stream</code>)和数据报模式(<code>Dgram</code>)；</li>
+<li>TCP保证数据正确性，UDP可能会丢包，TCP保证数据顺序，UDP不保证。</li>
+</ol>
+<h2 id="TcpClient-TcpListener-UdpClient"><a href="#TcpClient-TcpListener-UdpClient" class="headerlink" title="TcpClient,TcpListener,UdpClient"></a>TcpClient,TcpListener,UdpClient</h2><p>应用程序可以通过<code>TcpClient</code>、<code>TcpListener</code>和<code>UdpClient</code>类使用传输控制协议(TCP)和用户数据文报协议(UDP)服务。这些协议类建立在<code>System.Net.Sockets.Socket</code>类的基础之上，辅助数据传送的细节(也就是说TcpClient、TcpListener和UdpClisent类是用来简化Socket的)。  </p>
+<p><code>TcpClient</code>和<code>TcpListener</code>使用<code>NetworkStream</code>类表示网络，使用GetStream方法返回网络流，然后调用该Stream的<code>Read</code>和<code>Write</code>方法。NetworkStream不拥有协议类的基础套接字，因此关闭NetworkStream不影响套接字。  </p>
+<p>UdpClient类使用字节数组(byte[])保存UDP数据文报，使用<code>Send</code>方法向网络发送数据，使用<code>Receive</code>方法接收传入的数据文报。</p>
+<br>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Socket</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>最大子序和</title>
     <url>/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</url>
     <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
@@ -632,30 +687,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
 <p>状态转移方程:是动态规划中本阶段的状态往往是上一阶段状态和上一阶段决策的结果。如果给定了第K阶段的状态Sk以及决策uk(Sk)，则第K+1阶段的状态Sk+1也就完全确定。<br>中文名状态转移方程应用学科编程</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int pre &#x3D; 0, maxAns &#x3D; nums[0];</span><br><span class="line">        foreach (int x in nums) &#123;</span><br><span class="line">            pre &#x3D; Math.Max(pre + x, x);</span><br><span class="line">            maxAns &#x3D; Math.Max(maxAns, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        return maxAns;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>删除排序数组重复项</title>
-    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
-    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
-<a id="more"></a>
-
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
-<pre><code>示例：
-给定数组 nums = [1,1,2],   
-函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
-你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
-<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
 
 
 ]]></content>
@@ -720,35 +751,6 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
-    <title>爬坑-关于“未能加载文件或程序集的解决方法法</title>
-    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
-<a id="more"></a>
-
-<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
-<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
-<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
-<br/>
-
-<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>VS</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>正则表达式</title>
     <url>/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="Regex类"><a href="#Regex类" class="headerlink" title="Regex类"></a>Regex类</h2><p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1" target="_blank" rel="noopener">Regex类</a>表示<code>.NET Framework</code>的正则表达式引擎（类库），它可用于快速分析大量文本以找到特定的字符模式;提取、编辑、替换或删除文本子字符串;和将提取的字符串添加到集合以生成报告。<br>简单的说，Regex是从字符窗中查找匹配字符串的应用类。通过Regex，编程人员能够非常方便的从一段数据中提取自己所需要的数据信息。</p>
@@ -766,30 +768,6 @@ lnkstack.ShowItem();</code></pre><br>
 </blockquote>
 <p>.   匹配除换行符以外的任意字符<br>\w  匹配字母、数字、下划线、汉字<br>\W  \w的补集<br>\s  匹配任意空白符（包括换行符/n、回车符/r、制表符/t、垂直制表符/v、换页符/f）<br>\S  \s的补集<br>\d  匹配数字（0-9）<br>\D  表示\d的补集（除0-9数字外）<br>\b  匹配单词的开始或结束<br>\B  匹配非单词的开始或结束<br>^  匹配必须出现在字符串的开头或行的开头<br>$  匹配必须出现在以下位置：字符串结尾、字符串结尾处的 \n 之前或行的结尾。   </p>
 ]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线程调用带参数方法</title>
-    <url>/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="通过Thread发起线程时怎么调用带参数的方法"><a href="#通过Thread发起线程时怎么调用带参数的方法" class="headerlink" title="通过Thread发起线程时怎么调用带参数的方法"></a>通过Thread发起线程时怎么调用带参数的方法</h2><p>在.NET Framework中可以通过2种方法实现线程调用带参数的方法:Thread.Start(object),封装线程的方法和参数</p>
-<a id="more"></a>
-
-<h3 id="第一种：通过-Thread-Start-object-方法"><a href="#第一种：通过-Thread-Start-object-方法" class="headerlink" title="第一种：通过 Thread.Start(object) 方法"></a>第一种：通过 Thread.Start(object) 方法</h3><p><code>Start(object)</code> 指导致操作系统将当前实例的状态更改为 Running，并选择提供包含线程执行的方法要使用的数据的对象。  </p>
-<pre><code>public void Start (object parameter);</code></pre><blockquote>
-<p><code>Object Data type</code> 保存引用对象的地址， 可以将任何引用类型（字符串、数组、类或接口）分配给 Object 变量， Object变量还可以引用任意值类型的数据（数值、、 Boolean Char 、 Date 、结构或枚举）。 Object数据类型可以指向任何数据类型的数据，包括应用程序识别的任何对象实例。 在 Object 编译时不知道变量可能指向的数据类型时，请使用。</p>
-</blockquote>
-<p>在线程(函数)的参数位置定义一个object数据类型参数，在运行线程时通过调用Thread类方法Start(object)来传递参数。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void DownloadFile(object filename)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot;);</span><br><span class="line">        Thread.Sleep(1000);     &#x2F;&#x2F;让线程休眠1000ms</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">            static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread t &#x3D; new Thread(DownloadFile);    &#x2F;&#x2F;初始化Therad类的新实例 Downloadfile</span><br><span class="line">        t.Start(&quot;xxx种子&quot;);                     &#x2F;&#x2F;让t线程开始运行   传递object类参数filename string</span><br><span class="line">        &#x2F;&#x2F;t.Start(&#39;y&#39;);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename char</span><br><span class="line">        &#x2F;&#x2F;t.Start(666);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename int</span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二种：封装线程的方法和参数"><a href="#第二种：封装线程的方法和参数" class="headerlink" title="第二种：封装线程的方法和参数"></a>第二种：封装线程的方法和参数</h3><p>单独创建一个Thread类，将线程执行的方法和参数都封装到一个类里面，通过实例化该类，方法就可以调用属性来实现间接的类型安全地传递参数。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyThread</span><br><span class="line">&#123;</span><br><span class="line">    private string filename;</span><br><span class="line">    private string filepath;</span><br><span class="line"></span><br><span class="line">    public MyThread(string fileName, string filePath)</span><br><span class="line">    &#123;</span><br><span class="line">        this.filename &#x3D; fileName;</span><br><span class="line">        this.filepath &#x3D; filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void DownFile()</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot; + filepath + filename);</span><br><span class="line">        Thread.Sleep(1000);</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;通过单独创建一个Thread类来传递参数</span><br><span class="line">        MyThread my &#x3D; new MyThread(&quot;xxx.bt&quot;, &quot;http:&#x2F;&#x2F;xxxx.com&quot;);</span><br><span class="line">        Thread t &#x3D; new Thread(my.DownFile);     &#x2F;&#x2F;new 一个Thread对象，传递my的DowanFile方法</span><br><span class="line">        t.Start();</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行效果:<br><a href="https://imgchr.com/i/N3IrlQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/21/N3IrlQ.png" alt="N3IrlQ.png"></a></p>
-<br>]]></content>
       <categories>
         <category>C#</category>
       </categories>
@@ -843,6 +821,83 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
       </tags>
   </entry>
   <entry>
+    <title>爬坑-FamilyRacing的那些事</title>
+    <url>/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+    <content><![CDATA[<h2 id="爬坑：FamilyRacing的那些事"><a href="#爬坑：FamilyRacing的那些事" class="headerlink" title="爬坑：FamilyRacing的那些事"></a>爬坑：FamilyRacing的那些事</h2><ul>
+<li><p>新建项目WPF初始化过程中，VS报错”无法加载一个或多个请求的类型，有关更多信息，请检索LoaderExceptions属性。”：</p>
+<p>这个是微软的机制问题，只要程序集所引用的dll不全或没有引用，就会报出这个错误，根据异常信息在项目bin目录下把缺少的dll文件补全即可。</p>
+</li>
+<li><p>之前创建项目时直接把其他项目的app.config搬了过来，导致后来添加dll引用时编译器报错 “试图加载格式不正确的程序” ：</p>
+<p>一般当项目的目标平台和dll不一致时会出现这个问题，在项目的生成设置里把AnyCPU改成32/64/98即可。</p>
+<p>另，引用一个数据库dll的时候，如果平台目标设置不是64位会报错，但是一般情况下AnyCPU是没有问题的。最后发现是创建项目时复制了其他项目的内容在app.config里，导致项目中某些地方生成了一些错误的东西。后来通过重建项目解决了问题，更具体的原因可对比新旧版本项目的csproj文件。</p>
+</li>
+<li><p>未将对象引用设置到对象的实例：</p>
+<p>一般是IOC引用落空了，不是IOC初始化没有引用就是对应类头部没有添加特性，添加上即可。刚接触公司这套东西，经常会忘记添加引用或特性，大部分非代码逻辑的问题都是出在这。</p>
+</li>
+<li><p>对类型“YDL.UI.LoadSplash.Loading3”的构造函数执行符合指定的绑定约束的调用时引发了异常:</p>
+<p>这一块属于程序打包这一块的问题，用dotNetReator对程序进行打包时，如果勾选了“Merge Assemblies”选项，程序打开时就会抛出该异常。</p>
+</li>
+<li><p>加载大体积文件、文档时，用记事本会打不开，用VSCode可以打开。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+        <tag>VS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WPF的xaml代码中显示“命名空间不存在对应名称”的错误</title>
+    <url>/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<h2 id="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"><a href="#爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题" class="headerlink" title="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"></a>爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题</h2><p>背景：在创建一个新的WPF项目时, app.xaml中的DataContext指向了一个IOC初始化类，但是“IOCInit.cs”在项目中已经存在，编译器却提示：命名空间不存在对应名称。</p>
+<a id="more"></a>
+
+<p>不知道是什么玄学，网上也没有找到具体的原因，但是都一致给出了相似的解决方法：</p>
+<ul>
+<li>在Debug下生成时说命名空间中找不到我自定义的控件。此时切换到Release模式，再生成。生成成功后切换回Debug模式就不报错了。这是Release模式下找不到我们自定义的控件导致的报错。所以切换为Release后生成则可以解决此问题。</li>
+<li>同是xaml里显示“命名空间不存在对应名称”的问题，在项目属性里配置Debug/Release不是任何时候都奏效的，这时候可以根据警告信息检查程序集版本有无问题，如果程序集版本落后，在项目属性里调整版本然后编译即可解决问题。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+        <tag>VS</tag>
+        <tag>WPF</tag>
+        <tag>XAML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程调用带参数方法</title>
+    <url>/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="通过Thread发起线程时怎么调用带参数的方法"><a href="#通过Thread发起线程时怎么调用带参数的方法" class="headerlink" title="通过Thread发起线程时怎么调用带参数的方法"></a>通过Thread发起线程时怎么调用带参数的方法</h2><p>在.NET Framework中可以通过2种方法实现线程调用带参数的方法:Thread.Start(object),封装线程的方法和参数</p>
+<a id="more"></a>
+
+<h3 id="第一种：通过-Thread-Start-object-方法"><a href="#第一种：通过-Thread-Start-object-方法" class="headerlink" title="第一种：通过 Thread.Start(object) 方法"></a>第一种：通过 Thread.Start(object) 方法</h3><p><code>Start(object)</code> 指导致操作系统将当前实例的状态更改为 Running，并选择提供包含线程执行的方法要使用的数据的对象。  </p>
+<pre><code>public void Start (object parameter);</code></pre><blockquote>
+<p><code>Object Data type</code> 保存引用对象的地址， 可以将任何引用类型（字符串、数组、类或接口）分配给 Object 变量， Object变量还可以引用任意值类型的数据（数值、、 Boolean Char 、 Date 、结构或枚举）。 Object数据类型可以指向任何数据类型的数据，包括应用程序识别的任何对象实例。 在 Object 编译时不知道变量可能指向的数据类型时，请使用。</p>
+</blockquote>
+<p>在线程(函数)的参数位置定义一个object数据类型参数，在运行线程时通过调用Thread类方法Start(object)来传递参数。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void DownloadFile(object filename)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot;);</span><br><span class="line">        Thread.Sleep(1000);     &#x2F;&#x2F;让线程休眠1000ms</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">            static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread t &#x3D; new Thread(DownloadFile);    &#x2F;&#x2F;初始化Therad类的新实例 Downloadfile</span><br><span class="line">        t.Start(&quot;xxx种子&quot;);                     &#x2F;&#x2F;让t线程开始运行   传递object类参数filename string</span><br><span class="line">        &#x2F;&#x2F;t.Start(&#39;y&#39;);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename char</span><br><span class="line">        &#x2F;&#x2F;t.Start(666);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename int</span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种：封装线程的方法和参数"><a href="#第二种：封装线程的方法和参数" class="headerlink" title="第二种：封装线程的方法和参数"></a>第二种：封装线程的方法和参数</h3><p>单独创建一个Thread类，将线程执行的方法和参数都封装到一个类里面，通过实例化该类，方法就可以调用属性来实现间接的类型安全地传递参数。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyThread</span><br><span class="line">&#123;</span><br><span class="line">    private string filename;</span><br><span class="line">    private string filepath;</span><br><span class="line"></span><br><span class="line">    public MyThread(string fileName, string filePath)</span><br><span class="line">    &#123;</span><br><span class="line">        this.filename &#x3D; fileName;</span><br><span class="line">        this.filepath &#x3D; filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void DownFile()</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot; + filepath + filename);</span><br><span class="line">        Thread.Sleep(1000);</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;通过单独创建一个Thread类来传递参数</span><br><span class="line">        MyThread my &#x3D; new MyThread(&quot;xxx.bt&quot;, &quot;http:&#x2F;&#x2F;xxxx.com&quot;);</span><br><span class="line">        Thread t &#x3D; new Thread(my.DownFile);     &#x2F;&#x2F;new 一个Thread对象，传递my的DowanFile方法</span><br><span class="line">        t.Start();</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><a href="https://imgchr.com/i/N3IrlQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/21/N3IrlQ.png" alt="N3IrlQ.png"></a></p>
+<br>]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>语言继承查询(LINQ)</title>
     <url>/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/</url>
     <content><![CDATA[<h2 id="语言继承查询-LINQ"><a href="#语言继承查询-LINQ" class="headerlink" title="语言继承查询 (LINQ)"></a>语言继承查询 (LINQ)</h2><p>语言集成查询 (LINQ) 是一系列直接将查询功能集成到 C# 语言的技术统称，是.<code>NET Frameorek 3.5</code> 的新增特性。<br>借助LINQ，可以使用语言关键字和熟悉的运算符针对强类型化对象集合编写查询，通俗一点说就是是指将查询功能和语言结合起来，从而为我们提供一种统一的方式，让我们能在C#或VB.NET语言中直接查询和操作各种数据。</p>
@@ -889,6 +944,56 @@ Console.WriteLine(name);    // Harry</code></pre><p>LINQ 查询变量被类型�
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
+    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
+<a id="more"></a>
+
+<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
+<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
+<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
+<br/>
+
+<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+        <tag>VS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬坑-显示器标识号与屏幕区域不匹配的问题</title>
+    <url>/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="爬坑：关于显示器标识号与屏幕区域不匹配的问题"><a href="#爬坑：关于显示器标识号与屏幕区域不匹配的问题" class="headerlink" title="爬坑：关于显示器标识号与屏幕区域不匹配的问题"></a>爬坑：关于显示器标识号与屏幕区域不匹配的问题</h2><p>最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。</p>
+<p>起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。</p>
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201010203717382.png" alt="image-20201010203717382" style="zoom: 50%;" />
+
+<p>那就做呗，然后在项目的加载事件里添加了几行代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private void ShowToLastSc(int count)</span><br><span class="line">&#123;</span><br><span class="line">    Screen[] sc;</span><br><span class="line">    sc &#x3D; Screen.AllScreens;</span><br><span class="line"></span><br><span class="line">    this.StartPosition &#x3D; FormStartPosition.Manual;</span><br><span class="line">    &#x2F;&#x2F;this.Location &#x3D; new Point(sc[count].Bounds.Left, sc[count].Bounds.Top);</span><br><span class="line">    this.Left &#x3D; sc[count].Bounds.Left;</span><br><span class="line">    this.Top &#x3D; sc[count].Bounds.Top;</span><br><span class="line">    this.Width &#x3D; sc[count].Bounds.Width;</span><br><span class="line">    this.Height &#x3D; sc[count].Bounds.Height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后发现效果不对，原本该显示在最后一块屏幕的窗口显示在了1号屏。</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+        <tag>计算机硬件</tag>
       </tags>
   </entry>
 </search>

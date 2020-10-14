@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Socket/TcpListener/UdpClient |  阿虞在路上
+    C#中关键字ref与out的区别 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Socket-TcpListener-UdpClient" class="article article-type-post" itemscope
+  <article id="post-C-中关键字ref与out的区别" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Socket/TcpListener/UdpClient
+  C#中关键字ref与out的区别
 </h1>
  
 
@@ -61,8 +61,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/06/26/Socket-TcpListener-UdpClient/" class="article-date">
-  <time datetime="2020-06-26T14:26:58.000Z" itemprop="datePublished">2020-06-26</time>
+      <a href="/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time datetime="2020-10-14T12:20:11.000Z" itemprop="datePublished">2020-10-14</time>
 </a>
       
   <div class="article-category">
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">599</span>
+            <span class="post-count">671</span>
         </span>
     </span>
 
@@ -110,42 +110,26 @@
       
 
       
-      <p>Socket/TcpListener/UdpClient同属于命名空间<code>System.Net.Sockets</code>，<code>System.Net.Sockets</code>命名空间为需要严密控制网络访问的开发人员提供了 Windows Sockets (Winsock) 接口的托管实现。</p>
-<a id="more"></a>
+      <h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
+<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
+<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
+<blockquote>
+<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="Socket-套接字-编程"><a href="#Socket-套接字-编程" class="headerlink" title="Socket(套接字)编程"></a>Socket(套接字)编程</h2><h3 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h3><p>基于<code>TCP协议</code>的Socket通讯类似于B/S架构，面向连接，但不同的是服务器端可以向客户端主动推送消息。  </p>
-<p>使用TCP协议通讯需要具备以下几个条件：</p>
-<ol>
-<li>建立一个<code>套接字</code>(Socket)</li>
-<li>绑定服务器端<code>IP地址</code>(IPAddress)和端口号(Port)</li>
-<li>利用<code>Listen()</code>方法开启监听</li>
-<li>利用<code>Accept()</code>方法尝试与客户端建立一个连接</li>
-<li>利用<code>Connect()</code>方法与服务器建立连接</li>
-<li>利用<code>Send()</code>方法向建立连接的主机发送消息</li>
-<li>利用<code>Recive()</code>方法接收来自建立连接的主机的消息</li>
-</ol>
-<p><img src="https://s1.ax1x.com/2020/06/26/Nsba26.png" alt="Nsba26.png"></p>
-<h3 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h3><p>基于<code>UDP协议</code>是无连接模式通讯，占用资源少，响应速度快，延时低。至于可靠性，可通过应用层的控制来满足。  </p>
-<p>使用TCP协议通讯需要具备以下几个条件：</p>
-<ol>
-<li>建立一个<code>套接字Socket</code></li>
-<li>绑定服务器端I<code>P地址及端口号</code></li>
-<li>通过<code>SendTo()</code>方法向指定主机发送消息(需提供主机IP和端口号)</li>
-<li>通过<code>ReciveFrom()</code>方法接收指定主机发送的消息(需提供主机IP和端口号)</li>
-</ol>
-<p><img src="https://s1.ax1x.com/2020/06/26/NsbU8x.png" alt="NsbU8x.png"></p>
-<h3 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h3><p>TCP协议和UDP协议连接过程的区别：</p>
-<ol>
-<li>基于连接和无连接；</li>
-<li>对系统资源的要求不同，TCP较多，UDP较少；</li>
-<li>UDP程序结构较简单；</li>
-<li>流模式(<code>Stream</code>)和数据报模式(<code>Dgram</code>)；</li>
-<li>TCP保证数据正确性，UDP可能会丢包，TCP保证数据顺序，UDP不保证。</li>
-</ol>
-<h2 id="TcpClient-TcpListener-UdpClient"><a href="#TcpClient-TcpListener-UdpClient" class="headerlink" title="TcpClient,TcpListener,UdpClient"></a>TcpClient,TcpListener,UdpClient</h2><p>应用程序可以通过<code>TcpClient</code>、<code>TcpListener</code>和<code>UdpClient</code>类使用传输控制协议(TCP)和用户数据文报协议(UDP)服务。这些协议类建立在<code>System.Net.Sockets.Socket</code>类的基础之上，辅助数据传送的细节(也就是说TcpClient、TcpListener和UdpClisent类是用来简化Socket的)。  </p>
-<p><code>TcpClient</code>和<code>TcpListener</code>使用<code>NetworkStream</code>类表示网络，使用GetStream方法返回网络流，然后调用该Stream的<code>Read</code>和<code>Write</code>方法。NetworkStream不拥有协议类的基础套接字，因此关闭NetworkStream不影响套接字。  </p>
-<p>UdpClient类使用字节数组(byte[])保存UDP数据文报，使用<code>Send</code>方法向网络发送数据，使用<code>Receive</code>方法接收传入的数据文报。</p>
-<br>
+<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
+</blockquote>
+<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
+<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
 
       
       <!-- reward -->
@@ -210,14 +194,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/06/26/Socket-TcpListener-UdpClient/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Socket/" rel="tag">Socket</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
 
 
     </footer>
@@ -228,19 +212,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            爬坑-关于“未能加载文件或程序集”的解决方法
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/" class="article-nav-link">
+      <a href="/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">线程调用带参数方法</div>
+        <div class="article-nav-title">爬坑-显示器标识号与屏幕区域不匹配的问题</div>
       </a>
     
   </nav>
