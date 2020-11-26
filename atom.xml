@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-10-14T13:28:41.948Z</updated>
+  <updated>2020-11-26T00:41:02.473Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSharp6新特性</title>
+    <link href="https://opppmarc.github.io/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <id>https://opppmarc.github.io/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/</id>
+    <published>2020-11-26T00:39:43.000Z</published>
+    <updated>2020-11-26T00:41:02.473Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;有关C-6新特性的简单总结&quot;&gt;&lt;a href=&quot;#有关C-6新特性的简单总结&quot; class=&quot;headerlink&quot; title=&quot;有关C#6新特性的简单总结&quot;&gt;&lt;/a&gt;有关C#6新特性的简单总结&lt;/h2&gt;&lt;p&gt;转载自Zoe_yan &lt;a href=&quot;https://www.cnblogs.com/zoe-yan/p/10276270.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;《C# 6新特性简单总结》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最近在看《C#高级编程 C# 6&amp;amp;.NET Core 1.0》，会做一些读书笔记，也算对知识的总结与沉淀了。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+      <category term="转载" scheme="https://opppmarc.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
   
   <entry>
     <title>C#中关键字ref与out的区别</title>
@@ -472,28 +496,6 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
       <category term="Blog" scheme="https://opppmarc.github.io/tags/Blog/"/>
     
       <category term="随笔" scheme="https://opppmarc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面向对象：类定义/构造/属性</title>
-    <link href="https://opppmarc.github.io/2020/05/27/Object-oriented/"/>
-    <id>https://opppmarc.github.io/2020/05/27/Object-oriented/</id>
-    <published>2020-05-27T08:02:03.000Z</published>
-    <updated>2020-06-09T09:00:20.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;类的定义&quot;&gt;&lt;a href=&quot;#类的定义&quot; class=&quot;headerlink&quot; title=&quot;类的定义&quot;&gt;&lt;/a&gt;类的定义&lt;/h2&gt;&lt;p&gt;对象是类的实例，构成类的方法和变量是类的成员。&lt;br&gt;定义类的一般形式：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;access specifier&amp;gt; class  class_name&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#x2F;&amp;#x2F; member variables&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;data type&amp;gt; variable1;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;data type&amp;gt; variable2;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;data type&amp;gt; variableN;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#x2F;&amp;#x2F; member methods&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;return type&amp;gt; method1(parameter_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#x2F;&amp;#x2F; method body&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;return type&amp;gt; method2(parameter_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#x2F;&amp;#x2F; method body&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;access specifier&amp;gt; &amp;lt;return type&amp;gt; methodN(parameter_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#x2F;&amp;#x2F; method body&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
-    
-    
-      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
     
   </entry>
   

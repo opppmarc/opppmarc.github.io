@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>16信管答辩简记</title>
+    <url>/2020/05/16/16Reply/</url>
+    <content><![CDATA[<p>简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。</p>
+<a id="more"></a>
+<p>以下是部分答辩内容，不代表全部。</p>
+<h3 id="留学信息检索系统"><a href="#留学信息检索系统" class="headerlink" title="留学信息检索系统"></a>留学信息检索系统</h3><p>1.选题背景 2.现有检索系统现状 3.研究意义 4.技术架构 5.成果 6.总结/优点/不足 7.致谢</p>
+<ul>
+<li>Q:数据比较简单，如果出现复杂数据时如何处理 </li>
+<li>Q:系统中的分类有无与信息结合，是存在自动化分类还是需要人工进行分类 </li>
+<li>A:有用到phyton (应该是无自动化)</li>
+</ul>
+<h3 id="基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站"><a href="#基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站" class="headerlink" title="基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)"></a>基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)</h3><p>1.需求及技术选型<br>2.功能分析：点赞/用户私信/多实体评论中心/页面内容展示/账号安全保障<br>4.系统实现<br>5.压力测试：多线程组并发测试<br>6.结论： 创新之处/存在问题/后续研究方向</p>
+<ul>
+<li>Q:能否通过实际应用</li>
+<li>Q:技术类社区和普通社区有什么不同，在网站技术上怎么体现它的不同</li>
+</ul>
+<h3 id="信管专业本科生就业状况的调查与分析"><a href="#信管专业本科生就业状况的调查与分析" class="headerlink" title="信管专业本科生就业状况的调查与分析"></a>信管专业本科生就业状况的调查与分析</h3><p>1.论文绪论<br>采用问卷调查法、文献调查法调查相关学生就业状况，针对具体问题提出措施<br>2.研究方法 3.调查阐述 4.研究成果 5.总结展望 (比较水,分析不够深入) 最后致谢</p>
+<ul>
+<li>Q:论文中的分析总结比较简短？最好能体现基于现在数据所采用的数理分析方法、统计方法的重要作用，而不是着重展示大量数据</li>
+<li>Q:数据样本数量有多大？(有点少)数据样本获取之后是怎么对数据进行处理的？ </li>
+<li>A:采用交叉分析法 </li>
+<li>Q:能具体讲一下吗 </li>
+<li>Q:有无借助其他数据工具进行辅助分析还是单纯是自己分析的数据</li>
+</ul>
+<h3 id="知识管理与企业核心竞争力的培养研究"><a href="#知识管理与企业核心竞争力的培养研究" class="headerlink" title="知识管理与企业核心竞争力的培养研究"></a>知识管理与企业核心竞争力的培养研究</h3><p>1.选题背景 2.研究意义 3.研究方法 文献研究法和案例分析法 4.案例分析 (分析内容偏少) 5.论文总结 (缺乏致谢)</p>
+<ul>
+<li>Q:论文中能体现专业素养或技术的亮点在哪？</li>
+<li>A:回答模棱两可</li>
+<li>Q:为什么选择所调查的三所公司？ </li>
+<li>A:公司规模大..在行业有代表性..有充足的文献可供参考</li>
+<li>Q:对论文这块的研究，你得出什么具体的成果了吗？</li>
+<li>A:答案模糊 显然没有自己独到的成果</li>
+</ul>
+<h3 id="出租屋管理信息系统的设计与实现"><a href="#出租屋管理信息系统的设计与实现" class="headerlink" title="出租屋管理信息系统的设计与实现"></a>出租屋管理信息系统的设计与实现</h3><p>1.背景 2.系统分析 从软件的使用主体来进行分析需求 3.主要功能模块 4.实现方法 5.总结 (缺乏致谢)</p>
+<ul>
+<li>Q:实现了吗各个模块？ </li>
+<li>A:没有全实现，只针对业务进行了实现</li>
+<li>Q:基本功能是有了，但是还是有点简单</li>
+</ul>
+<h3 id="项目管理对公司绩效的影响——以威拓公司为例"><a href="#项目管理对公司绩效的影响——以威拓公司为例" class="headerlink" title="项目管理对公司绩效的影响——以威拓公司为例"></a>项目管理对公司绩效的影响——以威拓公司为例</h3><p>1.研究背景及意义 2.项目管理现状 3.项目管理对公司绩效的影响:管理制度/胜任力/资源管理/客户管理 4.项目管理对威拓公司绩效的影响(具体案例分析) 6.总结 </p>
+<ul>
+<li>缺乏正反方面的例子</li>
+</ul>
+<h3 id="基于4GL的中小型制造业ERP采购管理系统的设计与实现"><a href="#基于4GL的中小型制造业ERP采购管理系统的设计与实现" class="headerlink" title="基于4GL的中小型制造业ERP采购管理系统的设计与实现"></a>基于4GL的中小型制造业ERP采购管理系统的设计与实现</h3><p>1.背景 2.业务流程 流程图 3.系统设计 系统组成模块/模块功能  其中MRP功能没有实现 4.实现方法 开发语言Genero FGL/Oracle数据库(阐述了为什么要使用这样的技术搭配)  实现后的运行页面展示  接口功能未实现 5.结论 6.致谢</p>
+<ul>
+<li>Q:这个erp系统是企业在用的吗？ </li>
+<li>A:不是，是企业提供的用来练习的 </li>
+<li>Q:这个系统是自己做的吗？ </li>
+<li>A:是公司的框架，其他自己开发</li>
+</ul>
+]]></content>
+      <categories>
+        <category>信息管理与信息系统</category>
+      </categories>
+      <tags>
+        <tag>信管</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo+GithubBlog搭建</title>
     <url>/2020/05/17/BlogBuding/</url>
     <content><![CDATA[<p>基于开源框架搭建博客，可以直接在<em>github page</em>上平台上托管自己的博客。Hexo是高效的静态网站生成框架，它基于Node.js，快速、简单且功能强大。通过Hexo，可以直接使用Markdown语法来撰写博客，但在这之前需要做好一些准备工作…</p>
@@ -94,62 +153,110 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>16信管答辩简记</title>
-    <url>/2020/05/16/16Reply/</url>
-    <content><![CDATA[<p>简要听了下16级师兄师姐的线上毕业答辩会议，可以说是水平差异比较大，但于学弟而言一场答辩的旁听也大致让我了解了大概的流程并有吸取到一些经验吧，总得感受就是准备一定要充分，只有充足的准备才能让你的项目真真正正落地，或者让论文研究更加完善。</p>
+    <title>CSharp6新特性</title>
+    <url>/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="有关C-6新特性的简单总结"><a href="#有关C-6新特性的简单总结" class="headerlink" title="有关C#6新特性的简单总结"></a>有关C#6新特性的简单总结</h2><p>转载自Zoe_yan <a href="https://www.cnblogs.com/zoe-yan/p/10276270.html" target="_blank" rel="noopener">《C# 6新特性简单总结》</a></p>
+<p>最近在看《C#高级编程 C# 6&amp;.NET Core 1.0》，会做一些读书笔记，也算对知识的总结与沉淀了。  </p>
 <a id="more"></a>
-<p>以下是部分答辩内容，不代表全部。</p>
-<h3 id="留学信息检索系统"><a href="#留学信息检索系统" class="headerlink" title="留学信息检索系统"></a>留学信息检索系统</h3><p>1.选题背景 2.现有检索系统现状 3.研究意义 4.技术架构 5.成果 6.总结/优点/不足 7.致谢</p>
-<ul>
-<li>Q:数据比较简单，如果出现复杂数据时如何处理 </li>
-<li>Q:系统中的分类有无与信息结合，是存在自动化分类还是需要人工进行分类 </li>
-<li>A:有用到phyton (应该是无自动化)</li>
-</ul>
-<h3 id="基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站"><a href="#基于SSM与Redis的技术类主题社区的设计与实现-技术类主题社区网站" class="headerlink" title="基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)"></a>基于SSM与Redis的技术类主题社区的设计与实现(技术类主题社区网站)</h3><p>1.需求及技术选型<br>2.功能分析：点赞/用户私信/多实体评论中心/页面内容展示/账号安全保障<br>4.系统实现<br>5.压力测试：多线程组并发测试<br>6.结论： 创新之处/存在问题/后续研究方向</p>
-<ul>
-<li>Q:能否通过实际应用</li>
-<li>Q:技术类社区和普通社区有什么不同，在网站技术上怎么体现它的不同</li>
-</ul>
-<h3 id="信管专业本科生就业状况的调查与分析"><a href="#信管专业本科生就业状况的调查与分析" class="headerlink" title="信管专业本科生就业状况的调查与分析"></a>信管专业本科生就业状况的调查与分析</h3><p>1.论文绪论<br>采用问卷调查法、文献调查法调查相关学生就业状况，针对具体问题提出措施<br>2.研究方法 3.调查阐述 4.研究成果 5.总结展望 (比较水,分析不够深入) 最后致谢</p>
-<ul>
-<li>Q:论文中的分析总结比较简短？最好能体现基于现在数据所采用的数理分析方法、统计方法的重要作用，而不是着重展示大量数据</li>
-<li>Q:数据样本数量有多大？(有点少)数据样本获取之后是怎么对数据进行处理的？ </li>
-<li>A:采用交叉分析法 </li>
-<li>Q:能具体讲一下吗 </li>
-<li>Q:有无借助其他数据工具进行辅助分析还是单纯是自己分析的数据</li>
-</ul>
-<h3 id="知识管理与企业核心竞争力的培养研究"><a href="#知识管理与企业核心竞争力的培养研究" class="headerlink" title="知识管理与企业核心竞争力的培养研究"></a>知识管理与企业核心竞争力的培养研究</h3><p>1.选题背景 2.研究意义 3.研究方法 文献研究法和案例分析法 4.案例分析 (分析内容偏少) 5.论文总结 (缺乏致谢)</p>
-<ul>
-<li>Q:论文中能体现专业素养或技术的亮点在哪？</li>
-<li>A:回答模棱两可</li>
-<li>Q:为什么选择所调查的三所公司？ </li>
-<li>A:公司规模大..在行业有代表性..有充足的文献可供参考</li>
-<li>Q:对论文这块的研究，你得出什么具体的成果了吗？</li>
-<li>A:答案模糊 显然没有自己独到的成果</li>
-</ul>
-<h3 id="出租屋管理信息系统的设计与实现"><a href="#出租屋管理信息系统的设计与实现" class="headerlink" title="出租屋管理信息系统的设计与实现"></a>出租屋管理信息系统的设计与实现</h3><p>1.背景 2.系统分析 从软件的使用主体来进行分析需求 3.主要功能模块 4.实现方法 5.总结 (缺乏致谢)</p>
-<ul>
-<li>Q:实现了吗各个模块？ </li>
-<li>A:没有全实现，只针对业务进行了实现</li>
-<li>Q:基本功能是有了，但是还是有点简单</li>
-</ul>
-<h3 id="项目管理对公司绩效的影响——以威拓公司为例"><a href="#项目管理对公司绩效的影响——以威拓公司为例" class="headerlink" title="项目管理对公司绩效的影响——以威拓公司为例"></a>项目管理对公司绩效的影响——以威拓公司为例</h3><p>1.研究背景及意义 2.项目管理现状 3.项目管理对公司绩效的影响:管理制度/胜任力/资源管理/客户管理 4.项目管理对威拓公司绩效的影响(具体案例分析) 6.总结 </p>
-<ul>
-<li>缺乏正反方面的例子</li>
-</ul>
-<h3 id="基于4GL的中小型制造业ERP采购管理系统的设计与实现"><a href="#基于4GL的中小型制造业ERP采购管理系统的设计与实现" class="headerlink" title="基于4GL的中小型制造业ERP采购管理系统的设计与实现"></a>基于4GL的中小型制造业ERP采购管理系统的设计与实现</h3><p>1.背景 2.业务流程 流程图 3.系统设计 系统组成模块/模块功能  其中MRP功能没有实现 4.实现方法 开发语言Genero FGL/Oracle数据库(阐述了为什么要使用这样的技术搭配)  实现后的运行页面展示  接口功能未实现 5.结论 6.致谢</p>
-<ul>
-<li>Q:这个erp系统是企业在用的吗？ </li>
-<li>A:不是，是企业提供的用来练习的 </li>
-<li>Q:这个系统是自己做的吗？ </li>
-<li>A:是公司的框架，其他自己开发</li>
-</ul>
+
+<h3 id="1-静态的using声明"><a href="#1-静态的using声明" class="headerlink" title="1. 静态的using声明"></a>1. 静态的using声明</h3><p>静态的using声明允许调用静态方法时不使用类名：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">using System;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;C# 5&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">using static System.Console;</span><br><span class="line"></span><br><span class="line">WriteLine(&quot;C# 6&quot;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-表达式体方法"><a href="#2-表达式体方法" class="headerlink" title="2.表达式体方法"></a>2.表达式体方法</h3><p>表达式体方法只包含一个可以用Lambda语法编写的语句：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public bool IsSquare(Rectangle rect)</span><br><span class="line">&#123;</span><br><span class="line">     return rect.Width &#x3D;&#x3D; rect.Height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public bool IsSquare(Rectangle rect) &#x3D;&gt; rect.Width &#x3D;&#x3D; rect.Height;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-表达式体属性"><a href="#3-表达式体属性" class="headerlink" title="3.表达式体属性"></a>3.表达式体属性</h3><p>与表达式体方法类似，只有get存储器的单行属性可以用Lambda语法编写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public string FullName</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return FirstName + &quot; &quot; + LastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public string FullName &#x3D;&gt; FirstName + &quot; &quot; + LastName;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-自动实现的属性初始化器"><a href="#4-自动实现的属性初始化器" class="headerlink" title="4.自动实现的属性初始化器"></a>4.自动实现的属性初始化器</h3><p>自动实现的属性可以用属性初始化器来初始化：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">    public Person()</span><br><span class="line">    &#123;</span><br><span class="line">        Age &#x3D; 24;</span><br><span class="line">    &#125;</span><br><span class="line">    public int Age &#123; get; set; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">    public int Age &#123; get; set; &#125; &#x3D; 24;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5-只读的自动属性"><a href="#5-只读的自动属性" class="headerlink" title="5.只读的自动属性"></a>5.只读的自动属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">private readonly int _bookId;</span><br><span class="line">public BookId</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _bookId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">private readonly int _bookId;</span><br><span class="line">public BookId &#123; get; &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="6-nameof运算符"><a href="#6-nameof运算符" class="headerlink" title="6.nameof运算符"></a>6.nameof运算符</h3><p>使用新的nameof运算符，可以访问字段名、属性名、方法名和类型名。这样，在重构时就不会遗漏名称的改变：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public void Method(object o)</span><br><span class="line">&#123;</span><br><span class="line">    if(o &#x3D;&#x3D; null)</span><br><span class="line">    &#123;</span><br><span class="line">        throw new ArgumentNullException(&quot;o&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public void Method(object o)</span><br><span class="line">&#123;</span><br><span class="line">    if(o &#x3D;&#x3D; null)</span><br><span class="line">     &#123;</span><br><span class="line">        throw new ArgumentNullException(nameof(o));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="7-空值传播运算符"><a href="#7-空值传播运算符" class="headerlink" title="7.空值传播运算符"></a>7.空值传播运算符</h3><p>空值传播运算符简化了空值的检查：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">int? age &#x3D; p &#x3D;&#x3D; null ? null : p.Age;</span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">int? age &#x3D; p?.Age;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-字符串插值"><a href="#8-字符串插值" class="headerlink" title="8.字符串插值"></a>8.字符串插值</h3><p>字符串插值删除了对string.Format的调用，它不在字符串中使用编号的格式占位符，占位符可以包含表达式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public override string ToString()</span><br><span class="line">&#123;</span><br><span class="line">    return string.Format(&quot;&#123;0&#125;,&#123;1&#125;&quot;, Title, Publisher);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public override string ToString() &#x3D;&gt; $&quot;&#123;Title&#125;&#123;Publisher&#125;&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-字典初始化"><a href="#9-字典初始化" class="headerlink" title="9.字典初始化"></a>9.字典初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">var dic &#x3D; new Dictionary&lt;int, string&gt;();</span><br><span class="line">dic.Add(3, &quot;three&quot;);</span><br><span class="line">dic.Add(7, &quot;seven&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">var dic &#x3D; new Dictionary&lt;int, string&gt;()</span><br><span class="line">&#123;</span><br><span class="line">    [3] &#x3D; &quot;three&quot;,</span><br><span class="line">    [7] &#x3D; &quot;seven&quot;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-异常过滤器"><a href="#10-异常过滤器" class="headerlink" title="10.异常过滤器"></a>10.异常过滤器</h3><p>异常过滤器允许在捕获异常之前过滤它们：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">      &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    if (ex.ErrorCode !&#x3D; 405) throw;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">      &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex) when (ex.ErrorCode &#x3D;&#x3D; 405)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>11.catch中的await<br>await现在可以在catch子句中使用，C# 5需要一种变通方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">bool hasError &#x3D; false;</span><br><span class="line">string errorMsg &#x3D; null;</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    hasError &#x3D; true;</span><br><span class="line">    errorMsg &#x3D; ex.Message;</span><br><span class="line">&#125;</span><br><span class="line">if (hasError)</span><br><span class="line">&#123;</span><br><span class="line">    await new MessageDialog().ShowAsync(errorMsg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    await new MessageDialog().ShowAsync(ex.Message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 ]]></content>
       <categories>
-        <category>信息管理与信息系统</category>
+        <category>C#</category>
       </categories>
       <tags>
-        <tag>信管</tag>
+        <tag>C#</tag>
+        <tag>转载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DeadCellEvolve</title>
+    <url>/2020/05/29/DeadCellEvolve/</url>
+    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
+<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
+<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
+<a id="more"></a>
+
+<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
+<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
+<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
+<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
+<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
+<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
+<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
+<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
+<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
+<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
+<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
+<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
+<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
+<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
+<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
+<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
+<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
+<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
+<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
+<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
+<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
+<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
+<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
+<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
+<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
+<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
+<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
+<br>  
+<br>  
+]]></content>
+      <categories>
+        <category>译文</category>
+      </categories>
+      <tags>
+        <tag>单机</tag>
+        <tag>搬运</tag>
+        <tag>译文</tag>
       </tags>
   </entry>
   <entry>
@@ -237,55 +344,15 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>DeadCellEvolve</title>
-    <url>/2020/05/29/DeadCellEvolve/</url>
-    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
-<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
-<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
 <a id="more"></a>
-
-<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
-<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
-<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
-<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
-<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
-<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
-<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
-<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
-<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
-<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
-<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
-<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
-<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
-<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
-<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
-<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
-<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
-<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
-<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
-<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
-<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
-<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
-<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
-<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
-<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
-<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
-<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
-<br>  
-<br>  
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
 ]]></content>
-      <categories>
-        <category>译文</category>
-      </categories>
       <tags>
-        <tag>单机</tag>
-        <tag>搬运</tag>
-        <tag>译文</tag>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -354,18 +421,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </categories>
       <tags>
         <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HelloWorld</title>
-    <url>/2020/05/15/HelloWorld/</url>
-    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
-<a id="more"></a>
-<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
-<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -613,6 +668,30 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>删除排序数组重复项</title>
+    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
+<pre><code>示例：
+给定数组 nums = [1,1,2],   
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
+你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>文字截断在blog里不起作用？</title>
     <url>/2020/05/27/TruncationError/</url>
     <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
@@ -639,65 +718,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>Blog</tag>
         <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>删除排序数组重复项</title>
-    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
-    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
-<a id="more"></a>
-
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
-<pre><code>示例：
-给定数组 nums = [1,1,2],   
-函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
-你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
-<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最大子序和</title>
-    <url>/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
-<pre><code>示例：
-输入[-2,1,-3,4,-1,2,1,-5,4]</code></pre><a id="more"></a>
-
-<h2 id="暴力破解法"><a href="#暴力破解法" class="headerlink" title="暴力破解法"></a>暴力破解法</h2><p>通过枚举判断 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)   &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum &#x3D; 0;</span><br><span class="line">                for (int k &#x3D; i; k &lt; j; k++)     &#x2F;&#x2F;暴力计算</span><br><span class="line">                &#123;</span><br><span class="line">                    sum +&#x3D; nums[k];</span><br><span class="line">                    if (sum &gt; max)</span><br><span class="line">                    &#123;</span><br><span class="line">                        max &#x3D; sum;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;intput: [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">&#x2F;&#x2F;output: 6   (leetcode:6)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>Int32.MinValue</code>字段表示Int32的最小可能值。 此字段是常量：<code>public const int MinValue = -2147483648;</code></p>
-</blockquote>
-<h2 id="改进暴力法"><a href="#改进暴力法" class="headerlink" title="改进暴力法"></a>改进暴力法</h2><p>在上面的代码中可以发现在程序每次执行第二层循环时sum都会清零，所以在我们每次计算子序和时都要重新从i处累加至j,就重复计算了一部分子序和。如果sum不清理，在上一次的序列和基础上来计算新的序列和，就可以减少一层for循环，由O(N^3)变成O(N^2)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;       &#x2F;&#x2F;定义max值为Integer最小值</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)       &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            sum &#x3D; 0;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum +&#x3D; nums[j];     &#x2F;&#x2F;在上一次的序列和基础上来计算新的序列和</span><br><span class="line">                if (sum &gt; max)</span><br><span class="line">                &#123;</span><br><span class="line">                    max &#x3D; sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h2><blockquote>
-<p>（据说这道题是《编程珠机》里面的题目，叫做扫描法，速度最快，扫描一次就求出结果，复杂度是O（n）。书中说，这个算法是一个统计学家提出的，在这略过。）<br>当我们加上一个正数时，和会增加；当我们加上一个负数时，和会减少。如果当前得到的和是个负数，那么这个和在接下来的累加中应该抛弃并重新清零，不然的话这个负数将会减少接下来的和。<br>zwzsdy在他的CSDN博客中有关于该方法的证明和想法，<a href="https://blog.csdn.net/zwzsdy/article/details/80029796" target="_blank" rel="noopener">传送门</a>。  </p>
-</blockquote>
-<h2 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h2><p>动态规划法也是LeetCode的官方题解方法之一，另一个是分治法。<br>设sum[i]为以第i个元素结尾且和最大的连续子数组。假设对于元素i，所有以它前面的元素结尾的子数组的长度都已经求得，那么以第i个元素结尾且和最大的连续子数组实际上，要么是以第i-1个元素结尾且和最大的连续子数组加上这个元素，要么是只包含第i个元素，即知状态转移方程为：sum[i] = max(sum[i-1] + a[i], a[i])。可以通过判断sum[i-1] + a[i]是否大于a[i]来做选择，而这实际上等价于判断sum[i-1]是否大于0。由于每次运算只需要前一次的结果，因此并不需要像普通的动态规划那样保留之前所有的计算结果，只需要保留上一次的即可，因此算法的时间和空间复杂度都很小。  </p>
-<blockquote>
-<p>状态转移方程:是动态规划中本阶段的状态往往是上一阶段状态和上一阶段决策的结果。如果给定了第K阶段的状态Sk以及决策uk(Sk)，则第K+1阶段的状态Sk+1也就完全确定。<br>中文名状态转移方程应用学科编程</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int pre &#x3D; 0, maxAns &#x3D; nums[0];</span><br><span class="line">        foreach (int x in nums) &#123;</span><br><span class="line">            pre &#x3D; Math.Max(pre + x, x);</span><br><span class="line">            maxAns &#x3D; Math.Max(maxAns, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        return maxAns;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -749,6 +769,41 @@ lnkstack.ShowItem();</code></pre><br>
       </categories>
       <tags>
         <tag>C#</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最大子序和</title>
+    <url>/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<pre><code>示例：
+输入[-2,1,-3,4,-1,2,1,-5,4]</code></pre><a id="more"></a>
+
+<h2 id="暴力破解法"><a href="#暴力破解法" class="headerlink" title="暴力破解法"></a>暴力破解法</h2><p>通过枚举判断 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)   &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum &#x3D; 0;</span><br><span class="line">                for (int k &#x3D; i; k &lt; j; k++)     &#x2F;&#x2F;暴力计算</span><br><span class="line">                &#123;</span><br><span class="line">                    sum +&#x3D; nums[k];</span><br><span class="line">                    if (sum &gt; max)</span><br><span class="line">                    &#123;</span><br><span class="line">                        max &#x3D; sum;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;intput: [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">&#x2F;&#x2F;output: 6   (leetcode:6)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>Int32.MinValue</code>字段表示Int32的最小可能值。 此字段是常量：<code>public const int MinValue = -2147483648;</code></p>
+</blockquote>
+<h2 id="改进暴力法"><a href="#改进暴力法" class="headerlink" title="改进暴力法"></a>改进暴力法</h2><p>在上面的代码中可以发现在程序每次执行第二层循环时sum都会清零，所以在我们每次计算子序和时都要重新从i处累加至j,就重复计算了一部分子序和。如果sum不清理，在上一次的序列和基础上来计算新的序列和，就可以减少一层for循环，由O(N^3)变成O(N^2)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;       &#x2F;&#x2F;定义max值为Integer最小值</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)       &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            sum &#x3D; 0;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum +&#x3D; nums[j];     &#x2F;&#x2F;在上一次的序列和基础上来计算新的序列和</span><br><span class="line">                if (sum &gt; max)</span><br><span class="line">                &#123;</span><br><span class="line">                    max &#x3D; sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h2><blockquote>
+<p>（据说这道题是《编程珠机》里面的题目，叫做扫描法，速度最快，扫描一次就求出结果，复杂度是O（n）。书中说，这个算法是一个统计学家提出的，在这略过。）<br>当我们加上一个正数时，和会增加；当我们加上一个负数时，和会减少。如果当前得到的和是个负数，那么这个和在接下来的累加中应该抛弃并重新清零，不然的话这个负数将会减少接下来的和。<br>zwzsdy在他的CSDN博客中有关于该方法的证明和想法，<a href="https://blog.csdn.net/zwzsdy/article/details/80029796" target="_blank" rel="noopener">传送门</a>。  </p>
+</blockquote>
+<h2 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h2><p>动态规划法也是LeetCode的官方题解方法之一，另一个是分治法。<br>设sum[i]为以第i个元素结尾且和最大的连续子数组。假设对于元素i，所有以它前面的元素结尾的子数组的长度都已经求得，那么以第i个元素结尾且和最大的连续子数组实际上，要么是以第i-1个元素结尾且和最大的连续子数组加上这个元素，要么是只包含第i个元素，即知状态转移方程为：sum[i] = max(sum[i-1] + a[i], a[i])。可以通过判断sum[i-1] + a[i]是否大于a[i]来做选择，而这实际上等价于判断sum[i-1]是否大于0。由于每次运算只需要前一次的结果，因此并不需要像普通的动态规划那样保留之前所有的计算结果，只需要保留上一次的即可，因此算法的时间和空间复杂度都很小。  </p>
+<blockquote>
+<p>状态转移方程:是动态规划中本阶段的状态往往是上一阶段状态和上一阶段决策的结果。如果给定了第K阶段的状态Sk以及决策uk(Sk)，则第K+1阶段的状态Sk+1也就完全确定。<br>中文名状态转移方程应用学科编程</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int pre &#x3D; 0, maxAns &#x3D; nums[0];</span><br><span class="line">        foreach (int x in nums) &#123;</span><br><span class="line">            pre &#x3D; Math.Max(pre + x, x);</span><br><span class="line">            maxAns &#x3D; Math.Max(maxAns, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        return maxAns;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
@@ -883,6 +938,51 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
+    <title>线程PlatformNotSupportedException异常</title>
+    <url>/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：  </p>
+<pre><code>System.PlatformNotSupportedException
+HResult=0x80131539
+Message=Operation is not supported on this platform.
+Source=System.Private.CoreLib
+StackTrace:
+at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)
+at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</code></pre><a id="more"></a>
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在vs2019创建.NET Core(3.1.301)的控制台应用程序，执行以下代码： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;&#x2F;Action a &#x3D; Test;</span><br><span class="line">        Func&lt;int, string, int&gt; a &#x3D; Test;        &#x2F;&#x2F;通过委托开起一个线程    </span><br><span class="line">        IAsyncResult ar &#x3D; a.BeginInvoke(100, &quot;siki&quot;, null, null);      &#x2F;&#x2F;run报错：平台不支持该操作</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        while (ar.IsCompleted &#x3D;&#x3D; false)     &#x2F;&#x2F;如果当前线程没有执行完毕</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&#39;.&#39;);</span><br><span class="line">            Thread.Sleep(100);      &#x2F;&#x2F;让Main线程休眠100ms</span><br><span class="line">        &#125;</span><br><span class="line">        int res &#x3D; a.EndInvoke(ar);      &#x2F;&#x2F;取得异步线程a的返回值ar</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int Test(int i, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;test&quot; + i + str);</span><br><span class="line">        Thread.Sleep(100);          &#x2F;&#x2F;让当前线程休眠100ms</span><br><span class="line">        return 100;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
+<p>运行前代码中没有出现编译错误，但是在运行后在“IAsyncResult ar = a.BeginInvoke(100, “siki”, null, null);”处会返回一个异常：System.PlatformNotSupportedException 。  </p>
+<p>上网找了下相关异常的处理方式，最后参考了<a href="https://www.cnblogs.com/Zev_Fung/" target="_blank" rel="noopener">阿水zev</a>的一篇博客。 <a href="https://www.cnblogs.com/Zev_Fung/p/12823418.html" target="_blank" rel="noopener">(传送门)</a>    </p>
+<p>阿水例子中使用APM的线程代码运行后会出现同样的错误：  </p>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35hMd.png" alt="N35hMd.png"></p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>异步编程模型(APM)(使用IAsyncResult和BeginInvoke)不再是异步调用的优选方法。从.NET Framework 4.5开始，基于任务的异步模式(TAP)是推荐的异步模型。因此，而且由于异步委托的实现取决于远程处理但.NET Core不存在的功能，BeginInvoke和EndInvoke委托调用不.NET Core支持。（GitHub问题 <a href="https://github.com/dotnet/runtime/issues/16312" target="_blank" rel="noopener">dotnet/corefx＃5940</a> 中对此进行了讨论）</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来直接就在阿水的例子上实验Task.Run了，自己的代码越改越多bug···<br>改为基于任务的异步模式Task.Run  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public delegate string AsyncMethodCaller(int callDuration, out int threadId);</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">        AsyncMethodCaller caller &#x3D; new AsyncMethodCaller(TestMethodAsync);</span><br><span class="line">        int threadid &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F;开启异步操作 IAsyncResult BeginInvoke</span><br><span class="line">        var workTask &#x3D; Task.Run(() &#x3D;&gt; caller.Invoke(3000, out threadid));</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;其他业务&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;调用EndInvoke，等待异步执行完成</span><br><span class="line">        Console.WriteLine(&quot;等待异步方法TestMethodAsync执行完成&quot;);</span><br><span class="line">        string res &#x3D; workTask.Result;</span><br><span class="line">        Console.WriteLine(&quot;Compeleted!&quot;);</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">    static string TestMethodAsync(int callDuration, out int threadId)</span><br><span class="line">    &#123;</span><br><span class="line">        Stopwatch sw &#x3D; new Stopwatch(); &#x2F;&#x2F;创建一个Stopwatch对象 用来测量运行时间</span><br><span class="line">        sw.Start();     &#x2F;&#x2F;开始测量运行时间</span><br><span class="line">        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 5; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;模拟耗时操作</span><br><span class="line">            Thread.Sleep(callDuration);</span><br><span class="line">            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        sw.Stop();      &#x2F;&#x2F;停止策略运行时间</span><br><span class="line">        threadId &#x3D; Thread.CurrentThread.ManagedThreadId;    &#x2F;&#x2F;获取当前线程，获取该线程是否属于托管线程池的值</span><br><span class="line">        return string.Format(&quot;耗时&#123;0&#125;ms.&quot;, sw.ElapsedMilliseconds.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
+<br>
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>C#</category>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线程调用带参数方法</title>
     <url>/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<h2 id="通过Thread发起线程时怎么调用带参数的方法"><a href="#通过Thread发起线程时怎么调用带参数的方法" class="headerlink" title="通过Thread发起线程时怎么调用带参数的方法"></a>通过Thread发起线程时怎么调用带参数的方法</h2><p>在.NET Framework中可以通过2种方法实现线程调用带参数的方法:Thread.Start(object),封装线程的方法和参数</p>
@@ -953,51 +1053,6 @@ Console.WriteLine(name);    // Harry</code></pre><p>LINQ 查询变量被类型�
       </categories>
       <tags>
         <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线程PlatformNotSupportedException异常</title>
-    <url>/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：  </p>
-<pre><code>System.PlatformNotSupportedException
-HResult=0x80131539
-Message=Operation is not supported on this platform.
-Source=System.Private.CoreLib
-StackTrace:
-at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)
-at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</code></pre><a id="more"></a>
-
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在vs2019创建.NET Core(3.1.301)的控制台应用程序，执行以下代码： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;&#x2F;Action a &#x3D; Test;</span><br><span class="line">        Func&lt;int, string, int&gt; a &#x3D; Test;        &#x2F;&#x2F;通过委托开起一个线程    </span><br><span class="line">        IAsyncResult ar &#x3D; a.BeginInvoke(100, &quot;siki&quot;, null, null);      &#x2F;&#x2F;run报错：平台不支持该操作</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        while (ar.IsCompleted &#x3D;&#x3D; false)     &#x2F;&#x2F;如果当前线程没有执行完毕</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&#39;.&#39;);</span><br><span class="line">            Thread.Sleep(100);      &#x2F;&#x2F;让Main线程休眠100ms</span><br><span class="line">        &#125;</span><br><span class="line">        int res &#x3D; a.EndInvoke(ar);      &#x2F;&#x2F;取得异步线程a的返回值ar</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int Test(int i, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;test&quot; + i + str);</span><br><span class="line">        Thread.Sleep(100);          &#x2F;&#x2F;让当前线程休眠100ms</span><br><span class="line">        return 100;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
-<p>运行前代码中没有出现编译错误，但是在运行后在“IAsyncResult ar = a.BeginInvoke(100, “siki”, null, null);”处会返回一个异常：System.PlatformNotSupportedException 。  </p>
-<p>上网找了下相关异常的处理方式，最后参考了<a href="https://www.cnblogs.com/Zev_Fung/" target="_blank" rel="noopener">阿水zev</a>的一篇博客。 <a href="https://www.cnblogs.com/Zev_Fung/p/12823418.html" target="_blank" rel="noopener">(传送门)</a>    </p>
-<p>阿水例子中使用APM的线程代码运行后会出现同样的错误：  </p>
-<p><img src="https://s1.ax1x.com/2020/06/21/N35hMd.png" alt="N35hMd.png"></p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>异步编程模型(APM)(使用IAsyncResult和BeginInvoke)不再是异步调用的优选方法。从.NET Framework 4.5开始，基于任务的异步模式(TAP)是推荐的异步模型。因此，而且由于异步委托的实现取决于远程处理但.NET Core不存在的功能，BeginInvoke和EndInvoke委托调用不.NET Core支持。（GitHub问题 <a href="https://github.com/dotnet/runtime/issues/16312" target="_blank" rel="noopener">dotnet/corefx＃5940</a> 中对此进行了讨论）</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来直接就在阿水的例子上实验Task.Run了，自己的代码越改越多bug···<br>改为基于任务的异步模式Task.Run  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public delegate string AsyncMethodCaller(int callDuration, out int threadId);</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">        AsyncMethodCaller caller &#x3D; new AsyncMethodCaller(TestMethodAsync);</span><br><span class="line">        int threadid &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F;开启异步操作 IAsyncResult BeginInvoke</span><br><span class="line">        var workTask &#x3D; Task.Run(() &#x3D;&gt; caller.Invoke(3000, out threadid));</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;其他业务&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;调用EndInvoke，等待异步执行完成</span><br><span class="line">        Console.WriteLine(&quot;等待异步方法TestMethodAsync执行完成&quot;);</span><br><span class="line">        string res &#x3D; workTask.Result;</span><br><span class="line">        Console.WriteLine(&quot;Compeleted!&quot;);</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">    static string TestMethodAsync(int callDuration, out int threadId)</span><br><span class="line">    &#123;</span><br><span class="line">        Stopwatch sw &#x3D; new Stopwatch(); &#x2F;&#x2F;创建一个Stopwatch对象 用来测量运行时间</span><br><span class="line">        sw.Start();     &#x2F;&#x2F;开始测量运行时间</span><br><span class="line">        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 5; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;模拟耗时操作</span><br><span class="line">            Thread.Sleep(callDuration);</span><br><span class="line">            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        sw.Stop();      &#x2F;&#x2F;停止策略运行时间</span><br><span class="line">        threadId &#x3D; Thread.CurrentThread.ManagedThreadId;    &#x2F;&#x2F;获取当前线程，获取该线程是否属于托管线程池的值</span><br><span class="line">        return string.Format(&quot;耗时&#123;0&#125;ms.&quot;, sw.ElapsedMilliseconds.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
-<br>
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>C#</category>
-        <category>Bug</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>Bug</tag>
       </tags>
   </entry>
 </search>
