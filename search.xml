@@ -153,6 +153,39 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>C#中关键字ref与out的区别</title>
+    <url>/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
+<a id="more"></a>
+
+<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
+<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
+<blockquote>
+<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
+</blockquote>
+<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
+<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSharp6新特性</title>
     <url>/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h2 id="有关C-6新特性的简单总结"><a href="#有关C-6新特性的简单总结" class="headerlink" title="有关C#6新特性的简单总结"></a>有关C#6新特性的简单总结</h2><p>转载自Zoe_yan <a href="https://www.cnblogs.com/zoe-yan/p/10276270.html" target="_blank" rel="noopener">《C# 6新特性简单总结》</a></p>
@@ -208,91 +241,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>DeadCellEvolve</title>
-    <url>/2020/05/29/DeadCellEvolve/</url>
-    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
-<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
-<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
-<a id="more"></a>
-
-<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
-<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
-<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
-<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
-<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
-<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
-<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
-<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
-<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
-<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
-<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
-<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
-<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
-<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
-<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
-<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
-<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
-<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
-<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
-<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
-<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
-<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
-<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
-<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
-<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
-<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
-<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
-<br>  
-<br>  
-]]></content>
-      <categories>
-        <category>译文</category>
-      </categories>
-      <tags>
-        <tag>单机</tag>
-        <tag>搬运</tag>
-        <tag>译文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C#中关键字ref与out的区别</title>
-    <url>/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
-<a id="more"></a>
-
-<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
-<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
-<blockquote>
-<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
-</blockquote>
-<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
-<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSharp中的调试与错误处理</title>
     <url>/2020/05/18/CSharpDebug/</url>
     <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
@@ -344,15 +292,55 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>HelloWorld</title>
-    <url>/2020/05/15/HelloWorld/</url>
-    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+    <title>DeadCellEvolve</title>
+    <url>/2020/05/29/DeadCellEvolve/</url>
+    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
+<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
+<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
 <a id="more"></a>
-<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
-<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
+
+<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
+<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
+<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
+<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
+<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
+<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
+<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
+<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
+<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
+<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
+<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
+<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
+<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
+<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
+<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
+<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
+<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
+<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
+<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
+<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
+<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
+<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
+<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
+<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
+<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
+<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
+<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
+<br>  
+<br>  
 ]]></content>
+      <categories>
+        <category>译文</category>
+      </categories>
       <tags>
-        <tag>随笔</tag>
+        <tag>单机</tag>
+        <tag>搬运</tag>
+        <tag>译文</tag>
       </tags>
   </entry>
   <entry>
@@ -424,6 +412,18 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>HelloWorld</title>
+    <url>/2020/05/15/HelloWorld/</url>
+    <content><![CDATA[<h1 id="起初"><a href="#起初" class="headerlink" title="起初"></a>起初</h1><p>第一次接触到博客的时候是在博客园无意间进入了一位大佬的个人博客，乍一看觉得还挺好看，想着“这是一个人能做出来的东西吗？有点酷欸…”，但后来略微浏览了之后，发现这博主一直在持续输出高质量的技术博客，其中不乏各种学习历程和项目经验。想来自己如若能简要搭建一个博客，对个人生活而言、对编程等学习的记录也是挺有意义的，由此我便萌生了自己搭建博客的想法。</p>
+<a id="more"></a>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p>刚开始个人对搭建博客的认识是：通过花钱买域名、主机、服务器，然后自己编写前端代码，然后搭建好后要各种测试，并时而进行维护，搭建好并长期使博客正常运行就要花费不菲的金钱和时间，且需要一定的相关技术水平。考虑到自己作为学生，经济水平有限，而且前端的知识也忘得七七八八了，自己从零开始搭建博客难免会有点困难。后来通过<a href="http://www.ityouknow.com/" target="_blank" rel="noopener">纯洁的微笑</a>博客中一篇关于通过GithubPages来搭建自己博客的方法，就开始着手在网上搜索相关的教程。网络上的教程大多比较零散，要不就是不够详细，作为新人刚开始也是看得云里雾里的。在看完东家一边看西家的过程中，发现了一位师兄<a href="https://sunhwee.com/" target="_blank" rel="noopener">洪卫</a>的教程，他的教程十分详尽，对我帮助很大。在第1天的时候主要在配置相关环境(git,nodejs),安装Hexo然后创建项目并将Github和本地同步，有了一个初步的雏形。第2天大部分时间都在定制、修改主题模板，在这里要感谢<a href="https://github.com/Shen-Yu" target="_blank" rel="noopener">沈宇</a>提供的Ayer。最后在git中添加插件，熟悉在博客中添加文章、编辑文章、上传文章的操作，基本完成了这个真`简洁的博客搭建。</p>
+<h1 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h1><p>曾经在一段时间内喜欢四处去浏览别人的博客，不记得在哪看到过一篇文章，讲的是一个博客不管它看起来有多好看，不管它搭建的时候用了多高级的技术，这只是一个博客的起点，作为一个博客，它最重要的是在剩下的时间里保持输出优质、有意义的内容。这个博客个人希望在未来能用于自己的学习记录和生活记录, 以此督促自己, 以期成为更好的自己, Hello World!</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
     <url>/2020/05/27/InsideNarrative/</url>
     <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/05/29/tKnxf0.jpg" alt="tKnxf0.jpg"></p>
@@ -464,44 +464,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>单机</tag>
         <tag>测评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面向对象：类定义/构造/属性</title>
-    <url>/2020/05/27/Object-oriented/</url>
-    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-
-
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </p>
-<p>构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 <code>Person</code> 的类的构造函数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private string _name &#x3D; &quot;Hello&quot;;</span><br><span class="line"></span><br><span class="line">public string Name</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line">    protected set</span><br><span class="line">    &#123;</span><br><span class="line">        _name &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
-</blockquote>
-<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Parent</span><br><span class="line">&#123;</span><br><span class="line">    public virtual int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Notice the accessor accessibility level.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; No access modifier is used here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Kid : Parent</span><br><span class="line">&#123;</span><br><span class="line">    public override int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Use the same accessibility level as in the overridden accessor.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Cannot use access modifier here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -546,6 +508,87 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>算法</tag>
         <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象：类定义/构造/属性</title>
+    <url>/2020/05/27/Object-oriented/</url>
+    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+
+
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </p>
+<p>构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 <code>Person</code> 的类的构造函数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private string _name &#x3D; &quot;Hello&quot;;</span><br><span class="line"></span><br><span class="line">public string Name</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line">    protected set</span><br><span class="line">    &#123;</span><br><span class="line">        _name &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
+</blockquote>
+<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Parent</span><br><span class="line">&#123;</span><br><span class="line">    public virtual int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Notice the accessor accessibility level.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; No access modifier is used here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Kid : Parent</span><br><span class="line">&#123;</span><br><span class="line">    public override int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Use the same accessibility level as in the overridden accessor.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Cannot use access modifier here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Screen的Bounds和WorkingArea的区别</title>
+    <url>/2020/11/30/Screen%E7%9A%84Bounds%E5%92%8CWorkingArea%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="Screen中Bounds和WorkingArea的区别"><a href="#Screen中Bounds和WorkingArea的区别" class="headerlink" title="Screen中Bounds和WorkingArea的区别"></a>Screen中Bounds和WorkingArea的区别</h2><h3 id="1-Screen-PrimaryScreen-Bounds"><a href="#1-Screen-PrimaryScreen-Bounds" class="headerlink" title="1.Screen.PrimaryScreen.Bounds"></a>1.Screen.PrimaryScreen.Bounds</h3><p>获取显示的边界。</p>
+<p><a href="https://imgchr.com/i/D2Mt6x" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/30/D2Mt6x.png" alt="D2Mt6x.png"></a></p>
+<h3 id="1-Screen-PrimaryScreen-WorkingArea"><a href="#1-Screen-PrimaryScreen-WorkingArea" class="headerlink" title="1.Screen.PrimaryScreen.WorkingArea"></a>1.Screen.PrimaryScreen.WorkingArea</h3><p>获取显示器的工作区。工作区是指显示器的桌面区域，不包括任务栏、停靠窗口等。</p>
+<p><a href="https://imgchr.com/i/D2MY11" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/30/D2MY11.png" alt="D2MY11.png"></a></p>
+<h3 id="3-区别"><a href="#3-区别" class="headerlink" title="3.区别"></a>3.区别</h3><p>Bounds 获取的是屏幕的宽和高，而WorkingArea 取得的不是屏幕的宽和高，而是程序运行可以使用的屏幕上的某个范围。<br>这个范围，会因为桌面的任务栏、工具栏之类的存在，而有所改变，所以并不等同于屏幕的宽和高，通常是小一些。</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>StringBuilder</title>
+    <url>/2020/06/13/StringBuilder/</url>
+    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
+<a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
+
+<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
+<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
+<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
+<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
+<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
+<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
+<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
+<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
+</ul>
+<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
+<br>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -597,33 +640,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>StringBuilder</title>
-    <url>/2020/06/13/StringBuilder/</url>
-    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
-<a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
-
-<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
-<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
-<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
-<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
-<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
-<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
-<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
-<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
-</ul>
-<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
-<br>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>String Method</title>
     <url>/2020/06/13/StringMethod/</url>
     <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
@@ -668,30 +684,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>删除排序数组重复项</title>
-    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
-    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
-<a id="more"></a>
-
-<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
-<pre><code>示例：
-给定数组 nums = [1,1,2],   
-函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
-你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
-<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>文字截断在blog里不起作用？</title>
     <url>/2020/05/27/TruncationError/</url>
     <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
@@ -718,6 +710,65 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>Blog</tag>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最大子序和</title>
+    <url>/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</url>
+    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
+<pre><code>示例：
+输入[-2,1,-3,4,-1,2,1,-5,4]</code></pre><a id="more"></a>
+
+<h2 id="暴力破解法"><a href="#暴力破解法" class="headerlink" title="暴力破解法"></a>暴力破解法</h2><p>通过枚举判断 </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)   &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum &#x3D; 0;</span><br><span class="line">                for (int k &#x3D; i; k &lt; j; k++)     &#x2F;&#x2F;暴力计算</span><br><span class="line">                &#123;</span><br><span class="line">                    sum +&#x3D; nums[k];</span><br><span class="line">                    if (sum &gt; max)</span><br><span class="line">                    &#123;</span><br><span class="line">                        max &#x3D; sum;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;intput: [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">&#x2F;&#x2F;output: 6   (leetcode:6)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>Int32.MinValue</code>字段表示Int32的最小可能值。 此字段是常量：<code>public const int MinValue = -2147483648;</code></p>
+</blockquote>
+<h2 id="改进暴力法"><a href="#改进暴力法" class="headerlink" title="改进暴力法"></a>改进暴力法</h2><p>在上面的代码中可以发现在程序每次执行第二层循环时sum都会清零，所以在我们每次计算子序和时都要重新从i处累加至j,就重复计算了一部分子序和。如果sum不清理，在上一次的序列和基础上来计算新的序列和，就可以减少一层for循环，由O(N^3)变成O(N^2)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;       &#x2F;&#x2F;定义max值为Integer最小值</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)       &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            sum &#x3D; 0;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum +&#x3D; nums[j];     &#x2F;&#x2F;在上一次的序列和基础上来计算新的序列和</span><br><span class="line">                if (sum &gt; max)</span><br><span class="line">                &#123;</span><br><span class="line">                    max &#x3D; sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h2><blockquote>
+<p>（据说这道题是《编程珠机》里面的题目，叫做扫描法，速度最快，扫描一次就求出结果，复杂度是O（n）。书中说，这个算法是一个统计学家提出的，在这略过。）<br>当我们加上一个正数时，和会增加；当我们加上一个负数时，和会减少。如果当前得到的和是个负数，那么这个和在接下来的累加中应该抛弃并重新清零，不然的话这个负数将会减少接下来的和。<br>zwzsdy在他的CSDN博客中有关于该方法的证明和想法，<a href="https://blog.csdn.net/zwzsdy/article/details/80029796" target="_blank" rel="noopener">传送门</a>。  </p>
+</blockquote>
+<h2 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h2><p>动态规划法也是LeetCode的官方题解方法之一，另一个是分治法。<br>设sum[i]为以第i个元素结尾且和最大的连续子数组。假设对于元素i，所有以它前面的元素结尾的子数组的长度都已经求得，那么以第i个元素结尾且和最大的连续子数组实际上，要么是以第i-1个元素结尾且和最大的连续子数组加上这个元素，要么是只包含第i个元素，即知状态转移方程为：sum[i] = max(sum[i-1] + a[i], a[i])。可以通过判断sum[i-1] + a[i]是否大于a[i]来做选择，而这实际上等价于判断sum[i-1]是否大于0。由于每次运算只需要前一次的结果，因此并不需要像普通的动态规划那样保留之前所有的计算结果，只需要保留上一次的即可，因此算法的时间和空间复杂度都很小。  </p>
+<blockquote>
+<p>状态转移方程:是动态规划中本阶段的状态往往是上一阶段状态和上一阶段决策的结果。如果给定了第K阶段的状态Sk以及决策uk(Sk)，则第K+1阶段的状态Sk+1也就完全确定。<br>中文名状态转移方程应用学科编程</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int pre &#x3D; 0, maxAns &#x3D; nums[0];</span><br><span class="line">        foreach (int x in nums) &#123;</span><br><span class="line">            pre &#x3D; Math.Max(pre + x, x);</span><br><span class="line">            maxAns &#x3D; Math.Max(maxAns, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        return maxAns;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>删除排序数组重复项</title>
+    <url>/2020/06/14/%E5%88%A0%E9%99%A4%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E9%87%8D%E5%A4%8D%E9%A1%B9/</url>
+    <content><![CDATA[<p>LeetCode数据结构练习，通过双指针法来删除排序数组中的重复项。<br><a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/" target="_blank" rel="noopener">LeetCode URL</a></p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。<br>不要使用额外的数组空间，你必须在原地修改输入数组 并在使用 O(1) 额外空间的条件下完成。  </p>
+<pre><code>示例：
+给定数组 nums = [1,1,2],   
+函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。   
+你不需要考虑数组中超出新长度后面的元素。  </code></pre><h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>数组完成排序后，我们可以放置两个指针<code>i</code>和<code>j</code>，其中<code>i</code>是慢指针，而<code>j</code>是快指针。只要<code>nums[i] = nums[j]</code>，我们就增加j以跳过重复项。<br>当我们遇到<code>nums[j] != nums[i]</code>时，跳过重复项的运行已经结束，因此我们必须把它（nums[j]）的值复制到<code>nums[i+1]</code>。然后递增<code>i</code>，接着我们将再次重复相同的过程，直到<code>j</code>到达数组的末尾为止。  </p>
+<h3 id="快慢指针"><a href="#快慢指针" class="headerlink" title="快慢指针"></a>快慢指针</h3><p>快慢指针中的快慢指的是移动的步长，即每次向前移动速度的快慢。例如可以让快指针每次沿链表向前移动2，慢指针每次向前移动1次。<br>快慢指针常用于判断单链表是否存在环、在有序链表中寻找中位数等···（先挖个坑，有机会再填上）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int RemoveDuplicates(int[] nums) &#123;</span><br><span class="line">        if (nums.Length &#x3D;&#x3D; 0) return 0;</span><br><span class="line">        int i &#x3D; 0;</span><br><span class="line">        for (int j &#x3D; 1; j &lt; nums.Length; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (nums[j] !&#x3D; nums[i])</span><br><span class="line">            &#123;</span><br><span class="line">                i++;</span><br><span class="line">                nums[i] &#x3D; nums[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return i + 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;input: [1,1,2,3,3,3,5]</span><br><span class="line">&#x2F;&#x2F;output： [1,2,3,5]</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -773,66 +824,6 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
-    <title>最大子序和</title>
-    <url>/2020/06/16/%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C/</url>
-    <content><![CDATA[<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。</p>
-<pre><code>示例：
-输入[-2,1,-3,4,-1,2,1,-5,4]</code></pre><a id="more"></a>
-
-<h2 id="暴力破解法"><a href="#暴力破解法" class="headerlink" title="暴力破解法"></a>暴力破解法</h2><p>通过枚举判断 </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)   &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum &#x3D; 0;</span><br><span class="line">                for (int k &#x3D; i; k &lt; j; k++)     &#x2F;&#x2F;暴力计算</span><br><span class="line">                &#123;</span><br><span class="line">                    sum +&#x3D; nums[k];</span><br><span class="line">                    if (sum &gt; max)</span><br><span class="line">                    &#123;</span><br><span class="line">                        max &#x3D; sum;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;intput: [-2,1,-3,4,-1,2,1,-5,4]</span><br><span class="line">&#x2F;&#x2F;output: 6   (leetcode:6)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><code>Int32.MinValue</code>字段表示Int32的最小可能值。 此字段是常量：<code>public const int MinValue = -2147483648;</code></p>
-</blockquote>
-<h2 id="改进暴力法"><a href="#改进暴力法" class="headerlink" title="改进暴力法"></a>改进暴力法</h2><p>在上面的代码中可以发现在程序每次执行第二层循环时sum都会清零，所以在我们每次计算子序和时都要重新从i处累加至j,就重复计算了一部分子序和。如果sum不清理，在上一次的序列和基础上来计算新的序列和，就可以减少一层for循环，由O(N^3)变成O(N^2)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int max &#x3D; Int32.MinValue;       &#x2F;&#x2F;定义max值为Integer最小值</span><br><span class="line">        int sum;</span><br><span class="line">        for (int i &#x3D; 0; i &lt; nums.Length; i++)       &#x2F;&#x2F;子序列左端点</span><br><span class="line">        &#123;</span><br><span class="line">            sum &#x3D; 0;</span><br><span class="line">            for (int j &#x3D; i; j &lt; nums.Length; j++)   &#x2F;&#x2F;子序列右端点</span><br><span class="line">            &#123;</span><br><span class="line">                sum +&#x3D; nums[j];     &#x2F;&#x2F;在上一次的序列和基础上来计算新的序列和</span><br><span class="line">                if (sum &gt; max)</span><br><span class="line">                &#123;</span><br><span class="line">                    max &#x3D; sum;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h2><blockquote>
-<p>（据说这道题是《编程珠机》里面的题目，叫做扫描法，速度最快，扫描一次就求出结果，复杂度是O（n）。书中说，这个算法是一个统计学家提出的，在这略过。）<br>当我们加上一个正数时，和会增加；当我们加上一个负数时，和会减少。如果当前得到的和是个负数，那么这个和在接下来的累加中应该抛弃并重新清零，不然的话这个负数将会减少接下来的和。<br>zwzsdy在他的CSDN博客中有关于该方法的证明和想法，<a href="https://blog.csdn.net/zwzsdy/article/details/80029796" target="_blank" rel="noopener">传送门</a>。  </p>
-</blockquote>
-<h2 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h2><p>动态规划法也是LeetCode的官方题解方法之一，另一个是分治法。<br>设sum[i]为以第i个元素结尾且和最大的连续子数组。假设对于元素i，所有以它前面的元素结尾的子数组的长度都已经求得，那么以第i个元素结尾且和最大的连续子数组实际上，要么是以第i-1个元素结尾且和最大的连续子数组加上这个元素，要么是只包含第i个元素，即知状态转移方程为：sum[i] = max(sum[i-1] + a[i], a[i])。可以通过判断sum[i-1] + a[i]是否大于a[i]来做选择，而这实际上等价于判断sum[i-1]是否大于0。由于每次运算只需要前一次的结果，因此并不需要像普通的动态规划那样保留之前所有的计算结果，只需要保留上一次的即可，因此算法的时间和空间复杂度都很小。  </p>
-<blockquote>
-<p>状态转移方程:是动态规划中本阶段的状态往往是上一阶段状态和上一阶段决策的结果。如果给定了第K阶段的状态Sk以及决策uk(Sk)，则第K+1阶段的状态Sk+1也就完全确定。<br>中文名状态转移方程应用学科编程</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int MaxSubArray(int[] nums) &#123;</span><br><span class="line">        int pre &#x3D; 0, maxAns &#x3D; nums[0];</span><br><span class="line">        foreach (int x in nums) &#123;</span><br><span class="line">            pre &#x3D; Math.Max(pre + x, x);</span><br><span class="line">            maxAns &#x3D; Math.Max(maxAns, pre);</span><br><span class="line">        &#125;</span><br><span class="line">        return maxAns;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>LeetCode</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="Regex类"><a href="#Regex类" class="headerlink" title="Regex类"></a>Regex类</h2><p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1" target="_blank" rel="noopener">Regex类</a>表示<code>.NET Framework</code>的正则表达式引擎（类库），它可用于快速分析大量文本以找到特定的字符模式;提取、编辑、替换或删除文本子字符串;和将提取的字符串添加到集合以生成报告。<br>简单的说，Regex是从字符窗中查找匹配字符串的应用类。通过Regex，编程人员能够非常方便的从一段数据中提取自己所需要的数据信息。</p>
-<a id="more"></a>
-
-<h2 id="常用的操作正则表达式的Regex方法"><a href="#常用的操作正则表达式的Regex方法" class="headerlink" title="常用的操作正则表达式的Regex方法"></a>常用的操作正则表达式的Regex方法</h2><ul>
-<li>静态方法IsMatch(返回值是一个bool类型，用于判断指定的字符串是否与正则表达式字符串匹配)</li>
-<li>静态方法Match</li>
-<li>静态方法Matches</li>
-<li>Replaces函数</li>
-<li>静态方法Split,拆分文本</li>
-</ul>
-<h2 id="定位元字符"><a href="#定位元字符" class="headerlink" title="定位元字符"></a>定位元字符</h2><blockquote>
-<p>@符号，在正则表达式字符串前加上@符号，不让编译器解析其中的转义字符<br>*代表有0个或多个字符</p>
-</blockquote>
-<p>.   匹配除换行符以外的任意字符<br>\w  匹配字母、数字、下划线、汉字<br>\W  \w的补集<br>\s  匹配任意空白符（包括换行符/n、回车符/r、制表符/t、垂直制表符/v、换页符/f）<br>\S  \s的补集<br>\d  匹配数字（0-9）<br>\D  表示\d的补集（除0-9数字外）<br>\b  匹配单词的开始或结束<br>\B  匹配非单词的开始或结束<br>^  匹配必须出现在字符串的开头或行的开头<br>$  匹配必须出现在以下位置：字符串结尾、字符串结尾处的 \n 之前或行的结尾。   </p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬坑-FamilyRacing的那些事</title>
     <url>/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
     <content><![CDATA[<h2 id="爬坑：FamilyRacing的那些事"><a href="#爬坑：FamilyRacing的那些事" class="headerlink" title="爬坑：FamilyRacing的那些事"></a>爬坑：FamilyRacing的那些事</h2><ul>
@@ -860,6 +851,31 @@ lnkstack.ShowItem();</code></pre><br>
         <tag>C#</tag>
         <tag>VS</tag>
         <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="Regex类"><a href="#Regex类" class="headerlink" title="Regex类"></a>Regex类</h2><p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1" target="_blank" rel="noopener">Regex类</a>表示<code>.NET Framework</code>的正则表达式引擎（类库），它可用于快速分析大量文本以找到特定的字符模式;提取、编辑、替换或删除文本子字符串;和将提取的字符串添加到集合以生成报告。<br>简单的说，Regex是从字符窗中查找匹配字符串的应用类。通过Regex，编程人员能够非常方便的从一段数据中提取自己所需要的数据信息。</p>
+<a id="more"></a>
+
+<h2 id="常用的操作正则表达式的Regex方法"><a href="#常用的操作正则表达式的Regex方法" class="headerlink" title="常用的操作正则表达式的Regex方法"></a>常用的操作正则表达式的Regex方法</h2><ul>
+<li>静态方法IsMatch(返回值是一个bool类型，用于判断指定的字符串是否与正则表达式字符串匹配)</li>
+<li>静态方法Match</li>
+<li>静态方法Matches</li>
+<li>Replaces函数</li>
+<li>静态方法Split,拆分文本</li>
+</ul>
+<h2 id="定位元字符"><a href="#定位元字符" class="headerlink" title="定位元字符"></a>定位元字符</h2><blockquote>
+<p>@符号，在正则表达式字符串前加上@符号，不让编译器解析其中的转义字符<br>*代表有0个或多个字符</p>
+</blockquote>
+<p>.   匹配除换行符以外的任意字符<br>\w  匹配字母、数字、下划线、汉字<br>\W  \w的补集<br>\s  匹配任意空白符（包括换行符/n、回车符/r、制表符/t、垂直制表符/v、换页符/f）<br>\S  \s的补集<br>\d  匹配数字（0-9）<br>\D  表示\d的补集（除0-9数字外）<br>\b  匹配单词的开始或结束<br>\B  匹配非单词的开始或结束<br>^  匹配必须出现在字符串的开头或行的开头<br>$  匹配必须出现在以下位置：字符串结尾、字符串结尾处的 \n 之前或行的结尾。   </p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>

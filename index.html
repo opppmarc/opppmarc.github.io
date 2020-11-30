@@ -78,6 +78,80 @@
     
     
     
+    <article id="post-Screen的Bounds和WorkingArea的区别" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2020/11/30/Screen%E7%9A%84Bounds%E5%92%8CWorkingArea%E7%9A%84%E5%8C%BA%E5%88%AB/"
+    >Screen的Bounds和WorkingArea的区别</a> 
+</h2>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2020/11/30/Screen%E7%9A%84Bounds%E5%92%8CWorkingArea%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-date">
+  <time datetime="2020-11-30T03:49:50.000Z" itemprop="datePublished">2020-11-30</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C#</a>
+  </div>
+
+      
+      
+      
+    </div>
+    
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h2 id="Screen中Bounds和WorkingArea的区别"><a href="#Screen中Bounds和WorkingArea的区别" class="headerlink" title="Screen中Bounds和WorkingArea的区别"></a>Screen中Bounds和WorkingArea的区别</h2><h3 id="1-Screen-PrimaryScreen-Bounds"><a href="#1-Screen-PrimaryScreen-Bounds" class="headerlink" title="1.Screen.PrimaryScreen.Bounds"></a>1.Screen.PrimaryScreen.Bounds</h3><p>获取显示的边界。</p>
+<p><a href="https://imgchr.com/i/D2Mt6x" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/30/D2Mt6x.png" alt="D2Mt6x.png"></a></p>
+<h3 id="1-Screen-PrimaryScreen-WorkingArea"><a href="#1-Screen-PrimaryScreen-WorkingArea" class="headerlink" title="1.Screen.PrimaryScreen.WorkingArea"></a>1.Screen.PrimaryScreen.WorkingArea</h3><p>获取显示器的工作区。工作区是指显示器的桌面区域，不包括任务栏、停靠窗口等。</p>
+<p><a href="https://imgchr.com/i/D2MY11" target="_blank" rel="noopener"><img src="https://s3.ax1x.com/2020/11/30/D2MY11.png" alt="D2MY11.png"></a></p>
+<h3 id="3-区别"><a href="#3-区别" class="headerlink" title="3.区别"></a>3.区别</h3><p>Bounds 获取的是屏幕的宽和高，而WorkingArea 取得的不是屏幕的宽和高，而是程序运行可以使用的屏幕上的某个范围。<br>这个范围，会因为桌面的任务栏、工具栏之类的存在，而有所改变，所以并不等同于屏幕的宽和高，通常是小一些。</p>
+
+      
+      <!-- reward -->
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+
+  
+
+  
+  
+  
+
+</article>
+    
     <article id="post-CSharp6新特性" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
@@ -733,78 +807,6 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/" rel="tag">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
-
-
-    </footer>
-
-  </div>
-
-  
-
-  
-
-  
-  
-  
-
-</article>
-    
-    <article id="post-语言继承查询-LINQ" class="article article-type-post" itemscope
-  itemprop="blogPost" data-scroll-reveal>
-
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/"
-    >语言继承查询(LINQ)</a> 
-</h2>
- 
-
-    </header>
-    
-
-    
-    <div class="article-meta">
-      <a href="/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/" class="article-date">
-  <time datetime="2020-06-21T14:49:24.000Z" itemprop="datePublished">2020-06-21</time>
-</a>
-      
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/C/">C#</a>
-  </div>
-
-      
-      
-      
-    </div>
-    
-
-    
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-
-      
-      <h2 id="语言继承查询-LINQ"><a href="#语言继承查询-LINQ" class="headerlink" title="语言继承查询 (LINQ)"></a>语言继承查询 (LINQ)</h2><p>语言集成查询 (LINQ) 是一系列直接将查询功能集成到 C# 语言的技术统称，是.<code>NET Frameorek 3.5</code> 的新增特性。<br>借助LINQ，可以使用语言关键字和熟悉的运算符针对强类型化对象集合编写查询，通俗一点说就是是指将查询功能和语言结合起来，从而为我们提供一种统一的方式，让我们能在C#或VB.NET语言中直接查询和操作各种数据。</p>
-      
-      <a class="article-more-link" href="/2020/06/21/%E8%AF%AD%E8%A8%80%E7%BB%A7%E6%89%BF%E6%9F%A5%E8%AF%A2-LINQ/">阅读更多...</a>
-      
-      
-      <!-- reward -->
-      
-    </div>
-    
-    
-      <!-- copyright -->
-      
-    <footer class="article-footer">
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
 
 
     </footer>
