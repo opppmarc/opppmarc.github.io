@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2020-11-30T05:37:16.785Z</updated>
+  <updated>2021-05-03T09:55:59.040Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅论SDK和API的联系</title>
+    <link href="https://opppmarc.github.io/2021/05/03/%E6%B5%85%E8%AE%BASDK%E5%92%8CAPI%E7%9A%84%E8%81%94%E7%B3%BB/"/>
+    <id>https://opppmarc.github.io/2021/05/03/%E6%B5%85%E8%AE%BASDK%E5%92%8CAPI%E7%9A%84%E8%81%94%E7%B3%BB/</id>
+    <published>2021-05-03T08:39:57.000Z</published>
+    <updated>2021-05-03T09:55:59.040Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;浅论SDK和API的联系&quot;&gt;&lt;a href=&quot;#浅论SDK和API的联系&quot; class=&quot;headerlink&quot; title=&quot;浅论SDK和API的联系&quot;&gt;&lt;/a&gt;浅论SDK和API的联系&lt;/h2&gt;&lt;br/&gt;  
+
+&lt;h3 id=&quot;定义&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="软件工程" scheme="https://opppmarc.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+    
+    
+      <category term="API" scheme="https://opppmarc.github.io/tags/API/"/>
+    
+  </entry>
   
   <entry>
     <title>Screen的Bounds和WorkingArea的区别</title>
@@ -471,35 +500,6 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
     
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>DeadCellEvolve</title>
-    <link href="https://opppmarc.github.io/2020/05/29/DeadCellEvolve/"/>
-    <id>https://opppmarc.github.io/2020/05/29/DeadCellEvolve/</id>
-    <published>2020-05-29T12:10:55.000Z</published>
-    <updated>2020-05-29T12:26:14.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;When-We-Made…-Dead-Cells&quot;&gt;&lt;a href=&quot;#When-We-Made…-Dead-Cells&quot; class=&quot;headerlink&quot; title=&quot;When We Made… Dead Cells&quot;&gt;&lt;/a&gt;When We Made… Dead Cells&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;本篇为译文，原文地址:&lt;a href=&quot;https://www.mcvuk.com/development-news/when-we-made-dead-cells/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;传送门&lt;/a&gt;  &lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;https://s1.ax1x.com/2020/05/29/tuoHq1.jpg&quot; alt=&quot;tuoHq1.jpg&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="译文" scheme="https://opppmarc.github.io/categories/%E8%AF%91%E6%96%87/"/>
-    
-    
-      <category term="单机" scheme="https://opppmarc.github.io/tags/%E5%8D%95%E6%9C%BA/"/>
-    
-      <category term="搬运" scheme="https://opppmarc.github.io/tags/%E6%90%AC%E8%BF%90/"/>
-    
-      <category term="译文" scheme="https://opppmarc.github.io/tags/%E8%AF%91%E6%96%87/"/>
     
   </entry>
   

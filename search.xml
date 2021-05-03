@@ -153,94 +153,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>C#中关键字ref与out的区别</title>
-    <url>/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
-<a id="more"></a>
-
-<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
-<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
-<blockquote>
-<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
-</blockquote>
-<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
-<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSharp6新特性</title>
-    <url>/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
-    <content><![CDATA[<h2 id="有关C-6新特性的简单总结"><a href="#有关C-6新特性的简单总结" class="headerlink" title="有关C#6新特性的简单总结"></a>有关C#6新特性的简单总结</h2><p>转载自Zoe_yan <a href="https://www.cnblogs.com/zoe-yan/p/10276270.html" target="_blank" rel="noopener">《C# 6新特性简单总结》</a></p>
-<p>最近在看《C#高级编程 C# 6&amp;.NET Core 1.0》，会做一些读书笔记，也算对知识的总结与沉淀了。  </p>
-<a id="more"></a>
-
-<h3 id="1-静态的using声明"><a href="#1-静态的using声明" class="headerlink" title="1. 静态的using声明"></a>1. 静态的using声明</h3><p>静态的using声明允许调用静态方法时不使用类名：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">using System;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;C# 5&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">using static System.Console;</span><br><span class="line"></span><br><span class="line">WriteLine(&quot;C# 6&quot;);</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="2-表达式体方法"><a href="#2-表达式体方法" class="headerlink" title="2.表达式体方法"></a>2.表达式体方法</h3><p>表达式体方法只包含一个可以用Lambda语法编写的语句：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public bool IsSquare(Rectangle rect)</span><br><span class="line">&#123;</span><br><span class="line">     return rect.Width &#x3D;&#x3D; rect.Height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public bool IsSquare(Rectangle rect) &#x3D;&gt; rect.Width &#x3D;&#x3D; rect.Height;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="3-表达式体属性"><a href="#3-表达式体属性" class="headerlink" title="3.表达式体属性"></a>3.表达式体属性</h3><p>与表达式体方法类似，只有get存储器的单行属性可以用Lambda语法编写</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public string FullName</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return FirstName + &quot; &quot; + LastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public string FullName &#x3D;&gt; FirstName + &quot; &quot; + LastName;</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-自动实现的属性初始化器"><a href="#4-自动实现的属性初始化器" class="headerlink" title="4.自动实现的属性初始化器"></a>4.自动实现的属性初始化器</h3><p>自动实现的属性可以用属性初始化器来初始化：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">    public Person()</span><br><span class="line">    &#123;</span><br><span class="line">        Age &#x3D; 24;</span><br><span class="line">    &#125;</span><br><span class="line">    public int Age &#123; get; set; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">    public int Age &#123; get; set; &#125; &#x3D; 24;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="5-只读的自动属性"><a href="#5-只读的自动属性" class="headerlink" title="5.只读的自动属性"></a>5.只读的自动属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">private readonly int _bookId;</span><br><span class="line">public BookId</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _bookId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">private readonly int _bookId;</span><br><span class="line">public BookId &#123; get; &#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="6-nameof运算符"><a href="#6-nameof运算符" class="headerlink" title="6.nameof运算符"></a>6.nameof运算符</h3><p>使用新的nameof运算符，可以访问字段名、属性名、方法名和类型名。这样，在重构时就不会遗漏名称的改变：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public void Method(object o)</span><br><span class="line">&#123;</span><br><span class="line">    if(o &#x3D;&#x3D; null)</span><br><span class="line">    &#123;</span><br><span class="line">        throw new ArgumentNullException(&quot;o&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public void Method(object o)</span><br><span class="line">&#123;</span><br><span class="line">    if(o &#x3D;&#x3D; null)</span><br><span class="line">     &#123;</span><br><span class="line">        throw new ArgumentNullException(nameof(o));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="7-空值传播运算符"><a href="#7-空值传播运算符" class="headerlink" title="7.空值传播运算符"></a>7.空值传播运算符</h3><p>空值传播运算符简化了空值的检查：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">int? age &#x3D; p &#x3D;&#x3D; null ? null : p.Age;</span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">int? age &#x3D; p?.Age;</span><br></pre></td></tr></table></figure>
-
-<h3 id="8-字符串插值"><a href="#8-字符串插值" class="headerlink" title="8.字符串插值"></a>8.字符串插值</h3><p>字符串插值删除了对string.Format的调用，它不在字符串中使用编号的格式占位符，占位符可以包含表达式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public override string ToString()</span><br><span class="line">&#123;</span><br><span class="line">    return string.Format(&quot;&#123;0&#125;,&#123;1&#125;&quot;, Title, Publisher);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public override string ToString() &#x3D;&gt; $&quot;&#123;Title&#125;&#123;Publisher&#125;&quot;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="9-字典初始化"><a href="#9-字典初始化" class="headerlink" title="9.字典初始化"></a>9.字典初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">var dic &#x3D; new Dictionary&lt;int, string&gt;();</span><br><span class="line">dic.Add(3, &quot;three&quot;);</span><br><span class="line">dic.Add(7, &quot;seven&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">var dic &#x3D; new Dictionary&lt;int, string&gt;()</span><br><span class="line">&#123;</span><br><span class="line">    [3] &#x3D; &quot;three&quot;,</span><br><span class="line">    [7] &#x3D; &quot;seven&quot;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h3 id="10-异常过滤器"><a href="#10-异常过滤器" class="headerlink" title="10.异常过滤器"></a>10.异常过滤器</h3><p>异常过滤器允许在捕获异常之前过滤它们：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">      &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    if (ex.ErrorCode !&#x3D; 405) throw;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">      &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex) when (ex.ErrorCode &#x3D;&#x3D; 405)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p>11.catch中的await<br>await现在可以在catch子句中使用，C# 5需要一种变通方法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">bool hasError &#x3D; false;</span><br><span class="line">string errorMsg &#x3D; null;</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    hasError &#x3D; true;</span><br><span class="line">    errorMsg &#x3D; ex.Message;</span><br><span class="line">&#125;</span><br><span class="line">if (hasError)</span><br><span class="line">&#123;</span><br><span class="line">    await new MessageDialog().ShowAsync(errorMsg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    await new MessageDialog().ShowAsync(ex.Message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>转载</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSharp中的调试与错误处理</title>
     <url>/2020/05/18/CSharpDebug/</url>
     <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
@@ -565,23 +477,40 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>StringBuilder</title>
-    <url>/2020/06/13/StringBuilder/</url>
-    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
-<a id="more"></a>
+    <title>String Method</title>
+    <url>/2020/06/13/StringMethod/</url>
+    <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
+<ul>
+<li><p>1.ComparaTo()方法，比较字符串的内容。<br>返回一个Int类型值，相同则返回0，不同则返回1。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name &#x3D; &quot;marc&quot;;</span><br><span class="line">int res &#x3D; name.CompareTo(&quot;lisa&quot;);</span><br><span class="line">Console.Write(res);     &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.Replace()方法，把指定的字符或字符串换成另一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string newStr &#x3D; name.Replace(&quot;rc&quot;,&quot;sa&quot;);</span><br><span class="line">Console.Write(name);        &#x2F;&#x2F;masa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.Split()方法，在出现给定字符的地方，把字符串拆分成一个字符串数组。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string[] strArr &#x3D; name.Split(&#39;a&#39;);</span><br><span class="line">foreach (var temp in strArr)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(temp + &quot; &quot;);     &#x2F;&#x2F;m rc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.Substring()方法，在字符串中检索给定位置的子字符串。<br>Substring(StartIndex, Length)<br>如果参数中没有给定截取长度的话，就会截取字符串里选定字符往后的所有字符。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string subStr &#x3D; name.Substring(1,2);    &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取2个字符</span><br><span class="line">string subStr2 &#x3D; name.Substring(3);     &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取往后的所有字符</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.ToLower()方法，把字符串转换为小写形式。</p>
+</li>
+<li><p>6.ToUpper()方法，把字符串转换为大写形式。</p>
+</li>
+<li><p>7.Trim()方法，删除首尾的空白。<br>常用于用户注册账号的过程中，像玩家注册的用户名首位带有空格的话，就用Trim()方法删掉。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name2 &#x3D; &quot;  marc  &quot;;</span><br><span class="line">string trimStr &#x3D; name2.Trim();       &#x2F;&#x2F;去除name2的首位空格</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8.Concat()方法，合并字符串。</p>
+</li>
+<li><p>9.CopyTo()方法，把字符串中指定的字符复制到另一个数组中。</p>
+</li>
+<li><p>10.Format()方法，格式化字符串。</p>
+</li>
+<li><p>11.IndexOf()方法，取得字符串中第一次出现某个给定字符或字符串的位置。<br>我们可以使用这个方法判断当前字符串是否包含一个给定的子字符串，如包含则返回第一个字符的索引，否则返回-1。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int index &#x3D; name.IndexOf(&quot;rc&quot;);     &#x2F;&#x2F;在name中查找出现子字符串&quot;rc&quot;的索引位置</span><br><span class="line">Console.WriteLine(index);   &#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
-
-<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
-<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
-<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
-<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
-<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
-<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
-<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
-<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
+</li>
 </ul>
-<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
 <br>
 ]]></content>
       <categories>
@@ -640,41 +569,30 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>String Method</title>
-    <url>/2020/06/13/StringMethod/</url>
-    <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
-<ul>
-<li><p>1.ComparaTo()方法，比较字符串的内容。<br>返回一个Int类型值，相同则返回0，不同则返回1。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name &#x3D; &quot;marc&quot;;</span><br><span class="line">int res &#x3D; name.CompareTo(&quot;lisa&quot;);</span><br><span class="line">Console.Write(res);     &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.Replace()方法，把指定的字符或字符串换成另一个字符串。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string newStr &#x3D; name.Replace(&quot;rc&quot;,&quot;sa&quot;);</span><br><span class="line">Console.Write(name);        &#x2F;&#x2F;masa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.Split()方法，在出现给定字符的地方，把字符串拆分成一个字符串数组。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string[] strArr &#x3D; name.Split(&#39;a&#39;);</span><br><span class="line">foreach (var temp in strArr)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(temp + &quot; &quot;);     &#x2F;&#x2F;m rc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.Substring()方法，在字符串中检索给定位置的子字符串。<br>Substring(StartIndex, Length)<br>如果参数中没有给定截取长度的话，就会截取字符串里选定字符往后的所有字符。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string subStr &#x3D; name.Substring(1,2);    &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取2个字符</span><br><span class="line">string subStr2 &#x3D; name.Substring(3);     &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取往后的所有字符</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.ToLower()方法，把字符串转换为小写形式。</p>
-</li>
-<li><p>6.ToUpper()方法，把字符串转换为大写形式。</p>
-</li>
-<li><p>7.Trim()方法，删除首尾的空白。<br>常用于用户注册账号的过程中，像玩家注册的用户名首位带有空格的话，就用Trim()方法删掉。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name2 &#x3D; &quot;  marc  &quot;;</span><br><span class="line">string trimStr &#x3D; name2.Trim();       &#x2F;&#x2F;去除name2的首位空格</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>8.Concat()方法，合并字符串。</p>
-</li>
-<li><p>9.CopyTo()方法，把字符串中指定的字符复制到另一个数组中。</p>
-</li>
-<li><p>10.Format()方法，格式化字符串。</p>
-</li>
-<li><p>11.IndexOf()方法，取得字符串中第一次出现某个给定字符或字符串的位置。<br>我们可以使用这个方法判断当前字符串是否包含一个给定的子字符串，如包含则返回第一个字符的索引，否则返回-1。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int index &#x3D; name.IndexOf(&quot;rc&quot;);     &#x2F;&#x2F;在name中查找出现子字符串&quot;rc&quot;的索引位置</span><br><span class="line">Console.WriteLine(index);   &#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
+    <title>C#中关键字ref与out的区别</title>
+    <url>/2020/10/14/C-%E4%B8%AD%E5%85%B3%E9%94%AE%E5%AD%97ref%E4%B8%8Eout%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<h2 id="C-中关键字ref与out的区别"><a href="#C-中关键字ref与out的区别" class="headerlink" title="C#中关键字ref与out的区别"></a>C#中关键字ref与out的区别</h2><p>C#中通过ref与Out关键字可以使参数按照引用来传递，通过引用（ref）和输出（out）向方法传递参数。</p>
+<a id="more"></a>
 
-</li>
-</ul>
-<br>
+<h4 id="区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。"><a href="#区别1：out参数会清空对内存地址的引用和指向-使用前必需重新赋值，而Ref不需要。" class="headerlink" title="区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。"></a>区别1：out参数会清空对内存地址的引用和指向, 使用前必需重新赋值，而Ref不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0IrSxI.png" alt="0IrSxI.png"></p>
+<p>像下面的代码，refTest方法输出的就是原来的值，但outTest方法输出的是后来重新赋值的值，而不是原来的值。</p>
+<blockquote>
+<p>MSDN中对out关键字的定义：<br>out 关键字会导致参数通过引用来传递。这与 ref 关键字类似，不同之处在于 ref 要求变量必须在传递之前进行初始化。若要使用 out 参数，方法定义和调用方法都必须显式使用 out 关键字。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="区别2：ref参数在使用前必需初始化，而out不需要。"><a href="#区别2：ref参数在使用前必需初始化，而out不需要。" class="headerlink" title="区别2：ref参数在使用前必需初始化，而out不需要。"></a>区别2：ref参数在使用前必需初始化，而out不需要。</h4><p><img src="https://s1.ax1x.com/2020/10/14/0Ir3oF.png" alt="0Ir3oF.png"><br>如果ref参数初始化时没有赋值，编译器会报错。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    string str;</span><br><span class="line">    RefTest(ref str);       &#x2F;&#x2F;error</span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>MSDN中对ref关键字的定义：<br>ref 关键字使参数按引用传递。其效果是，当控制权传递回调用方法时，在方法中对参数所做的任何更改都将反映在该变量中。若要使用 ref 参数，则方法定义和调用方法都必须显式使用 ref 关键字。</p>
+</blockquote>
+<p>ref是直接对值的直接引用，即直接指向内存地址，以下面的代码为例，如果在方法中更改了参数的值，那原变量的值也会随之改变。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line">    string str &#x3D; &quot;Hello&quot;;</span><br><span class="line">    RefTest(ref str);       </span><br><span class="line">    outTest(out str);</span><br><span class="line"></span><br><span class="line">    Console.ReadKey();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void outTest(out string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;Bye&quot;;</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: Bye</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private static void RefTest(ref string str)</span><br><span class="line">&#123;</span><br><span class="line">    str &#x3D; &quot;it is changed&quot;;      &#x2F;&#x2F;所做的任何更改都将反映在该变量中</span><br><span class="line">    Console.WriteLine(str);     &#x2F;&#x2F;output: it is changed</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><p>通俗的从功能上来讲，使用这两个关键字，可以使一个方法返回多个参数。<br>out适合用在需要retrun多个返回值的地方，而ref则用在需要被调用的方法修改调用者的引用的时候。</p>
+<p>参考：<a href="https://www.cnblogs.com/windinsky/archive/2009/02/13/1390071.html" target="_blank" rel="noopener">InSky的博文</a></p>
 ]]></content>
       <categories>
         <category>C#</category>
@@ -684,32 +602,30 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>文字截断在blog里不起作用？</title>
-    <url>/2020/05/27/TruncationError/</url>
-    <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
-<a id="more"></a>  
+    <title>StringBuilder</title>
+    <url>/2020/06/13/StringBuilder/</url>
+    <content><![CDATA[<h2 id="StringBuilder类"><a href="#StringBuilder类" class="headerlink" title="StringBuilder类"></a>StringBuilder类</h2><p>StringBuilder类表示可变字符字符串。<br>下面的示例演示如何调用由 StringBuilder 类定义的多个方法：  </p>
+<a id="more"></a>
 
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjx00.png" alt="tAjx00.png">  </p>
-<p>第一次测试如图，是正常的段落文字加文字截断标签。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjvmq.png" alt="tAjvmq.png">  </p>
-<p>实际预览时就会出错，该截断的文字没有截断，不知道是什么原因，后面的内容也受影响跑到了代码块里···  </p>
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjXXn.png" alt="tAjXXn.png">  </p>
-<p>第二次测试，将测试部分放在了代码块前。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/27/tAjO6s.png" alt="tAjO6s.png">  </p>
-<p>这次在博客首页就能看到文字截断起效了，而且文章内容没有受到影响。</p>
-<p>待更新···</p>
-<p>6月9日更新:<br>generate了一篇blog后，在预览中发现代码块中出现了本不该出现在这个位置的内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Console.Write(&quot;love u 3000 times&quot;);</span><br><span class="line">## 标题</span><br><span class="line">&lt;内容&gt; etc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Text;</span><br><span class="line"></span><br><span class="line">public sealed class App</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a StringBuilder that expects to hold 50 characters.</span><br><span class="line">        &#x2F;&#x2F; Initialize the StringBuilder with &quot;ABC&quot;.</span><br><span class="line">        StringBuilder sb &#x3D; new StringBuilder(&quot;ABC&quot;, 50);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append three characters (D, E, and F) to the end of the StringBuilder.</span><br><span class="line">        sb.Append(new char[] &#123; &#39;D&#39;, &#39;E&#39;, &#39;F&#39; &#125;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Append a format string to the end of the StringBuilder.</span><br><span class="line">        sb.AppendFormat(&quot;GHI&#123;0&#125;&#123;1&#125;&quot;, &#39;J&#39;, &#39;k&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Insert a string at the beginning of the StringBuilder.</span><br><span class="line">        sb.Insert(0, &quot;Alphabet: &quot;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Replace all lowercase k&#39;s with uppercase K&#39;s.</span><br><span class="line">        sb.Replace(&#39;k&#39;, &#39;K&#39;);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Display the number of characters in the StringBuilder and its string.</span><br><span class="line">        Console.WriteLine(&quot;&#123;0&#125; chars: &#123;1&#125;&quot;, sb.Length, sb.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; This code produces the following output.</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 11 chars: ABCDEFGHIJk</span><br><span class="line">&#x2F;&#x2F; 21 chars: Alphabet: ABCDEFGHIJK</span><br></pre></td></tr></table></figure>
 
-<p>像这样，起初以为是MarkDown代码块符号用错了，反复测试发现问题是出在“``` ”后的空格，因为MD中空格后回车是起换行的作用，没成想这个习惯给带到输入符号的过程中了，引以为戒。 </p>
-<p>之前的有关bolg内容截断失效的原因也是因为代码块符号“``` ”后的空格，而不是截断标签的使用位置。删除空格后即可正常显示。 </p>
+<h3 id="String-和-StringBuilder-类型"><a href="#String-和-StringBuilder-类型" class="headerlink" title="String 和 StringBuilder 类型"></a>String 和 StringBuilder 类型</h3><p>尽管<code>StringBuilder</code>和<code>String</code>都表示字符序列，但它们的实现方式不同。<code>String</code>是不可变类型。 也就是说，出现用于修改<code>String</code>对象的每个操作实际上会创建一个新字符串。而<code>StringBuilder</code>是一个可变对象，可以预分配缓冲区，这样，往StringBuilder中新增字符时，不会创建新的临时对象。  </p>
+<p>对于执行大量字符串操作的例程（如在循环中多次修改字符串的应用程序），重复修改字符串可能会显著降低性能。 替代方法是使用<code>StringBuilder</code>，这是一个<code>可变字符串类</code>。 <u>可变性是指在创建类的实例后，可以通过追加、移除、替换或插入字符来修改它。</u> StringBuilder 对象维护缓冲区以容纳到字符串的扩展。 如果空间可用，则会将新数据追加到缓冲区;否则，将分配一个新的更大的缓冲区，将原始缓冲区中的数据复制到新缓冲区，然后将新数据追加到新缓冲区。</p>
+<h3 id="StringBuilder类常用方法"><a href="#StringBuilder类常用方法" class="headerlink" title="StringBuilder类常用方法"></a>StringBuilder类常用方法</h3><ul>
+<li>1.Append()方法，给字符串追前添加一个字符或字符串。</li>
+<li>2.Insert()方法，在指定的位置插入字符或字符串。<br><code>sb.Insert(0,&#39;a&#39;);  //在索引为0的位置插入字符a</code></li>
+<li>3.Remove()方法，从当前字符串中删除字符。<br><code>sb.Remove(0,3);    //删除字符串中给定索引之间的字符</code></li>
+<li>4.Replace()方法，用某个字符或字符串替换另一个字符或字符串</li>
+<li>5.ToString()方法，用来把当前StringBuilder中存储的字符串，提取成一个不可变的字符串。</li>
+</ul>
+<h3 id="更多说明"><a href="#更多说明" class="headerlink" title="更多说明"></a>更多说明</h3><p>关于StringBuilder的更多方法、显示接口实现等说明详见微软Docs文档：<a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/dotnet/api/system.text.stringbuilder?view=netcore-3.1#methods</a></p>
+<br>
 ]]></content>
       <categories>
-        <category>Blog</category>
+        <category>C#</category>
       </categories>
       <tags>
-        <tag>Blog</tag>
-        <tag>随笔</tag>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -745,6 +661,60 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>LeetCode</tag>
         <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>文字截断在blog里不起作用？</title>
+    <url>/2020/05/27/TruncationError/</url>
+    <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
+<a id="more"></a>  
+
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjx00.png" alt="tAjx00.png">  </p>
+<p>第一次测试如图，是正常的段落文字加文字截断标签。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjvmq.png" alt="tAjvmq.png">  </p>
+<p>实际预览时就会出错，该截断的文字没有截断，不知道是什么原因，后面的内容也受影响跑到了代码块里···  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjXXn.png" alt="tAjXXn.png">  </p>
+<p>第二次测试，将测试部分放在了代码块前。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/27/tAjO6s.png" alt="tAjO6s.png">  </p>
+<p>这次在博客首页就能看到文字截断起效了，而且文章内容没有受到影响。</p>
+<p>待更新···</p>
+<p>6月9日更新:<br>generate了一篇blog后，在预览中发现代码块中出现了本不该出现在这个位置的内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Console.Write(&quot;love u 3000 times&quot;);</span><br><span class="line">## 标题</span><br><span class="line">&lt;内容&gt; etc</span><br></pre></td></tr></table></figure>
+
+<p>像这样，起初以为是MarkDown代码块符号用错了，反复测试发现问题是出在“``` ”后的空格，因为MD中空格后回车是起换行的作用，没成想这个习惯给带到输入符号的过程中了，引以为戒。 </p>
+<p>之前的有关bolg内容截断失效的原因也是因为代码块符号“``` ”后的空格，而不是截断标签的使用位置。删除空格后即可正常显示。 </p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Blog</tag>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则表达式</title>
+    <url>/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="Regex类"><a href="#Regex类" class="headerlink" title="Regex类"></a>Regex类</h2><p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1" target="_blank" rel="noopener">Regex类</a>表示<code>.NET Framework</code>的正则表达式引擎（类库），它可用于快速分析大量文本以找到特定的字符模式;提取、编辑、替换或删除文本子字符串;和将提取的字符串添加到集合以生成报告。<br>简单的说，Regex是从字符窗中查找匹配字符串的应用类。通过Regex，编程人员能够非常方便的从一段数据中提取自己所需要的数据信息。</p>
+<a id="more"></a>
+
+<h2 id="常用的操作正则表达式的Regex方法"><a href="#常用的操作正则表达式的Regex方法" class="headerlink" title="常用的操作正则表达式的Regex方法"></a>常用的操作正则表达式的Regex方法</h2><ul>
+<li>静态方法IsMatch(返回值是一个bool类型，用于判断指定的字符串是否与正则表达式字符串匹配)</li>
+<li>静态方法Match</li>
+<li>静态方法Matches</li>
+<li>Replaces函数</li>
+<li>静态方法Split,拆分文本</li>
+</ul>
+<h2 id="定位元字符"><a href="#定位元字符" class="headerlink" title="定位元字符"></a>定位元字符</h2><blockquote>
+<p>@符号，在正则表达式字符串前加上@符号，不让编译器解析其中的转义字符<br>*代表有0个或多个字符</p>
+</blockquote>
+<p>.   匹配除换行符以外的任意字符<br>\w  匹配字母、数字、下划线、汉字<br>\W  \w的补集<br>\s  匹配任意空白符（包括换行符/n、回车符/r、制表符/t、垂直制表符/v、换页符/f）<br>\S  \s的补集<br>\d  匹配数字（0-9）<br>\D  表示\d的补集（除0-9数字外）<br>\b  匹配单词的开始或结束<br>\B  匹配非单词的开始或结束<br>^  匹配必须出现在字符串的开头或行的开头<br>$  匹配必须出现在以下位置：字符串结尾、字符串结尾处的 \n 之前或行的结尾。   </p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -824,6 +794,81 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
+    <title>浅论SDK和API的联系</title>
+    <url>/2021/05/03/%E6%B5%85%E8%AE%BASDK%E5%92%8CAPI%E7%9A%84%E8%81%94%E7%B3%BB/</url>
+    <content><![CDATA[<h2 id="浅论SDK和API的联系"><a href="#浅论SDK和API的联系" class="headerlink" title="浅论SDK和API的联系"></a>浅论SDK和API的联系</h2><br/>  
+
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
+<li><p>SDK是一组工具，用于开发针对特定平台的软件应用程序，其包括工具、库、文档或示例代码。  </p>
+</li>
+<li><p>API是一种接口，用于软件程序之间进行交互通信。  </p>
+</li>
+</ul>
+<h3 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h3><p>SDK是一套完整的API，可以提供创建应用程序所需的所有部件。而API是一系列相关的接口方法，有时候是针对某个特定的问题提供支持。  </p>
+]]></content>
+      <categories>
+        <category>软件工程</category>
+      </categories>
+      <tags>
+        <tag>API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSharp6新特性</title>
+    <url>/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="有关C-6新特性的简单总结"><a href="#有关C-6新特性的简单总结" class="headerlink" title="有关C#6新特性的简单总结"></a>有关C#6新特性的简单总结</h2><p>转载自Zoe_yan <a href="https://www.cnblogs.com/zoe-yan/p/10276270.html" target="_blank" rel="noopener">《C# 6新特性简单总结》</a></p>
+<p>最近在看《C#高级编程 C# 6&amp;.NET Core 1.0》，会做一些读书笔记，也算对知识的总结与沉淀了。  </p>
+<a id="more"></a>
+
+<h3 id="1-静态的using声明"><a href="#1-静态的using声明" class="headerlink" title="1. 静态的using声明"></a>1. 静态的using声明</h3><p>静态的using声明允许调用静态方法时不使用类名：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">using System;</span><br><span class="line"></span><br><span class="line">Console.WriteLine(&quot;C# 5&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">using static System.Console;</span><br><span class="line"></span><br><span class="line">WriteLine(&quot;C# 6&quot;);</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="2-表达式体方法"><a href="#2-表达式体方法" class="headerlink" title="2.表达式体方法"></a>2.表达式体方法</h3><p>表达式体方法只包含一个可以用Lambda语法编写的语句：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public bool IsSquare(Rectangle rect)</span><br><span class="line">&#123;</span><br><span class="line">     return rect.Width &#x3D;&#x3D; rect.Height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public bool IsSquare(Rectangle rect) &#x3D;&gt; rect.Width &#x3D;&#x3D; rect.Height;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="3-表达式体属性"><a href="#3-表达式体属性" class="headerlink" title="3.表达式体属性"></a>3.表达式体属性</h3><p>与表达式体方法类似，只有get存储器的单行属性可以用Lambda语法编写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public string FullName</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return FirstName + &quot; &quot; + LastName;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public string FullName &#x3D;&gt; FirstName + &quot; &quot; + LastName;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-自动实现的属性初始化器"><a href="#4-自动实现的属性初始化器" class="headerlink" title="4.自动实现的属性初始化器"></a>4.自动实现的属性初始化器</h3><p>自动实现的属性可以用属性初始化器来初始化：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">    public Person()</span><br><span class="line">    &#123;</span><br><span class="line">        Age &#x3D; 24;</span><br><span class="line">    &#125;</span><br><span class="line">    public int Age &#123; get; set; &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">    public int Age &#123; get; set; &#125; &#x3D; 24;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5-只读的自动属性"><a href="#5-只读的自动属性" class="headerlink" title="5.只读的自动属性"></a>5.只读的自动属性</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">private readonly int _bookId;</span><br><span class="line">public BookId</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _bookId;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">private readonly int _bookId;</span><br><span class="line">public BookId &#123; get; &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="6-nameof运算符"><a href="#6-nameof运算符" class="headerlink" title="6.nameof运算符"></a>6.nameof运算符</h3><p>使用新的nameof运算符，可以访问字段名、属性名、方法名和类型名。这样，在重构时就不会遗漏名称的改变：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public void Method(object o)</span><br><span class="line">&#123;</span><br><span class="line">    if(o &#x3D;&#x3D; null)</span><br><span class="line">    &#123;</span><br><span class="line">        throw new ArgumentNullException(&quot;o&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public void Method(object o)</span><br><span class="line">&#123;</span><br><span class="line">    if(o &#x3D;&#x3D; null)</span><br><span class="line">     &#123;</span><br><span class="line">        throw new ArgumentNullException(nameof(o));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="7-空值传播运算符"><a href="#7-空值传播运算符" class="headerlink" title="7.空值传播运算符"></a>7.空值传播运算符</h3><p>空值传播运算符简化了空值的检查：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">int? age &#x3D; p &#x3D;&#x3D; null ? null : p.Age;</span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">int? age &#x3D; p?.Age;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-字符串插值"><a href="#8-字符串插值" class="headerlink" title="8.字符串插值"></a>8.字符串插值</h3><p>字符串插值删除了对string.Format的调用，它不在字符串中使用编号的格式占位符，占位符可以包含表达式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">public override string ToString()</span><br><span class="line">&#123;</span><br><span class="line">    return string.Format(&quot;&#123;0&#125;,&#123;1&#125;&quot;, Title, Publisher);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">public override string ToString() &#x3D;&gt; $&quot;&#123;Title&#125;&#123;Publisher&#125;&quot;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-字典初始化"><a href="#9-字典初始化" class="headerlink" title="9.字典初始化"></a>9.字典初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">var dic &#x3D; new Dictionary&lt;int, string&gt;();</span><br><span class="line">dic.Add(3, &quot;three&quot;);</span><br><span class="line">dic.Add(7, &quot;seven&quot;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">var dic &#x3D; new Dictionary&lt;int, string&gt;()</span><br><span class="line">&#123;</span><br><span class="line">    [3] &#x3D; &quot;three&quot;,</span><br><span class="line">    [7] &#x3D; &quot;seven&quot;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-异常过滤器"><a href="#10-异常过滤器" class="headerlink" title="10.异常过滤器"></a>10.异常过滤器</h3><p>异常过滤器允许在捕获异常之前过滤它们：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">      &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    if (ex.ErrorCode !&#x3D; 405) throw;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">      &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex) when (ex.ErrorCode &#x3D;&#x3D; 405)</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>11.catch中的await<br>await现在可以在catch子句中使用，C# 5需要一种变通方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; C# 5</span><br><span class="line">bool hasError &#x3D; false;</span><br><span class="line">string errorMsg &#x3D; null;</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    hasError &#x3D; true;</span><br><span class="line">    errorMsg &#x3D; ex.Message;</span><br><span class="line">&#125;</span><br><span class="line">if (hasError)</span><br><span class="line">&#123;</span><br><span class="line">    await new MessageDialog().ShowAsync(errorMsg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; C# 6</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;</span><br><span class="line">&#125;</span><br><span class="line">catch (MyException ex)</span><br><span class="line">&#123;</span><br><span class="line">    await new MessageDialog().ShowAsync(ex.Message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>转载</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>爬坑-FamilyRacing的那些事</title>
     <url>/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
     <content><![CDATA[<h2 id="爬坑：FamilyRacing的那些事"><a href="#爬坑：FamilyRacing的那些事" class="headerlink" title="爬坑：FamilyRacing的那些事"></a>爬坑：FamilyRacing的那些事</h2><ul>
@@ -851,106 +896,6 @@ lnkstack.ShowItem();</code></pre><br>
         <tag>C#</tag>
         <tag>VS</tag>
         <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>正则表达式</title>
-    <url>/2020/06/16/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="Regex类"><a href="#Regex类" class="headerlink" title="Regex类"></a>Regex类</h2><p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1" target="_blank" rel="noopener">Regex类</a>表示<code>.NET Framework</code>的正则表达式引擎（类库），它可用于快速分析大量文本以找到特定的字符模式;提取、编辑、替换或删除文本子字符串;和将提取的字符串添加到集合以生成报告。<br>简单的说，Regex是从字符窗中查找匹配字符串的应用类。通过Regex，编程人员能够非常方便的从一段数据中提取自己所需要的数据信息。</p>
-<a id="more"></a>
-
-<h2 id="常用的操作正则表达式的Regex方法"><a href="#常用的操作正则表达式的Regex方法" class="headerlink" title="常用的操作正则表达式的Regex方法"></a>常用的操作正则表达式的Regex方法</h2><ul>
-<li>静态方法IsMatch(返回值是一个bool类型，用于判断指定的字符串是否与正则表达式字符串匹配)</li>
-<li>静态方法Match</li>
-<li>静态方法Matches</li>
-<li>Replaces函数</li>
-<li>静态方法Split,拆分文本</li>
-</ul>
-<h2 id="定位元字符"><a href="#定位元字符" class="headerlink" title="定位元字符"></a>定位元字符</h2><blockquote>
-<p>@符号，在正则表达式字符串前加上@符号，不让编译器解析其中的转义字符<br>*代表有0个或多个字符</p>
-</blockquote>
-<p>.   匹配除换行符以外的任意字符<br>\w  匹配字母、数字、下划线、汉字<br>\W  \w的补集<br>\s  匹配任意空白符（包括换行符/n、回车符/r、制表符/t、垂直制表符/v、换页符/f）<br>\S  \s的补集<br>\d  匹配数字（0-9）<br>\D  表示\d的补集（除0-9数字外）<br>\b  匹配单词的开始或结束<br>\B  匹配非单词的开始或结束<br>^  匹配必须出现在字符串的开头或行的开头<br>$  匹配必须出现在以下位置：字符串结尾、字符串结尾处的 \n 之前或行的结尾。   </p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>WPF的xaml代码中显示“命名空间不存在对应名称”的错误</title>
-    <url>/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<h2 id="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"><a href="#爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题" class="headerlink" title="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"></a>爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题</h2><p>背景：在创建一个新的WPF项目时, app.xaml中的DataContext指向了一个IOC初始化类，但是“IOCInit.cs”在项目中已经存在，编译器却提示：命名空间不存在对应名称。</p>
-<a id="more"></a>
-
-<p>不知道是什么玄学，网上也没有找到具体的原因，但是都一致给出了相似的解决方法：</p>
-<ul>
-<li>在Debug下生成时说命名空间中找不到我自定义的控件。此时切换到Release模式，再生成。生成成功后切换回Debug模式就不报错了。这是Release模式下找不到我们自定义的控件导致的报错。所以切换为Release后生成则可以解决此问题。</li>
-<li>同是xaml里显示“命名空间不存在对应名称”的问题，在项目属性里配置Debug/Release不是任何时候都奏效的，这时候可以根据警告信息检查程序集版本有无问题，如果程序集版本落后，在项目属性里调整版本然后编译即可解决问题。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>VS</tag>
-        <tag>Bug</tag>
-        <tag>WPF</tag>
-        <tag>XAML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
-    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
-<a id="more"></a>
-
-<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
-<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
-<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
-<br/>
-
-<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>VS</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬坑-显示器标识号与屏幕区域不匹配的问题</title>
-    <url>/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="爬坑：关于显示器标识号与屏幕区域不匹配的问题"><a href="#爬坑：关于显示器标识号与屏幕区域不匹配的问题" class="headerlink" title="爬坑：关于显示器标识号与屏幕区域不匹配的问题"></a>爬坑：关于显示器标识号与屏幕区域不匹配的问题</h2><p>最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。</p>
-<p>起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。</p>
-<a id="more"></a>
-
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201010203717382.png" alt="image-20201010203717382" style="zoom: 50%;" />
-
-<p>那就做呗，然后在项目的加载事件里添加了几行代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private void ShowToLastSc(int count)</span><br><span class="line">&#123;</span><br><span class="line">    Screen[] sc;</span><br><span class="line">    sc &#x3D; Screen.AllScreens;</span><br><span class="line"></span><br><span class="line">    this.StartPosition &#x3D; FormStartPosition.Manual;</span><br><span class="line">    &#x2F;&#x2F;this.Location &#x3D; new Point(sc[count].Bounds.Left, sc[count].Bounds.Top);</span><br><span class="line">    this.Left &#x3D; sc[count].Bounds.Left;</span><br><span class="line">    this.Top &#x3D; sc[count].Bounds.Top;</span><br><span class="line">    this.Width &#x3D; sc[count].Bounds.Width;</span><br><span class="line">    this.Height &#x3D; sc[count].Bounds.Height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>运行后发现效果不对，原本该显示在最后一块屏幕的窗口显示在了1号屏。</p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>Bug</tag>
-        <tag>计算机硬件</tag>
       </tags>
   </entry>
   <entry>
@@ -1069,6 +1014,81 @@ Console.WriteLine(name);    // Harry</code></pre><p>LINQ 查询变量被类型�
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
+    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
+<a id="more"></a>
+
+<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
+<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
+<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
+<br/>
+
+<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>VS</tag>
+        <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WPF的xaml代码中显示“命名空间不存在对应名称”的错误</title>
+    <url>/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<h2 id="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"><a href="#爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题" class="headerlink" title="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"></a>爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题</h2><p>背景：在创建一个新的WPF项目时, app.xaml中的DataContext指向了一个IOC初始化类，但是“IOCInit.cs”在项目中已经存在，编译器却提示：命名空间不存在对应名称。</p>
+<a id="more"></a>
+
+<p>不知道是什么玄学，网上也没有找到具体的原因，但是都一致给出了相似的解决方法：</p>
+<ul>
+<li>在Debug下生成时说命名空间中找不到我自定义的控件。此时切换到Release模式，再生成。生成成功后切换回Debug模式就不报错了。这是Release模式下找不到我们自定义的控件导致的报错。所以切换为Release后生成则可以解决此问题。</li>
+<li>同是xaml里显示“命名空间不存在对应名称”的问题，在项目属性里配置Debug/Release不是任何时候都奏效的，这时候可以根据警告信息检查程序集版本有无问题，如果程序集版本落后，在项目属性里调整版本然后编译即可解决问题。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>VS</tag>
+        <tag>Bug</tag>
+        <tag>WPF</tag>
+        <tag>XAML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬坑-显示器标识号与屏幕区域不匹配的问题</title>
+    <url>/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="爬坑：关于显示器标识号与屏幕区域不匹配的问题"><a href="#爬坑：关于显示器标识号与屏幕区域不匹配的问题" class="headerlink" title="爬坑：关于显示器标识号与屏幕区域不匹配的问题"></a>爬坑：关于显示器标识号与屏幕区域不匹配的问题</h2><p>最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。</p>
+<p>起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。</p>
+<a id="more"></a>
+
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201010203717382.png" alt="image-20201010203717382" style="zoom: 50%;" />
+
+<p>那就做呗，然后在项目的加载事件里添加了几行代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private void ShowToLastSc(int count)</span><br><span class="line">&#123;</span><br><span class="line">    Screen[] sc;</span><br><span class="line">    sc &#x3D; Screen.AllScreens;</span><br><span class="line"></span><br><span class="line">    this.StartPosition &#x3D; FormStartPosition.Manual;</span><br><span class="line">    &#x2F;&#x2F;this.Location &#x3D; new Point(sc[count].Bounds.Left, sc[count].Bounds.Top);</span><br><span class="line">    this.Left &#x3D; sc[count].Bounds.Left;</span><br><span class="line">    this.Top &#x3D; sc[count].Bounds.Top;</span><br><span class="line">    this.Width &#x3D; sc[count].Bounds.Width;</span><br><span class="line">    this.Height &#x3D; sc[count].Bounds.Height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后发现效果不对，原本该显示在最后一块屏幕的窗口显示在了1号屏。</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+        <tag>计算机硬件</tag>
       </tags>
   </entry>
 </search>
