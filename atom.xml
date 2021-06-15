@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2021-05-03T09:55:59.040Z</updated>
+  <updated>2021-06-15T14:28:06.365Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>爬坑-关于程序跨区域使用时小数点转换成逗号的问题</title>
+    <link href="https://opppmarc.github.io/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>https://opppmarc.github.io/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/</id>
+    <published>2021-06-15T13:27:20.000Z</published>
+    <updated>2021-06-15T14:28:06.365Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;手头有项目需要和外企业合作开发，其中涉及到一个协议对接的问题，虽然两边的开发团队事先都有协商好统一的开发协议，但是在收发命令时，发现国外Double转换会把小数点转换为逗号。&lt;br&gt;这种情况在中文操作系统下没有出现，反而是在英文操作系统下出现了，两边的人还反复确认了几遍、都觉得自己没有问题。最后通过&lt;code&gt;修改区域性&lt;/code&gt;为英文解决。  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+      <category term="Bug" scheme="https://opppmarc.github.io/tags/Bug/"/>
+    
+  </entry>
   
   <entry>
     <title>浅论SDK和API的联系</title>
@@ -479,27 +502,6 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
       <category term="算法" scheme="https://opppmarc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
       <category term="LeetCode" scheme="https://opppmarc.github.io/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Gneric Note</title>
-    <link href="https://opppmarc.github.io/2020/06/09/Gneric-Note/"/>
-    <id>https://opppmarc.github.io/2020/06/09/Gneric-Note/</id>
-    <published>2020-06-09T07:27:07.000Z</published>
-    <updated>2020-06-09T08:34:42.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;泛型&quot;&gt;&lt;a href=&quot;#泛型&quot; class=&quot;headerlink&quot; title=&quot;泛型&quot;&gt;&lt;/a&gt;泛型&lt;/h2&gt;&lt;p&gt;泛型（Generic） 允许您延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许您编写一个可以与任何数据类型一起工作的类或方法。  &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
-    
-    
-      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
     
   </entry>
   
