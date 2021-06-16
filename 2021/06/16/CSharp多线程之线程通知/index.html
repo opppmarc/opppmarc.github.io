@@ -11,7 +11,7 @@
    
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    爬坑-关于程序跨区域使用时小数点转换成逗号的问题 |  阿虞在路上
+    CSharp多线程之线程通知 |  阿虞在路上
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -44,7 +44,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-爬坑-关于程序跨区域使用时小数点转换成逗号的问题" class="article article-type-post" itemscope
+  <article id="post-CSharp多线程之线程通知" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -52,7 +52,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  爬坑-关于程序跨区域使用时小数点转换成逗号的问题
+  CSharp多线程之线程通知
 </h1>
  
 
@@ -61,8 +61,8 @@
 
     
     <div class="article-meta">
-      <a href="/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-date">
-  <time datetime="2021-06-15T13:27:20.000Z" itemprop="datePublished">2021-06-15</time>
+      <a href="/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/" class="article-date">
+  <time datetime="2021-06-16T12:24:01.000Z" itemprop="datePublished">2021-06-16</time>
 </a>
       
   <div class="article-category">
@@ -76,7 +76,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">396</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -96,6 +96,8 @@
 
     
     
+    <div class="tocbot"></div>
+
 
 
 
@@ -108,28 +110,53 @@
       
 
       
-      <p>手头有项目需要和外企业合作开发，其中涉及到一个协议对接的问题，虽然两边的开发团队事先都有协商好统一的开发协议，但是在收发命令时，发现国外Double转换会把小数点转换为逗号。<br>这种情况在中文操作系统下没有出现，反而是在英文操作系统下出现了，两边的人还反复确认了几遍、都觉得自己没有问题。最后通过<code>修改区域性</code>为英文解决。  </p>
+      <p>这篇主要学习C#中用于发送线程通知的AutoResetEvent类。  </p>
+<h2 id="AutoResetEvent类"><a href="#AutoResetEvent类" class="headerlink" title="AutoResetEvent类"></a>AutoResetEvent类</h2><p>表示线程同步事件在一个等待线程释放后收到信号时自动重置。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public selead Class AutoResetEvent ：System.Threading.EventWaitHandle</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.autoresetevent?view=net-5.0" target="_blank" rel="noopener">MSDN介绍传送门</a>  </p>
 <a id="more"></a>
 
-<p>App.xaml:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Application</span> <span class="attr">x:Class</span>=<span class="string">"测试工具.App"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns</span>=<span class="string">"http://schemas.microsoft.com/winfx/2006/xaml/presentation"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:x</span>=<span class="string">"http://schemas.microsoft.com/winfx/2006/xaml"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">xmlns:local</span>=<span class="string">"clr-namespace:测试工具"</span></span></span><br><span class="line"><span class="tag">             <span class="attr">StartupUri</span>=<span class="string">"MainWindow.xaml"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Application.Resources</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ResourceDictionary</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">ResourceDictionary.MergedDictionaries</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- 设置区域性为英文 --&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"StringResource.en-US.xaml"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">ResourceDictionary.MergedDictionaries</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ResourceDictionary</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Application.Resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Application</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>像这种情况可以通过以下三种方法解决：  </p>
-<ol>
-<li><p>转换的数字格式为“3.3”，转换后出来aa为“3，3”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CultureInfo ci &#x3D; (CultureInfo)CultureInfo.CurrentCulture.Clone();</span><br><span class="line">ci.NumberFormat.CurrentDecimalSeparator &#x3D; &quot;.&quot;;</span><br><span class="line">float aa &#x3D; float.Parsse(this.textBox1.Text.Trim(), NumberStyles.Any, ci);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>工程Program.cs中增加这行代码，通过CurrentCulture把线程区域性设置为中文。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置区域性，其他语言同理，如&quot;en-US&quot;</span><br><span class="line">Thread.CurrentThread.CurrentCulture &#x3D; new System.Globalization.CultureInfo(&quot;zh-CN&quot;);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>亦或是在App.xmal中修改区域性，和开篇的那行代码一样。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ResourceDictionary</span> <span class="attr">Source</span>=<span class="string">"StringResource.en-US.xaml"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ol>
-<p>参考：<br>&lt;区域性问题导致多语言软件允许出错&gt; yueqing</p>
+<p>AutoResetEvent的构造函数参数用于设置信号状态。  </p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AutoResetEvent(Boolean)</td>
+<td>用一个指示是否将初始状态设置为终止的布尔值初始化 AutoResetEvent 类的新实例。</td>
+</tr>
+</tbody></table>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>AutoResetEvent类的方法包括Set、Reset、WaitOne、Close、Dispose等，这里就不一一展开细说了，主要介绍3种基础的方法。  </p>
+<h4 id="Reset"><a href="#Reset" class="headerlink" title="Reset()"></a>Reset()</h4><p>将事件状态设置为非终止状态，阻塞线程。<br>字面意思，重置该线程的信号状态，使用了该方法的线程会被阻塞，只有收到其他线程的信号才能继续执行。<br>当AutoResetEvent已经处于终止状态，线程调用WaitOne()不会起作用，这个时候就需要调用Reset()重置AutoResetEvent的状态为无信号状态。  </p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set()"></a>Set()</h4><p>将事件状态设置为终止状态，允许一个或多个等待线程继续。<br>字面意思，使用了该方法的线程会被阻塞，而其他正在等待的线程会受到信号。</p>
+<h4 id="WaitOne-WaitOne-Int32-WaitOne-Int32-Boolean"><a href="#WaitOne-WaitOne-Int32-WaitOne-Int32-Boolean" class="headerlink" title="WaitOne() / WaitOne(Int32) / WaitOne(Int32, Boolean)"></a>WaitOne() / WaitOne(Int32) / WaitOne(Int32, Boolean)</h4><p>阻止当前线程，知道WaitHandle受到信号。<br>WaitOne()用来等待另一个线程发送通知，一次只能允许一个线程进入。<br>可以通过参数指定等待时间(Int)和等待结束后是否需要退出同步域(Bool)。  </p>
+<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static AutoResetEvent resetEvent &#x3D; new AutoResetEvent(false);</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        new Thread(doOne).Start();</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.ReadKey();          &#x2F;&#x2F;等待按键</span><br><span class="line">            resetEvent.Set();           &#x2F;&#x2F;重置等待线程为非中止状态</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void doOne(object obj)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;线程准备就绪，正在等待信号...&quot;);</span><br><span class="line">        resetEvent.WaitOne();           &#x2F;&#x2F;等待其他线程发送信号</span><br><span class="line">        Console.WriteLine(&quot;收到信号，继续执行...&quot;);           </span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">            Thread.Sleep(500);</span><br><span class="line">        Console.WriteLine(&quot;第一阶段执行完毕&quot;);</span><br><span class="line"></span><br><span class="line">        resetEvent.Reset();</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;线程准备就绪，正在等待信号...&quot;);</span><br><span class="line">        resetEvent.WaitOne();             &#x2F;&#x2F;等待其他线程发送信号</span><br><span class="line">        Console.WriteLine(&quot;收到信号，继续执行...&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">           Thread.Sleep(500);</span><br><span class="line">        Console.WriteLine(&quot;第二阶段执行完毕&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://imgtu.com/i/2X7dW8" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/06/16/2X7dW8.jpg" alt="2X7dW8.jpg"></a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>AutoResetEvent 对象有终止和非终止状态。Set() 设置终止状态，Reset() 重置非终止状态。  </p>
+<p>这个终止状态，可以理解成信号已经通知；非终止状态则是信号还没有通知。  </p>
+<p>注意终止状态和非终止状态指的是 AutoResetEvent 的状态，不是指线程的状态。  </p>
+<blockquote>
+<p>线程通过调用 WaitOne() 方法，等待信号；<br>另一个线程可以调用 Set() 通知 AutoResetEvent 释放等待线程。<br>然后 AutoResetEvent 变为终止状态。  </p>
+</blockquote>
+<p>需要注意的是，如果 AutoResetEvent 已经处于终止状态，那么线程调用 WaitOne() 不会再起作用。除非调用Reset() 。  </p>
+<p>构造函数中的参数，正是设置这个状态的。true 代表终止状态，false 代表非终止状态。如果使用 new AutoResetEvent(true); ，则线程一开始是无需等待信号的。  </p>
+<p>在使用完类型后，您应直接或间接释放类型，显式调用 Close()/Dispose() 或 使用 using。 当然，也可以直接退出程序。  </p>
+<p>需要注意的是，如果多次调用 Set() 的时间间隔过短，如果第一次 Set() 还没有结束(信号发送需要处理时间)，那么第二次 Set() 可能无效(不起作用)。  </p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>两个线程具有的功能：阻塞自己、解除另一个线程的阻塞。  </p>
+<p>用电影《最佳拍档》里面的一个画面来理解。  </p>
+<p>DoOne 、DoTwo 轮流呼吸，不能自己控制自己呼吸，但自己能够决定别人呼吸。  </p>
+<p>你搞我，我搞你，就能相互呼吸了。  </p>
+<p><a href="https://imgtu.com/i/2X79iV" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/06/16/2X79iV.png" alt="2X79iV.png"></a></p>
+<p>当然WaitOne() 也可以设置等待时间，如果 光头佬(DoOne) 耍赖不让 金刚(DoTwo)呼吸，金刚等待一定时间后，可以强行荡动天平，落地呼吸。  </p>
+<blockquote>
+<p>注意，AutoRestEvent 用得不当容易发生死锁。<br>另外 AutoRestEvent 使用的是内核时间模式，因此等待时间不能太长，不然比较耗费 CPU 时间。<br>AutoResetEvent 也适合用于线程同步。</p>
+</blockquote>
+<p>另外，线程中使用 WaitOne() ，另一个线程使用 Set() 通知后， AutoResetEvent 对象会自动恢复非终止状态，不需要线程使用 Reset() 。  </p>
+<p>参考:<br>&lt;C#多线程(6): 线程通知&gt; 痴者工良</p>
 
       
       <!-- reward -->
@@ -194,14 +221,14 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://opppmarc.github.io/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bug/" rel="tag">Bug</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BA%BF%E7%A8%8B/" rel="tag">线程</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag">转载</a></li></ul>
 
 
     </footer>
@@ -212,19 +239,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            CSharp多线程之线程通知
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/05/03/%E6%B5%85%E8%AE%BASDK%E5%92%8CAPI%E7%9A%84%E8%81%94%E7%B3%BB/" class="article-nav-link">
+      <a href="/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">浅论SDK和API的联系</div>
+        <div class="article-nav-title">爬坑-关于程序跨区域使用时小数点转换成逗号的问题</div>
       </a>
     
   </nav>

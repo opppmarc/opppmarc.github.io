@@ -153,6 +153,117 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
+    <title>CSharp中的调试与错误处理</title>
+    <url>/2020/05/18/CSharpDebug/</url>
+    <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
+<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
+<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
+
+</li>
+</ul>
+<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
+<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
+<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
+<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
+<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
+<li>4.在行首位置直接单击添加，再次单击删除。</li>
+</ul>
+<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
+<blockquote>
+<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
+</blockquote>
+<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
+<p><code>监视</code>前需要添加变量对象：  </p>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
+<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
+<blockquote>
+<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
+</blockquote>
+<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
+<blockquote>
+<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
+<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
+<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
+<pre><code class="c#"><span class="keyword">try</span>{ 
+    ···     <span class="comment">//包含可能出现异常的代码</span>
+}
+<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
+    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
+<span class="keyword">finally</span>{  
+    ···     <span class="comment">//包含始终会执行的代码</span>
+}</code></pre>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSharp多线程之线程通知</title>
+    <url>/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/</url>
+    <content><![CDATA[<p>这篇主要学习C#中用于发送线程通知的AutoResetEvent类。  </p>
+<h2 id="AutoResetEvent类"><a href="#AutoResetEvent类" class="headerlink" title="AutoResetEvent类"></a>AutoResetEvent类</h2><p>表示线程同步事件在一个等待线程释放后收到信号时自动重置。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public selead Class AutoResetEvent ：System.Threading.EventWaitHandle</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.autoresetevent?view=net-5.0" target="_blank" rel="noopener">MSDN介绍传送门</a>  </p>
+<a id="more"></a>
+
+<p>AutoResetEvent的构造函数参数用于设置信号状态。  </p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AutoResetEvent(Boolean)</td>
+<td>用一个指示是否将初始状态设置为终止的布尔值初始化 AutoResetEvent 类的新实例。</td>
+</tr>
+</tbody></table>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>AutoResetEvent类的方法包括Set、Reset、WaitOne、Close、Dispose等，这里就不一一展开细说了，主要介绍3种基础的方法。  </p>
+<h4 id="Reset"><a href="#Reset" class="headerlink" title="Reset()"></a>Reset()</h4><p>将事件状态设置为非终止状态，阻塞线程。<br>字面意思，重置该线程的信号状态，使用了该方法的线程会被阻塞，只有收到其他线程的信号才能继续执行。<br>当AutoResetEvent已经处于终止状态，线程调用WaitOne()不会起作用，这个时候就需要调用Reset()重置AutoResetEvent的状态为无信号状态。  </p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set()"></a>Set()</h4><p>将事件状态设置为终止状态，允许一个或多个等待线程继续。<br>字面意思，使用了该方法的线程会被阻塞，而其他正在等待的线程会受到信号。</p>
+<h4 id="WaitOne-WaitOne-Int32-WaitOne-Int32-Boolean"><a href="#WaitOne-WaitOne-Int32-WaitOne-Int32-Boolean" class="headerlink" title="WaitOne() / WaitOne(Int32) / WaitOne(Int32, Boolean)"></a>WaitOne() / WaitOne(Int32) / WaitOne(Int32, Boolean)</h4><p>阻止当前线程，知道WaitHandle受到信号。<br>WaitOne()用来等待另一个线程发送通知，一次只能允许一个线程进入。<br>可以通过参数指定等待时间(Int)和等待结束后是否需要退出同步域(Bool)。  </p>
+<h2 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static AutoResetEvent resetEvent &#x3D; new AutoResetEvent(false);</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        new Thread(doOne).Start();</span><br><span class="line">        while (true)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.ReadKey();          &#x2F;&#x2F;等待按键</span><br><span class="line">            resetEvent.Set();           &#x2F;&#x2F;重置等待线程为非中止状态</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private static void doOne(object obj)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;线程准备就绪，正在等待信号...&quot;);</span><br><span class="line">        resetEvent.WaitOne();           &#x2F;&#x2F;等待其他线程发送信号</span><br><span class="line">        Console.WriteLine(&quot;收到信号，继续执行...&quot;);           </span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">            Thread.Sleep(500);</span><br><span class="line">        Console.WriteLine(&quot;第一阶段执行完毕&quot;);</span><br><span class="line"></span><br><span class="line">        resetEvent.Reset();</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;线程准备就绪，正在等待信号...&quot;);</span><br><span class="line">        resetEvent.WaitOne();             &#x2F;&#x2F;等待其他线程发送信号</span><br><span class="line">        Console.WriteLine(&quot;收到信号，继续执行...&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">           Thread.Sleep(500);</span><br><span class="line">        Console.WriteLine(&quot;第二阶段执行完毕&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="https://imgtu.com/i/2X7dW8" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/06/16/2X7dW8.jpg" alt="2X7dW8.jpg"></a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>AutoResetEvent 对象有终止和非终止状态。Set() 设置终止状态，Reset() 重置非终止状态。  </p>
+<p>这个终止状态，可以理解成信号已经通知；非终止状态则是信号还没有通知。  </p>
+<p>注意终止状态和非终止状态指的是 AutoResetEvent 的状态，不是指线程的状态。  </p>
+<blockquote>
+<p>线程通过调用 WaitOne() 方法，等待信号；<br>另一个线程可以调用 Set() 通知 AutoResetEvent 释放等待线程。<br>然后 AutoResetEvent 变为终止状态。  </p>
+</blockquote>
+<p>需要注意的是，如果 AutoResetEvent 已经处于终止状态，那么线程调用 WaitOne() 不会再起作用。除非调用Reset() 。  </p>
+<p>构造函数中的参数，正是设置这个状态的。true 代表终止状态，false 代表非终止状态。如果使用 new AutoResetEvent(true); ，则线程一开始是无需等待信号的。  </p>
+<p>在使用完类型后，您应直接或间接释放类型，显式调用 Close()/Dispose() 或 使用 using。 当然，也可以直接退出程序。  </p>
+<p>需要注意的是，如果多次调用 Set() 的时间间隔过短，如果第一次 Set() 还没有结束(信号发送需要处理时间)，那么第二次 Set() 可能无效(不起作用)。  </p>
+<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>两个线程具有的功能：阻塞自己、解除另一个线程的阻塞。  </p>
+<p>用电影《最佳拍档》里面的一个画面来理解。  </p>
+<p>DoOne 、DoTwo 轮流呼吸，不能自己控制自己呼吸，但自己能够决定别人呼吸。  </p>
+<p>你搞我，我搞你，就能相互呼吸了。  </p>
+<p><a href="https://imgtu.com/i/2X79iV" target="_blank" rel="noopener"><img src="https://z3.ax1x.com/2021/06/16/2X79iV.png" alt="2X79iV.png"></a></p>
+<p>当然WaitOne() 也可以设置等待时间，如果 光头佬(DoOne) 耍赖不让 金刚(DoTwo)呼吸，金刚等待一定时间后，可以强行荡动天平，落地呼吸。  </p>
+<blockquote>
+<p>注意，AutoRestEvent 用得不当容易发生死锁。<br>另外 AutoRestEvent 使用的是内核时间模式，因此等待时间不能太长，不然比较耗费 CPU 时间。<br>AutoResetEvent 也适合用于线程同步。</p>
+</blockquote>
+<p>另外，线程中使用 WaitOne() ，另一个线程使用 Set() 通知后， AutoResetEvent 对象会自动恢复非终止状态，不需要线程使用 Reset() 。  </p>
+<p>参考:<br>&lt;C#多线程(6): 线程通知&gt; 痴者工良</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>转载</tag>
+        <tag>线程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSharp6新特性</title>
     <url>/2020/11/26/CSharp6%E6%96%B0%E7%89%B9%E6%80%A7/</url>
     <content><![CDATA[<h2 id="有关C-6新特性的简单总结"><a href="#有关C-6新特性的简单总结" class="headerlink" title="有关C#6新特性的简单总结"></a>有关C#6新特性的简单总结</h2><p>转载自Zoe_yan <a href="https://www.cnblogs.com/zoe-yan/p/10276270.html" target="_blank" rel="noopener">《C# 6新特性简单总结》</a></p>
@@ -241,58 +352,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>DeadCellEvolve</title>
-    <url>/2020/05/29/DeadCellEvolve/</url>
-    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
-<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
-<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
-<a id="more"></a>
-
-<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
-<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
-<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
-<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
-<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
-<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
-<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
-<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
-<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
-<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
-<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
-<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
-<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
-<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
-<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
-<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
-<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
-<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
-<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
-<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
-<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
-<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
-<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
-<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
-<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
-<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
-<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
-<br>  
-<br>  
-]]></content>
-      <categories>
-        <category>译文</category>
-      </categories>
-      <tags>
-        <tag>单机</tag>
-        <tag>搬运</tag>
-        <tag>译文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Gneric Note</title>
     <url>/2020/06/09/Gneric-Note/</url>
     <content><![CDATA[<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>泛型（Generic） 允许您延迟编写类或方法中的编程元素的数据类型的规范，直到实际在程序中使用它的时候。换句话说，泛型允许您编写一个可以与任何数据类型一起工作的类或方法。  </p>
@@ -361,92 +420,55 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>CSharp中的调试与错误处理</title>
-    <url>/2020/05/18/CSharpDebug/</url>
-    <content><![CDATA[<h2 id="正常模式下的调试"><a href="#正常模式下的调试" class="headerlink" title="正常模式下的调试"></a>正常模式下的调试</h2><ul>
-<li>1.在VS中 我们使用<code>Console.Write(或者WriteLine)</code>方法向控制台输出变量的值，通过查看变量值是否符合预期来调试错误。</li>
-<li>2.在Unity中我们使用<code>Debug.Log(&quot;&quot;) Debug.LogError(&quot;&quot;) Debug.LogWarn9(&quot;&quot;)</code>，向unity的Console窗口输出信息，帮助我们调试错误。<a id="more"></a>
-
-</li>
-</ul>
-<h2 id="中断模式下的调试"><a href="#中断模式下的调试" class="headerlink" title="中断模式下的调试"></a>中断模式下的调试</h2><p>断点是源代码中自动进入中断模式的一个标记，当遇到断点的时候，程序会进入中断模式。</p>
-<h3 id="如何插入断点"><a href="#如何插入断点" class="headerlink" title="如何插入断点?"></a>如何插入断点?</h3><ul>
-<li>1.右击代码行，选择breakpoint，insert breakpoint。</li>
-<li>2.光标定位到代码行，菜单-debug-Toggle breakpoint。</li>
-<li>3.光标定位到代码行，按F9插入brakpoint，再次按下删除。</li>
-<li>4.在行首位置直接单击添加，再次单击删除。</li>
-</ul>
-<h3 id="中断模式下监视、修改变量"><a href="#中断模式下监视、修改变量" class="headerlink" title="中断模式下监视、修改变量"></a>中断模式下监视、修改变量</h3><p>中断模式下查看变量值最简单的方法即把鼠标指向源代码中的变量名，会出现提示显示该变量信息。<br>中断模下界面的左下角会有三个选项卡，其中两个是：</p>
-<blockquote>
-<p>局部变量 -当前运行环境中所有局部变量的类型和值<br>监视 -监视变量值的变化  </p>
+    <title>DeadCellEvolve</title>
+    <url>/2020/05/29/DeadCellEvolve/</url>
+    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
+<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
 </blockquote>
-<p><code>局部变量</code>选项卡内可以直接查看或修改变量信息：  </p>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgF4f.png" alt="YhgF4f.png"> </p>
-<p><code>监视</code>前需要添加变量对象：  </p>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgE8S.png" alt="YhgE8S.png"> </p>
-<h3 id="调用堆栈和即时窗口"><a href="#调用堆栈和即时窗口" class="headerlink" title="调用堆栈和即时窗口"></a>调用堆栈和即时窗口</h3><p>中断模式下界面右下角可以选择<code>调用堆栈</code>和<code>即时窗口</code>  </p>
-<blockquote>
-<p><code>调用堆栈</code>可以查看运行进度和代码的被调用情况  </p>
-</blockquote>
-<p><a href="https://imgchr.com/i/YhgAC8" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/05/18/YhgAC8.png" alt="YhgAC8.png"></a></p>
-<blockquote>
-<p>我们可以在<code>即时窗口</code>输入命令，查看、修改变量值，或输入表达式查看结果。  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/18/YhgiUP.png" alt="YhgiUP.png"></p>
-<h3 id="单步执行代码"><a href="#单步执行代码" class="headerlink" title="单步执行代码"></a>单步执行代码</h3><p>中断模式下可以单步执行代码，分<code>逐过程</code>和<code>逐语句</code>，同样是逐条语句运行，但是逐语句执行遇到函数时不会进入函数。  </p>
-<h2 id="错误处理-异常处理"><a href="#错误处理-异常处理" class="headerlink" title="错误处理(异常处理)"></a>错误处理(异常处理)</h2><p>处理异常的语法结构：  </p>
-<pre><code class="c#"><span class="keyword">try</span>{ 
-    ···     <span class="comment">//包含可能出现异常的代码</span>
-}
-<span class="keyword">catch</span>(&lt;exceptionType&gt;e){    <span class="comment">//当catch参数不写时，会捕捉任何出现的异常</span>
-    ···     <span class="comment">//当出现的异常类型和cath块中的异常类型一样时，捕捉异常。</span>
-<span class="keyword">finally</span>{  
-    ···     <span class="comment">//包含始终会执行的代码</span>
-}</code></pre>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>面向对象：类定义/构造/属性</title>
-    <url>/2020/05/27/Object-oriented/</url>
-    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
+<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
 <a id="more"></a>
 
-
-
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </p>
-<p>构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 <code>Person</code> 的类的构造函数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private string _name &#x3D; &quot;Hello&quot;;</span><br><span class="line"></span><br><span class="line">public string Name</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line">    protected set</span><br><span class="line">    &#123;</span><br><span class="line">        _name &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
-</blockquote>
-<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Parent</span><br><span class="line">&#123;</span><br><span class="line">    public virtual int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Notice the accessor accessibility level.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; No access modifier is used here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Kid : Parent</span><br><span class="line">&#123;</span><br><span class="line">    public override int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Use the same accessibility level as in the overridden accessor.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Cannot use access modifier here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
+<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
+<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
+<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
+<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
+<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
+<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
+<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
+<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
+<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
+<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
+<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
+<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
+<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
+<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
+<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
+<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
+<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
+<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
+<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
+<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
+<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
+<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
+<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
+<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
+<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
+<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
+<br>  
+<br>  
 ]]></content>
       <categories>
-        <category>C#</category>
+        <category>译文</category>
       </categories>
       <tags>
-        <tag>C#</tag>
+        <tag>单机</tag>
+        <tag>搬运</tag>
+        <tag>译文</tag>
       </tags>
   </entry>
   <entry>
@@ -502,50 +524,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>单机</tag>
         <tag>测评</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Reverse-integer</title>
-    <url>/2020/06/12/Reverse-integer/</url>
-    <content><![CDATA[<p>昨天在LeetCode上刷到了一个算法题，在看官方的参考思路时有个点给我卡了一下，在这之前对<code>整数溢出</code>的判断完全没有概念，在这做一下记录。  </p>
-<a id="more"></a>
-
-<h2 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h2><p><a href="https://leetcode-cn.com/problems/reverse-integer/" target="_blank" rel="noopener">LeetCode URL</a> </p>
-<p>题目：给出一个32位的有符号整数，你需要将这个整数中每一位上的数字进行反转。<br><em>示例1：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
-
-<p><em>示例2：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：-123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
-
-<p><em>示例3：</em></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
-
-<p>注意：假设我们的环境只能存储下32位的有符号整数，则起数值范围为<code>[-2147483648, 2147483647]</code>,请根据这个假设，如果反转后整数溢出那么就返回0。  </p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>思路：<br>我们可以一次构建反转整数中的一位数整数附加另字，反复构建多次得到反转后的整数，同时通过一次构建一位数字的方式，我们就可以预先检查向反转一位数字是否会导致整数溢出。  </p>
-<p>算法：  </p>
-<blockquote>
-<p>反转整数的方法可以与反转字符串的方法进行类比</p>
-</blockquote>
-<p>通过重复“弹出”原整数中最后一位数字即个位数，然后把该数字“推入”到反转整数的个位上（想象一下，把一个满弹弹夹上的子弹依次填入另一个空弹夹），然后在没有堆栈、数组辅助的情况下用数学方法实现“弹出、推入”，最后得到反转后的整数。  </p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pop operation:</span></span><br><span class="line">pop = x % <span class="number">10</span>;</span><br><span class="line">x /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//push operation:</span></span><br><span class="line">temp = rev * <span class="number">10</span> + pop;</span><br><span class="line">rev = temp;</span><br></pre></td></tr></table></figure>
-
-<p>当 <code>temp = rev * 10 + pop</code> 时会导致溢出，需要事先检查语句是否会导致整数溢出  </p>
-<p><img src="https://s1.ax1x.com/2020/06/12/tqqysH.png" alt="tqqysH.png"></p>
-<p>就这个地方，这个7和8那会琢磨了好久愣是一时间没想明白，后来google查了下才知道是指Int最大值和最小值的个位······</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; INT_MAX/<span class="number">10</span> || (rev == INT_MAX / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; INT_MIN/<span class="number">10</span> || (rev == INT_MIN / <span class="number">10</span> &amp;&amp; pop &lt; <span class="number">-8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>该<code>reverse(int x)</code>函数反转的十进制数字x。例如，if x = 102，它返回201，如果x = -102返回-201。</p>
-<p>x计算反向时，将其存储在<code>rev</code>。例如，对于x = 102，<code>rev</code>取连续值2，20，201。</p>
-<p>在每次迭代时，<code>rev</code>乘以10，并向其添加一位数。当然，<code>rev</code>不能大于<code>Integer.MAX_VALUE</code>（2147483647）。因此，乘前<code>rev</code>通过10，我们检查是否乘以它10并加入<code>pop</code>将使其大于<code>Integer.MAX_VALUE</code>。</p>
-<p>我们首先检查是否<code>rev</code>大于<code>Integer.MAX_VALUE / 10</code>（214748364）。如果它更大，则不存在反向整数。如果不是，那么<code>rev</code>小于或等于<code>Integer.MAX_VALUE / 10</code>。如果它小于<code>Integer.MAX_VALUE / 10</code>，那么即使我们乘以它10，我们也可以添加任何数字（pop），我们不会超过<code>Integer.MAX_VALUE</code>。但是，如果它等于<code>Integer.MAX_VALUE / 10</code>，那么我们必须确保<code>pop不是&gt; 7</code>（2147483647 - 214748364 * 10）否则我们会超过<code>Integer.MAX_VALUE</code>。</p>
-<p>同样的推理适用于Integer.MIN_VALUE（-2147483648）。</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-        <tag>LeetCode</tag>
       </tags>
   </entry>
   <entry>
@@ -640,50 +618,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>String Method</title>
-    <url>/2020/06/13/StringMethod/</url>
-    <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
-<ul>
-<li><p>1.ComparaTo()方法，比较字符串的内容。<br>返回一个Int类型值，相同则返回0，不同则返回1。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name &#x3D; &quot;marc&quot;;</span><br><span class="line">int res &#x3D; name.CompareTo(&quot;lisa&quot;);</span><br><span class="line">Console.Write(res);     &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>2.Replace()方法，把指定的字符或字符串换成另一个字符串。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string newStr &#x3D; name.Replace(&quot;rc&quot;,&quot;sa&quot;);</span><br><span class="line">Console.Write(name);        &#x2F;&#x2F;masa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>3.Split()方法，在出现给定字符的地方，把字符串拆分成一个字符串数组。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string[] strArr &#x3D; name.Split(&#39;a&#39;);</span><br><span class="line">foreach (var temp in strArr)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(temp + &quot; &quot;);     &#x2F;&#x2F;m rc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>4.Substring()方法，在字符串中检索给定位置的子字符串。<br>Substring(StartIndex, Length)<br>如果参数中没有给定截取长度的话，就会截取字符串里选定字符往后的所有字符。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string subStr &#x3D; name.Substring(1,2);    &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取2个字符</span><br><span class="line">string subStr2 &#x3D; name.Substring(3);     &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取往后的所有字符</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>5.ToLower()方法，把字符串转换为小写形式。</p>
-</li>
-<li><p>6.ToUpper()方法，把字符串转换为大写形式。</p>
-</li>
-<li><p>7.Trim()方法，删除首尾的空白。<br>常用于用户注册账号的过程中，像玩家注册的用户名首位带有空格的话，就用Trim()方法删掉。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name2 &#x3D; &quot;  marc  &quot;;</span><br><span class="line">string trimStr &#x3D; name2.Trim();       &#x2F;&#x2F;去除name2的首位空格</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>8.Concat()方法，合并字符串。</p>
-</li>
-<li><p>9.CopyTo()方法，把字符串中指定的字符复制到另一个数组中。</p>
-</li>
-<li><p>10.Format()方法，格式化字符串。</p>
-</li>
-<li><p>11.IndexOf()方法，取得字符串中第一次出现某个给定字符或字符串的位置。<br>我们可以使用这个方法判断当前字符串是否包含一个给定的子字符串，如包含则返回第一个字符的索引，否则返回-1。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int index &#x3D; name.IndexOf(&quot;rc&quot;);     &#x2F;&#x2F;在name中查找出现子字符串&quot;rc&quot;的索引位置</span><br><span class="line">Console.WriteLine(index);   &#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<br>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>文字截断在blog里不起作用？</title>
     <url>/2020/05/27/TruncationError/</url>
     <content><![CDATA[<p>有次写好一篇笔记想上传到博客，在本地预览时发现“阅读更多”的标签明明在文中添加了，但是在博客中没起作用。后来经过测试发现标签如果写在了代码块后面，实际预览效果就会出错。  </p>
@@ -710,6 +644,88 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>Blog</tag>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reverse-integer</title>
+    <url>/2020/06/12/Reverse-integer/</url>
+    <content><![CDATA[<p>昨天在LeetCode上刷到了一个算法题，在看官方的参考思路时有个点给我卡了一下，在这之前对<code>整数溢出</code>的判断完全没有概念，在这做一下记录。  </p>
+<a id="more"></a>
+
+<h2 id="整数反转"><a href="#整数反转" class="headerlink" title="整数反转"></a>整数反转</h2><p><a href="https://leetcode-cn.com/problems/reverse-integer/" target="_blank" rel="noopener">LeetCode URL</a> </p>
+<p>题目：给出一个32位的有符号整数，你需要将这个整数中每一位上的数字进行反转。<br><em>示例1：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：123</span><br><span class="line">输出：321</span><br></pre></td></tr></table></figure>
+
+<p><em>示例2：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：-123</span><br><span class="line">输出：-321</span><br></pre></td></tr></table></figure>
+
+<p><em>示例3：</em></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入：120</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
+
+<p>注意：假设我们的环境只能存储下32位的有符号整数，则起数值范围为<code>[-2147483648, 2147483647]</code>,请根据这个假设，如果反转后整数溢出那么就返回0。  </p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>思路：<br>我们可以一次构建反转整数中的一位数整数附加另字，反复构建多次得到反转后的整数，同时通过一次构建一位数字的方式，我们就可以预先检查向反转一位数字是否会导致整数溢出。  </p>
+<p>算法：  </p>
+<blockquote>
+<p>反转整数的方法可以与反转字符串的方法进行类比</p>
+</blockquote>
+<p>通过重复“弹出”原整数中最后一位数字即个位数，然后把该数字“推入”到反转整数的个位上（想象一下，把一个满弹弹夹上的子弹依次填入另一个空弹夹），然后在没有堆栈、数组辅助的情况下用数学方法实现“弹出、推入”，最后得到反转后的整数。  </p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//pop operation:</span></span><br><span class="line">pop = x % <span class="number">10</span>;</span><br><span class="line">x /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//push operation:</span></span><br><span class="line">temp = rev * <span class="number">10</span> + pop;</span><br><span class="line">rev = temp;</span><br></pre></td></tr></table></figure>
+
+<p>当 <code>temp = rev * 10 + pop</code> 时会导致溢出，需要事先检查语句是否会导致整数溢出  </p>
+<p><img src="https://s1.ax1x.com/2020/06/12/tqqysH.png" alt="tqqysH.png"></p>
+<p>就这个地方，这个7和8那会琢磨了好久愣是一时间没想明白，后来google查了下才知道是指Int最大值和最小值的个位······</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rev = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (x != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> pop = x % <span class="number">10</span>;</span><br><span class="line">            x /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &gt; INT_MAX/<span class="number">10</span> || (rev == INT_MAX / <span class="number">10</span> &amp;&amp; pop &gt; <span class="number">7</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (rev &lt; INT_MIN/<span class="number">10</span> || (rev == INT_MIN / <span class="number">10</span> &amp;&amp; pop &lt; <span class="number">-8</span>)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            rev = rev * <span class="number">10</span> + pop;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rev;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>该<code>reverse(int x)</code>函数反转的十进制数字x。例如，if x = 102，它返回201，如果x = -102返回-201。</p>
+<p>x计算反向时，将其存储在<code>rev</code>。例如，对于x = 102，<code>rev</code>取连续值2，20，201。</p>
+<p>在每次迭代时，<code>rev</code>乘以10，并向其添加一位数。当然，<code>rev</code>不能大于<code>Integer.MAX_VALUE</code>（2147483647）。因此，乘前<code>rev</code>通过10，我们检查是否乘以它10并加入<code>pop</code>将使其大于<code>Integer.MAX_VALUE</code>。</p>
+<p>我们首先检查是否<code>rev</code>大于<code>Integer.MAX_VALUE / 10</code>（214748364）。如果它更大，则不存在反向整数。如果不是，那么<code>rev</code>小于或等于<code>Integer.MAX_VALUE / 10</code>。如果它小于<code>Integer.MAX_VALUE / 10</code>，那么即使我们乘以它10，我们也可以添加任何数字（pop），我们不会超过<code>Integer.MAX_VALUE</code>。但是，如果它等于<code>Integer.MAX_VALUE / 10</code>，那么我们必须确保<code>pop不是&gt; 7</code>（2147483647 - 214748364 * 10）否则我们会超过<code>Integer.MAX_VALUE</code>。</p>
+<p>同样的推理适用于Integer.MIN_VALUE（-2147483648）。</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象：类定义/构造/属性</title>
+    <url>/2020/05/27/Object-oriented/</url>
+    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+
+
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </p>
+<p>构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 <code>Person</code> 的类的构造函数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private string _name &#x3D; &quot;Hello&quot;;</span><br><span class="line"></span><br><span class="line">public string Name</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line">    protected set</span><br><span class="line">    &#123;</span><br><span class="line">        _name &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
+</blockquote>
+<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Parent</span><br><span class="line">&#123;</span><br><span class="line">    public virtual int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Notice the accessor accessibility level.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; No access modifier is used here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Kid : Parent</span><br><span class="line">&#123;</span><br><span class="line">    public override int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Use the same accessibility level as in the overridden accessor.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Cannot use access modifier here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -768,58 +784,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </categories>
       <tags>
         <tag>LeetCode</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>栈(Stack)</title>
-    <url>/2020/06/21/%E6%A0%88-Stack/</url>
-    <content><![CDATA[<h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h2><p>栈(stack)又叫堆栈，是一种只能在表的一端进行插入和删除操作的线性表。允许进行插入、删除操作的这一端称为栈顶（Top），另一个固定端称为栈底。 </p>
-<a id="more"></a>
-
-<p>向一个栈插入新元素又称作进栈、入栈或压栈，它是把新元素放到栈顶元素的上面，使之成为新的栈顶元素；从一个栈删除元素又称作出栈或退栈，它是把栈顶元素删除掉，使其相邻的元素成为新的栈顶元素。  </p>
-<p>例如栈中有三个元素，近栈的顺序是a1、a2、a3，当需要出栈时顺序为a3,a2,a1,所以栈又称“后进先出”或“先进后出”的线性表，简称“LIFO表”或“FILO表”（Last In First Out）。   </p>
-<p><img src="https://s1.ax1x.com/2020/06/21/N3oJ9U.png" alt="N3oJ9U.png"></p>
-<h3 id="栈的基本运算（by-CSharp）"><a href="#栈的基本运算（by-CSharp）" class="headerlink" title="栈的基本运算（by CSharp）"></a>栈的基本运算（by CSharp）</h3><h4 id="1-栈初始化"><a href="#1-栈初始化" class="headerlink" title="1.栈初始化"></a>1.栈初始化</h4><pre><code>Stack myStack = new Stack();</code></pre><h4 id="2-判栈空"><a href="#2-判栈空" class="headerlink" title="2.判栈空"></a>2.判栈空</h4><p>直接通过<code>Stack类的Count属性</code>来获取Stack中包含的元素数，以此来判断栈是否为空。  </p>
-<pre><code>if (stack.Count == 0)
-{
-    MessageBox.Show(&quot;堆栈为空&quot;);
-}
-else
-{
-    MessageBox.Show(&quot;堆栈不为空&quot;);
-}</code></pre><h4 id="3-入栈"><a href="#3-入栈" class="headerlink" title="3.入栈"></a>3.入栈</h4><pre><code>myStack.Push(&quot;A&quot;);</code></pre><h4 id="4-出栈"><a href="#4-出栈" class="headerlink" title="4.出栈"></a>4.出栈</h4><pre><code>Console.WriteLine(&quot;出栈的元素是：{0}&quot;, myStack.Pop());</code></pre><h4 id="5-读栈顶元素"><a href="#5-读栈顶元素" class="headerlink" title="5.读栈顶元素"></a>5.读栈顶元素</h4><pre><code>Console.WriteLine(&quot;栈顶元素：{0}&quot;, myStack.Peek());</code></pre><h4 id="egCode"><a href="#egCode" class="headerlink" title="egCode"></a>egCode</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Stack&lt;string&gt; statck &#x3D; new Stack&lt;string&gt;();</span><br><span class="line">Console.WriteLine(&quot;入栈操作&quot;);</span><br><span class="line">statck.Push(&quot;A&quot;);</span><br><span class="line">statck.Push(&quot;B&quot;);</span><br><span class="line">statck.Push(&quot;C&quot;);</span><br><span class="line">statck.Push(&quot;D&quot;);</span><br><span class="line">foreach (var item in statck)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;出栈操作，元素是：&quot; + statck.Pop());</span><br><span class="line">foreach(var item in statck)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;栈顶元素：&quot; + statck.Peek());</span><br><span class="line">Console.WriteLine(&quot;元素个数：&quot; + statck.Count);</span><br><span class="line">foreach (var item in statck)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;是否包含元素A,true or false: &quot; + statck.Contains(&quot;A&quot;));</span><br></pre></td></tr></table></figure>
-<h3 id="栈的存储结构"><a href="#栈的存储结构" class="headerlink" title="栈的存储结构"></a>栈的存储结构</h3><p>由于栈是运算受限的线性表(各个元素依次存放在一组地址连续的存储单元中)，因此线性表的存储结构对栈也是适用的，只是操作不同而已。  </p>
-<h4 id="1-顺序栈"><a href="#1-顺序栈" class="headerlink" title="1.顺序栈"></a>1.顺序栈</h4><p>利用顺序存储方式实现的栈称为顺序栈。类似于顺序表的定义，栈中的数据元素用一个预设的足够长度的一维数组来实现，栈底位置可以设置在数组的任意一个端点，而栈顶随着插入和删除而变化。  </p>
-<p>通常将0下标端设为栈底，这样空栈时栈顶指标top=-1；入栈时，栈顶指针加1，即s-&gt;top++；出栈时，栈顶指针减1，即s-&gt;top–。栈顶指针与栈中数据元素如下图所示：  </p>
-<h4 id="2-链栈"><a href="#2-链栈" class="headerlink" title="2.链栈"></a>2.链栈</h4><p>用链式存储结构实现的栈称为链栈，通过链栈用单链表表示，因此其结点结构与单链表的结点结构相同，但链栈只能在栈顶操作。  </p>
-<h5 id="链栈节点类的定义"><a href="#链栈节点类的定义" class="headerlink" title="链栈节点类的定义"></a>链栈节点类的定义</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">namespace DataStructureLearning.ImplementClass</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;链表节点类</span><br><span class="line">    public class LinkNode&lt;T&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        #region ----成员变量-----</span><br><span class="line">        private T data;&#x2F;&#x2F;数据域，当前结点的值</span><br><span class="line">        private LinkNode&lt;T&gt; next;&#x2F;&#x2F;指针域，指向下一个结点</span><br><span class="line">        #endregion</span><br><span class="line">        #region ----构造方法-----</span><br><span class="line">        &#x2F;&#x2F;构造方法</span><br><span class="line">        public LinkNode(T val, LinkNode&lt;T&gt; p)</span><br><span class="line">        &#123;</span><br><span class="line">            data &#x3D; val;</span><br><span class="line">            next &#x3D; p;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;构造方法只包含引用域的结点</span><br><span class="line">        public LinkNode(LinkNode&lt;T&gt; p)</span><br><span class="line">        &#123;</span><br><span class="line">            next &#x3D; p;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;构造方法只包含数据域的结点</span><br><span class="line">        public LinkNode(T val)</span><br><span class="line">        &#123;</span><br><span class="line">            data &#x3D; val;</span><br><span class="line">            next &#x3D; null;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;构造方法既不包含数据域也不包含引用域的结点</span><br><span class="line">        public LinkNode()</span><br><span class="line">        &#123;</span><br><span class="line">            data &#x3D; default(T);</span><br><span class="line">            next &#x3D; null;</span><br><span class="line">        &#125;</span><br><span class="line">        #endregion</span><br><span class="line">        #region ----公有属性-----</span><br><span class="line">        &#x2F;&#x2F;数据域属性</span><br><span class="line">        public T Data</span><br><span class="line">        &#123;</span><br><span class="line">            get</span><br><span class="line">            &#123;</span><br><span class="line">                return data;</span><br><span class="line">            &#125;</span><br><span class="line">            set</span><br><span class="line">            &#123;</span><br><span class="line">                data &#x3D; value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;引用域属性</span><br><span class="line">        public LinkNode&lt;T&gt; Next</span><br><span class="line">        &#123;</span><br><span class="line">            get</span><br><span class="line">            &#123;</span><br><span class="line">                return next;</span><br><span class="line">            &#125;</span><br><span class="line">            set</span><br><span class="line">            &#123;</span><br><span class="line">                next &#x3D; value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        #endregion</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="链栈实体类中几个关键的操作"><a href="#链栈实体类中几个关键的操作" class="headerlink" title="链栈实体类中几个关键的操作"></a>链栈实体类中几个关键的操作</h5><ul>
-<li>1.移动链栈的下一节点指针： <code>p=p.Next</code></li>
-<li>2.获取节点的数据: <code>p.Data</code></li>
-<li>3.空链栈： <code>top==null &amp;&amp; nodeNum==0</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class LinkSeqStack&lt;T&gt;:IStack&lt;T&gt;      &#x2F;&#x2F;继承STL&#x2F;CRL stack对象的结构 IStack</span><br><span class="line">&#123;</span><br><span class="line">    #region 成员变量</span><br><span class="line">    private LinkNode&lt;T&gt; top;&#x2F;&#x2F;栈顶指示器</span><br><span class="line">    private int nodeNum;&#x2F;&#x2F;</span><br><span class="line">    #endregion</span><br><span class="line">    #region 公有属性、索引器</span><br><span class="line">    &#x2F;&#x2F;栈顶指示器属性</span><br><span class="line">    public LinkNode&lt;T&gt; Top</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return top;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            top &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;元素个数属性</span><br><span class="line">    public int Num</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return nodeNum;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            nodeNum &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">    #region 构造方法</span><br><span class="line">    public LinkSeqStack()</span><br><span class="line">    &#123;</span><br><span class="line">        top &#x3D; null;</span><br><span class="line">        nodeNum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">    #region 成员方法</span><br><span class="line">    &#x2F;&#x2F;求链栈的长度即nodeNUm</span><br><span class="line">    public int GetLength()</span><br><span class="line">    &#123;</span><br><span class="line">        return nodeNum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;清空链栈：栈顶指示器置空节且节点数清0</span><br><span class="line">    public void Clear()</span><br><span class="line">    &#123;</span><br><span class="line">        top &#x3D; null;</span><br><span class="line">        nodeNum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;判断链栈是否为空：如果链栈的栈底指示器为null并且num等于0，则链栈为空，返回true，否则返回false</span><br><span class="line">    public bool IsEmpty()</span><br><span class="line">    &#123;</span><br><span class="line">        if ((top &#x3D;&#x3D; null) &amp;&amp; (nodeNum &#x3D;&#x3D; 0))</span><br><span class="line">        &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;链栈的入栈操作在栈顶添加一个新结点，top指向新的结点，num加1，栈发生变化。</span><br><span class="line">    public void Push(T item)</span><br><span class="line">    &#123;</span><br><span class="line">        LinkNode&lt;T&gt; q &#x3D; new LinkNode&lt;T&gt;(item);</span><br><span class="line">        if (top &#x3D;&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            top &#x3D; q;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            q.Next &#x3D; top;</span><br><span class="line">            top &#x3D; q;</span><br><span class="line">        &#125;</span><br><span class="line">        ++nodeNum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;出栈操作是在栈不为空的情况下，先取出栈顶结点的值，然后将栈顶指示器指向栈顶结点的直接后继结点，使之成为新的栈顶结点，num减1</span><br><span class="line">    public T Pop()</span><br><span class="line">    &#123;</span><br><span class="line">        if (IsEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;Stack is empty!&quot;);</span><br><span class="line">            return default(T);</span><br><span class="line">        &#125;</span><br><span class="line">        LinkNode&lt;T&gt; p &#x3D; top;</span><br><span class="line">        top &#x3D; top.Next;</span><br><span class="line">        --nodeNum;</span><br><span class="line">        return p.Data;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;获取链顶结点的值,如果链栈不为空，返回栈顶结点的值，否则返回特殊值表示栈为空，栈不发生变化。</span><br><span class="line">    public T GetTop()</span><br><span class="line">    &#123;</span><br><span class="line">        if (IsEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;Stack is empty!&quot;);</span><br><span class="line">            return default(T);</span><br><span class="line">        &#125;</span><br><span class="line">        return top.Data;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;遍历链栈</span><br><span class="line">    public void ShowItem()</span><br><span class="line">    &#123;</span><br><span class="line">        LinkNode&lt;T&gt; p &#x3D; top;</span><br><span class="line">        while (top !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(top.Data + &quot;\t&quot;);</span><br><span class="line">            top &#x3D; top.Next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<br>
-
-<p>测试：  </p>
-<pre><code>LinkSeqStack&lt;int&gt; lnkstack = new LinkSeqStack&lt;int&gt;();
-lnkstack.Push(32);
-lnkstack.Push(92);
-//stack.Pop();
-Console.WriteLine(&quot;遍历链栈:&quot; + &quot;\n&quot;);
-lnkstack.ShowItem();</code></pre><br>
-
-<p>参考：<br><a href="https://blog.csdn.net/mingyuli/article/details/82720781" target="_blank" rel="noopener">《数据结构基础—-链栈》明宇</a><br><a href="https://blog.csdn.net/csdn_aiyang/article/details/84941351" target="_blank" rel="noopener">《数据结构与算法-栈和队列》艾阳</a><br><a href="https://blog.csdn.net/CrazyMo_/article/details/46236823" target="_blank" rel="noopener">《C#数据结构回顾之链栈》CrazyMo_</a>  </p>
-<br>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
         <tag>数据结构</tag>
       </tags>
   </entry>
@@ -899,58 +863,6 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
-    <title>WPF的xaml代码中显示“命名空间不存在对应名称”的错误</title>
-    <url>/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/</url>
-    <content><![CDATA[<h2 id="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"><a href="#爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题" class="headerlink" title="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"></a>爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题</h2><p>背景：在创建一个新的WPF项目时, app.xaml中的DataContext指向了一个IOC初始化类，但是“IOCInit.cs”在项目中已经存在，编译器却提示：命名空间不存在对应名称。</p>
-<a id="more"></a>
-
-<p>不知道是什么玄学，网上也没有找到具体的原因，但是都一致给出了相似的解决方法：</p>
-<ul>
-<li>在Debug下生成时说命名空间中找不到我自定义的控件。此时切换到Release模式，再生成。生成成功后切换回Debug模式就不报错了。这是Release模式下找不到我们自定义的控件导致的报错。所以切换为Release后生成则可以解决此问题。</li>
-<li>同是xaml里显示“命名空间不存在对应名称”的问题，在项目属性里配置Debug/Release不是任何时候都奏效的，这时候可以根据警告信息检查程序集版本有无问题，如果程序集版本落后，在项目属性里调整版本然后编译即可解决问题。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>VS</tag>
-        <tag>Bug</tag>
-        <tag>WPF</tag>
-        <tag>XAML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
-    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
-<a id="more"></a>
-
-<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
-<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
-<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
-<br/>
-
-<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>VS</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬坑-关于程序跨区域使用时小数点转换成逗号的问题</title>
     <url>/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>手头有项目需要和外企业合作开发，其中涉及到一个协议对接的问题，虽然两边的开发团队事先都有协商好统一的开发协议，但是在收发命令时，发现国外Double转换会把小数点转换为逗号。<br>这种情况在中文操作系统下没有出现，反而是在英文操作系统下出现了，两边的人还反复确认了几遍、都觉得自己没有问题。最后通过<code>修改区域性</code>为英文解决。  </p>
@@ -985,71 +897,151 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
-    <title>爬坑-显示器标识号与屏幕区域不匹配的问题</title>
-    <url>/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="爬坑：关于显示器标识号与屏幕区域不匹配的问题"><a href="#爬坑：关于显示器标识号与屏幕区域不匹配的问题" class="headerlink" title="爬坑：关于显示器标识号与屏幕区域不匹配的问题"></a>爬坑：关于显示器标识号与屏幕区域不匹配的问题</h2><p>最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。</p>
-<p>起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。</p>
+    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
+    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
 <a id="more"></a>
 
-<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201010203717382.png" alt="image-20201010203717382" style="zoom: 50%;" />
+<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
 
-<p>那就做呗，然后在项目的加载事件里添加了几行代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private void ShowToLastSc(int count)</span><br><span class="line">&#123;</span><br><span class="line">    Screen[] sc;</span><br><span class="line">    sc &#x3D; Screen.AllScreens;</span><br><span class="line"></span><br><span class="line">    this.StartPosition &#x3D; FormStartPosition.Manual;</span><br><span class="line">    &#x2F;&#x2F;this.Location &#x3D; new Point(sc[count].Bounds.Left, sc[count].Bounds.Top);</span><br><span class="line">    this.Left &#x3D; sc[count].Bounds.Left;</span><br><span class="line">    this.Top &#x3D; sc[count].Bounds.Top;</span><br><span class="line">    this.Width &#x3D; sc[count].Bounds.Width;</span><br><span class="line">    this.Height &#x3D; sc[count].Bounds.Height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br/>
 
-<p>运行后发现效果不对，原本该显示在最后一块屏幕的窗口显示在了1号屏。</p>
+<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
+<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
+<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
+<br/>
+
+<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
 ]]></content>
       <categories>
         <category>C#</category>
       </categories>
       <tags>
         <tag>C#</tag>
+        <tag>VS</tag>
         <tag>Bug</tag>
-        <tag>计算机硬件</tag>
       </tags>
   </entry>
   <entry>
-    <title>线程PlatformNotSupportedException异常</title>
-    <url>/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/</url>
-    <content><![CDATA[<h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：  </p>
-<pre><code>System.PlatformNotSupportedException
-HResult=0x80131539
-Message=Operation is not supported on this platform.
-Source=System.Private.CoreLib
-StackTrace:
-at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)
-at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</code></pre><a id="more"></a>
+    <title>String Method</title>
+    <url>/2020/06/13/StringMethod/</url>
+    <content><![CDATA[<h2 id="字符串的一些常用方法"><a href="#字符串的一些常用方法" class="headerlink" title="字符串的一些常用方法"></a>字符串的一些常用方法</h2><a id="more"></a>
+<ul>
+<li><p>1.ComparaTo()方法，比较字符串的内容。<br>返回一个Int类型值，相同则返回0，不同则返回1。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name &#x3D; &quot;marc&quot;;</span><br><span class="line">int res &#x3D; name.CompareTo(&quot;lisa&quot;);</span><br><span class="line">Console.Write(res);     &#x2F;&#x2F;1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>2.Replace()方法，把指定的字符或字符串换成另一个字符串。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string newStr &#x3D; name.Replace(&quot;rc&quot;,&quot;sa&quot;);</span><br><span class="line">Console.Write(name);        &#x2F;&#x2F;masa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>3.Split()方法，在出现给定字符的地方，把字符串拆分成一个字符串数组。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string[] strArr &#x3D; name.Split(&#39;a&#39;);</span><br><span class="line">foreach (var temp in strArr)</span><br><span class="line">&#123;</span><br><span class="line">    Console.Write(temp + &quot; &quot;);     &#x2F;&#x2F;m rc</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.Substring()方法，在字符串中检索给定位置的子字符串。<br>Substring(StartIndex, Length)<br>如果参数中没有给定截取长度的话，就会截取字符串里选定字符往后的所有字符。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string subStr &#x3D; name.Substring(1,2);    &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取2个字符</span><br><span class="line">string subStr2 &#x3D; name.Substring(3);     &#x2F;&#x2F;表示从字符串中索引为1的字符处开始截取往后的所有字符</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.ToLower()方法，把字符串转换为小写形式。</p>
+</li>
+<li><p>6.ToUpper()方法，把字符串转换为大写形式。</p>
+</li>
+<li><p>7.Trim()方法，删除首尾的空白。<br>常用于用户注册账号的过程中，像玩家注册的用户名首位带有空格的话，就用Trim()方法删掉。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">string name2 &#x3D; &quot;  marc  &quot;;</span><br><span class="line">string trimStr &#x3D; name2.Trim();       &#x2F;&#x2F;去除name2的首位空格</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>8.Concat()方法，合并字符串。</p>
+</li>
+<li><p>9.CopyTo()方法，把字符串中指定的字符复制到另一个数组中。</p>
+</li>
+<li><p>10.Format()方法，格式化字符串。</p>
+</li>
+<li><p>11.IndexOf()方法，取得字符串中第一次出现某个给定字符或字符串的位置。<br>我们可以使用这个方法判断当前字符串是否包含一个给定的子字符串，如包含则返回第一个字符的索引，否则返回-1。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">int index &#x3D; name.IndexOf(&quot;rc&quot;);     &#x2F;&#x2F;在name中查找出现子字符串&quot;rc&quot;的索引位置</span><br><span class="line">Console.WriteLine(index);   &#x2F;&#x2F;2</span><br></pre></td></tr></table></figure>
 
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在vs2019创建.NET Core(3.1.301)的控制台应用程序，执行以下代码： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;&#x2F;Action a &#x3D; Test;</span><br><span class="line">        Func&lt;int, string, int&gt; a &#x3D; Test;        &#x2F;&#x2F;通过委托开起一个线程    </span><br><span class="line">        IAsyncResult ar &#x3D; a.BeginInvoke(100, &quot;siki&quot;, null, null);      &#x2F;&#x2F;run报错：平台不支持该操作</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        while (ar.IsCompleted &#x3D;&#x3D; false)     &#x2F;&#x2F;如果当前线程没有执行完毕</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&#39;.&#39;);</span><br><span class="line">            Thread.Sleep(100);      &#x2F;&#x2F;让Main线程休眠100ms</span><br><span class="line">        &#125;</span><br><span class="line">        int res &#x3D; a.EndInvoke(ar);      &#x2F;&#x2F;取得异步线程a的返回值ar</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int Test(int i, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;test&quot; + i + str);</span><br><span class="line">        Thread.Sleep(100);          &#x2F;&#x2F;让当前线程休眠100ms</span><br><span class="line">        return 100;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
-<p>运行前代码中没有出现编译错误，但是在运行后在“IAsyncResult ar = a.BeginInvoke(100, “siki”, null, null);”处会返回一个异常：System.PlatformNotSupportedException 。  </p>
-<p>上网找了下相关异常的处理方式，最后参考了<a href="https://www.cnblogs.com/Zev_Fung/" target="_blank" rel="noopener">阿水zev</a>的一篇博客。 <a href="https://www.cnblogs.com/Zev_Fung/p/12823418.html" target="_blank" rel="noopener">(传送门)</a>    </p>
-<p>阿水例子中使用APM的线程代码运行后会出现同样的错误：  </p>
-<p><img src="https://s1.ax1x.com/2020/06/21/N35hMd.png" alt="N35hMd.png"></p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>异步编程模型(APM)(使用IAsyncResult和BeginInvoke)不再是异步调用的优选方法。从.NET Framework 4.5开始，基于任务的异步模式(TAP)是推荐的异步模型。因此，而且由于异步委托的实现取决于远程处理但.NET Core不存在的功能，BeginInvoke和EndInvoke委托调用不.NET Core支持。（GitHub问题 <a href="https://github.com/dotnet/runtime/issues/16312" target="_blank" rel="noopener">dotnet/corefx＃5940</a> 中对此进行了讨论）</p>
-<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来直接就在阿水的例子上实验Task.Run了，自己的代码越改越多bug···<br>改为基于任务的异步模式Task.Run  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public delegate string AsyncMethodCaller(int callDuration, out int threadId);</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">        AsyncMethodCaller caller &#x3D; new AsyncMethodCaller(TestMethodAsync);</span><br><span class="line">        int threadid &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F;开启异步操作 IAsyncResult BeginInvoke</span><br><span class="line">        var workTask &#x3D; Task.Run(() &#x3D;&gt; caller.Invoke(3000, out threadid));</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;其他业务&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;调用EndInvoke，等待异步执行完成</span><br><span class="line">        Console.WriteLine(&quot;等待异步方法TestMethodAsync执行完成&quot;);</span><br><span class="line">        string res &#x3D; workTask.Result;</span><br><span class="line">        Console.WriteLine(&quot;Compeleted!&quot;);</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">    static string TestMethodAsync(int callDuration, out int threadId)</span><br><span class="line">    &#123;</span><br><span class="line">        Stopwatch sw &#x3D; new Stopwatch(); &#x2F;&#x2F;创建一个Stopwatch对象 用来测量运行时间</span><br><span class="line">        sw.Start();     &#x2F;&#x2F;开始测量运行时间</span><br><span class="line">        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 5; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;模拟耗时操作</span><br><span class="line">            Thread.Sleep(callDuration);</span><br><span class="line">            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        sw.Stop();      &#x2F;&#x2F;停止策略运行时间</span><br><span class="line">        threadId &#x3D; Thread.CurrentThread.ManagedThreadId;    &#x2F;&#x2F;获取当前线程，获取该线程是否属于托管线程池的值</span><br><span class="line">        return string.Format(&quot;耗时&#123;0&#125;ms.&quot;, sw.ElapsedMilliseconds.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
+</li>
+</ul>
 <br>
-
-
-
-
-
-
-
-
-
-
 ]]></content>
       <categories>
         <category>C#</category>
-        <category>Bug</category>
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WPF的xaml代码中显示“命名空间不存在对应名称”的错误</title>
+    <url>/2020/10/06/%E7%88%AC%E5%9D%91-WPF%E7%9A%84xaml%E4%BB%A3%E7%A0%81%E4%B8%AD%E6%98%BE%E7%A4%BA%E2%80%9C%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8D%E5%AD%98%E5%9C%A8%E5%AF%B9%E5%BA%94%E5%90%8D%E7%A7%B0%E2%80%9D%E7%9A%84%E9%94%99%E8%AF%AF/</url>
+    <content><![CDATA[<h2 id="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"><a href="#爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题" class="headerlink" title="爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题"></a>爬坑：关于WPF程序的xaml代码处显示“命名空间不存在对应名称”的问题</h2><p>背景：在创建一个新的WPF项目时, app.xaml中的DataContext指向了一个IOC初始化类，但是“IOCInit.cs”在项目中已经存在，编译器却提示：命名空间不存在对应名称。</p>
+<a id="more"></a>
+
+<p>不知道是什么玄学，网上也没有找到具体的原因，但是都一致给出了相似的解决方法：</p>
+<ul>
+<li>在Debug下生成时说命名空间中找不到我自定义的控件。此时切换到Release模式，再生成。生成成功后切换回Debug模式就不报错了。这是Release模式下找不到我们自定义的控件导致的报错。所以切换为Release后生成则可以解决此问题。</li>
+<li>同是xaml里显示“命名空间不存在对应名称”的问题，在项目属性里配置Debug/Release不是任何时候都奏效的，这时候可以根据警告信息检查程序集版本有无问题，如果程序集版本落后，在项目属性里调整版本然后编译即可解决问题。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>VS</tag>
         <tag>Bug</tag>
+        <tag>WPF</tag>
+        <tag>XAML</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>栈(Stack)</title>
+    <url>/2020/06/21/%E6%A0%88-Stack/</url>
+    <content><![CDATA[<h2 id="栈（Stack）"><a href="#栈（Stack）" class="headerlink" title="栈（Stack）"></a>栈（Stack）</h2><p>栈(stack)又叫堆栈，是一种只能在表的一端进行插入和删除操作的线性表。允许进行插入、删除操作的这一端称为栈顶（Top），另一个固定端称为栈底。 </p>
+<a id="more"></a>
+
+<p>向一个栈插入新元素又称作进栈、入栈或压栈，它是把新元素放到栈顶元素的上面，使之成为新的栈顶元素；从一个栈删除元素又称作出栈或退栈，它是把栈顶元素删除掉，使其相邻的元素成为新的栈顶元素。  </p>
+<p>例如栈中有三个元素，近栈的顺序是a1、a2、a3，当需要出栈时顺序为a3,a2,a1,所以栈又称“后进先出”或“先进后出”的线性表，简称“LIFO表”或“FILO表”（Last In First Out）。   </p>
+<p><img src="https://s1.ax1x.com/2020/06/21/N3oJ9U.png" alt="N3oJ9U.png"></p>
+<h3 id="栈的基本运算（by-CSharp）"><a href="#栈的基本运算（by-CSharp）" class="headerlink" title="栈的基本运算（by CSharp）"></a>栈的基本运算（by CSharp）</h3><h4 id="1-栈初始化"><a href="#1-栈初始化" class="headerlink" title="1.栈初始化"></a>1.栈初始化</h4><pre><code>Stack myStack = new Stack();</code></pre><h4 id="2-判栈空"><a href="#2-判栈空" class="headerlink" title="2.判栈空"></a>2.判栈空</h4><p>直接通过<code>Stack类的Count属性</code>来获取Stack中包含的元素数，以此来判断栈是否为空。  </p>
+<pre><code>if (stack.Count == 0)
+{
+    MessageBox.Show(&quot;堆栈为空&quot;);
+}
+else
+{
+    MessageBox.Show(&quot;堆栈不为空&quot;);
+}</code></pre><h4 id="3-入栈"><a href="#3-入栈" class="headerlink" title="3.入栈"></a>3.入栈</h4><pre><code>myStack.Push(&quot;A&quot;);</code></pre><h4 id="4-出栈"><a href="#4-出栈" class="headerlink" title="4.出栈"></a>4.出栈</h4><pre><code>Console.WriteLine(&quot;出栈的元素是：{0}&quot;, myStack.Pop());</code></pre><h4 id="5-读栈顶元素"><a href="#5-读栈顶元素" class="headerlink" title="5.读栈顶元素"></a>5.读栈顶元素</h4><pre><code>Console.WriteLine(&quot;栈顶元素：{0}&quot;, myStack.Peek());</code></pre><h4 id="egCode"><a href="#egCode" class="headerlink" title="egCode"></a>egCode</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Stack&lt;string&gt; statck &#x3D; new Stack&lt;string&gt;();</span><br><span class="line">Console.WriteLine(&quot;入栈操作&quot;);</span><br><span class="line">statck.Push(&quot;A&quot;);</span><br><span class="line">statck.Push(&quot;B&quot;);</span><br><span class="line">statck.Push(&quot;C&quot;);</span><br><span class="line">statck.Push(&quot;D&quot;);</span><br><span class="line">foreach (var item in statck)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;出栈操作，元素是：&quot; + statck.Pop());</span><br><span class="line">foreach(var item in statck)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;栈顶元素：&quot; + statck.Peek());</span><br><span class="line">Console.WriteLine(&quot;元素个数：&quot; + statck.Count);</span><br><span class="line">foreach (var item in statck)</span><br><span class="line">&#123;</span><br><span class="line">    Console.WriteLine(item);</span><br><span class="line">&#125;</span><br><span class="line">Console.WriteLine(&quot;是否包含元素A,true or false: &quot; + statck.Contains(&quot;A&quot;));</span><br></pre></td></tr></table></figure>
+<h3 id="栈的存储结构"><a href="#栈的存储结构" class="headerlink" title="栈的存储结构"></a>栈的存储结构</h3><p>由于栈是运算受限的线性表(各个元素依次存放在一组地址连续的存储单元中)，因此线性表的存储结构对栈也是适用的，只是操作不同而已。  </p>
+<h4 id="1-顺序栈"><a href="#1-顺序栈" class="headerlink" title="1.顺序栈"></a>1.顺序栈</h4><p>利用顺序存储方式实现的栈称为顺序栈。类似于顺序表的定义，栈中的数据元素用一个预设的足够长度的一维数组来实现，栈底位置可以设置在数组的任意一个端点，而栈顶随着插入和删除而变化。  </p>
+<p>通常将0下标端设为栈底，这样空栈时栈顶指标top=-1；入栈时，栈顶指针加1，即s-&gt;top++；出栈时，栈顶指针减1，即s-&gt;top–。栈顶指针与栈中数据元素如下图所示：  </p>
+<h4 id="2-链栈"><a href="#2-链栈" class="headerlink" title="2.链栈"></a>2.链栈</h4><p>用链式存储结构实现的栈称为链栈，通过链栈用单链表表示，因此其结点结构与单链表的结点结构相同，但链栈只能在栈顶操作。  </p>
+<h5 id="链栈节点类的定义"><a href="#链栈节点类的定义" class="headerlink" title="链栈节点类的定义"></a>链栈节点类的定义</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">namespace DataStructureLearning.ImplementClass</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F;链表节点类</span><br><span class="line">    public class LinkNode&lt;T&gt;</span><br><span class="line">    &#123;</span><br><span class="line">        #region ----成员变量-----</span><br><span class="line">        private T data;&#x2F;&#x2F;数据域，当前结点的值</span><br><span class="line">        private LinkNode&lt;T&gt; next;&#x2F;&#x2F;指针域，指向下一个结点</span><br><span class="line">        #endregion</span><br><span class="line">        #region ----构造方法-----</span><br><span class="line">        &#x2F;&#x2F;构造方法</span><br><span class="line">        public LinkNode(T val, LinkNode&lt;T&gt; p)</span><br><span class="line">        &#123;</span><br><span class="line">            data &#x3D; val;</span><br><span class="line">            next &#x3D; p;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;构造方法只包含引用域的结点</span><br><span class="line">        public LinkNode(LinkNode&lt;T&gt; p)</span><br><span class="line">        &#123;</span><br><span class="line">            next &#x3D; p;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;构造方法只包含数据域的结点</span><br><span class="line">        public LinkNode(T val)</span><br><span class="line">        &#123;</span><br><span class="line">            data &#x3D; val;</span><br><span class="line">            next &#x3D; null;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;构造方法既不包含数据域也不包含引用域的结点</span><br><span class="line">        public LinkNode()</span><br><span class="line">        &#123;</span><br><span class="line">            data &#x3D; default(T);</span><br><span class="line">            next &#x3D; null;</span><br><span class="line">        &#125;</span><br><span class="line">        #endregion</span><br><span class="line">        #region ----公有属性-----</span><br><span class="line">        &#x2F;&#x2F;数据域属性</span><br><span class="line">        public T Data</span><br><span class="line">        &#123;</span><br><span class="line">            get</span><br><span class="line">            &#123;</span><br><span class="line">                return data;</span><br><span class="line">            &#125;</span><br><span class="line">            set</span><br><span class="line">            &#123;</span><br><span class="line">                data &#x3D; value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;引用域属性</span><br><span class="line">        public LinkNode&lt;T&gt; Next</span><br><span class="line">        &#123;</span><br><span class="line">            get</span><br><span class="line">            &#123;</span><br><span class="line">                return next;</span><br><span class="line">            &#125;</span><br><span class="line">            set</span><br><span class="line">            &#123;</span><br><span class="line">                next &#x3D; value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        #endregion</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="链栈实体类中几个关键的操作"><a href="#链栈实体类中几个关键的操作" class="headerlink" title="链栈实体类中几个关键的操作"></a>链栈实体类中几个关键的操作</h5><ul>
+<li>1.移动链栈的下一节点指针： <code>p=p.Next</code></li>
+<li>2.获取节点的数据: <code>p.Data</code></li>
+<li>3.空链栈： <code>top==null &amp;&amp; nodeNum==0</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class LinkSeqStack&lt;T&gt;:IStack&lt;T&gt;      &#x2F;&#x2F;继承STL&#x2F;CRL stack对象的结构 IStack</span><br><span class="line">&#123;</span><br><span class="line">    #region 成员变量</span><br><span class="line">    private LinkNode&lt;T&gt; top;&#x2F;&#x2F;栈顶指示器</span><br><span class="line">    private int nodeNum;&#x2F;&#x2F;</span><br><span class="line">    #endregion</span><br><span class="line">    #region 公有属性、索引器</span><br><span class="line">    &#x2F;&#x2F;栈顶指示器属性</span><br><span class="line">    public LinkNode&lt;T&gt; Top</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return top;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            top &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;元素个数属性</span><br><span class="line">    public int Num</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return nodeNum;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            nodeNum &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">    #region 构造方法</span><br><span class="line">    public LinkSeqStack()</span><br><span class="line">    &#123;</span><br><span class="line">        top &#x3D; null;</span><br><span class="line">        nodeNum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">    #region 成员方法</span><br><span class="line">    &#x2F;&#x2F;求链栈的长度即nodeNUm</span><br><span class="line">    public int GetLength()</span><br><span class="line">    &#123;</span><br><span class="line">        return nodeNum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;清空链栈：栈顶指示器置空节且节点数清0</span><br><span class="line">    public void Clear()</span><br><span class="line">    &#123;</span><br><span class="line">        top &#x3D; null;</span><br><span class="line">        nodeNum &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;判断链栈是否为空：如果链栈的栈底指示器为null并且num等于0，则链栈为空，返回true，否则返回false</span><br><span class="line">    public bool IsEmpty()</span><br><span class="line">    &#123;</span><br><span class="line">        if ((top &#x3D;&#x3D; null) &amp;&amp; (nodeNum &#x3D;&#x3D; 0))</span><br><span class="line">        &#123;</span><br><span class="line">            return true;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;链栈的入栈操作在栈顶添加一个新结点，top指向新的结点，num加1，栈发生变化。</span><br><span class="line">    public void Push(T item)</span><br><span class="line">    &#123;</span><br><span class="line">        LinkNode&lt;T&gt; q &#x3D; new LinkNode&lt;T&gt;(item);</span><br><span class="line">        if (top &#x3D;&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            top &#x3D; q;</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            q.Next &#x3D; top;</span><br><span class="line">            top &#x3D; q;</span><br><span class="line">        &#125;</span><br><span class="line">        ++nodeNum;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;出栈操作是在栈不为空的情况下，先取出栈顶结点的值，然后将栈顶指示器指向栈顶结点的直接后继结点，使之成为新的栈顶结点，num减1</span><br><span class="line">    public T Pop()</span><br><span class="line">    &#123;</span><br><span class="line">        if (IsEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;Stack is empty!&quot;);</span><br><span class="line">            return default(T);</span><br><span class="line">        &#125;</span><br><span class="line">        LinkNode&lt;T&gt; p &#x3D; top;</span><br><span class="line">        top &#x3D; top.Next;</span><br><span class="line">        --nodeNum;</span><br><span class="line">        return p.Data;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;获取链顶结点的值,如果链栈不为空，返回栈顶结点的值，否则返回特殊值表示栈为空，栈不发生变化。</span><br><span class="line">    public T GetTop()</span><br><span class="line">    &#123;</span><br><span class="line">        if (IsEmpty())</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;Stack is empty!&quot;);</span><br><span class="line">            return default(T);</span><br><span class="line">        &#125;</span><br><span class="line">        return top.Data;</span><br><span class="line">    &#125;</span><br><span class="line">    &#x2F;&#x2F;遍历链栈</span><br><span class="line">    public void ShowItem()</span><br><span class="line">    &#123;</span><br><span class="line">        LinkNode&lt;T&gt; p &#x3D; top;</span><br><span class="line">        while (top !&#x3D; null)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.Write(top.Data + &quot;\t&quot;);</span><br><span class="line">            top &#x3D; top.Next;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    #endregion</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>测试：  </p>
+<pre><code>LinkSeqStack&lt;int&gt; lnkstack = new LinkSeqStack&lt;int&gt;();
+lnkstack.Push(32);
+lnkstack.Push(92);
+//stack.Pop();
+Console.WriteLine(&quot;遍历链栈:&quot; + &quot;\n&quot;);
+lnkstack.ShowItem();</code></pre><br>
+
+<p>参考：<br><a href="https://blog.csdn.net/mingyuli/article/details/82720781" target="_blank" rel="noopener">《数据结构基础—-链栈》明宇</a><br><a href="https://blog.csdn.net/csdn_aiyang/article/details/84941351" target="_blank" rel="noopener">《数据结构与算法-栈和队列》艾阳</a><br><a href="https://blog.csdn.net/CrazyMo_/article/details/46236823" target="_blank" rel="noopener">《C#数据结构回顾之链栈》CrazyMo_</a>  </p>
+<br>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1123,6 +1115,74 @@ Console.WriteLine(name);    // Harry</code></pre><p>LINQ 查询变量被类型�
       </categories>
       <tags>
         <tag>C#</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>爬坑-显示器标识号与屏幕区域不匹配的问题</title>
+    <url>/2020/10/10/%E7%88%AC%E5%9D%91-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%87%E8%AF%86%E5%8F%B7%E4%B8%8E%E5%B1%8F%E5%B9%95%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8C%B9%E9%85%8D%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="爬坑：关于显示器标识号与屏幕区域不匹配的问题"><a href="#爬坑：关于显示器标识号与屏幕区域不匹配的问题" class="headerlink" title="爬坑：关于显示器标识号与屏幕区域不匹配的问题"></a>爬坑：关于显示器标识号与屏幕区域不匹配的问题</h2><p>最近有个项目需求，要求在计算机有多个显示屏幕的环境下，把指定的应用程序显示在指定的显示器上。</p>
+<p>起初的要求是把应用程序弹到“最后一块”屏幕上即可，比如横向排列的3块显示器，屏幕标识号（桌面右键-显示设置）依次为1\2\3，那目标屏幕就是3号屏。</p>
+<a id="more"></a>
+
+<img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20201010203717382.png" alt="image-20201010203717382" style="zoom: 50%;" />
+
+<p>那就做呗，然后在项目的加载事件里添加了几行代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private void ShowToLastSc(int count)</span><br><span class="line">&#123;</span><br><span class="line">    Screen[] sc;</span><br><span class="line">    sc &#x3D; Screen.AllScreens;</span><br><span class="line"></span><br><span class="line">    this.StartPosition &#x3D; FormStartPosition.Manual;</span><br><span class="line">    &#x2F;&#x2F;this.Location &#x3D; new Point(sc[count].Bounds.Left, sc[count].Bounds.Top);</span><br><span class="line">    this.Left &#x3D; sc[count].Bounds.Left;</span><br><span class="line">    this.Top &#x3D; sc[count].Bounds.Top;</span><br><span class="line">    this.Width &#x3D; sc[count].Bounds.Width;</span><br><span class="line">    this.Height &#x3D; sc[count].Bounds.Height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后发现效果不对，原本该显示在最后一块屏幕的窗口显示在了1号屏。</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
+        <tag>计算机硬件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程PlatformNotSupportedException异常</title>
+    <url>/2020/06/21/%E7%BA%BF%E7%A8%8BPlatformNotSupportedException%E5%BC%82%E5%B8%B8/</url>
+    <content><![CDATA[<h2 id="System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”"><a href="#System-PlatformNotSupportedException-”Operation-is-not-supported-on-this-platform”" class="headerlink" title="System.PlatformNotSupportedException:”Operation is not supported on this platform”"></a>System.PlatformNotSupportedException:”Operation is not supported on this platform”</h2><p>详细信息：  </p>
+<pre><code>System.PlatformNotSupportedException
+HResult=0x80131539
+Message=Operation is not supported on this platform.
+Source=System.Private.CoreLib
+StackTrace:
+at System.Func`3.BeginInvoke(T1 arg1, T2 arg2, AsyncCallback callback, Object object)
+at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CSStudy3\010-线程\Program.cs:line 13</code></pre><a id="more"></a>
+
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>在vs2019创建.NET Core(3.1.301)的控制台应用程序，执行以下代码： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;&#x2F;&#x2F;Action a &#x3D; Test;</span><br><span class="line">        Func&lt;int, string, int&gt; a &#x3D; Test;        &#x2F;&#x2F;通过委托开起一个线程    </span><br><span class="line">        IAsyncResult ar &#x3D; a.BeginInvoke(100, &quot;siki&quot;, null, null);      &#x2F;&#x2F;run报错：平台不支持该操作</span><br><span class="line"></span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        while (ar.IsCompleted &#x3D;&#x3D; false)     &#x2F;&#x2F;如果当前线程没有执行完毕</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&#39;.&#39;);</span><br><span class="line">            Thread.Sleep(100);      &#x2F;&#x2F;让Main线程休眠100ms</span><br><span class="line">        &#125;</span><br><span class="line">        int res &#x3D; a.EndInvoke(ar);      &#x2F;&#x2F;取得异步线程a的返回值ar</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    static int Test(int i, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;test&quot; + i + str);</span><br><span class="line">        Thread.Sleep(100);          &#x2F;&#x2F;让当前线程休眠100ms</span><br><span class="line">        return 100;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/06/21/N35WxH.png" alt="N35WxH.png"></p>
+<p>运行前代码中没有出现编译错误，但是在运行后在“IAsyncResult ar = a.BeginInvoke(100, “siki”, null, null);”处会返回一个异常：System.PlatformNotSupportedException 。  </p>
+<p>上网找了下相关异常的处理方式，最后参考了<a href="https://www.cnblogs.com/Zev_Fung/" target="_blank" rel="noopener">阿水zev</a>的一篇博客。 <a href="https://www.cnblogs.com/Zev_Fung/p/12823418.html" target="_blank" rel="noopener">(传送门)</a>    </p>
+<p>阿水例子中使用APM的线程代码运行后会出现同样的错误：  </p>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35hMd.png" alt="N35hMd.png"></p>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>异步编程模型(APM)(使用IAsyncResult和BeginInvoke)不再是异步调用的优选方法。从.NET Framework 4.5开始，基于任务的异步模式(TAP)是推荐的异步模型。因此，而且由于异步委托的实现取决于远程处理但.NET Core不存在的功能，BeginInvoke和EndInvoke委托调用不.NET Core支持。（GitHub问题 <a href="https://github.com/dotnet/runtime/issues/16312" target="_blank" rel="noopener">dotnet/corefx＃5940</a> 中对此进行了讨论）</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>后来直接就在阿水的例子上实验Task.Run了，自己的代码越改越多bug···<br>改为基于任务的异步模式Task.Run  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public delegate string AsyncMethodCaller(int callDuration, out int threadId);</span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">        AsyncMethodCaller caller &#x3D; new AsyncMethodCaller(TestMethodAsync);</span><br><span class="line">        int threadid &#x3D; 0;</span><br><span class="line">        &#x2F;&#x2F;开启异步操作 IAsyncResult BeginInvoke</span><br><span class="line">        var workTask &#x3D; Task.Run(() &#x3D;&gt; caller.Invoke(3000, out threadid));</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 10; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;其他业务&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F;调用EndInvoke，等待异步执行完成</span><br><span class="line">        Console.WriteLine(&quot;等待异步方法TestMethodAsync执行完成&quot;);</span><br><span class="line">        string res &#x3D; workTask.Result;</span><br><span class="line">        Console.WriteLine(&quot;Compeleted!&quot;);</span><br><span class="line">        Console.WriteLine(res);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F;基于任务的异步模式(TAP)</span><br><span class="line">    static string TestMethodAsync(int callDuration, out int threadId)</span><br><span class="line">    &#123;</span><br><span class="line">        Stopwatch sw &#x3D; new Stopwatch(); &#x2F;&#x2F;创建一个Stopwatch对象 用来测量运行时间</span><br><span class="line">        sw.Start();     &#x2F;&#x2F;开始测量运行时间</span><br><span class="line">        Console.WriteLine(&quot;异步TestMethodAsync开始&quot;);</span><br><span class="line">        for (int i &#x3D; 0; i &lt; 5; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            &#x2F;&#x2F;模拟耗时操作</span><br><span class="line">            Thread.Sleep(callDuration);</span><br><span class="line">            Console.WriteLine(&quot;TestMethodAsync:&quot; + i.ToString());</span><br><span class="line">        &#125;</span><br><span class="line">        sw.Stop();      &#x2F;&#x2F;停止策略运行时间</span><br><span class="line">        threadId &#x3D; Thread.CurrentThread.ManagedThreadId;    &#x2F;&#x2F;获取当前线程，获取该线程是否属于托管线程池的值</span><br><span class="line">        return string.Format(&quot;耗时&#123;0&#125;ms.&quot;, sw.ElapsedMilliseconds.ToString());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://s1.ax1x.com/2020/06/21/N35RRe.png" alt="N35RRe.png"></p>
+<br>
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>C#</category>
+        <category>Bug</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>Bug</tag>
       </tags>
   </entry>
 </search>

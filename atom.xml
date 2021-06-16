@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://opppmarc.github.io/"/>
-  <updated>2021-06-15T14:28:06.365Z</updated>
+  <updated>2021-06-16T13:51:27.497Z</updated>
   <id>https://opppmarc.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSharp多线程之线程通知</title>
+    <link href="https://opppmarc.github.io/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/"/>
+    <id>https://opppmarc.github.io/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/</id>
+    <published>2021-06-16T12:24:01.000Z</published>
+    <updated>2021-06-16T13:51:27.497Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这篇主要学习C#中用于发送线程通知的AutoResetEvent类。  &lt;/p&gt;
+&lt;h2 id=&quot;AutoResetEvent类&quot;&gt;&lt;a href=&quot;#AutoResetEvent类&quot; class=&quot;headerlink&quot; title=&quot;AutoResetEvent类&quot;&gt;&lt;/a&gt;AutoResetEvent类&lt;/h2&gt;&lt;p&gt;表示线程同步事件在一个等待线程释放后收到信号时自动重置。  &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;public selead Class AutoResetEvent ：System.Threading.EventWaitHandle&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/zh-cn/dotnet/api/system.threading.autoresetevent?view=net-5.0&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MSDN介绍传送门&lt;/a&gt;  &lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/categories/C/"/>
+    
+    
+      <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
+    
+      <category term="转载" scheme="https://opppmarc.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="线程" scheme="https://opppmarc.github.io/tags/%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>爬坑-关于程序跨区域使用时小数点转换成逗号的问题</title>
@@ -479,29 +508,6 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
     
     
       <category term="C#" scheme="https://opppmarc.github.io/tags/C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Reverse-integer</title>
-    <link href="https://opppmarc.github.io/2020/06/12/Reverse-integer/"/>
-    <id>https://opppmarc.github.io/2020/06/12/Reverse-integer/</id>
-    <published>2020-06-11T17:08:52.000Z</published>
-    <updated>2020-06-12T06:52:28.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;昨天在LeetCode上刷到了一个算法题，在看官方的参考思路时有个点给我卡了一下，在这之前对&lt;code&gt;整数溢出&lt;/code&gt;的判断完全没有概念，在这做一下记录。  &lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="算法" scheme="https://opppmarc.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-      <category term="算法" scheme="https://opppmarc.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-      <category term="LeetCode" scheme="https://opppmarc.github.io/tags/LeetCode/"/>
     
   </entry>
   
