@@ -156,7 +156,7 @@
 <p>注意，AutoRestEvent 用得不当容易发生死锁。<br>另外 AutoRestEvent 使用的是内核时间模式，因此等待时间不能太长，不然比较耗费 CPU 时间。<br>AutoResetEvent 也适合用于线程同步。</p>
 </blockquote>
 <p>另外，线程中使用 WaitOne() ，另一个线程使用 Set() 通知后， AutoResetEvent 对象会自动恢复非终止状态，不需要线程使用 Reset() 。  </p>
-<p>参考:<br>&lt;C#多线程(6): 线程通知&gt; 痴者工良</p>
+<p>参考:<br>&lt;<a href="https://www.cnblogs.com/whuanle/p/12730169.html" target="_blank" rel="noopener">C#多线程(6): 线程通知</a>&gt; 痴者工良</p>
 
       
       <!-- reward -->
