@@ -292,58 +292,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>DeadCellEvolve</title>
-    <url>/2020/05/29/DeadCellEvolve/</url>
-    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
-<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
-</blockquote>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
-<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
-<a id="more"></a>
-
-<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
-<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
-<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
-<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
-<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
-<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
-<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
-<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
-<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
-<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
-<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
-<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
-<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
-<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
-<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
-<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
-<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
-<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
-<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
-<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
-<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
-<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
-<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
-<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
-<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
-<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
-<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
-<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
-<br>  
-<br>  
-]]></content>
-      <categories>
-        <category>译文</category>
-      </categories>
-      <tags>
-        <tag>单机</tag>
-        <tag>搬运</tag>
-        <tag>译文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSharp多线程之线程通知</title>
     <url>/2021/06/16/CSharp%E5%A4%9A%E7%BA%BF%E7%A8%8B%E4%B9%8B%E7%BA%BF%E7%A8%8B%E9%80%9A%E7%9F%A5/</url>
     <content><![CDATA[<p>这篇主要学习C#中用于发送线程通知的AutoResetEvent类。  </p>
@@ -401,6 +349,58 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
         <tag>C#</tag>
         <tag>转载</tag>
         <tag>线程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DeadCellEvolve</title>
+    <url>/2020/05/29/DeadCellEvolve/</url>
+    <content><![CDATA[<h1 id="When-We-Made…-Dead-Cells"><a href="#When-We-Made…-Dead-Cells" class="headerlink" title="When We Made… Dead Cells"></a>When We Made… Dead Cells</h1><blockquote>
+<p>本篇为译文，原文地址:<a href="https://www.mcvuk.com/development-news/when-we-made-dead-cells/" target="_blank" rel="noopener">传送门</a>  </p>
+</blockquote>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuoHq1.jpg" alt="tuoHq1.jpg">  </p>
+<p>视频游戏的开发都是关于迭代，一个好的想法会有成百上千的原型和失败的项目。《死亡细胞》也不例外，在成为广受好评的“roguelik-meets-metroidvania”头衔之前，它一开始是作为一款多人塔防游戏发家的。  </p>
+<a id="more"></a>
+
+<p><img src="https://s1.ax1x.com/2020/05/29/tuXE0H.jpg" alt="tuXE0H.jpg">     </p>
+<p>“它开始于三四年前，”首席开发者兼游戏设计师Sébastien Bénard开始解释说。”当时，Motion Twin还在做网页游戏和一些手机游戏，但我们想为我们的老游戏《Hordes》（又名《Die2Nite》）做一些精神上的续集。这款游戏一开始是一款免费游戏，是一款塔防类的游戏，和其他游戏不同。它到了原型阶段，所以我们确实有一个alpha版本，我们向人们展示了它，但并不顺利，因为它真的不好玩，就像真的不好玩一样，”他笑道。  </p>
+<p>“在这一点上，我们决定取消它也许是个好主意，但我们做了一个单人原型，在Gamescom这样的活动中展示。我的一个朋友告诉我们：’也许你们应该保留单人游戏的原型，因为它实际上比多人游戏更有趣。起初，这真的只是一个玩笑，但有一次，我们想:”等等，也许他是在开玩笑。等等，也许他是对的，也许删掉一切是个好主意。”所以我们就这么做了！我们从这个老式的横向卷轴塔防游戏中删除了很多元素，包括多人游戏、移动游戏和免费游戏等元素，这就成就了我们制作的这款恶魔城的游戏。”  </p>
+<p>Motion Twin拥有17年的浏览器和手机游戏开发经验，但《死亡细胞》是其首款如此规模的游戏，面向PC和主机玩家。  </p>
+<p>“这是完全不同的，因为当你做一款免费游戏的时候，你真正考虑的是游戏的生命周期。当你做一个PC游戏的时候，你更多的是考虑的当然是游戏的质量，但只是制作一个出色的游戏玩法，而不是做一个冗长的游戏或者是让人付费的工具。但因为我们也有这样的经验，所以当我们做roguelike部分的时候，事情就简单了一些。因为我们希望有一款能吸引你的游戏，所以我们确实用这种经验做了《死亡细胞》的玩法。这真的是一件很不一样的事情，但它并不难，对我们来说更像是一种解脱，因为我们实际上把所有没有成功的东西都带来了，所以这是一个很好的过程。”  </p>
+<p>但尽管团队经验丰富，但将roguelike和metroidvania这样复杂的两个流派嫁接在一起仍然不是一件容易的事，前者需要程序化生成的关卡，而后者是一个已知的环境，你可以在其中一点一点地进化。  </p>
+<p>“最大的挑战真的与关卡设计有关，”Bénard说。”你知道当你做一个metroidvania的时候，你必须花相当多的时间来确保关卡设计是建立在你会进步的想法上。你会看到一些你一开始不能用的东西，但你会进步，你会回来的。尤其是这种回溯的想法，回到你已经知道的地方。  </p>
+<p>“但因为我们想要一个程序化的世界，所以我们知道如果真的有一个你记得不可能穿越的地方，那就没有意义了。所以这真的是我们最困难的部分：确保你每次探索的时候都能真正拥有一个不一样的世界，但仍然能很好地了解到你能做什么，不能做什么，以及当你得到一个新的能力时，你应该去哪里使用它。”  </p>
+<p>Motion Twin 解决这个问题的方法之一是通过添加符文，永久升级，让你访问最初被屏蔽的路径类型。你在之前的运行中看到的那个地洞？你现在可以用它来长出一根藤蔓，进入一个新的位置。当然还有武器和物品，你在每次运行时都会解锁，典型的roguelike风格。其实《死亡细胞》经常被拿来和《以撒的结合》相提并论。埃德蒙-麦克米伦的这一击确实是灵感的来源，但并不是我们所想的那样。  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIfcd.jpg" alt="tuIfcd.jpg">  </p>
+<p>“《黑暗之魂》对我们来说是一个很明显的参考，主要是因为它的困难难度、以及相当困难难度。它不仅仅是要做一个有难度的游戏 而是要做一个相当难度的游戏。”  </p>
+<p>“《以撒的结合》是一个很好的参考，但也有它的缺点。”Bénard说。”这真的是一款roguelike游戏，在这里你有大量不同的物品。但问题是，正因为如此，当你在《以撒的结合》中开始一个新的游戏时，你有很低的几率能有一个很好的开局，因为你有这么多不同的物品，而且大多数都不是那么强大。这是我们想尽量避免的事情，要确保你玩的时候，大部分的开局应该是可行的。”    </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tuIW1H.jpg" alt="tuIW1H.jpg">  </p>
+<p>因此，Motion Twin决定在游戏中加入 “不一定要少一些，但要多一些有影响力的物品”，这样每一次的开局都可以有不同的玩法，但相同的几率可以做到最后。然而，在《死亡细胞》中，要想 “走到最后 “显然不是那么容易的，死亡就在每一个角落。这就引出了游戏的下一个灵感–是的，你可能已经猜到了。  </p>
+<p>“作为一个笑话，我们想在会议室里放一个罐子，所以每当有人说’黑暗之魂’的时候，你就应该把2英镑放进去。”贝纳尔笑着说。”《黑暗之魂》对我们来说是一种明显的参考，主要是因为它困难难度–还有它的相当困难难度。这不仅仅是为了制作一款困难的游戏，而是为了制作一款相当难度的游戏，所以《黑暗之魂》就是一个很好的例子。但也有《Risk of Rain》是一个非常好的平台游戏roguelike，因为它是一个非常简单的游戏，但它有很多非常聪明的想法。而《暗黑破坏神III》也是因为他们如何打磨了一切，以及从《暗黑破坏神II》到《暗黑破坏神III》的所有变化，以及他们做得有多好。”  </p>
+<h2 id="社区的声音"><a href="#社区的声音" class="headerlink" title="社区的声音"></a>社区的声音</h2><p>Motion Twin早在2017年5月就为《死亡细胞》选择了Steam Early Access，然后在今年8月在PC和游戏机上正式发布。但工作室热衷于避免了Early Access的常见套路：把游戏放在那里多年来一直处于半开发状态。  </p>
+<p>“我们向玩家们宣布，我们想进入Early Access的时间只有一年，实际上因为游戏机移植的原因，我们多花了6个月的时间，但我们真的想确保，因为我们宣布了一年，所以就会是一年。”Bénard说。”所以我们不得不在游戏中推掉了一些东西。我们想有一个另类的结局，所以这就是我们决定保留的东西，可能会在明年年初发布的免费DLC。但我们仍然想确保发行版会尽可能地让玩家感觉到完整。”  </p>
+<p>死亡细胞》在早期访问期间发展了很多，比如说，武器上的统计值锻造能力已经被放弃了。玩家的反馈在游戏的制作过程中是非常重要的。  </p>
+<p>“Early Access刚开始的时候，我们以为只是增加内容和平衡一些东西，但我们并没有打算改变一切。但实际上在Early Access的第一个月之后，我们从社区中得到了很多有趣的反馈。他们实际上真正理解了游戏的意义。所以我们决定改变了很多重要的东西，尤其是你在游戏中如何建立你的角色，如何发展和世界的结构。”  </p>
+<p><img src="https://s1.ax1x.com/2020/05/29/tu7W3F.gif" alt="tu7W3F.gif">  </p>
+<p>在发展的过程中，在早期访问之前，也有急剧发展的东西，是主角的设计，只知道囚犯和，有大量的细胞的头的设计。  </p>
+<p>“有些是一种偶然的过程，因为我们对这个角色没有一个非常明确的规划。所以，这是我们在一个非常反复的过程中决定的。刚开始的时候，这个角色过去是有一个头，但这是我们改变的东西，”Bénard解释说，并补充说团队觉得这个设计不够突出。”这导致了很多有趣的事情。因为这个角色没有头，他不能说话，而且因为他不能说话，他有很多非常有趣的动画和事情要做。即使他不会说话，但还是觉得他有很强的性格，即使他不会说话。所以这是一开始没有明确决定的东西，但在游戏中逐渐出现了。”  </p>
+<h2 id="改造"><a href="#改造" class="headerlink" title="改造"></a>改造</h2><p>为了创建《死亡细胞》，Motion Twin使用了Haxe和Heaps语言作为框架。  </p>
+<p>“Haxe是我们多年前创建的一种自定义语言，”Bénard解释说，这让团队能够在已知的领域内，在某些方面让每个人的生活变得更加轻松。  </p>
+<p>“起初，这个语言是为了创建跨平台的游戏而做的。因为我们还在做网页游戏和移动端，我们希望有一种语言能够为Flash或苹果或安卓或其他任何我们想要的平台做一些东西。而当我们决定将《死亡细胞》制作成metroidvania的单机游戏时，我们决定坚持使用这个引擎，因为我们知道它的核心是为了在任何平台上工作。所以一开始是Steam版，但也是针对游戏机的，所以我们可以很容易地进行移植。比如说Xbox版或Switch，我们大概花了一两个月的时间来做基本的移植，所以速度相当快。”  </p>
+<p>他还解释说，仍然存在一些挑战，Switch的混合特性带来了主要挑战。  </p>
+<p>“从技术方面来说，这并不复杂，因为现在的每个控制台都有相当经典的架构。最重要的挑战，尤其是对Switch来说，是屏幕尺寸太小，或者说屏幕离你3米远。所以对于UI来说，我们确实有很多东西需要调整，以确保它总是清晰可辨，而且你可以在任何距离上看到所有的细节和一切。这对我们来说是最复杂的部分。”  </p>
+<p>在发售后不久，Motion Twin就透露《死亡细胞》在Switch上的销售速度是PS4上的四倍。所以听起来，团队似乎钉住了他们为数不多的移植挑战。随着DLC和更新的公布，包括更多关注速跑社区的DLC，《死亡细胞》将迎来黄金时代。但Motion Twin并不想太过依赖这种成功。  </p>
+<p>“我们想在《死亡细胞》上多做一些工作，因为我们还有一些想法没有时间投入，但是可能在明年年初，我们会开始着手做下一个项目。但我们有额外内容的计划，所以我们可能会不时推送额外的免费DLC、平衡补丁或类似的东西。所以我不能确定会持续多久，但我们想确保………..，”他停顿了一下，然后补充道，”直到游戏完成为止。”  </p>
+<p>“因为我们是一家老公司，我们之前确实有很多不同的头衔，我们很确定地知道，坚持一款游戏、一次成功，并不是一个好主意。所以当你做出一款好的游戏时，最好的办法就是再做一款。”Bénard笑着说。  </p>
+<br>  
+<br>  
+]]></content>
+      <categories>
+        <category>译文</category>
+      </categories>
+      <tags>
+        <tag>单机</tag>
+        <tag>搬运</tag>
+        <tag>译文</tag>
       </tags>
   </entry>
   <entry>
@@ -484,44 +484,6 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       </tags>
   </entry>
   <entry>
-    <title>面向对象：类定义/构造/属性</title>
-    <url>/2020/05/27/Object-oriented/</url>
-    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-
-
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </p>
-<p>构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 <code>Person</code> 的类的构造函数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
-<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private string _name &#x3D; &quot;Hello&quot;;</span><br><span class="line"></span><br><span class="line">public string Name</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line">    protected set</span><br><span class="line">    &#123;</span><br><span class="line">        _name &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
-</blockquote>
-<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Parent</span><br><span class="line">&#123;</span><br><span class="line">    public virtual int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Notice the accessor accessibility level.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; No access modifier is used here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Kid : Parent</span><br><span class="line">&#123;</span><br><span class="line">    public override int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Use the same accessibility level as in the overridden accessor.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Cannot use access modifier here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>无“声”胜有“声”——《Inside》中异于传统的叙事手段</title>
     <url>/2020/05/27/InsideNarrative/</url>
     <content><![CDATA[<p><img src="https://s1.ax1x.com/2020/05/29/tKnxf0.jpg" alt="tKnxf0.jpg"></p>
@@ -562,6 +524,44 @@ hexo deploy   //简写 hexo d 上传部署</code></pre>]]></content>
       <tags>
         <tag>单机</tag>
         <tag>测评</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>面向对象：类定义/构造/属性</title>
+    <url>/2020/05/27/Object-oriented/</url>
+    <content><![CDATA[<h2 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h2><p>对象是类的实例，构成类的方法和变量是类的成员。<br>定义类的一般形式：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;access specifier&gt; class  class_name</span><br><span class="line">&#123;</span><br><span class="line">    &#x2F;&#x2F; member variables</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable1;</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variable2;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;data type&gt; variableN;</span><br><span class="line">    &#x2F;&#x2F; member methods</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method1(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; method2(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">    &lt;access specifier&gt; &lt;return type&gt; methodN(parameter_list)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; method body</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+
+
+<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>每当创建类或结构时，将会调用其构造函数。 类或结构可能具有采用不同参数的多个构造函数。 使用构造函数能够设置默认值、限制实例化。  </p>
+<p>构造函数是一种方法，其名称与其类型的名称相同。 其方法签名仅包含方法名称和其参数列表；它不包含返回类型。 以下示例演示一个名为 <code>Person</code> 的类的构造函数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Person</span><br><span class="line">&#123;</span><br><span class="line">   private string last;</span><br><span class="line">   private string first;</span><br><span class="line"></span><br><span class="line">   public Person(string lastName, string firstName)</span><br><span class="line">   &#123;</span><br><span class="line">      last &#x3D; lastName;</span><br><span class="line">      first &#x3D; firstName;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F; Remaining implementation of Person class.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><p>属性可以使用<code>访问器(accessors)</code>使得私有域的值可以被读写或操作。<br>例如，有一个名为 Student 的类，带有 age、name 和 code 的私有域。我们不能在类的范围以外直接访问这些域，但是我们可以拥有访问这些私有域的属性。<br>定义结构：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 声明类型为 string 的 Code 属性</span><br><span class="line">public string Code      &#x2F;&#x2F;定义属性需要名字和类型</span><br><span class="line">&#123;</span><br><span class="line">   get</span><br><span class="line">   &#123;</span><br><span class="line">      return code;      </span><br><span class="line">   &#125;</span><br><span class="line">   set</span><br><span class="line">   &#123;</span><br><span class="line">      code &#x3D; value;     &#x2F;&#x2F;通过value关键字访问code值         </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自动实现的属性：<br>当get、set块中没有字段时，编译器会自动给我们生成一个字段用以存储值。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public string Code &#123;get;set;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何声明和使用读-写属性"><a href="#如何声明和使用读-写属性" class="headerlink" title="如何声明和使用读/写属性"></a>如何声明和使用读/写属性</h3><p>属性提供了公共数据成员的便利性，且不会产生未受保护、不可控制和未经验证地访问对象的数据的风险。 可以通过访问器实现从基础数据成员中检索值或赋值。<br><code>get</code>访问器可检索数据成员值（读），<code>set</code>访问器可以分配数据成员（写）。<br>示例： </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person</span><br><span class="line">&#123;</span><br><span class="line">    private string _name &#x3D; &quot;N&#x2F;A&quot;;</span><br><span class="line">    private int _age &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare a Name property of type string:</span><br><span class="line">    public string Name</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _name;</span><br><span class="line">        &#125;</span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _name &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Declare an Age property of type int:</span><br><span class="line">    public int Age</span><br><span class="line">    &#123;</span><br><span class="line">        get</span><br><span class="line">        &#123;</span><br><span class="line">            return _age;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        set</span><br><span class="line">        &#123;</span><br><span class="line">            _age &#x3D; value;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public override string ToString()</span><br><span class="line">    &#123;</span><br><span class="line">        return &quot;Name &#x3D; &quot; + Name + &quot;, Age &#x3D; &quot; + Age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class TestPerson</span><br><span class="line">&#123;</span><br><span class="line">    static void Main()</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Create a new Person object:</span><br><span class="line">        Person person &#x3D; new Person();</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Print out the name and the age associated with the person:</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Set some values on the person object:</span><br><span class="line">        person.Name &#x3D; &quot;Joe&quot;;</span><br><span class="line">        person.Age &#x3D; 99;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Increment the Age property:</span><br><span class="line">        person.Age +&#x3D; 1;</span><br><span class="line">        Console.WriteLine(&quot;Person details - &#123;0&#125;&quot;, person);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Keep the console window open in debug mode.</span><br><span class="line">        Console.WriteLine(&quot;Press any key to exit.&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;* Output:</span><br><span class="line">    Person details - Name &#x3D; N&#x2F;A, Age &#x3D; 0</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 99</span><br><span class="line">    Person details - Name &#x3D; Joe, Age &#x3D; 100</span><br><span class="line">*&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="可靠编程：限制访问器的可访问性"><a href="#可靠编程：限制访问器的可访问性" class="headerlink" title="可靠编程：限制访问器的可访问性"></a>可靠编程：限制访问器的可访问性</h3><p>属性中可以同时包含<code>get</code>和<code>set</code>访问器，默认情况下，它们具有与所属属性或索引器相同的可见性或访问级别。但是有时限制对其中某个访问器的访问是有益的，一般是可读不可写，例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">private string _name &#x3D; &quot;Hello&quot;;</span><br><span class="line"></span><br><span class="line">public string Name</span><br><span class="line">&#123;</span><br><span class="line">    get</span><br><span class="line">    &#123;</span><br><span class="line">        return _name;</span><br><span class="line">    &#125;</span><br><span class="line">    protected set</span><br><span class="line">    &#123;</span><br><span class="line">        _name &#x3D; value;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>当属性带有<code>override</code>修饰符时，访问器修饰符必须与重写的访问器的修饰符匹配。</p>
+</blockquote>
+<h3 id="重写访问器的访问修饰符"><a href="#重写访问器的访问修饰符" class="headerlink" title="重写访问器的访问修饰符"></a>重写访问器的访问修饰符</h3><p>重写属性或索引器时，被重写的访问器对重写代码而言必须是可访问的。 此外，属性/索引器及其访问器的可访问性都必须与相应的被重写属性/索引器及其访问器匹配。 例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Parent</span><br><span class="line">&#123;</span><br><span class="line">    public virtual int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Notice the accessor accessibility level.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; No access modifier is used here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">public class Kid : Parent</span><br><span class="line">&#123;</span><br><span class="line">    public override int TestProperty</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F; Use the same accessibility level as in the overridden accessor.</span><br><span class="line">        protected set &#123; &#125;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Cannot use access modifier here.</span><br><span class="line">        get &#123; return 0; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -909,6 +909,36 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
+    <title>爬坑-FamilyRacing的那些事</title>
+    <url>/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
+    <content><![CDATA[<h2 id="爬坑：FamilyRacing的那些事"><a href="#爬坑：FamilyRacing的那些事" class="headerlink" title="爬坑：FamilyRacing的那些事"></a>爬坑：FamilyRacing的那些事</h2><ul>
+<li><p>新建项目WPF初始化过程中，VS报错”无法加载一个或多个请求的类型，有关更多信息，请检索LoaderExceptions属性。”：</p>
+<p>这个是微软的机制问题，只要程序集所引用的dll不全或没有引用，就会报出这个错误，根据异常信息在项目bin目录下把缺少的dll文件补全即可。</p>
+</li>
+<li><p>之前创建项目时直接把其他项目的app.config搬了过来，导致后来添加dll引用时编译器报错 “试图加载格式不正确的程序” ：</p>
+<p>一般当项目的目标平台和dll不一致时会出现这个问题，在项目的生成设置里把AnyCPU改成32/64/98即可。</p>
+<p>另，引用一个数据库dll的时候，如果平台目标设置不是64位会报错，但是一般情况下AnyCPU是没有问题的。最后发现是创建项目时复制了其他项目的内容在app.config里，导致项目中某些地方生成了一些错误的东西。后来通过重建项目解决了问题，更具体的原因可对比新旧版本项目的csproj文件。</p>
+</li>
+<li><p>未将对象引用设置到对象的实例：</p>
+<p>一般是IOC引用落空了，不是IOC初始化没有引用就是对应类头部没有添加特性，添加上即可。刚接触公司这套东西，经常会忘记添加引用或特性，大部分非代码逻辑的问题都是出在这。</p>
+</li>
+<li><p>对类型“YDL.UI.LoadSplash.Loading3”的构造函数执行符合指定的绑定约束的调用时引发了异常:</p>
+<p>这一块属于程序打包这一块的问题，用dotNetReator对程序进行打包时，如果勾选了“Merge Assemblies”选项，程序打开时就会抛出该异常。</p>
+</li>
+<li><p>加载大体积文件、文档时，用记事本会打不开，用VSCode可以打开。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>VS</tag>
+        <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>浅论SDK和API的联系</title>
     <url>/2021/05/03/%E6%B5%85%E8%AE%BASDK%E5%92%8CAPI%E7%9A%84%E8%81%94%E7%B3%BB/</url>
     <content><![CDATA[<h2 id="浅论SDK和API的联系"><a href="#浅论SDK和API的联系" class="headerlink" title="浅论SDK和API的联系"></a>浅论SDK和API的联系</h2><br/>  
@@ -929,25 +959,24 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
-    <title>爬坑-FamilyRacing的那些事</title>
-    <url>/2020/10/06/%E7%88%AC%E5%9D%91-FamilyRacing%E7%9A%84%E9%82%A3%E4%BA%9B%E4%BA%8B/</url>
-    <content><![CDATA[<h2 id="爬坑：FamilyRacing的那些事"><a href="#爬坑：FamilyRacing的那些事" class="headerlink" title="爬坑：FamilyRacing的那些事"></a>爬坑：FamilyRacing的那些事</h2><ul>
-<li><p>新建项目WPF初始化过程中，VS报错”无法加载一个或多个请求的类型，有关更多信息，请检索LoaderExceptions属性。”：</p>
-<p>这个是微软的机制问题，只要程序集所引用的dll不全或没有引用，就会报出这个错误，根据异常信息在项目bin目录下把缺少的dll文件补全即可。</p>
-</li>
-<li><p>之前创建项目时直接把其他项目的app.config搬了过来，导致后来添加dll引用时编译器报错 “试图加载格式不正确的程序” ：</p>
-<p>一般当项目的目标平台和dll不一致时会出现这个问题，在项目的生成设置里把AnyCPU改成32/64/98即可。</p>
-<p>另，引用一个数据库dll的时候，如果平台目标设置不是64位会报错，但是一般情况下AnyCPU是没有问题的。最后发现是创建项目时复制了其他项目的内容在app.config里，导致项目中某些地方生成了一些错误的东西。后来通过重建项目解决了问题，更具体的原因可对比新旧版本项目的csproj文件。</p>
-</li>
-<li><p>未将对象引用设置到对象的实例：</p>
-<p>一般是IOC引用落空了，不是IOC初始化没有引用就是对应类头部没有添加特性，添加上即可。刚接触公司这套东西，经常会忘记添加引用或特性，大部分非代码逻辑的问题都是出在这。</p>
-</li>
-<li><p>对类型“YDL.UI.LoadSplash.Loading3”的构造函数执行符合指定的绑定约束的调用时引发了异常:</p>
-<p>这一块属于程序打包这一块的问题，用dotNetReator对程序进行打包时，如果勾选了“Merge Assemblies”选项，程序打开时就会抛出该异常。</p>
-</li>
-<li><p>加载大体积文件、文档时，用记事本会打不开，用VSCode可以打开。</p>
-</li>
-</ul>
+    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
+    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
+<a id="more"></a>
+
+<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
+
+<br/>
+
+<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
+<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
+<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
+<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
+<br/>
+
+<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
 ]]></content>
       <categories>
         <category>C#</category>
@@ -982,35 +1011,6 @@ lnkstack.ShowItem();</code></pre><br>
       </tags>
   </entry>
   <entry>
-    <title>爬坑-关于“未能加载文件或程序集”的解决方法</title>
-    <url>/2020/09/28/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E2%80%9C%E6%9C%AA%E8%83%BD%E5%8A%A0%E8%BD%BD%E6%96%87%E4%BB%B6%E6%88%96%E7%A8%8B%E5%BA%8F%E9%9B%86%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="爬坑：关于“未能加载文件或程序集”的解决方法"><a href="#爬坑：关于“未能加载文件或程序集”的解决方法" class="headerlink" title="爬坑：关于“未能加载文件或程序集”的解决方法"></a>爬坑：关于“未能加载文件或程序集”的解决方法</h2><p>调试项目时重写了2个类，上一个版本可以正常运行，但是重写后一跑立马报了一个异常“EntryAssembly: D:\VR\Egg_Unmannad.exe UnhandledException: Ioc instance init erro!!”</p>
-<a id="more"></a>
-
-<h3 id="异常信息："><a href="#异常信息：" class="headerlink" title="异常信息："></a>异常信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EntryAssembly: D:\VR\Egg_Unmannad.exe</span><br><span class="line">UnhandledException:</span><br><span class="line">Ioc instance init erro!!</span><br><span class="line">StackTrace:</span><br><span class="line">   在 YDL.YDLVRInitializer.InitIoc(String ioc) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 66</span><br><span class="line">  在 YDL.YDLVRInitializer.InitNormal(Action&#96;1 showMsg) 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\YDLVRInitializer.cs:行号 105</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;&gt;c.&lt;CMD_Loaded&gt;b__14_0() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">  在 System.Threading.Tasks.Task.InnerInvoke()</span><br><span class="line">  在 System.Threading.Tasks.Task.Execute()</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)</span><br><span class="line">  在 System.Runtime.CompilerServices.TaskAwaiter.GetResult()</span><br><span class="line">  在 YDL.WPF.Notify.InitModelBase.&lt;CMD_Loaded&gt;d__14.MoveNext() 位置 E:\VSProject\YDLSystem2\src\YDL\YDL.Core\WPF\Notify\InitModelBase.cs:行号 73</span><br><span class="line">--- 引发异常的上一位置中堆栈跟踪的末尾 ---</span><br><span class="line">  在 System.Runtime.CompilerServices.AsyncMethodBuilderCore.&lt;&gt;c.&lt;ThrowAsync&gt;b__6_0(Object state)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.InternalRealCall(Delegate callback, Object args, Int32 numArgs)</span><br><span class="line">  在 System.Windows.Threading.ExceptionWrapper.TryCatchWhen(Object source, Delegate callback, Object args, Int32 numArgs, Delegate catchHandler)</span><br></pre></td></tr></table></figure>
-
-<br/>
-
-<h3 id="控制台输出信息："><a href="#控制台输出信息：" class="headerlink" title="控制台输出信息："></a>控制台输出信息：</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">主屏幕边界 &#123;X&#x3D;0,Y&#x3D;0,Width&#x3D;1920,Height&#x3D;1080&#125;</span><br><span class="line">初始化0%</span><br><span class="line">无法加载程序集YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.IOC, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Log, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.SQL, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.VR.Core, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.Dog, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。</span><br><span class="line">无法加载程序集YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.LiveBroadcast, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br><span class="line">无法加载程序集YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null - 未能加载文件或程序集“YDL.MotoPlatform, Version&#x3D;1.0.0.0, Culture&#x3D;neutral, PublicKeyToken&#x3D;null”或它的某一个依赖项。系统找不到指定的文件。 &#x2F;&#x2F;Missing</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXu3F.png" alt="dKXu3F.png"></p>
-<p>后来发现是在项目的引用中<code>没有添加对应的引用</code>，即YDL.LiveBroadcast和YDL.MotoPlatform，添加后就可以正常运行了。</p>
-<p><img src="https://s1.ax1x.com/2020/08/18/dKXn9U.png" alt="dKXn9U.png"></p>
-<p>（话说没有找到项目Config配置文件里是在哪声明的dll版本, 先挖个坑， 有机会再填上。）</p>
-<br/>
-
-<p>[参考]{<a href="https://blog.csdn.net/lwpoor123/article/details/78350212}" target="_blank" rel="noopener">https://blog.csdn.net/lwpoor123/article/details/78350212}</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>VS</tag>
-        <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>爬坑-关于程序跨区域使用时小数点转换成逗号的问题</title>
     <url>/2021/06/15/%E7%88%AC%E5%9D%91-%E5%85%B3%E4%BA%8E%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%8C%BA%E5%9F%9F%E4%BD%BF%E7%94%A8%E6%97%B6%E5%B0%8F%E6%95%B0%E7%82%B9%E8%BD%AC%E6%8D%A2%E6%88%90%E9%80%97%E5%8F%B7%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>手头有项目需要和外企业合作开发，其中涉及到一个协议对接的问题，虽然两边的开发团队事先都有协商好统一的开发协议，但是在收发命令时，发现国外Double转换会把小数点转换为逗号。<br>这种情况在中文操作系统下没有出现，反而是在英文操作系统下出现了，两边的人还反复确认了几遍、都觉得自己没有问题。最后通过<code>修改区域性</code>为英文解决。  </p>
@@ -1042,30 +1042,6 @@ lnkstack.ShowItem();</code></pre><br>
       <tags>
         <tag>C#</tag>
         <tag>Bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线程调用带参数方法</title>
-    <url>/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="通过Thread发起线程时怎么调用带参数的方法"><a href="#通过Thread发起线程时怎么调用带参数的方法" class="headerlink" title="通过Thread发起线程时怎么调用带参数的方法"></a>通过Thread发起线程时怎么调用带参数的方法</h2><p>在.NET Framework中可以通过2种方法实现线程调用带参数的方法:Thread.Start(object),封装线程的方法和参数</p>
-<a id="more"></a>
-
-<h3 id="第一种：通过-Thread-Start-object-方法"><a href="#第一种：通过-Thread-Start-object-方法" class="headerlink" title="第一种：通过 Thread.Start(object) 方法"></a>第一种：通过 Thread.Start(object) 方法</h3><p><code>Start(object)</code> 指导致操作系统将当前实例的状态更改为 Running，并选择提供包含线程执行的方法要使用的数据的对象。  </p>
-<pre><code>public void Start (object parameter);</code></pre><blockquote>
-<p><code>Object Data type</code> 保存引用对象的地址， 可以将任何引用类型（字符串、数组、类或接口）分配给 Object 变量， Object变量还可以引用任意值类型的数据（数值、、 Boolean Char 、 Date 、结构或枚举）。 Object数据类型可以指向任何数据类型的数据，包括应用程序识别的任何对象实例。 在 Object 编译时不知道变量可能指向的数据类型时，请使用。</p>
-</blockquote>
-<p>在线程(函数)的参数位置定义一个object数据类型参数，在运行线程时通过调用Thread类方法Start(object)来传递参数。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void DownloadFile(object filename)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot;);</span><br><span class="line">        Thread.Sleep(1000);     &#x2F;&#x2F;让线程休眠1000ms</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">            static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread t &#x3D; new Thread(DownloadFile);    &#x2F;&#x2F;初始化Therad类的新实例 Downloadfile</span><br><span class="line">        t.Start(&quot;xxx种子&quot;);                     &#x2F;&#x2F;让t线程开始运行   传递object类参数filename string</span><br><span class="line">        &#x2F;&#x2F;t.Start(&#39;y&#39;);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename char</span><br><span class="line">        &#x2F;&#x2F;t.Start(666);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename int</span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="第二种：封装线程的方法和参数"><a href="#第二种：封装线程的方法和参数" class="headerlink" title="第二种：封装线程的方法和参数"></a>第二种：封装线程的方法和参数</h3><p>单独创建一个Thread类，将线程执行的方法和参数都封装到一个类里面，通过实例化该类，方法就可以调用属性来实现间接的类型安全地传递参数。  </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyThread</span><br><span class="line">&#123;</span><br><span class="line">    private string filename;</span><br><span class="line">    private string filepath;</span><br><span class="line"></span><br><span class="line">    public MyThread(string fileName, string filePath)</span><br><span class="line">    &#123;</span><br><span class="line">        this.filename &#x3D; fileName;</span><br><span class="line">        this.filepath &#x3D; filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void DownFile()</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot; + filepath + filename);</span><br><span class="line">        Thread.Sleep(1000);</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;通过单独创建一个Thread类来传递参数</span><br><span class="line">        MyThread my &#x3D; new MyThread(&quot;xxx.bt&quot;, &quot;http:&#x2F;&#x2F;xxxx.com&quot;);</span><br><span class="line">        Thread t &#x3D; new Thread(my.DownFile);     &#x2F;&#x2F;new 一个Thread对象，传递my的DowanFile方法</span><br><span class="line">        t.Start();</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行效果:<br><a href="https://imgchr.com/i/N3IrlQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/21/N3IrlQ.png" alt="N3IrlQ.png"></a></p>
-<br>]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -1134,6 +1110,30 @@ at _010_线程.Program.Main(String[] args) in D:\VSProject\CSharpStudy\Level3\CS
       <tags>
         <tag>C#</tag>
         <tag>Bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线程调用带参数方法</title>
+    <url>/2020/06/21/%E7%BA%BF%E7%A8%8B%E8%B0%83%E7%94%A8%E5%B8%A6%E5%8F%82%E6%95%B0%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="通过Thread发起线程时怎么调用带参数的方法"><a href="#通过Thread发起线程时怎么调用带参数的方法" class="headerlink" title="通过Thread发起线程时怎么调用带参数的方法"></a>通过Thread发起线程时怎么调用带参数的方法</h2><p>在.NET Framework中可以通过2种方法实现线程调用带参数的方法:Thread.Start(object),封装线程的方法和参数</p>
+<a id="more"></a>
+
+<h3 id="第一种：通过-Thread-Start-object-方法"><a href="#第一种：通过-Thread-Start-object-方法" class="headerlink" title="第一种：通过 Thread.Start(object) 方法"></a>第一种：通过 Thread.Start(object) 方法</h3><p><code>Start(object)</code> 指导致操作系统将当前实例的状态更改为 Running，并选择提供包含线程执行的方法要使用的数据的对象。  </p>
+<pre><code>public void Start (object parameter);</code></pre><blockquote>
+<p><code>Object Data type</code> 保存引用对象的地址， 可以将任何引用类型（字符串、数组、类或接口）分配给 Object 变量， Object变量还可以引用任意值类型的数据（数值、、 Boolean Char 、 Date 、结构或枚举）。 Object数据类型可以指向任何数据类型的数据，包括应用程序识别的任何对象实例。 在 Object 编译时不知道变量可能指向的数据类型时，请使用。</p>
+</blockquote>
+<p>在线程(函数)的参数位置定义一个object数据类型参数，在运行线程时通过调用Thread类方法Start(object)来传递参数。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void DownloadFile(object filename)</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot;);</span><br><span class="line">        Thread.Sleep(1000);     &#x2F;&#x2F;让线程休眠1000ms</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">            static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        Thread t &#x3D; new Thread(DownloadFile);    &#x2F;&#x2F;初始化Therad类的新实例 Downloadfile</span><br><span class="line">        t.Start(&quot;xxx种子&quot;);                     &#x2F;&#x2F;让t线程开始运行   传递object类参数filename string</span><br><span class="line">        &#x2F;&#x2F;t.Start(&#39;y&#39;);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename char</span><br><span class="line">        &#x2F;&#x2F;t.Start(666);                         &#x2F;&#x2F;让t线程开始运行   传递object类参数filename int</span><br><span class="line">        Console.WriteLine(&quot;Main&quot;);</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="第二种：封装线程的方法和参数"><a href="#第二种：封装线程的方法和参数" class="headerlink" title="第二种：封装线程的方法和参数"></a>第二种：封装线程的方法和参数</h3><p>单独创建一个Thread类，将线程执行的方法和参数都封装到一个类里面，通过实例化该类，方法就可以调用属性来实现间接的类型安全地传递参数。  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class MyThread</span><br><span class="line">&#123;</span><br><span class="line">    private string filename;</span><br><span class="line">    private string filepath;</span><br><span class="line"></span><br><span class="line">    public MyThread(string fileName, string filePath)</span><br><span class="line">    &#123;</span><br><span class="line">        this.filename &#x3D; fileName;</span><br><span class="line">        this.filepath &#x3D; filePath;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void DownFile()</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;开始下载&quot; + filepath + filename);</span><br><span class="line">        Thread.Sleep(1000);</span><br><span class="line">        Console.WriteLine(&quot;下载完成&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Program</span><br><span class="line">&#123;</span><br><span class="line">    static void Main(string[] args)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;通过单独创建一个Thread类来传递参数</span><br><span class="line">        MyThread my &#x3D; new MyThread(&quot;xxx.bt&quot;, &quot;http:&#x2F;&#x2F;xxxx.com&quot;);</span><br><span class="line">        Thread t &#x3D; new Thread(my.DownFile);     &#x2F;&#x2F;new 一个Thread对象，传递my的DowanFile方法</span><br><span class="line">        t.Start();</span><br><span class="line">        Console.ReadKey();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行效果:<br><a href="https://imgchr.com/i/N3IrlQ" target="_blank" rel="noopener"><img src="https://s1.ax1x.com/2020/06/21/N3IrlQ.png" alt="N3IrlQ.png"></a></p>
+<br>]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
